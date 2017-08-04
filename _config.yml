@@ -45,10 +45,6 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
-  - jekyll-minifier
-
-gems:
-    - jekyll-minifier
 
 # Configuration for jekyll-paginate-v2 plugin
 pagination:
