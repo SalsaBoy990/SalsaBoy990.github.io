@@ -1,0 +1,32 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <h2 class="footer-heading">{{ site.name }}</h2>
+        <p>{{ site.description }}
+          {% comment %}
+    site.time generates the current time when the site is built. The filter, date
+    is used to show just the year for the date.
+    {% endcomment %}
+    <p class="copyright">&copy; {{ site.name | escape }} {{ site.time | date: '%Y' }}.</a></p>
+        </p>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          {% if site.github_username %}
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          {% endif %}
+
+          {% if site.facebook %}
+          <li>
+            {% include icon-facebook.html username= site.facebook %}
+          </li>
+          {% endif %}
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        </ul>
+      </div>
+  </div>
+</footer>

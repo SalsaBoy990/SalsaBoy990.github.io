@@ -1,0 +1,73 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: New Geographer
+# Site name
+name: Gulácsi András
+# URL to site image. Site image is used when your site is shared via social media
+# 1:1 aspect ratio with a minimum of 144x144 or maximum of 4096x4096 pixels
+# Sizes are references from https://dev.twitter.com/cards/types/summary#reference
+image: https://location-of-image.com
+email: gulandras90@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  A New Geographer – Új Geográfus blog egy újszerű szemléletben
+  egyesíti a földrajzot az informatikával és a webfejlesztéssel.
+  A blogomon az esszéimet és a tudományos ismeretterjesztő
+  írásaimat publikálom számos, egymástól távol álló témában
+  a földi életről.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://salsaboy990.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: SalsaBoy990
+facebook: Facebook
+
+# Google Analytics
+# Remove # found before google_analytics to include Google Analytics to your
+# Jekyll site. Then replace UA-########-# with your Google Analytics tracking ID
+# google_analytics: UA-########-#
+
+# set timezone
+timezone: Europe/Budapest
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-paginate-v2
+  - jekyll-minifier
+
+gems:
+    - jekyll-minifier
+
+# Configuration for jekyll-paginate-v2 plugin
+pagination:
+  enabled: false
+  per_page: 5
+  permalink: "/:num/"
+
+autopages:
+  enabled: false
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - readme.md
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

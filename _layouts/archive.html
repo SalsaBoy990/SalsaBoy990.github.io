@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+<header class="post-header">
+  <h1 class="post-title">{{ page.title | escape }}</h1>
+</header>
+
+{% for post in site.posts %}
+  {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+  {% capture this_month %}{{ post.date | date: "%-m" }}{% endcapture %}
+  {% capture prev_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+  {% capture prev_month %}{{ post.previous.date | date: "%-m" }}{% endcapture %}
+
+  {% if forloop.first %}
+    <h2>{{ this_year }}. {% assign m = this_month %}
+                            {% case m %}
+                              {% when '1' %}janu&#225;r
+                              {% when '2' %}febru&#225;r
+                              {% when '3' %}m&#225;rcius
+                              {% when '4' %}&#225;prilis
+                              {% when '5' %}m&#225;jus
+                              {% when '6' %}j&#250;nius
+                              {% when '7' %}j&#250;lius
+                              {% when '8' %}augusztus
+                              {% when '9' %}szeptember
+                              {% when '10' %}okt&#243;ber
+                              {% when '11' %}november
+                              {% when '12' %}december
+                            {% endcase %}</h2>
+    <ul>
+  {% endif %}
+  <li><a href="{{ post.url }}" class="archive-a">{{ post.title }}</a></li>
+
+  {% unless forloop.last %}
+    {% if this_year != prev_year %}
+      </ul>
+      <h2>{{ prev_year }}. {% assign m = prev_month %}
+                            {% case m %}
+                              {% when '1' %}janu&#225;r
+                              {% when '2' %}febru&#225;r
+                              {% when '3' %}m&#225;rcius
+                              {% when '4' %}&#225;prilis
+                              {% when '5' %}m&#225;jus
+                              {% when '6' %}j&#250;nius
+                              {% when '7' %}j&#250;lius
+                              {% when '8' %}augusztus
+                              {% when '9' %}szeptember
+                              {% when '10' %}okt&#243;ber
+                              {% when '11' %}november
+                              {% when '12' %}december
+                            {% endcase %} </h2>
+      <ul>
+    {% else %}
+      {% if this_month != prev_month %}
+        </ul>
+        <h2>{{ prev_year }}. {% assign m = prev_month %}
+                            {% case m %}
+                              {% when '1' %}janu&#225;r
+                              {% when '2' %}febru&#225;r
+                              {% when '3' %}m&#225;rcius
+                              {% when '4' %}&#225;prilis
+                              {% when '5' %}m&#225;jus
+                              {% when '6' %}j&#250;nius
+                              {% when '7' %}j&#250;lius
+                              {% when '8' %}augusztus
+                              {% when '9' %}szeptember
+                              {% when '10' %}okt&#243;ber
+                              {% when '11' %}november
+                              {% when '12' %}december
+                            {% endcase %}</h2>
+        <ul>
+      {% endif %}
+    {% endif %}
+  {% endunless %}
+{% endfor %}
