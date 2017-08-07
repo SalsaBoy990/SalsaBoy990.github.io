@@ -20,12 +20,22 @@
           </li>
           {% endif %}
 
-          {% if site.facebook %}
+          {% if site.twitter_username %}
           <li>
-            {% include icon-facebook.html username= site.facebook %}
+            {% include icon-twitter.html username=site.twitter_username %}
           </li>
           {% endif %}
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+
+          {% if site.facebook %}
+          <li>
+            {% include icon-facebook.html username=site.facebook %}
+          </li>
+          {% endif %}
+          {% if site.email %}
+          <li>
+            {% include icon-email.html username=site.email %}
+          </li>
+          {% endif %}
         </ul>
       </div>
   </div>

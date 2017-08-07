@@ -8,6 +8,559 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Hány cigány él Magyarországon?</title>
+        <description>&lt;p&gt;&lt;strong&gt;A népszámlálások adataiból az derül ki, hogy Magyarországon 2001 és 2011 között 53%-kal, 205 720 főről 315 583 főre nőtt a cigányok száma. A Központi Statisztikai Hivatal (KSH) népszámlálásai a nemzetiségre, az anyanyelvre, a családi, baráti közösségben használt nyelvre, és a kulturális kötődésre kérdeznek rá, de ezekre a válaszadás megtagadható. A nemzetiségi hovatartozásukról nem nyilatkozók száma 2001 és 2011 között két és félszeresére, 543 317 főről 1 398 731 főre emelkedett.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Az 1. táblázatban az 1893-2003 közötti időszakban végzett mintavételek, cigányösszeírások eredményeit foglaltam össze. A reprezentatív szociológiai mintavételek a cigányok tényleges, a lakókörnyezet minősítése által meghatározott számát becsülték meg 1971-ben, 1993-ban és 2003-ban. Az 1893. évi cigányösszeírás egyedülálló a maga nevében, mivel hazánkban a mai napig nem történt ehhez hasonló, kifejezetten a cigányok számbavételét célzó kutatás.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;
+    &lt;figcaption&gt;
+    1. táblázat: A magyarországi cigányok száma az 1893. évi cigányösszeírás és a szociológiai adatfelvételek alapján (Kertesi G. – Kézdi G. 1998, Kemény I. 2004). * A trianoni határokon belül.
+    &lt;/figcaption&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Év
+            &lt;/th&gt;
+            &lt;th&gt;Felmérések, ezer fő (középérték)
+            &lt;/th&gt;
+            &lt;th&gt;A modell szerint (ezer fő)
+            &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1893&lt;/td&gt;
+            &lt;td&gt;59,982*&lt;/td&gt;
+            &lt;td&gt;60&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1971&lt;/td&gt;
+            &lt;td&gt;270-370 (320)&lt;/td&gt;
+            &lt;td&gt;300&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1993&lt;/td&gt;
+            &lt;td&gt;449-461 (455)&lt;/td&gt;
+            &lt;td&gt;472&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2003&lt;/td&gt;
+            &lt;td&gt;520-650 (585)&lt;/td&gt;
+            &lt;td&gt;580&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2015&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;743&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2020&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;823&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/center&gt;
+
+&lt;p&gt;A cigányság száma &lt;strong&gt;az elmúlt 110 évben megtízszereződött&lt;/strong&gt;: &lt;strong&gt;60 ezer főről 600 ezer főre gyarapodott 2003-ig&lt;/strong&gt;. 2003-ban az össznépesség 10 millió 142 ezer fő volt, melynek &lt;strong&gt;6%&lt;/strong&gt;-a a cigány nemzetiséghez tartozott. A népszámlálások kétszeresen alábecsülték a magyarországi cigányság tényleges számát!&lt;/p&gt;
+
+&lt;p&gt;A cigányság 2015. évi számának becslésére és 2020-ig való előrejelzésére, egy egyszerű modellt készítettem. A rendelkezésre álló adatfelvételek adatpontjaira egy exponenciális függvényt illesztettem (1. ábra).&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://localhost:4000/assets/Cigany_modell-min.jpg&quot; alt=&quot;A cigányok számának előrejelzése 2020-ig&quot; class=&quot;image2&quot; /&gt;
+    &lt;figcaption&gt;1. ábra: A cigányfelmérések eredményeire számolt exponenciális függvény (Hablicsek L. 2007). (Az R-ben írt kódot lásd az &lt;a href=&quot;https://github.com/SalsaBoy990/R-codes&quot; target=&quot;_blank&quot;&gt;R-codes&lt;/a&gt; gyűjteményemben.)
+    &lt;/figcaption&gt;
+&lt;/center&gt;
+
+&lt;p&gt;Szépen látható, hogy a modell teljesen reprodukálja az 1893. évi összeírás értékét (60 ezer fő). &lt;strong&gt;A cigányság 2015-ös létszámára 743 ezer jött ki, míg 2020-ra meg fogja haladni a 800 ezer főt.&lt;/strong&gt; Az 1. táblázatban közöltem a modell alapján visszaszámolt értékeket, amelyek kitűnő egyezést mutatnak a valós értékekkel (r&lt;sup&gt;2&lt;/sup&gt;=0,99, p&amp;lt;0,001).&lt;/p&gt;
+
+&lt;p&gt;A teljes termékenységi arányszám, vagyis az egy szülőképes korú (15-49 év) nőre eső gyerekszám, jó mutatja, hogy 1970 óta a magyar nők kevesebb gyereket szülnek (&lt;strong&gt;a teljes népesség körében 1,3 gyerek/nő&lt;/strong&gt;, de ebbe a cigányok is beletartoznak), mint amennyi a népességszám szinten tartásához (2,1 gyerek/szülőképes nő) elegendő lenne. Ezzel szemben, kizárólag &lt;strong&gt;a cigány nők esetén&lt;/strong&gt;, a termékenységi arányszám még mindig jelentősen meghaladja az átlagot (&lt;strong&gt;3,0&lt;/strong&gt;). A cigányság gyerekszáma gyorsabban nő, mint a magyaroké. A születő magyar gyerekek száma viszont az elöregedő magyar társadalom halálozási ütemét nem képes ellensúlyozni. A cigányság számaránya a népességen belül pedig tovább növekszik, de szerencsére &lt;strong&gt;az utóbbi tíz évben a cigány nők termékenységi arányszáma is lassan csökkenésnek indult&lt;/strong&gt; (2. táblázat).&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;
+    &lt;figcaption&gt;
+    2. táblázat: A teljes női lakosság és a cigány nők termékenységi arányszámai, 1930-31 és 1999-2002 között (Janky B. 2005)
+    &lt;/figcaption&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Időszak
+            &lt;/th&gt;
+            &lt;th&gt;A teljes lakosság körében
+            &lt;/th&gt;
+            &lt;th&gt;A cigány nők körében
+            &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1930-31&lt;/td&gt;
+            &lt;td&gt;2,8&lt;/td&gt;
+            &lt;td&gt;n/a&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1969-70&lt;/td&gt;
+            &lt;td&gt;2,0&lt;/td&gt;
+            &lt;td&gt;n/a&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1990-93&lt;/td&gt;
+            &lt;td&gt;1,8&lt;/td&gt;
+            &lt;td&gt;3,3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1995-98&lt;/td&gt;
+            &lt;td&gt;1,4&lt;/td&gt;
+            &lt;td&gt;3,3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1999-2002&lt;/td&gt;
+            &lt;td&gt;1,3&lt;/td&gt;
+            &lt;td&gt;3,0&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/center&gt;
+
+&lt;p&gt;Kizárólag a magyar nők esetén az egy szülőképes nőre jutó gyerekszám katasztrofálisan alacsony: 1,3 alatt van, mivel a cigányok szaporasága javít a statisztikán. Sajnos nem áll rendelkezésemre külön, csak a magyarokra vonatkozó adat. Így is egészen ritka adatokat adok közre.&lt;/p&gt;
+
+&lt;p&gt;A teljes népesség és a cigányság élveszületési számának és arányának változásából kiderül, hogy &lt;strong&gt;2003-ban már minden hatodik újszülött cigány volt&lt;/strong&gt; (3. táblázat) (Kemény I. 2004). A cigányság korösszetétele is teljesen eltér a magyarságétól: &lt;strong&gt;a 15 év alattiak aránya a cigányok esetén megközelíti a 37%-ot&lt;/strong&gt;, míg &lt;strong&gt;a 60 éven felüliek aránya 3,9%&lt;/strong&gt;-ot tesz ki. Ez fiatalos korszerkezetet jelent. Az össznépesség esetén azonban, a cigányokhoz képest, &lt;strong&gt;a 15 éven aluliak aránya kevesebb, mint feleakkora&lt;/strong&gt; (16,1%), illetve &lt;strong&gt;a 60 éven felüliek aránya több, mint ötször akkora&lt;/strong&gt; (20,8%). A tizenöt éven aluliak aránya meghaladja a hatvan éven felüliekét, ami elöregedő korszerkezetre utal (4. táblázat).&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;
+    &lt;figcaption&gt;
+    3. táblázat: Az élveszületések számának és arányának változása a teljes népesség és a cigányság körében 1971-2003 (Kemény I. 2004)
+    &lt;/figcaption&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Év
+            &lt;/th&gt;
+            &lt;th&gt;A teljes lakosság körében (ezer fő)
+            &lt;/th&gt;
+            &lt;th&gt;A cigány népesség körében
+            &lt;/th&gt;
+            &lt;th&gt;A cigány születések aránya
+            &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1971&lt;/td&gt;
+            &lt;td&gt;151&lt;/td&gt;
+            &lt;td&gt;10&lt;/td&gt;
+            &lt;td&gt;&amp;lt;7%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1993&lt;/td&gt;
+            &lt;td&gt;116&lt;/td&gt;
+            &lt;td&gt;13&lt;/td&gt;
+            &lt;td&gt;&amp;gt;11%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2003&lt;/td&gt;
+            &lt;td&gt;94,647&lt;/td&gt;
+            &lt;td&gt;15&lt;/td&gt;
+            &lt;td&gt;15,8%&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;figcaption&gt;
+    4. táblázat: A cigány háztartásokban élő és az országos népesség a 0-14 év közötti és a 60 év feletti korcsoportjainak százalékos megoszlása 2003-ban (Kemény I. 2004)
+    &lt;/figcaption&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Korcsoport
+            &lt;/th&gt;
+            &lt;th&gt;A teljes népesség esetén
+            &lt;/th&gt;
+            &lt;th&gt;A cigányok körében
+            &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;15 éven aluliak&lt;/td&gt;
+            &lt;td&gt;16,1&lt;/td&gt;
+            &lt;td&gt;36,8&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;60 éven felüliek&lt;/td&gt;
+            &lt;td&gt;20,8&lt;/td&gt;
+            &lt;td&gt;3,9&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/center&gt;
+
+&lt;p&gt;A könnyebb összehasonlíthatóság kedvéért, a 2-3. ábrákon megjelenítettem a cigány és a magyar korfát a 2001. évi népszámlálás adatainak felhasználásával. Megjegyzés: a vízszintes tengely beosztása a két korfán eltérő. A magyar lakosság esetén 39 év az átlagéletkor, míg a cigányoknál csupán 25.&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://localhost:4000/assets/Cigany_korfa-min.jpg&quot; alt=&quot;A cigányok számának előrejelzése 2020-ig&quot; class=&quot;image2&quot; /&gt;
+    &lt;figcaption&gt;2. ábra: A cigányságot jellemző korfa piramis alakú (KSH alapján). (Az R-ben írt kódot lásd az &lt;a href=&quot;https://github.com/SalsaBoy990/R-codes&quot; target=&quot;_blank&quot;&gt;R-codes&lt;/a&gt; gyűjteményemben.)
+    &lt;/figcaption&gt;
+    &lt;img src=&quot;http://localhost:4000/assets/Magyar_korfa-min.jpg&quot; alt=&quot;A cigányok számának előrejelzése 2020-ig&quot; class=&quot;image2&quot; /&gt;
+    &lt;figcaption&gt;3. ábra: A magyarság korfája elöregedő korszerkezetet tükröz, urna alakú (KSH alapján). (Az R-ben írt kódot lásd az &lt;a href=&quot;https://github.com/SalsaBoy990/R-codes&quot; target=&quot;_blank&quot;&gt;R-codes&lt;/a&gt; gyűjteményemben.)
+    &lt;/figcaption&gt;
+&lt;/center&gt;
+
+&lt;p&gt;&lt;strong&gt;A cigányok 86,9%-ának végzettsége általános iskola&lt;/strong&gt; (8 évfolyam vagy annál kevesebb), &lt;strong&gt;egyetemi, főiskolai végzettséggel mindössze 2607 fő rendelkezett&lt;/strong&gt; 2011-ben (5. táblázat).&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;
+    &lt;figcaption&gt;
+    5. táblázat: A magyar és a cigány népesség megoszlása a legmagasabb befejezett iskolai végzettség szerint, 2011-ben (KSH alapján).
+    &lt;/figcaption&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Legmagasabb iskolai végzettség
+            &lt;/th&gt;
+            &lt;th&gt;Magyar (%)
+            &lt;/th&gt;
+            &lt;th&gt;Cigány (%)
+            &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;8 évfolyamnál alacsonyabb&lt;/td&gt;
+            &lt;td&gt;18,1&lt;/td&gt;
+            &lt;td&gt;47,5&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;8 évfolyam&lt;/td&gt;
+            &lt;td&gt;23,5&lt;/td&gt;
+            &lt;td&gt;39,4&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Középfokú iskola érettségi nélkül,
+szakmai oklevéllel&lt;/td&gt;
+            &lt;td&gt;18,0&lt;/td&gt;
+            &lt;td&gt;8,8&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Érettségi&lt;/td&gt;
+            &lt;td&gt;25,6&lt;/td&gt;
+            &lt;td&gt;3,4&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Főiskola, egyetem&lt;/td&gt;
+            &lt;td&gt;14,7&lt;/td&gt;
+            &lt;td&gt;0,8&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/center&gt;
+
+&lt;p&gt;A 6. táblázatból világossá válik, hogy a szocializmus időszakában a cigányok foglalkoztatottsága (különösen a férfiak) jóval magasabb volt, egészen a rendszerváltozásig. Onnantól kezdve drasztikusan leesett a cigányok foglalkoztatottsága, és az adatok szerint 2003-ig változatlan volt. &lt;strong&gt;1987-1993 között a férfiak esetén 45,6, a nők esetén 33, míg együtt 39,4%-kal csökkent a dolgozók aránya.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;
+    &lt;figcaption&gt;
+    6. táblázat: A cigány férfiak és nők foglalkoztatottsága 1971-2003 között százalékban (Janky B. 2005). * Az 1971-es, 1993-as és 2003-as országos reprezentatív cigányvizsgálat alapján. N: a minta nagysága, az adatok a 15–54 éves nők és 15–59 éves férfiak százalékában értendők.
+    &lt;/figcaption&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;
+            &lt;/th&gt;
+            &lt;th&gt;1971
+            &lt;/th&gt;
+            &lt;th&gt;1978
+            &lt;/th&gt;
+            &lt;th&gt;1987
+            &lt;/th&gt;
+            &lt;th&gt;1993
+            &lt;/th&gt;
+            &lt;th&gt;2003
+            &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Férfiak&lt;/td&gt;
+            &lt;td&gt;85,2&lt;/td&gt;
+            &lt;td&gt;77,3&lt;/td&gt;
+            &lt;td&gt;74,4&lt;/td&gt;
+            &lt;td&gt;28,8&lt;/td&gt;
+            &lt;td&gt;29,2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Nők&lt;/td&gt;
+            &lt;td&gt;30,3&lt;/td&gt;
+            &lt;td&gt;47,0&lt;/td&gt;
+            &lt;td&gt;49,3&lt;/td&gt;
+            &lt;td&gt;16,3&lt;/td&gt;
+            &lt;td&gt;16,3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Együtt&lt;/td&gt;
+            &lt;td&gt;n/a&lt;/td&gt;
+            &lt;td&gt;62,0&lt;/td&gt;
+            &lt;td&gt;62,0&lt;/td&gt;
+            &lt;td&gt;22,6&lt;/td&gt;
+            &lt;td&gt;22,7&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;N&lt;/td&gt;
+            &lt;td&gt;n/a&lt;/td&gt;
+            &lt;td&gt;2875&lt;/td&gt;
+            &lt;td&gt;3888&lt;/td&gt;
+            &lt;td&gt;4842&lt;/td&gt;
+            &lt;td&gt;3081&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;végszó&quot;&gt;Végszó&lt;/h2&gt;
+&lt;p&gt;A szocializmus alatt kevés volt a “közveszélyes munkakerülő”. A nehézipar, a bányászat sok alacsonyan képzett munkaerőt szívott fel, ami munkát adott, a cigányoknak is. Viszont a rendszerváltoztatás során szétbomlasztották a magyar ipart, jelentősen megnövelve ezzel a munkanélküliséget. Ma a szociális ellátórendszeren élősködnek az indiából származó cigányok (megélhetési gyerekcsinálók). A cigányokkal pedig csak keményen lehet bánni, hiszen a többségük csak az erőszakból ért.&lt;/p&gt;
+
+&lt;p&gt;A cigányok beilleszkedési képtelenségét a cigányok viselkedésében kell keresni. Nem a magyarok szegregálják a cigányokat, hanem a cigányok magukat, mert &lt;strong&gt;nem akarnak integrálódni&lt;/strong&gt;!&lt;/p&gt;
+
+&lt;p&gt;A bőnözőket nem luxusbörtönbe kell zárni, hanem kemény munkatáborba, hogy társadalmilag hasznos tevékenységet folytassanak. Ez majd lelohasztja a cigányok bűnözésre való hajlamát.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;felhasznált-irodalom&quot;&gt;Felhasznált irodalom&lt;/h2&gt;
+
+&lt;ul class=&quot;no-decoration-16px&quot;&gt;
+    &lt;li&gt;Hablicsek L. (2007). &lt;a href=&quot;http://demografia.hu/kiadvanyokonline/index.php/demografia/article/viewFile/540/483&quot; target=&quot;_blank&quot;&gt;Kísérleti számítások a roma lakosság területi jellemzőinek alakulására és 2021-ig történő előrebecslésére.&lt;/a&gt; – Demográfia 50(1), pp. 7-54. &lt;/li&gt;
+    &lt;li&gt;Janky B. (2005). &lt;a href=&quot;www.szmm.gov.hu/download.php?ctag=download&amp;amp;docID=20471&quot; target=&quot;_blank&quot;&gt;A cigány nők társadalmi helyzete és termékenysége.&lt;/a&gt; – In. Nagy I. – Pongrácz T. –Tóth I. Gy. (szerk.): Szerepváltozások. Jelentés a nők és férfiak helyzetéről, 2005. – TÁRKI, Ifjúsági, Családügyi, Szociális és Esélyegyenlőségi Minisztérium, Budapest. pp. 136–148.&lt;/li&gt;
+    &lt;li&gt;Kemény I. 2004: &lt;a href=&quot;http://www.demografia.hu/kiadvanyokonline/index.php/demografia/article/download/615/427&quot; target=&quot;_blank&quot;&gt;A magyarországi cigány népesség demográfiája.&lt;/a&gt; – Demográfia 47(3-4), pp. 335-346. &lt;/li&gt;
+    &lt;li&gt;Kertesi G. – Kézdi G. 1998: &lt;a href=&quot;http://econ.core.hu/file/download/Kertesi_Kezdi/A_cigany_nepesseg_Mo-n.pdf&quot; target=&quot;_blank&quot;&gt;A cigány népesség Magyarországon.&lt;/a&gt; (Dokumentáció és adattár.) – Socio-typo, Budapest. 467 p. &lt;/li&gt;
+    &lt;li&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.nepszamlalas2001.hu/hun/kotetek/04/tabhun/tabl01/load01.html&quot; target=&quot;_blank&quot;&gt;KSH 2001. évi népszámlálás. 1.1.  Nemzetiség.&lt;/a&gt; (letöltve: 2015-05-27)&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.nepszamlalas2001.hu/hun/kotetek/24/tables/loadcig2_1.html&quot; target=&quot;_blank&quot;&gt;KSH 2001. évi népszámlálás. Cigány, roma:
+2.1. A népesség korév és nemek szerint, a nemek aránya.&lt;/a&gt; (letöltve: 2015-05-25)&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.nepszamlalas2001.hu/hun/kotetek/24/tables/loadmagy2_1.html&quot; target=&quot;_blank&quot;&gt;KSH 2001. évi népszámlálás. Magyar: 
+2.1. A népesség korév és nemek szerint, a nemek aránya.&lt;/a&gt; (letöltve: 2015-05-25)&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.ksh.hu/nepszamlalas/docs/tablak/nemzetiseg/09_02_15_01.xls&quot; target=&quot;_blank&quot;&gt;KSH 2011. évi népszámlálás. 2.15.1. A népesség korcsoport, településtípus és nemek szerint, a nemek aránya, 2011.
+&lt;/a&gt; (letöltve: 2015-05-27)&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.ksh.hu/nepszamlalas/docs/tablak/teruleti/00/00_2_1_6_1.xls&quot; target=&quot;_blank&quot;&gt;KSH 2011. évi népszámlálás. 2.1.6.1. A népesség nemzetiség, korcsoport, legmagasabb befejezett iskolai végzettség és nemek szerint, 2011.
+&lt;/a&gt; (letöltve: 2015-05-26)&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.ksh.hu/nepszamlalas/docs/tablak/nemzetiseg/09_01_01.xls&quot; target=&quot;_blank&quot;&gt;KSH 2011. 1.1. A népesség a nemzetiségi hovatartozást befolyásoló tényezők szerint
+&lt;/a&gt; (letöltve: 2015-05-27)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 07 Aug 2017 17:27:00 +0200</pubDate>
+        <link>http://localhost:4000//tudomany/2017/08/07/ciganyok_magyarorszagon.html</link>
+        <guid isPermaLink="true">http://localhost:4000//tudomany/2017/08/07/ciganyok_magyarorszagon.html</guid>
+      </item>
+    
+      <item>
+        <title>A Google Earth Engine felhő alapú platform alkalmazása a geoinformatikában, 1. rész.</title>
+        <description>&lt;p&gt;&lt;strong&gt;Korunkban már nem az adatok hiánya jelenti a földrajzi kutatások korlátját, hanem annak a tömérdek rendelkezésre álló és ingyenes távérzékelt adatnak a rendkívül hosszadalmas feldolgozása. Hiszen csak nagy mennyiségű, empirikus adatból lehet szilárd, megbízható tudományos következtetéseket levonni, és megbízható modelleket megalapozni. A Google Earth Engine felhő alapú számítási platform alkalmazásával szeretném demonstrálni az objektum-orientált programozás elengedhetetlen szükségét a geoinformatikában.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;a-google-earth-engine-bemutatása&quot;&gt;A Google Earth Engine bemutatása&lt;/h2&gt;
+
+&lt;center&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/4E6yQLoGO2o&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;/center&gt;
+
+&lt;p&gt;A &lt;strong&gt;felhő alapú&lt;/strong&gt; (cloud computing) &lt;strong&gt;szolgáltatások&lt;/strong&gt; közös jellemzője, hogy a szolgáltatásokat nem egy dedikált hardvereszközön üzemeltetik, hanem a szolgáltató eszközein elosztva, a szolgáltatás üzemeltetési részleteit a felhasználótól elrejtve. Ezeket a szolgáltatásokat a felhasználók &lt;strong&gt;a hálózaton keresztül&lt;/strong&gt; érhetik el. A &lt;strong&gt;Google Earth Engine&lt;/strong&gt; is egy ilyen felhő alapú szolgáltatás. Ez egy olyan szoftverszolgáltatási módszer, amelynél a szoftver és a kapcsolódó adatok központilag vannak tárolva (tipikusan egy (internet) felhőben, esetünkben a Google szerverein), ugyanakkor a felhasználói hozzáférések egy vékony &lt;strong&gt;kliens&lt;/strong&gt;en keresztül zajlanak, amely leggyakrabban egy valamilyen &lt;strong&gt;webböngésző alkalmazás&lt;/strong&gt;. Esetünkben ez a Google Earth Engine alkalmazásprogramozási felülete vagy interfésze (application programming interface, API). A Google Earth Engine API a JavaScript és a Python programozási nyelveket használja. A Python használatához telepítésre is szükség van. Csak a JavaScript klienssel foglalkozom.&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;A Google Earth Engine (a későbbiekben: GEE) felhő alapú platformját műholdképek és egyéb földi megfigyelési adatok feldolgozására hozták létre. Hozzáférést nyújt a Google képi adattáraihoz (909 terrabájtnyi, azaz majdnem 1 petabájtnyi (10&lt;sup&gt;15&lt;/sup&gt; bájt) adat) és biztosítja azt a gigászi számítási teljesítményt, ami a képek feldolgozásához szükséges.&lt;/p&gt;
+
+&lt;p&gt;A tudomány tekintélyes adat- és technológiai erőforrásokkal való párosítása több &lt;strong&gt;előnnyel&lt;/strong&gt; jár:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Példa nélküli sebesség:&lt;/strong&gt; még a legerősebb felhasználói számítógépekkel is napokba vagy hetekbe telik egy elemzés lefuttatása a földfelszín bármely nagyobb szegletére. A felhő alapú számítással nagyságrendileg lecsökken a számítási idő.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Könnyen használható és alacsony költségű:&lt;/strong&gt; egy internetes felület, amely könnyű hozzáférést nyújtva az adatokhoz (Landsat, MODIS, Sentinel stb.), a tudományos algoritmusokhoz és a számítási teljesítményhez. Drámaian lecsökkenti a földrajzi adatok elemzésének költségeit és összetettségét. Ez lehetővé teszi a magas befolyású, adat-vezérelte tudományt.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;A GEE számítási módszere figyelemreméltóan hatékony: automatikusan párhuzamosítja az elemzéseket, így aztán számos számítógép CPU-ján egy időben futnak a Google adatközpontokban. A számításokat „lustán” hajtja végre, csak a kijelző megtöltéséhez vagy a kért értékek számításához szükséges bemenő adatokat kéri be. Ez az &lt;strong&gt;éppen időben&lt;/strong&gt; (just-in-time) &lt;strong&gt;megosztott számítási modell&lt;/strong&gt; lehetővé teszi az eredmények valós idejű felfedezését. A számítás után, az eredményeket gyorsítótárazza a memóriában azért, hogy az ugyanarra a műholdképre vagy értékre vonatkozó többszörös HTTP lekérések ne vezessenek fölösleges újraszámításhoz.&lt;/p&gt;
+
+&lt;p&gt;A GEE Code Editor fejlesztői környezet felületét a lenti kép mutatja: fent középen a &lt;strong&gt;JavaScript kódszerkesztő&lt;/strong&gt;, alul a &lt;strong&gt;térképnézet&lt;/strong&gt;, a bal felső ablakban a fülekkel a &lt;strong&gt;szkriptkezelő&lt;/strong&gt; (Scripts), az &lt;strong&gt;API dokumentáció&lt;/strong&gt; (Docs) és a &lt;strong&gt;saját feltöltött adataink&lt;/strong&gt; (Assets) érhetők el. A jobb felső ablakban a &lt;strong&gt;felügyelő&lt;/strong&gt; (Inspector) – pl. a térképre kattintva egy pont földrajzi koordinátáit írja ki –, a &lt;strong&gt;konzol&lt;/strong&gt; (Console) – a &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; függvény ide ír –, és a &lt;strong&gt;feladatok&lt;/strong&gt; (Tasks) – pl. egy műholdkép GeoTIFF-be exportálása – jeleníthető meg a fülekre kattintva. A kódszerkesztő ablak fejlécében a &lt;strong&gt;Get Link&lt;/strong&gt; gombra kattintva megkapjuk a szkriptünkre mutató egyedi html címet.&lt;/p&gt;
+
+&lt;center&gt;
+&lt;img src=&quot;http://localhost:4000/assets/gee-800px-min.jpg&quot; class=&quot;large&quot; alt=&quot;Google Earth Engine kódszerkesztő&quot; /&gt;
+&lt;figcaption&gt;1. kép: A Google Earth Engine kódszerkesztője
+&lt;/figcaption&gt;
+&lt;/center&gt;
+
+&lt;h3 id=&quot;fontos-tudnivalók&quot;&gt;Fontos tudnivalók&lt;/h3&gt;
+
+&lt;p&gt;A GEE nem kereskedelmi célra ingyenesen elérhető, viszont a használata az &lt;strong&gt;Earth Engine Kiértékelők&lt;/strong&gt; (Earth Engine Evaluators) számára korlátozott.&lt;/p&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;A Google Earth Engine használatához &lt;a href=&quot;https://accounts.google.com/SignUp?hl=hu&quot; target=&quot;_blank&quot;&gt;Google Fiók&lt;/a&gt;kal kell rendelkezni.
+    &lt;/li&gt;
+    &lt;li&gt;Egy űrlapot kell kitölteni &lt;a href=&quot;https://signup.earthengine.google.com/&quot; target=&quot;_blank&quot;&gt;itt&lt;/a&gt;. Kb. 1 hét alatt bírálják el, és adnak hozzáférést a platformhoz.
+    &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Csak ez a két lépés után tudod használni a Google Earth Engine-t.&lt;/p&gt;
+
+&lt;p&gt;A továbbiakban dióhéjban bemutatom a GEE működését. Az &lt;strong&gt;objektum-orientált programozás&lt;/strong&gt; és a &lt;strong&gt;JavaScript&lt;/strong&gt; nyelv rövid bemutatását egy későbbi blogbejegyzésben pótolom.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;hogyan-működik-a-google-earth-engine&quot;&gt;Hogyan működik a Google Earth Engine?&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-kliens-kontra-szerver&quot;&gt;1. Kliens kontra szerver&lt;/h3&gt;
+
+&lt;p&gt;Fontos megkülönböztetni az &lt;strong&gt;EE objektumokat&lt;/strong&gt; más JavaScript objektumoktól vagy elemi grafikus objektumoktól (ún. primitívek), amelyek a kódban lehetnek. A szerveren található objektumokat &lt;strong&gt;kliens oldali „proxy” objektumok&lt;/strong&gt; (tárolók) manipulálásával lehet változtatni.  A webböngészőt hívjuk kliensnek: esetünkben ez a Google Earth Engine API. &lt;strong&gt;Minden „ee”-vel kezdődő „valami” egy proxy objektum.&lt;/strong&gt; Ezek nem tartalmaznak semmilyen tényleges adatot, mert ezek csupán a szerveren található objektumok kezelői.&lt;/p&gt;
+
+&lt;p&gt;A következő példában a kliensSztring sztring típusú változót becsomagoljuk egy tárolóba (az &lt;code class=&quot;highlighter-rouge&quot;&gt;ee.Date()&lt;/code&gt; konstruktorát hívjuk meg). Ezeket a tárolókat küldjük el a szervernek feldolgozásra!&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;kliensSztring&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2017-04-01&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;kliensSztring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//=&amp;gt; sztring&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Az ee.Date() konstruktorát meghívjuk.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;szerverSztring&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kliensSztring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;Ez egy EE objektum?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;szerverSztring&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ComputedObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//=&amp;gt; igaz&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;A dátum objektumok segítségével könnyedén le tudjuk válogatni a megadott időszakban készült műholdképeket a képkollekcióból (&lt;code class=&quot;highlighter-rouge&quot;&gt;ee.ImageCollection&lt;/code&gt; osztály).&lt;/p&gt;
+
+&lt;p&gt;A szerver oldali objektumok és metódusok (tagfüggvények) szintaxisa &lt;code class=&quot;highlighter-rouge&quot;&gt;ee.Thing&lt;/code&gt;, illetve &lt;code class=&quot;highlighter-rouge&quot;&gt;ee.Thing.method()&lt;/code&gt;. Bármely másik objektum, ami nem „ee”-vel kezdődik az mind kliens oldali. Például a &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt;, a &lt;code class=&quot;highlighter-rouge&quot;&gt;Map&lt;/code&gt;, az &lt;code class=&quot;highlighter-rouge&quot;&gt;Export&lt;/code&gt; vagy a &lt;code class=&quot;highlighter-rouge&quot;&gt;Chart&lt;/code&gt;. Mivel a kliens nem tudja, hogy mi található a szerver oldali &lt;code class=&quot;highlighter-rouge&quot;&gt;ee.Thing&lt;/code&gt; objektumokban, így aztán &lt;strong&gt;a rajtuk végzett for ciklusok és feltételes kifejezések (if-else) nem működnek!&lt;/strong&gt; Helyette a &lt;strong&gt;szerver oldali&lt;/strong&gt; funkciókat kell használni:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Normalizált Differenciált Vegetációindex számítása.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;addNDVIBand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;use strict&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addBands&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;normalizedDifference&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;B5&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;B4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;NDVI&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/* Landsat 8 kollekció szűrése, NDVI számítása az
+ * összes képre a map() metódussal. */&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Geometry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;19.064&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;47.547&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;landsat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;LANDSAT/LC8_L1T_TOA_FMASK&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;filteredCollection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ImageCollection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;landsat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filterBounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filterDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2016-08-01&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2016-08-31&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNDVIBand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;landsat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Növekvő sorrend a %-os felhőborítás alapján.&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CLOUD_COVER&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2-késleltetett-végrehajtás&quot;&gt;2. Késleltetett végrehajtás&lt;/h3&gt;
+
+&lt;p&gt;Ha egy szkriptet írunk, akkor a kód nem közvetlenül fut le az EE szerverein. Ehelyett, a kliens könyvtár (GEE API) átkódolja a szkriptet &lt;strong&gt;JSON objektumok&lt;/strong&gt; sorozatává, majd ezeket elküldi a Google-nek, és válaszra vár. Semmi sem lesz elküldve a Google számára feldolgozásra, ha explicite nem adunk rá utasítást. Tehát fölöslegesen nem dolgoz fel semmit a szerver, ha nem utasítjuk rá. A &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; vagy a &lt;code class=&quot;highlighter-rouge&quot;&gt;Map.addLayer()&lt;/code&gt; utasítás már elegendő a kérés elküldéséhez:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Az első kép leválogatása (a legkevesebb felhő).&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;filteredCollection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;landsatImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// A kép tulajdonságainak kiírása a konzolra.&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;landsatImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;studyArea&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Geometry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Rectangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;mf&quot;&gt;19.1223&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;mf&quot;&gt;46.7513&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;mf&quot;&gt;19.2341&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;mf&quot;&gt;46.8884&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Megjelenítési paraméterek beállítása.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vizParams&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;bands&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;B5&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;B4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;B3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;gamma&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.3&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// A 11. piramisszinthez tartozó felbontás 76 méter!&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;19.17826&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;46.81987&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Megjelenítés a térképnézeten.&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;studyArea&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;landsatImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;studyArea&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;vizParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;Landsat 8 hamis színes kompozit&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;3-a-lépték-és-a-vetületek-kezelése&quot;&gt;3. A lépték és a vetületek kezelése&lt;/h3&gt;
+
+&lt;p&gt;Fontos tudnivaló, hogy a &lt;code class=&quot;highlighter-rouge&quot;&gt;Map.addLayer()&lt;/code&gt; segítségével a térképen kirajzolt kép eltérő bemenetekből készül a nagyítási szint és a térképnézet határaitól függően. A lépték a GEE-ben &lt;strong&gt;pixelméretet&lt;/strong&gt; jelent. A GEE az elemzés / a bemenő adat léptékét a kimenetből határozza meg, amit nekünk meg kell adnunk. A GEE ugyanis &lt;strong&gt;képpiramisokat&lt;/strong&gt; használ, ahol minden egyes cella értéke egy adott piramisszinten az alatta levő szint 2x2-es blokkjának, azaz 4 cellájának az átlagértéke. Az aggregálás egy 256x256 cella felbontású képszelvényig történik. A GEE azt a piramisszintet választja, ami &lt;strong&gt;legközelebb esik az általunk megadott léptékhez&lt;/strong&gt; (kisebb vagy egyenlő annál), és abból számol.&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img src=&quot;http://localhost:4000/assets/keppiramisok.png&quot; class=&quot;image2&quot; alt=&quot;GEE képpiramisok&quot; /&gt;
+    &lt;figcaption&gt;2. kép: Google Earth Engine képpiramisok
+    &lt;/figcaption&gt;
+    &lt;figcaption&gt;1. táblázat: Pixelméretek a különböző nagyítási szinteknél (0-20) a Google Mercator vetülete esetén (EPSG:3857). Ha Magyarországra akarunk vonatkoztatni, akkor a földrajzi szélesség koszinuszával be kell szorozni az értékeket. Például a 12-es nagyítási szintnél: 38·cos(47°) = 25,6 m.
+    &lt;/figcaption&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th width=&quot;40%&quot;&gt;Nagyítási szint
+            &lt;/th&gt;
+            &lt;th width=&quot;60%&quot;&gt;Pixelméret az Egyenlítőnél
+            &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;11&lt;/td&gt;
+            &lt;td&gt;76 m&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;12&lt;/td&gt;
+            &lt;td&gt;38 m&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;13&lt;/td&gt;
+            &lt;td&gt;19 m&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;14&lt;/td&gt;
+            &lt;td&gt;9,6 m&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;15&lt;/td&gt;
+            &lt;td&gt;4,8 m&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;16&lt;/td&gt;
+            &lt;td&gt;2,4 m&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/center&gt;
+
+&lt;p&gt;A Google a térképek megjelenítéséhez a &lt;strong&gt;Mercator vetületet&lt;/strong&gt; használja (WGS 84 / Pseudo-Mercator, EPSG:3857), így aztán a képpiramis megfelelő szintjén, a megjelenítést megelőzően, vetületi transzformációra kerül sor (röptében). Ha lehetséges, akkor célszerű elkerülni az egyéb vetületi transzformációkat. Meg kell hagyni az adatokat eredeti vetületükben! Az EOV nem támogatott. Ne is próbáld használni, mert rossz lesz az eredmény!&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Az első sáv kiválasztása; vetület, lépték kiírása.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;landsatImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;Vetület, crs, és crs_transform:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;myImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;projection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;Felbontás méterben:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;myImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;projection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nominalScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;4-inputoutput-műveletek&quot;&gt;4. Input/output műveletek&lt;/h3&gt;
+
+&lt;p&gt;Több lehetőség áll rendelkezésünkre az exportálásra: az adatainkat &lt;strong&gt;GeoTIFF-be/HD videóba&lt;/strong&gt; menthetjük a &lt;strong&gt;Google Drive&lt;/strong&gt;-ra, a Google felhő-alapú tárolóegységre (&lt;strong&gt;Google Cloud Storage&lt;/strong&gt;) vagy az &lt;strong&gt;Assets&lt;/strong&gt; mappánkba. Ez utóbbi helyre a saját GeoTIFF raszterállományainkat is feltölthetünk. A vektoros adatokat &lt;strong&gt;KML formátumban&lt;/strong&gt; ajánlott feltölteni, amiből &lt;strong&gt;Fusion Table&lt;/strong&gt; készül, amit betölthetünk a szkriptünkbe az azonosítója segítségével. A készített idősorok adatai is lementhetők CSV-be (pontosvesszővel tagolt értékek).&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* Mindig adjuk meg az eredeti felbontást!
+ * A kép eredeti vetületébe (WGS 84 / UTM) menti. */&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Export&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toDrive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;landsatImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;NDVI&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NDVI_image&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;region&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;studyArea&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Próbáljátok ki a szkriptet a &lt;a href=&quot;https://code.earthengine.google.com/&quot; target=&quot;_blank&quot;&gt;Google Earth Engine Code Editor&lt;/a&gt;ban! A teljes kódot töltsd le az &lt;a href=&quot;https://github.com/SalsaBoy990/EarthEngine/blob/master/tutorial1.js&quot; target=&quot;_blank&quot;&gt;Earth Engine&lt;/a&gt; gyűjteményemből!&lt;/p&gt;
+
+&lt;p&gt;A Google Earth Engine-nek nem csak alkalmazásprogramozási felülete (API) van, hanem rendelkezésre áll a &lt;a href=&quot;https://explorer.earthengine.google.com&quot; target=&quot;_blank&quot;&gt;Google Earth Engine Explorer&lt;/a&gt;, ami egy grafikus felhasználói felület (graphical user interface, GUI), ahol programozási ismeretek nélkül is hozzáférhetünk az adatokhoz. Természetesen sokkal korlátozottabb funkcionalitással bír, mint a kódszerkesztő. Ennek a használata is regisztrációhoz kötött és szintén ingyenes nem kereskedelmi célokra.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;felhasznált-irodalom&quot;&gt;Felhasznált irodalom&lt;/h2&gt;
+
+&lt;ul class=&quot;no-decoration-16px&quot;&gt;
+    &lt;li&gt;Google Earth Engine Team (2015). &lt;a href=&quot;https://earthengine.google.com&quot; target=&quot;_blank&quot;&gt;Google Earth Engine: A planetary-scale geospatial analysis platform.&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://developers.google.com/earth-engine/&quot; target=&quot;_blank&quot;&gt;Google Earth Engine API kézikönyv.&lt;/a&gt; 
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://code.earthengine.google.com/&quot; target=&quot;_blank&quot;&gt;Google Earth Engine Code Editor.&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://explorer.earthengine.google.com&quot; target=&quot;_blank&quot;&gt;Google Earth Engine Explorer.&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;Egy Earth Engine Kiértékelő felhasználói fiókért egy elektronikus űrlap kitöltésével &lt;a href=&quot;https://signup.earthengine.google.com/&quot; target=&quot;_blank&quot;&gt;itt&lt;/a&gt; lehet jelentkezni. 
+    &lt;/li&gt;
+    &lt;li&gt;További JavaScript kódok a &lt;a href=&quot;https://github.com/SalsaBoy990/EarthEngine&quot; target=&quot;_blank&quot;&gt;GitHub&lt;/a&gt; gyűjteményemből érhetők el. 
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 07 Aug 2017 17:26:00 +0200</pubDate>
+        <link>http://localhost:4000//tudomany/2017/08/07/google_earth_engine_01.html</link>
+        <guid isPermaLink="true">http://localhost:4000//tudomany/2017/08/07/google_earth_engine_01.html</guid>
+      </item>
+    
+      <item>
         <title>Felforgatók, utópisták és a kulturális marxizmus</title>
         <description>&lt;center&gt;
 &lt;blockquote&gt;Az őrültség nem más, mint ugyanazt tenni újra és újra, és várni, hogy az eredmény más legyen.

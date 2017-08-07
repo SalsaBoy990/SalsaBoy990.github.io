@@ -19,7 +19,7 @@ name: Gulácsi András
 # URL to site image. Site image is used when your site is shared via social media
 # 1:1 aspect ratio with a minimum of 144x144 or maximum of 4096x4096 pixels
 # Sizes are references from https://dev.twitter.com/cards/types/summary#reference
-image: https://location-of-image.com
+# image: https://location-of-image.com
 email: gulandras90@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   A New Geographer – Új Geográfus blog egy újszerű szemléletben
@@ -31,6 +31,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://salsaboy990.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: SalsaBoy990
 facebook: Facebook
+email: gulandras90@gmail.com
+twitter_username: "@UjGeografus"
 
 # Google Analytics
 # Remove # found before google_analytics to include Google Analytics to your
