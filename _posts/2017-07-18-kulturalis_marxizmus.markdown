@@ -30,7 +30,7 @@ categories: politika
 <p>Freeman legfőbb kifogása az, hogy a mérsékelt amerikai liberális gondolkodókat nem tartja helyesnek ide citálni. Galbraith vagy Dworkin ugyanis hívei voltak a piacgazdaságnak és a jogállamnak, és csupán abban különböznek Scrutontól, hogy a jövedelmi különbségek enyhítését szorgalmazták. Az újraelosztás liberális híveit éppen annyira alaptalan szigorú, marxista egyenlősítéssel vádolni, mint a konzervatívokat minden változás elutasításával. Ráadásul a legkeményebb libertáriusok, mint Milton Friedman is pártolták valamiféle szociális háló kiépítését. Maga Scruton is. Freeman elismeri, hogy az amerikai baloldali liberalizmusnak van radikális ága, és a politikai korrektség kultuszának veszélyeit sem tagadja, de a legutóbbi idők egyetemi ellentéteiben nemcsak ezt látja megjelenni, hanem a toleráns liberálisok véleményét is, akiknek szent a szólásszabadság. A recenzens elismeri, hogy az egyéni szabadság nem elegendő – közösségi erényekre is szükség van a nyugati kultúrát megalapozó értékek és intézmények védelme érdekében. De hiányolja, hogy Scruton nem talál univerzális biztosítékot „a társadalom minden tagjának tényleges szabadságára, valódi esélyegyenlőségére és gazdasági jólétére”, vagyis nem dolgoz ki olyan normatív elméletet, amely a helyi hagyományoktól függetlenül mindenütt szavatolná ezeknek az alapvető értékeknek az érvényesülését. Nem csoda, hogy nem talál, mert a konzervatív gondolkodó szerint ilyen garancia nincs. Éppen arról szól a könyve, hogy <strong>aki absztrakt elvek alapján a lehetetlent hirdeti, az veszélybe sodorja a konkrét szabadságot, céljait viszont nem fogja elérni.</strong></p>
 <br />
 
-### A marxizmus és a kulturális marxizmus
+## A marxizmus és a kulturális marxizmus
 <p>A sorozat <a href="https://salsaboy990.github.io/politika/2017/07/13/tudomanyosseta.html" target="_blank">első rész</a>ében már nagy vonalakban felvázoltam a konzervativizmus mibenlétét, és erős kritikával illettem a „Séta a Tudományért” mozgalmat, ami a nevével ellentétben sokkal inkább a társadalmi igazságosságról szólt. A tudományban nincs helye a politikai aktivizmusnak. Itt áttértek a „kulturális marxizmussal” kapcsolatos eszmefuttatásomra.</p>
 
 <center>
@@ -116,7 +116,7 @@ A kapitalista rendszer természetesen nem tökéletes, viszont az emberek nagyob
 
 <br />
 
-### A zöld ideológia is méreg
+## A zöld ideológia is méreg
 
 <p>A marxizmuson kívül vannak még más kortárs és kártékony ideológiák: A <strong>zöld ideológia</strong> nevében erőszakolt változásokat követelnek a „környezetvédők” az energiaellátás és a gazdaság ideológiai alapon való felforgatására. <strong>„Energiaforradalomról”</strong> (Sic!) és <strong>„energiademokráciáról”</strong> (Sic!) beszélnek [<a href="http://www.antalattila.hu/search/label/energia-demokr%C3%A1cia%3B%20disszert%C3%A1ci%C3%B3" target="_blank">9</a>].</p>
 <p>Megjelenik a <strong>„környezeti igazságosság”</strong> elve, a „társadalmi igazságtalanságok” részhalmazát képezve: „A XXI. század környezeti válságát és <strong>környezeti igazságtalanságait</strong> a nagy, centralizált és gyakran <strong>demokratikus kontroll nélküli</strong> energiarendszerek okozták” (meg azt a jólétet, amit most a fejlett világ élvez, amihez a fejlődő világ alig jut hozzá). Ennek megoldása a zöldek szerint:</p>
@@ -137,14 +137,14 @@ Sajnos sok geográfus bedőlt ezeknek az ostobaságoknak, és a zöld ideológia
 <figcaption>6. kép: "Környezetvédő" aktivisták Cleveland-ban (Ohio állam), 1970-ben</figcaption>
 </center>
 
-### Végszó
+## Végszó
 
 <center>
 <blockquote>Mindig is voltak olyan félművelt értelmiségiek, akik azt hitték, hogy a lojalitásnak van alternatívája. Ezek értelmiségiek mindig azt gondolják, hogy a hétköznapi emberek ragaszkodása a családhoz, a hazához, vagy a valláshoz meghaladható valamilyen átfogó, globális vízióval. Csakhogy ez nem így van, ezeket nem lehet felülírni. A jelenlegi legjobb megoldás a nemzetállam. (Roger Scruton) [<a href="http://www.origo.hu/kultura/20101010-interju-roger-scrutonnal-napjaink-egyik-legelismertebb-konzervativ-filozofusaval.html" target="_blank">10</a>].</blockquote>
 </center>
 <br />
 
-#### Felhasznált források
+## Felhasznált források
 <ul class="no-decoration-16px">
     <li>Bihari Mihály – Pokol Béla (2009). Politológia. Nemzeti Tankönyvkiadó, Budapest. pp. 188-203.</li>
     <li>[1] <a href="http://www.metazin.hu/index.php/item/3242-a-konzervativ-scruton-es-a-felforgatok" target="_blank">A konzervatív Scruton és a felforgatók.</a> Metazin, 2016-04-21. </li>
