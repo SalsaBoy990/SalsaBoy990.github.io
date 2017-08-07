@@ -41,7 +41,9 @@ layout: compress
           var temp = $("#about-block");
           temp.css("margin-bottom", "40px");
           temp.slideToggle(200);
-          $(window).scrollTop(200);
+          if(temp.css("display") === "block") {
+             $(window).scrollTop(200);
+          }
         });
         $("#close").click(function() {
           $("#about-block").slideToggle(200);
