@@ -41,17 +41,18 @@ layout: compress
           var temp = $("#about-block");
           temp.css("margin-bottom", "40px");
           temp.slideToggle(200);
+          $(window).scrollTop(200);
         });
         $("#close").click(function() {
           $("#about-block").slideToggle(200);
-          $(window).scrollTop(0);
+          $(window).scrollTop(200);
         });
         $("#toggle-book-contents").on("click", function() {
           var temp = $("#book-contents");
           temp.css("border", "1px solid #828282");
           temp.css("border-radius", "7px");
           temp.slideToggle(200);
-        })
+        });
     });
     </script>
 
