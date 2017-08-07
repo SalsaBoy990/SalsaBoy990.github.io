@@ -135,7 +135,7 @@ Ezek a szélső baloldali álhumanista liberálisok rá akarják erőszakolni a 
 </p>
 <br />
 
-### Felhasznált források
+## Felhasznált források
 <ul class="no-decoration" id="irodalom">
     <li>Bihari Mihály – Pokol Béla (2009). Politológia. Nemzeti Tankönyvkiadó, Budapest. pp. 188-203.</li>
     <li>[1] Faye Flam: <a href="https://www.bloomberg.com/view/articles/2017-03-07/why-some-scientists-won-t-march-for-science" target="_blank">Why Some Scientists Won't March for Science.</a> Bloomberg, 2017-03-01.</li>
