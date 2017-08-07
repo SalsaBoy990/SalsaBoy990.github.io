@@ -44,15 +44,14 @@ layout: compress
         });
         $("#close").click(function() {
           $("#about-block").slideToggle(200);
+          $(window).scrollTop(0);
         });
         $("#toggle-book-contents").on("click", function() {
           var temp = $("#book-contents");
           temp.css("border", "1px solid #828282");
           temp.css("border-radius", "7px");
           temp.slideToggle(200);
-        });
-        $('table tr:even').addClass('color');
-        $("table tr").filter(":first").css("font-weight", "600");
+        })
     });
     </script>
 
