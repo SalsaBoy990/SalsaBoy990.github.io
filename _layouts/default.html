@@ -5,13 +5,12 @@ layout: compress
 <!DOCTYPE html>
 <html lang="hu">
   {% include head.html %}
-  <body class="body-style">
+  <body oncopy="copyLink()" class="body-style">
     {% include header.html %}
 
     <div class="stripe">
       <div class="wrapper">
         <span id="intro">[ Bemutatkozás ]</span>
-        <!--<span id="right">Archívum</span>-->
       </div>
     </div>
 
@@ -30,28 +29,33 @@ layout: compress
 
     {% include footer.html %}
 
-    <script
-  src="{{ site.url}}/js/jquery.min.js"></script>
+    <script src="{{ site.url}}/js/jquery.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function () {
         $("#back-to-top").on("click", function() {
-            $(window).scrollTop(0);
+            $("html,body").animate({ scrollTop: 0 }, 400);
+            /*$(window).scrollTop(0);*/
         });
         $("#intro").click(function() {
           var temp = $("#about-block");
           temp.css("margin-bottom", "40px");
-          temp.slideToggle(0);
+          temp.slideToggle(400);
+          $("html,body").animate({ scrollTop: 0 }, 400);
+          /*$(window).scrollTop(0);*/
         });
         $("#close").click(function() {
-          $("#about-block").slideToggle(200);
-          $(window).scrollTop(200);
+          $("#about-block").slideToggle(400);
+          $("html,body").animate({ scrollTop: 0 }, 400);
+          /*$(window).scrollTop(0);*/
         });
         $("#toggle-book-contents").on("click", function() {
           var temp = $("#book-contents");
           temp.css("border", "1px solid #828282");
           temp.css("border-radius", "7px");
-          temp.slideToggle(200);
+          temp.slideToggle(400);
         });
+        $('table tr:even').addClass('color');
+        $("table tr").filter(":first").css("font-weight", "600");
     });
     </script>
 
