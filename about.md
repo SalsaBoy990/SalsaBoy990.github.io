@@ -7,7 +7,7 @@ weight: 4
 
 Gulácsi András vagyok, 1990-ben születtem Szegeden, geográfus és okleveles környezetkutató végzettséggel rendelkezem. Szakterületem a távérzékelés és a térinformatika.
 
-Jelenleg a Szegedi Tudományegyetem Földtudományok Doktori Iskolájában vagyok doktorandosz hallgató.
+Jelenleg a Szegedi Tudományegyetem Földtudományok Doktori Iskolájában vagyok doktorandusz hallgató.
 
 A jövőben webfejlesztőként (**Frontend**) szeretnék elhelyezkedni.
 
@@ -61,7 +61,7 @@ function getAge(year, month, day, id) {
     <li><strong>Frontend</strong> webfejlesztés, <strong>HTML</strong>, <strong>CSS</strong>, Sass</li>
     <li>A <strong>jQuery</strong> framework és <strong>Node.js</strong> ismerete</li>
     <li><strong>GIT</strong> és <strong>Jekyll</strong> alapismeretek</li>
-    <li>Responsive Design alkalmazása (media query, CSS columns)</li>
+    <li>Responsive Design alkalmazása</li>
     <li>Google Earth Engine API és a Google Maps API ismerete</li>
     <li>Szoftverek: <strong>Visual Studio Code</strong>, Code::Blocks, MS Visual Studio </li>
 	<li><a href="https://github.com/SalsaBoy990/MyWorks" target="_blank">Munkáim a GitHub-on!</a></li>
