@@ -28,7 +28,7 @@ description: > # this means to ignore newlines until "baseurl:"
   írásaimat publikálom számos, egymástól távol álló témában
   a földi életről.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://salsaboy990.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://www.newgeographer.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: SalsaBoy990
 facebook: Facebook
 email: gulandras90@gmail.com
