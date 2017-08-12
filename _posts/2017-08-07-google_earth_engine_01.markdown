@@ -17,10 +17,6 @@ categories: tudomany
 
 A **felhő alapú** (cloud computing) **szolgáltatások** közös jellemzője, hogy a szolgáltatásokat nem egy dedikált hardvereszközön üzemeltetik, hanem a szolgáltató eszközein elosztva, a szolgáltatás üzemeltetési részleteit a felhasználótól elrejtve. Ezeket a szolgáltatásokat a felhasználók **a hálózaton keresztül** érhetik el. A **Google Earth Engine** is egy ilyen felhő alapú szolgáltatás. Ez egy olyan szoftverszolgáltatási módszer, amelynél a szoftver és a kapcsolódó adatok központilag vannak tárolva (tipikusan egy (internet) felhőben, esetünkben a Google szerverein), ugyanakkor a felhasználói hozzáférések egy vékony **kliens**en keresztül zajlanak, amely leggyakrabban egy valamilyen **webböngésző alkalmazás**. Esetünkben ez a Google Earth Engine alkalmazásprogramozási felülete vagy interfésze (application programming interface, API). A Google Earth Engine API a JavaScript és a Python programozási nyelveket használja. A Python használatához telepítésre is szükség van. Csak a JavaScript klienssel foglalkozom.
 
-<center>
-    <img />
-</center>
-
 <p>A Google Earth Engine (a későbbiekben: GEE) felhő alapú platformját műholdképek és egyéb földi megfigyelési adatok feldolgozására hozták létre. Hozzáférést nyújt a Google képi adattáraihoz (909 terrabájtnyi, azaz majdnem 1 petabájtnyi (10<sup>15</sup> bájt) adat) és biztosítja azt a gigászi számítási teljesítményt, ami a képek feldolgozásához szükséges.</p>
 
 A tudomány tekintélyes adat- és technológiai erőforrásokkal való párosítása több **előnnyel** jár:
