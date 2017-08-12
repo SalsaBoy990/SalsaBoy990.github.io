@@ -33,26 +33,26 @@ layout: compress
     <script type="text/javascript">
     $(document).ready(function () {
         $("#back-to-top").on("click", function() {
-            $("html,body").animate({ scrollTop: 0 }, 400);
+            $("html,body").animate({ scrollTop: 0 }, 50);
             /*$(window).scrollTop(0);*/
         });
         $("#intro").click(function() {
           var temp = $("#about-block");
           temp.css("margin-bottom", "40px");
-          temp.slideToggle(400);
-          $("html,body").animate({ scrollTop: 0 }, 400);
+          temp.slideToggle(300);
+          $("html,body").animate({ scrollTop: 0 }, 300);
           /*$(window).scrollTop(0);*/
         });
         $("#close").click(function() {
-          $("#about-block").slideToggle(400);
-          $("html,body").animate({ scrollTop: 0 }, 400);
+          $("#about-block").slideToggle(300);
+          $("html,body").animate({ scrollTop: 0 }, 300);
           /*$(window).scrollTop(0);*/
         });
         $("#toggle-book-contents").on("click", function() {
           var temp = $("#book-contents");
           temp.css("border", "1px solid #828282");
           temp.css("border-radius", "7px");
-          temp.slideToggle(400);
+          temp.slideToggle(200);
         });
         $('table tr:even').addClass('color');
         $("table tr").filter(":first").css("font-weight", "600");
