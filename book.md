@@ -87,5 +87,5 @@ Igyekszem vele, amennyire az időmből kitelik. Úgy néz ki, hogy két kötetre
 </div>
 <br />
 <center>
-<img class="image2" src="{{ site.url}}/assets/boritoterv_2016.jpg" alt="A könyvem borítóterve"/>
+<img class="image2" src="{{ site.url}}/assets/basic/boritoterv_2016.jpg" alt="A könyvem borítóterve"/>
 </center>

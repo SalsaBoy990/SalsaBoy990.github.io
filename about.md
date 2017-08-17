@@ -9,13 +9,14 @@ Gulácsi András vagyok, 1990-ben születtem Szegeden, geográfus és okleveles 
 
 Jelenleg a Szegedi Tudományegyetem Földtudományok Doktori Iskolájában vagyok doktorandusz hallgató.
 
-A jövőben webfejlesztőként (**Frontend**) szeretnék elhelyezkedni.
+A jövőben **frontend** webfejlesztőként szeretnék elhelyezkedni.
+
+Egyedi kinézetű, okostelefonra is optimalizált, villámgyors, statikus honlapok készítését vállalom némi fizetésért cserébe (megbeszélés szerint).
+
+A [Jekyll](https://jekyllrb.com/) statikus oldalgenerátort, a [jQuery](https://jquery.com/) keretrendszert és a [GitHub](https://github.com/) ingyenes tárhelyét használom. Egyedüli költséget a domain név (a weboldal választott címe) megvásárlása jelenti. A blogbejegyzésekhez a hozzászólási lehetőséget a népszerű és már szinte általánossá vált [Disqus](https://disqus.com/) kommentelési rendszeren keresztül biztosítom.
 
 
-Egyszerű statikus honlapok készítését vállalom némi fizetésért cserébe (megbeszélés szerint). A statikus honlapokat úgy értem, hogy semmi adatbázis, fórum, hozzászólási lehetőség, chat stb. nincsen bennük, mert ezekhez nem értek. Ezek helyettesítésére a [Facebook](https://www.facebook.com/) tökéletesen alkalmas.
-
-
-Állásajánlattal kapcsolatos megkereséseket az e-mail címemre várom: [gulandras90@gmail.com](mailto:gulandras90@gmail.com). Az önéletrajzomat lásd alább:
+Állásajánlattal kapcsolatos megkereséseket az e-mail címemre várom: [guland@protonmail.com](mailto:guland@protonmail.com). Az önéletrajzomat lásd alább:
 
 
 <br/>
@@ -25,12 +26,12 @@ Egyszerű statikus honlapok készítését vállalom némi fizetésért cserébe
 <div class="table-columns">
     <ul>
         <li>Lakóhely: Szeged</li>
-        <li>Telefon: +36/20/442-7225</li>
-        <li>E-mail: <a title="Az e-mail címem" href="mailto:gulandras90@gmail.com">gulandras90@gmail.com</a></li>
+        <li>&#9742; +36/20/442-7225</li>
+        <li>&#9993; <a title="Az e-mail címem" href="mailto:guland@protonmail.com">guland@protonmail.com</a></li>
         <li id="age"></li>
     </ul>
     <span>
-    <img class="profile-picture" src="{{ site.url}}/assets/me-min.jpg" alt="It's me."/></span>
+    <img class="profile-picture" src="{{ site.url}}/assets/basic/me-min.jpg" alt="It's me."/></span>
 </div>
 
 <script type="text/javascript">
@@ -57,14 +58,14 @@ function getAge(year, month, day, id) {
 
 <h4>Erősségeim, referenciák</h4>
 <ul class="lista">
-	<li>Objektum orientált programozás: <strong>C/C++</strong> és <strong>JavaScript</strong> alapok</li>
+	<li>Objektum orientált programozás: <strong>C/C++</strong>, <strong>JavaScript</strong> és R alapok</li>
     <li><strong>Frontend</strong> webfejlesztés, <strong>HTML</strong>, <strong>CSS</strong>, Sass</li>
-    <li>A <strong>jQuery</strong> framework és <strong>Node.js</strong> ismerete</li>
+    <li>A <strong>jQuery</strong> és az <strong>AngularJS 1.x</strong> framework, valamint a <strong>Node.js</strong> ismerete</li>
     <li><strong>GIT</strong> és <strong>Jekyll</strong> alapismeretek</li>
     <li>Responsive Design alkalmazása</li>
     <li>Google Earth Engine API és a Google Maps API ismerete</li>
     <li>Szoftverek: <strong>Visual Studio Code</strong>, Code::Blocks, MS Visual Studio </li>
-	<li><a href="https://github.com/SalsaBoy990/MyWorks" target="_blank">Munkáim a GitHub-on!</a></li>
+	<li><a href="https://github.com/SalsaBoy990" target="_blank">Munkáim a GitHub-on!</a></li>
 </ul>
 
 <h4>Nyelvismeret</h4>
