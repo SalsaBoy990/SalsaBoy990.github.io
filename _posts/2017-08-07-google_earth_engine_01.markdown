@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  A Google Earth Engine felhő alapú platform alkalmazása a geoinformatikában, 1. rész.
 date: 2017-08-07 17:26
 categories: tudomany

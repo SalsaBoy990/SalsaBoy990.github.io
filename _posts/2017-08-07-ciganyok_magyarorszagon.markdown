@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  Hány cigány él Magyarországon?
 date: 2017-08-07 17:27
 categories: tudomany

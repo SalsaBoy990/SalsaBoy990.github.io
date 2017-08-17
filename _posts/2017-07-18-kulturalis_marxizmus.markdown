@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Felforgatók, utópisták és a kulturális marxizmus"
 date:   2017-07-18 01:26
 categories: politika

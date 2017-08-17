@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 
 <article class="post">
@@ -10,4 +11,6 @@ layout: default
   <div class="post-content">
     {{ content }}
   </div>
+  {% include disqus.html %}
+
 </article>

@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "A Séta a „Tudományért” tüntetések a társadalmi igazságosságért"
 date:   2017-07-13 20:32
 categories: politika
