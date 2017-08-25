@@ -1,42 +1,20 @@
 <footer class="site-footer">
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <h2 class="footer-heading">{{ site.name }}</h2>
-        <p>{{ site.description }}
-          {% comment %}
+    <div class="wrapper">
+        {% include contact.html %}
+        {% include about_block.html %}
+      <nav class="footer-bar">
+        <span class="footer-nav" id="back-to-top">Az oldal tetejére</span>
+        <span class="footer-nav" id="open-mission">A blogról</span>
+        <span class="footer-nav" id="open-contact">Kapcsolat</span>
+        <span class="footer-nav" id="footer-archive-link">
+          <a href="{{ site.url}}/archive">Archívum</a>
+        </span>  
+        
+      </nav>
+      <span class="copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | escape }}</span> 
+    {% comment %}
     site.time generates the current time when the site is built. The filter, date
     is used to show just the year for the date.
     {% endcomment %}
-    <p class="copyright">&copy; {{ site.name | escape }} {{ site.time | date: '%Y' }}.</a></p>
-        </p>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-
-          {% if site.facebook %}
-          <li>
-            {% include icon-facebook.html username=site.facebook %}
-          </li>
-          {% endif %}
-          {% if site.email %}
-          <li>
-            {% include icon-email.html username=site.email %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-  </div>
+    </div>
 </footer>

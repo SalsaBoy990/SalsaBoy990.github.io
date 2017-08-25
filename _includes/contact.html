@@ -1,0 +1,37 @@
+{% comment %}
+Az elérhetőségeim jönnek ide
+{% endcomment %}
+<section id="contact-me">
+<div class="footer-container">
+    <span id="close-contact" class="close">&times;</span>
+    <div class="wrapper">
+        <div style="padding: 0rem 1.4rem;">
+            <br />
+            <br />
+            <span>&#9742; {{ site.mobile }}</span><br />
+            <span>&#9993; {{ site.email }}</span>
+              <center>
+            <div style="display: inline;">
+                {% if site.github_username %}
+                <span>
+                  {% include icon-github.html username=site.github_username %}
+                </span>
+                {% endif %}
+                
+                {% if site.twitter_username %}
+                <span>
+                  {% include icon-twitter.html username=site.twitter_username %}
+                </span>
+                {% endif %}
+          
+                {% if site.facebook %}
+                <span>
+                  {% include icon-facebook.html username=site.facebook %}
+                </span>
+                {% endif %}
+            </div>
+              </center>
+        </div>
+    </div>
+</div>
+</section>

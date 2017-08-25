@@ -22,16 +22,23 @@ name: Gulácsi András
 # image: https://location-of-image.com
 email: gulandras90@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  A New Geographer – Új Geográfus blog egy újszerű szemléletben
-  egyesíti a földrajzot az informatikával és a webfejlesztéssel.
-  A blogomon az esszéimet és a tudományos ismeretterjesztő
-  írásaimat publikálom számos, egymástól távol álló témában
-  a földi életről.
+  Gulácsi András vagyok. Geoinformatikusként a legújabb web-alapú megoldásokat alkalmazom
+  a földrajzi kutatásban, a földrajzi adatok feldolgozására és megjelenítésére a JavaScript
+  nyelv erejével. Az alacsony színvonalú, elavult egyetemi tömegoktatás nem képes megfelelni
+   a jelen kihívásainak és nem aknázza ki a legújabb IT-technológiákban rejlő nagy
+   lehetőségeket. A tudásom 90%-át nem az egyetemen szereztem, programozni is magamtól
+   tanultam meg. Az írásaimban és a készülő könyvemben az ideológiai alapú, utópisztikus
+   gondolkodás ellen veszem fel a küzdelmet a tények, a tapasztalatok és a józan ész
+   segítségével, hogy ne váljon a pusztító ideológiák martalékává a társadalom,
+   szenvedést és nyomort hagyva maga után. A New Geographer – Új Geográfus blog
+   egy újszerű szemléletben egyesíti a földrajzot az informatikával és a webfejlesztéssel.
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.newgeographer.com" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: SalsaBoy990
-facebook: Facebook
+
 email: guland@protonmail.com
+mobile: +36 20 442 7225
+github_username: SalsaBoy990
 twitter_username: "@UjGeografus"
 
 # Google Analytics
@@ -41,6 +48,8 @@ twitter_username: "@UjGeografus"
 
 # set timezone
 timezone: Europe/Budapest
+
+show_related_posts: true
 
 # Build settings
 markdown: kramdown

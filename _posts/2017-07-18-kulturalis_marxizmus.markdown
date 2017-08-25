@@ -3,11 +3,12 @@ layout: post
 comments: true
 title:  "Felforgatók, utópisták és a kulturális marxizmus"
 date:   2017-07-18 01:26
+tags: "ideologia"
 categories: politika
 ---
 
 <center>
-<blockquote>Az őrültség nem más, mint ugyanazt tenni újra és újra, és várni, hogy az eredmény más legyen.
+<blockquote>"Az őrültség nem más, mint ugyanazt tenni újra és újra, és várni, hogy az eredmény más legyen."
 (Részlet a Narcotics Anonymous közösség egy 1981-es kiadványából)
 </blockquote>
 </center>
@@ -32,7 +33,7 @@ categories: politika
 <br />
 
 ## A marxizmus és a kulturális marxizmus
-<p>A sorozat <a href="https://salsaboy990.github.io/politika/2017/07/13/tudomanyosseta.html" target="_blank">első rész</a>ében már nagy vonalakban felvázoltam a konzervativizmus mibenlétét, és erős kritikával illettem a „Séta a Tudományért” mozgalmat, ami a nevével ellentétben sokkal inkább a társadalmi igazságosságról szólt. A tudományban nincs helye a politikai aktivizmusnak. Itt áttértek a „kulturális marxizmussal” kapcsolatos eszmefuttatásomra.</p>
+<p>A sorozat <a href="https://salsaboy990.github.io/politika/2017/07/13/tudomanyosseta.html" target="_blank">első részében</a> már nagy vonalakban felvázoltam a konzervativizmus mibenlétét, és erős kritikával illettem a „Séta a Tudományért” mozgalmat, ami a nevével ellentétben sokkal inkább a társadalmi igazságosságról szólt. A tudományban nincs helye a politikai aktivizmusnak. Itt áttértek a „kulturális marxizmussal” kapcsolatos eszmefuttatásomra.</p>
 
 <center>
 <img src="{{ site.url }}/assets/a_mezon.jpg" class="image2" alt="A mezőn (1977)"/>
@@ -141,12 +142,12 @@ Sajnos sok geográfus bedőlt ezeknek az ostobaságoknak, és a zöld ideológia
 ## Végszó
 
 <center>
-<blockquote>Mindig is voltak olyan félművelt értelmiségiek, akik azt hitték, hogy a lojalitásnak van alternatívája. Ezek értelmiségiek mindig azt gondolják, hogy a hétköznapi emberek ragaszkodása a családhoz, a hazához, vagy a valláshoz meghaladható valamilyen átfogó, globális vízióval. Csakhogy ez nem így van, ezeket nem lehet felülírni. A jelenlegi legjobb megoldás a nemzetállam. (Roger Scruton) [<a href="http://www.origo.hu/kultura/20101010-interju-roger-scrutonnal-napjaink-egyik-legelismertebb-konzervativ-filozofusaval.html" target="_blank">10</a>].</blockquote>
+<blockquote>"Mindig is voltak olyan félművelt értelmiségiek, akik azt hitték, hogy a lojalitásnak van alternatívája. Ezek értelmiségiek mindig azt gondolják, hogy a hétköznapi emberek ragaszkodása a családhoz, a hazához, vagy a valláshoz meghaladható valamilyen átfogó, globális vízióval. Csakhogy ez nem így van, ezeket nem lehet felülírni. A jelenlegi legjobb megoldás a nemzetállam." (Roger Scruton) [<a href="http://www.origo.hu/kultura/20101010-interju-roger-scrutonnal-napjaink-egyik-legelismertebb-konzervativ-filozofusaval.html" target="_blank">10</a>].</blockquote>
 </center>
 <br />
 
 ## Felhasznált források
-<ul class="no-decoration-16px">
+<ul class="no-decoration-18px">
     <li>Bihari Mihály – Pokol Béla (2009). Politológia. Nemzeti Tankönyvkiadó, Budapest. pp. 188-203.</li>
     <li>[1] <a href="http://www.metazin.hu/index.php/item/3242-a-konzervativ-scruton-es-a-felforgatok" target="_blank">A konzervatív Scruton és a felforgatók.</a> Metazin, 2016-04-21. </li>
     <li>[2] <a href="https://en.wikipedia.org/wiki/Roger_Scruton" target="_blank">Roger Scruton</a> (1944- ), angol konzervatív filozófus, esztéta, Wikipedia. </li>

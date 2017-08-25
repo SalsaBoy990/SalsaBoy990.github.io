@@ -2,14 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gulácsi András</title>
-    <description>A New Geographer – Új Geográfus blog egy újszerű szemléletben egyesíti a földrajzot az informatikával és a webfejlesztéssel. A blogomon az esszéimet és a tudományos ismeretterjesztő írásaimat publikálom számos, egymástól távol álló témában a földi életről.
+    <description>Gulácsi András vagyok. Geoinformatikusként a legújabb web-alapú megoldásokat alkalmazom a földrajzi kutatásban, a földrajzi adatok feldolgozására és megjelenítésére a JavaScript nyelv erejével. Az alacsony színvonalú, elavult egyetemi tömegoktatás nem képes megfelelni
+ a jelen kihívásainak és nem aknázza ki a legújabb IT-technológiákban rejlő nagy
+ lehetőségeket. A tudásom 90%-át nem az egyetemen szereztem, programozni is magamtól
+ tanultam meg. Az írásaimban és a készülő könyvemben az ideológiai alapú, utópisztikus
+ gondolkodás ellen veszem fel a küzdelmet a tények, a tapasztalatok és a józan ész
+ segítségével, hogy ne váljon a pusztító ideológiák martalékává a társadalom,
+ szenvedést és nyomort hagyva maga után. A New Geographer – Új Geográfus blog
+ egy újszerű szemléletben egyesíti a földrajzot az informatikával és a webfejlesztéssel.
 </description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>A kommentelési szabályzat</title>
+        <description>&lt;p&gt;Ezeket a kommentelési szabályokat vezetem be a honlapomon:
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Csak a témához kötődő hozzászólások engedélyezettek.&lt;/li&gt;
+  &lt;li&gt;Pontosan “idézd”, hogy a bejegyzés mely részével (vagy részeivel) nem értesz egyet!&lt;/li&gt;
+  &lt;li&gt;A személyeskedést, a trollkodást és a spammelést moderálással szankcionálom.&lt;/li&gt;
+  &lt;li&gt;Mindent tudok a csaló érvelési technikákról (szalmabáb és társai). Ne is próbálkozz ilyenekkel!&lt;/li&gt;
+  &lt;li&gt;A reklámokat és a nem biztonságos honlapokra mutató linkeket automatikusan eltávolítom. Egyébként lehet hasznos linkeket megosztani.&lt;/li&gt;
+  &lt;li&gt;Itt nincsen semmilyen “politikai korrektség” (cenzúra, kettős mérce és társai), mint a liberális oldalakon.&lt;/li&gt;
+  &lt;li&gt;Előmoderációt nem alkalmazok. Utólag ellenőrzöm a kommenteket.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;
+A fenti pontokban lefektetett szabályok kötelező érvényűek mindenkire, kivétel nélkül.
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Kelt: Szeged, 2017. augusztus 18.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 18 Aug 2017 19:08:00 +0200</pubDate>
+        <link>http://localhost:4000//2017/08/18/kommentelesi_szabalyzat.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/08/18/kommentelesi_szabalyzat.html</guid>
+      </item>
+    
+      <item>
         <title>Hány cigány él Magyarországon?</title>
-        <description>&lt;p&gt;&lt;strong&gt;A népszámlálások adataiból az derül ki, hogy Magyarországon 2001 és 2011 között 53%-kal, 205 720 főről 315 583 főre nőtt a cigányok száma. A Központi Statisztikai Hivatal (KSH) népszámlálásai a nemzetiségre, az anyanyelvre, a családi, baráti közösségben használt nyelvre, és a kulturális kötődésre kérdeznek rá, de ezekre a válaszadás megtagadható. A nemzetiségi hovatartozásukról nem nyilatkozók száma 2001 és 2011 között két és félszeresére, 543 317 főről 1 398 731 főre emelkedett.&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;p&gt;A népszámlálások adataiból az derül ki, hogy Magyarországon 2001 és 2011 között 53%-kal, 205 720 főről 315 583 főre nőtt a cigányok száma. A Központi Statisztikai Hivatal (KSH) népszámlálásai a nemzetiségre, az anyanyelvre, a családi, baráti közösségben használt nyelvre, és a kulturális kötődésre kérdeznek rá, de ezekre a válaszadás megtagadható. A nemzetiségi hovatartozásukról nem nyilatkozók száma 2001 és 2011 között két és félszeresére, 543 317 főről 1 398 731 főre emelkedett.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
 Az 1. táblázatban az 1893-2003 közötti időszakban végzett mintavételek, cigányösszeírások eredményeit foglaltam össze. A reprezentatív szociológiai mintavételek a cigányok tényleges, a lakókörnyezet minősítése által meghatározott számát becsülték meg 1971-ben, 1993-ban és 2003-ban. Az 1893. évi cigányösszeírás egyedülálló a maga nevében, mivel hazánkban a mai napig nem történt ehhez hasonló, kifejezetten a cigányok számbavételét célzó kutatás.&lt;/p&gt;
@@ -330,7 +363,7 @@ szakmai oklevéllel&lt;/td&gt;
     
       <item>
         <title>A Google Earth Engine felhő alapú platform alkalmazása a geoinformatikában, 1. rész.</title>
-        <description>&lt;p&gt;&lt;strong&gt;Korunkban már nem az adatok hiánya jelenti a földrajzi kutatások korlátját, hanem annak a tömérdek rendelkezésre álló és ingyenes távérzékelt adatnak a rendkívül hosszadalmas feldolgozása. Hiszen csak nagy mennyiségű, empirikus adatból lehet szilárd, megbízható tudományos következtetéseket levonni, és megbízható modelleket megalapozni. A Google Earth Engine felhő alapú számítási platform alkalmazásával szeretném demonstrálni az objektum-orientált programozás elengedhetetlen szükségét a geoinformatikában.&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;p&gt;Korunkban már nem az adatok hiánya jelenti a földrajzi kutatások korlátját, hanem annak a tömérdek rendelkezésre álló és ingyenes távérzékelt adatnak a rendkívül hosszadalmas feldolgozása. Hiszen csak nagy mennyiségű, empirikus adatból lehet szilárd, megbízható tudományos következtetéseket levonni, és megbízható modelleket megalapozni. A Google Earth Engine felhő alapú számítási platform alkalmazásával szeretném demonstrálni az objektum-orientált programozás elengedhetetlen szükségét a geoinformatikában.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;a-google-earth-engine-bemutatása&quot;&gt;A Google Earth Engine bemutatása&lt;/h2&gt;
@@ -537,7 +570,7 @@ szakmai oklevéllel&lt;/td&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;felhasznált-irodalom&quot;&gt;Felhasznált irodalom&lt;/h2&gt;
 
-&lt;ul class=&quot;no-decoration-16px&quot;&gt;
+&lt;ul class=&quot;no-decoration-18px&quot;&gt;
     &lt;li&gt;Google Earth Engine Team (2015). &lt;a href=&quot;https://earthengine.google.com&quot; target=&quot;_blank&quot;&gt;Google Earth Engine: A planetary-scale geospatial analysis platform.&lt;/a&gt;
     &lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://developers.google.com/earth-engine/&quot; target=&quot;_blank&quot;&gt;Google Earth Engine API kézikönyv.&lt;/a&gt; 
@@ -559,7 +592,7 @@ szakmai oklevéllel&lt;/td&gt;
       <item>
         <title>Felforgatók, utópisták és a kulturális marxizmus</title>
         <description>&lt;center&gt;
-&lt;blockquote&gt;Az őrültség nem más, mint ugyanazt tenni újra és újra, és várni, hogy az eredmény más legyen.
+&lt;blockquote&gt;&quot;Az őrültség nem más, mint ugyanazt tenni újra és újra, és várni, hogy az eredmény más legyen.&quot;
 (Részlet a Narcotics Anonymous közösség egy 1981-es kiadványából)
 &lt;/blockquote&gt;
 &lt;/center&gt;
@@ -583,7 +616,7 @@ szakmai oklevéllel&lt;/td&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;a-marxizmus-és-a-kulturális-marxizmus&quot;&gt;A marxizmus és a kulturális marxizmus&lt;/h2&gt;
-&lt;p&gt;A sorozat &lt;a href=&quot;https://salsaboy990.github.io/politika/2017/07/13/tudomanyosseta.html&quot; target=&quot;_blank&quot;&gt;első rész&lt;/a&gt;ében már nagy vonalakban felvázoltam a konzervativizmus mibenlétét, és erős kritikával illettem a „Séta a Tudományért” mozgalmat, ami a nevével ellentétben sokkal inkább a társadalmi igazságosságról szólt. A tudományban nincs helye a politikai aktivizmusnak. Itt áttértek a „kulturális marxizmussal” kapcsolatos eszmefuttatásomra.&lt;/p&gt;
+&lt;p&gt;A sorozat &lt;a href=&quot;https://salsaboy990.github.io/politika/2017/07/13/tudomanyosseta.html&quot; target=&quot;_blank&quot;&gt;első részében&lt;/a&gt; már nagy vonalakban felvázoltam a konzervativizmus mibenlétét, és erős kritikával illettem a „Séta a Tudományért” mozgalmat, ami a nevével ellentétben sokkal inkább a társadalmi igazságosságról szólt. A tudományban nincs helye a politikai aktivizmusnak. Itt áttértek a „kulturális marxizmussal” kapcsolatos eszmefuttatásomra.&lt;/p&gt;
 
 &lt;center&gt;
 &lt;img src=&quot;http://localhost:4000/assets/a_mezon.jpg&quot; class=&quot;image2&quot; alt=&quot;A mezőn (1977)&quot; /&gt;
@@ -691,12 +724,12 @@ szakmai oklevéllel&lt;/td&gt;
 &lt;h2 id=&quot;végszó&quot;&gt;Végszó&lt;/h2&gt;
 
 &lt;center&gt;
-&lt;blockquote&gt;Mindig is voltak olyan félművelt értelmiségiek, akik azt hitték, hogy a lojalitásnak van alternatívája. Ezek értelmiségiek mindig azt gondolják, hogy a hétköznapi emberek ragaszkodása a családhoz, a hazához, vagy a valláshoz meghaladható valamilyen átfogó, globális vízióval. Csakhogy ez nem így van, ezeket nem lehet felülírni. A jelenlegi legjobb megoldás a nemzetállam. (Roger Scruton) [&lt;a href=&quot;http://www.origo.hu/kultura/20101010-interju-roger-scrutonnal-napjaink-egyik-legelismertebb-konzervativ-filozofusaval.html&quot; target=&quot;_blank&quot;&gt;10&lt;/a&gt;].&lt;/blockquote&gt;
+&lt;blockquote&gt;&quot;Mindig is voltak olyan félművelt értelmiségiek, akik azt hitték, hogy a lojalitásnak van alternatívája. Ezek értelmiségiek mindig azt gondolják, hogy a hétköznapi emberek ragaszkodása a családhoz, a hazához, vagy a valláshoz meghaladható valamilyen átfogó, globális vízióval. Csakhogy ez nem így van, ezeket nem lehet felülírni. A jelenlegi legjobb megoldás a nemzetállam.&quot; (Roger Scruton) [&lt;a href=&quot;http://www.origo.hu/kultura/20101010-interju-roger-scrutonnal-napjaink-egyik-legelismertebb-konzervativ-filozofusaval.html&quot; target=&quot;_blank&quot;&gt;10&lt;/a&gt;].&lt;/blockquote&gt;
 &lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;felhasznált-források&quot;&gt;Felhasznált források&lt;/h2&gt;
-&lt;ul class=&quot;no-decoration-16px&quot;&gt;
+&lt;ul class=&quot;no-decoration-18px&quot;&gt;
     &lt;li&gt;Bihari Mihály – Pokol Béla (2009). Politológia. Nemzeti Tankönyvkiadó, Budapest. pp. 188-203.&lt;/li&gt;
     &lt;li&gt;[1] &lt;a href=&quot;http://www.metazin.hu/index.php/item/3242-a-konzervativ-scruton-es-a-felforgatok&quot; target=&quot;_blank&quot;&gt;A konzervatív Scruton és a felforgatók.&lt;/a&gt; Metazin, 2016-04-21. &lt;/li&gt;
     &lt;li&gt;[2] &lt;a href=&quot;https://en.wikipedia.org/wiki/Roger_Scruton&quot; target=&quot;_blank&quot;&gt;Roger Scruton&lt;/a&gt; (1944- ), angol konzervatív filozófus, esztéta, Wikipedia. &lt;/li&gt;
@@ -725,7 +758,7 @@ szakmai oklevéllel&lt;/td&gt;
     
       <item>
         <title>A Séta a „Tudományért” tüntetések a társadalmi igazságosságért</title>
-        <description>&lt;p&gt;&lt;strong&gt;A megvezetett tudósok, a tudományhívők, a „környezetvédő” politikai aktivisták és a „társadalmi igazságosság” harcosai az USA legtöbb nagyvárosában együtt kormányellenes tüntetéseket tartottak Donald Trump kormánya ellen, annak tudományellenes, illetve a tudományos kutatásokra fordított kormányzati kiadásokat drasztikusan lefaragó politikai intézkedései ellen. Ebben van ráció, ugyanis egy hatalmas bürokrácia jött létre, ami az állami pénzek haszonélvezője. Miről szóltak a tüntetések valójában?&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;p&gt;A megvezetett tudósok, a tudományhívők, a „környezetvédő” politikai aktivisták és a „társadalmi igazságosság” harcosai az USA legtöbb nagyvárosában együtt kormányellenes tüntetéseket tartottak Donald Trump kormánya ellen, annak tudományellenes, illetve a tudományos kutatásokra fordított kormányzati kiadásokat drasztikusan lefaragó politikai intézkedései ellen. Ebben van ráció, ugyanis egy hatalmas bürokrácia jött létre, ami az állami pénzek haszonélvezője. Miről szóltak a tüntetések valójában?&lt;/p&gt;
 
 &lt;center&gt;
 &lt;img src=&quot;http://localhost:4000/assets/msf800px-min.jpg&quot; class=&quot;image2&quot; alt=&quot;A Séta a Tudományért mozgalom weboldala&quot; /&gt;
@@ -742,37 +775,37 @@ szakmai oklevéllel&lt;/td&gt;
 
 &lt;center&gt;
 &lt;blockquote&gt;
-&lt;strong&gt;Diverzitás alapelvek &lt;/strong&gt;&lt;br /&gt;
+&quot;&lt;strong&gt;Diverzitás alapelvek &lt;/strong&gt;&lt;br /&gt;
 A bevonás, a sokszínűség, a méltányosság és a hozzáférhetőség központi szerepet játszik a Séta a Tudományért küldetésében és elveiben. A tudósok és a tudományért törődő emberek egy &lt;strong&gt;keresztmetszeti csoport&lt;/strong&gt; (intersectional group), amely &lt;strong&gt;fajok, szexuális orientációk, gender identitások, képességek, vallások, életkorok, szocioökonómiai és bevándorlási státuszok&lt;/strong&gt; széles tartományát magába foglalja.&lt;br /&gt;
 Mi, a menetelés szervezői, képviseljük és szolidaritást mutatunk a történelmileg alulreprezentált tudósok és tudománypártolók iránt.  A tudásra való törekvésért és annak megosztásáért való közös szenvedélyünk egyesít bennünket.&lt;br /&gt;
-Elismerjük, hogy a társadalom és a tudományos intézmények gyakran kudarcot vallanak az alulreprezentált csoportokból származó tudósok hozzájárulásainak az értékelésére.
+Elismerjük, hogy a társadalom és a tudományos intézmények gyakran kudarcot vallanak az alulreprezentált csoportokból származó tudósok hozzájárulásainak az értékelésére.&quot;
 &lt;/blockquote&gt;
 &lt;/center&gt;
 
 &lt;p&gt;Miért kéne értékelni azon hozzájárulásokat, amelyek nem ütik meg a mércét, nem elég színvonalasak? A tudományban és a versenyszférában a rátermettebbek érvényesülnek, hiába követelőznek néhányan, csak mert például más a bőrszínük vagy a nemük, ha nem teljesítenek elég jól. A sikerért keményen meg kell dolgozni, és nem a nem létező diszkrimináció miatt kell hisztizni!&lt;/p&gt;
 
 &lt;center&gt;
-&lt;blockquote&gt;A &lt;strong&gt;privilégiumok rendszere&lt;/strong&gt; (Sic!) befolyásolja, hogy ki válik a tudományos közösség részévé, milyen témát kutatunk, és hogyan alkalmazzuk a munkánkat új technológiák létrehozásában és a politikák kialakításában.&lt;br /&gt;
+&lt;blockquote&gt;&quot;&lt;strong&gt;Privilégiumok rendszere&lt;/strong&gt; (Sic!) befolyásolja, hogy ki válik a tudományos közösség részévé, milyen témát kutatunk, és hogyan alkalmazzuk a munkánkat új technológiák létrehozásában és a politikák kialakításában.&lt;br /&gt;
 Felismerjük, hogy mind történelmileg, mind napjainkban, egyes tudományos törekvéseket a háttérbe szorított, marginalizálódott közösségek megkárosítására és elnyomására használják. Politikai intézkedések – mint például a tudományos ügynökségek a kormányzat részéről való elhallgattatása, a pénzügyi támogatások befagyasztása, bevándorlási tilalmak és a klímaváltozás elleni harcot akadályozó politikai változások – nagyobb kárt okoznak a sérülékeny lakosság számára.&lt;br /&gt;
-A tudomány önmagában lendületet adhat a &lt;strong&gt;sokszínűség&lt;/strong&gt; fontosságával kapcsolatos párbeszédeknek, mivel &lt;strong&gt;adatokat&lt;/strong&gt; biztosít számunkra annak megértésére, hogy a &lt;strong&gt;rendszerszintű torzítás és diszkrimináció&lt;/strong&gt; (Sic!) hogyan hat a közösségeinkre és hogyan lehet azt legjobban megváltoztatni.
+A tudomány önmagában lendületet adhat a &lt;strong&gt;sokszínűség&lt;/strong&gt; fontosságával kapcsolatos párbeszédeknek, mivel &lt;strong&gt;adatokat&lt;/strong&gt; biztosít számunkra annak megértésére, hogy a &lt;strong&gt;rendszerszintű torzítás és diszkrimináció&lt;/strong&gt; (Sic!) hogyan hat a közösségeinkre és hogyan lehet azt legjobban megváltoztatni.&quot;
 &lt;/blockquote&gt;
 &lt;/center&gt;
 
 &lt;p&gt;A tudományos intézmények tekintélyét rombolják, társadalmi változásokat akarnak kikényszeríteni a „társadalmi igazságosság” elvont eszméinek a megvalósítása érdekében. Az ideológiai elvtársak a baloldal főhadiszállását képező egyetemeken pontosan úgy ferdíthetik el csaló statisztikával az adatokat, hogy a politikai céljaik megvalósításának a szükségességét alátámasszák.&lt;/p&gt;
 
 &lt;center&gt;
-&lt;blockquote&gt;Folytatni fogjuk a problematikus struktúrák, torzítások és cselekedetek megértésének elősegítését annak érdekében, hogy egy &lt;strong&gt;egészségesebb jövőt&lt;/strong&gt; teremtsünk mindenki számára.
+&lt;blockquote&gt;&quot;Folytatni fogjuk a problematikus struktúrák, torzítások és cselekedetek megértésének elősegítését annak érdekében, hogy egy &lt;strong&gt;egészségesebb jövőt&lt;/strong&gt; teremtsünk mindenki számára.&quot;
 &lt;/blockquote&gt;
 &lt;/center&gt;
 
 &lt;p&gt;Egyszerű felforgatók csupán, akik egy soha sem létezett, soha meg nem valósítható utópiát igyekeznek megvalósítani, miközben a társadalmi rendet bomlasztják.&lt;/p&gt;
 
 &lt;center&gt;
-&lt;blockquote&gt;Ezek a kinyilatkoztatások cselekedeteket igényelnek:
+&lt;blockquote&gt;&quot;Ezek a kinyilatkoztatások cselekedeteket igényelnek:
 &lt;ul&gt;
     &lt;li&gt;Elkötelezzük magunkat saját magunk és mások oktatására a bevonás, a sokszínűség, méltányosság és a hozzáférhetőség ügyére a tudományban.&lt;/li&gt;
     &lt;li&gt;Támogatjuk és bátorítjuk a kihívó párbeszédeket, amelyek ebből következnek.&lt;/li&gt;
-    &lt;li&gt;Elkötelezzük magunkat az alulreprezentált tudósok munkáinak felerősítésében, és hogy a tudományos tereket igazságosabbá (Sic!) tegyük.&lt;/li&gt;
+    &lt;li&gt;Elkötelezzük magunkat az alulreprezentált tudósok munkáinak felerősítésében, és hogy a tudományos tereket igazságosabbá (Sic!) tegyük.&quot;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;/center&gt;
@@ -812,7 +845,7 @@ A konzervativizmus kritikai eszmeáramlatként született meg az 1789-es francia
 
 &lt;center&gt;
 &lt;blockquote&gt;
-Egyetlen mozgalom sem példázza az állítólagos demokratikus mozgalomnál jobban azt a módot, ahogyan egy jó szervezett és elszánt kisebbség a tehetetlen és szervezetlen tömegek akarata fölött uralkodhat.
+&quot;Egyetlen mozgalom sem példázza az állítólagos demokratikus mozgalomnál jobban azt a módot, ahogyan egy jó szervezett és elszánt kisebbség a tehetetlen és szervezetlen tömegek akarata fölött uralkodhat.&quot;
 &lt;/blockquote&gt;
 &lt;/center&gt;
 
@@ -830,7 +863,7 @@ Egyetlen mozgalom sem példázza az állítólagos demokratikus mozgalomnál job
 
 &lt;center&gt;
 &lt;blockquote&gt;
-az egyszerűen nem veszi figyelembe, hogy az ész, az erő és a szépség vonzóbb, mint a butaság, a gyengeség és a csúfság (Roger Scruton).
+&quot;az egyszerűen nem veszi figyelembe, hogy az ész, az erő és a szépség vonzóbb, mint a butaság, a gyengeség és a csúfság&quot; (Roger Scruton).
 &lt;/blockquote&gt;
 &lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -856,7 +889,7 @@ Ezek a szélső baloldali álhumanista liberálisok rá akarják erőszakolni a 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;felhasznált-források&quot;&gt;Felhasznált források&lt;/h2&gt;
-&lt;ul class=&quot;no-decoration&quot; id=&quot;irodalom&quot;&gt;
+&lt;ul class=&quot;no-decoration-18px&quot; id=&quot;irodalom&quot;&gt;
     &lt;li&gt;Bihari Mihály – Pokol Béla (2009). Politológia. Nemzeti Tankönyvkiadó, Budapest. pp. 188-203.&lt;/li&gt;
     &lt;li&gt;[1] Faye Flam: &lt;a href=&quot;https://www.bloomberg.com/view/articles/2017-03-07/why-some-scientists-won-t-march-for-science&quot; target=&quot;_blank&quot;&gt;Why Some Scientists Won't March for Science.&lt;/a&gt; Bloomberg, 2017-03-01.&lt;/li&gt;
     &lt;li&gt;[2] Robert S. Young: &lt;a href=&quot;https://www.nytimes.com/2017/01/31/opinion/a-scientists-march-on-washington-is-a-bad-idea.html&quot; target=&quot;_blank&quot;&gt;A Scientists’ March on Washington Is a Bad Idea.&lt;/a&gt; The New York Times, 2017-01-31. &lt;/li&gt;
@@ -864,8 +897,8 @@ Ezek a szélső baloldali álhumanista liberálisok rá akarják erőszakolni a 
     &lt;li id=&quot;kulturalis_marxizmus&quot;&gt;[4] Ennek részletezését a következő esszémre tartogatom. Karl Marx a tőkét kritizálta és nem a kultúrát. A „kulturális marxizmusnak” nem sok köze van Marx eredeti elképzeléseihez. Az új baloldalnak nevezett irányzat az 1960-as években jött létre a Frankfurti Iskola tevékenységéhez kötődően. A „társadalmi igazságosság” ideálja nevében felszámolnák a nyugati kultúrát. Ezt az irányzatot sokan „kulturális marxizmus” néven illetik, ezért használom én is.&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://satellites.marchforscience.com/&quot; target=&quot;_blank&quot;&gt;1. kép: A Séta a Tudományért mozgalom weboldala
 &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://www.facebook.com/marchforscience/photos/pcb.360992090961778/360991287628525/?type=3&amp;amp;theater&quot; target=&quot;_blank&quot;&gt;2.kép: Republikánus ellenes demokrata tüntetők. Tényleg a tudományért tüntetnek?&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://pbs.twimg.com/media/C-iyuLzU0AADign.jpg:large&quot; target=&quot;_blank&quot;&gt;3.kép: Tüntetők Washington D.C.-ben&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://www.facebook.com/marchforscience/photos/pcb.360992090961778/360991287628525/?type=3&amp;amp;theater&quot; target=&quot;_blank&quot;&gt;2. kép: Republikánus ellenes demokrata tüntetők. Tényleg a tudományért tüntetnek?&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://pbs.twimg.com/media/C-iyuLzU0AADign.jpg:large&quot; target=&quot;_blank&quot;&gt;3. kép: Tüntetők Washington D.C.-ben&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>

@@ -8,66 +8,26 @@ layout: compress
   <body oncopy="copyLink()" class="body-style">
     {% include header.html %}
 
-    <div class="stripe">
-      <div class="wrapper">
-        <span id="intro">[ Bemutatkozás ]</span>
-      </div>
-    </div>
-
-    {% include about_block.html %}
-
     <div class="page-content">
       <div class="wrapper">
         {{ content }}
       </div>
     </div>
-    
-    <center>
-        <div id="back-to-top" class="gomb">Vissza fel</div>
-    </center>
-    <br />
 
     {% include footer.html %}
-
+    
     <!-- jQuery here -->    
-    <script src="{{ site.url}}/js/jquery.min.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-        $("#back-to-top").on("click", function() {
-            $("html,body").animate({ scrollTop: 0 }, 50);
-            /*$(window).scrollTop(0);*/
-        });
-        $("#intro").click(function() {
-          var temp = $("#about-block");
-          temp.css("margin-bottom", "40px");
-          temp.slideToggle(300);
-          $("html,body").animate({ scrollTop: 0 }, 300);
-          /*$(window).scrollTop(0);*/
-        });
-        $("#close").click(function() {
-          $("#about-block").slideToggle(300);
-          $("html,body").animate({ scrollTop: 0 }, 300);
-          /*$(window).scrollTop(0);*/
-        });
-        $("#toggle-book-contents").on("click", function() {
-          var temp = $("#book-contents");
-          temp.css("border", "1px solid #828282");
-          temp.css("border-radius", "7px");
-          temp.slideToggle(200);
-        });
-        $('table tr:even').addClass('color');
-        $("table tr").filter(":first").css("font-weight", "600");
-    });
-    </script>
+    {% include jquery_events.html %}
 
     {% comment %}
       This block renders Google Analytics but only renders if the google_analytics
       variable exists in _config.yml and if the environment for Jekyll is set to
       production `JEKYLL_ENV=production jekyll build`. It will not render when running
       `jekyll serve` because by default, the environment is set to `development`.
-    {% endcomment %}
+    
     {% if jekyll.environment == "production" and site.google_analytics %}
   {% include google_analytics.html %}
     {% endif %}
+    {% endcomment %}
   </body>
 </html>

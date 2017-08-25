@@ -2,30 +2,24 @@
 layout: default
 ---
 
-{% include about_block.html %}
 {% comment %}
   Grabs the latest post from `site.posts` and assigns it to a variable `post`
 {% endcomment %}
 
-<!--{% assign post = site.posts.first %}-->
 {% for post in site.posts limit:5 %}
 <article>
-  <header>
+  <header class="post-header">
     <h2>
       <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
     </h2>
-    <div><em>{{ post.date | date:"%Y-%m-%d" }}</em></div>
+    <div class="post-date">{% assign date = post.date %} {% include date.html %}</div>
   </header>
   <div>
     {{ post.excerpt }}
-    <a href="{{ post.url | relative_url }}">Tovább olvasom</a>
+    <a class="read-more" href="{{ post.url | relative_url }}">Tovább a teljes cikkre</a>
+    <br/>
+    <br/>
   </div>
 </article>
 <br />
 {% endfor %}
-
-<!--<center>
-  <img class="image" src="{{ site.url }}/assets/home-min.jpg" alt="Gesztenyefasor"/>
-</center>
-<br />
--->

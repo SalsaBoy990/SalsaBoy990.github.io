@@ -15,8 +15,9 @@ Igyekszem vele, amennyire az időmből kitelik. Úgy néz ki, hogy két kötetre
 <br />
 
 <center>
-	<div id="toggle-book-contents" class="gomb-2">Tartalomjegyzék</div>
+	<a id="toggle-book-contents" class="gomb-2">Tartalomjegyzék</a>
 </center>
+<br />
 
 <div id="book-contents">
 	<ol class="no-decoration">

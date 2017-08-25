@@ -3,10 +3,11 @@ layout: post
 comments: true
 title:  "A Séta a „Tudományért” tüntetések a társadalmi igazságosságért"
 date:   2017-07-13 20:32
+tags: "ideologia"
 categories: politika
 ---
 
-**A megvezetett tudósok, a tudományhívők, a „környezetvédő” politikai aktivisták és a „társadalmi igazságosság” harcosai az USA legtöbb nagyvárosában együtt kormányellenes tüntetéseket tartottak Donald Trump kormánya ellen, annak tudományellenes, illetve a tudományos kutatásokra fordított kormányzati kiadásokat drasztikusan lefaragó politikai intézkedései ellen. Ebben van ráció, ugyanis egy hatalmas bürokrácia jött létre, ami az állami pénzek haszonélvezője. Miről szóltak a tüntetések valójában?**
+A megvezetett tudósok, a tudományhívők, a „környezetvédő” politikai aktivisták és a „társadalmi igazságosság” harcosai az USA legtöbb nagyvárosában együtt kormányellenes tüntetéseket tartottak Donald Trump kormánya ellen, annak tudományellenes, illetve a tudományos kutatásokra fordított kormányzati kiadásokat drasztikusan lefaragó politikai intézkedései ellen. Ebben van ráció, ugyanis egy hatalmas bürokrácia jött létre, ami az állami pénzek haszonélvezője. Miről szóltak a tüntetések valójában?
 
 <center>
 <img src="{{ site.url}}/assets/msf800px-min.jpg" class="image2" alt="A Séta a Tudományért mozgalom weboldala"/>
@@ -23,37 +24,37 @@ A republikánus kormány nem híve a klímaváltozás elleni harcnak, a tüntet�
 
 <center>
 <blockquote>
-<strong>Diverzitás alapelvek </strong><br />
+"<strong>Diverzitás alapelvek </strong><br />
 A bevonás, a sokszínűség, a méltányosság és a hozzáférhetőség központi szerepet játszik a Séta a Tudományért küldetésében és elveiben. A tudósok és a tudományért törődő emberek egy <strong>keresztmetszeti csoport</strong> (intersectional group), amely <strong>fajok, szexuális orientációk, gender identitások, képességek, vallások, életkorok, szocioökonómiai és bevándorlási státuszok</strong> széles tartományát magába foglalja.<br />
 Mi, a menetelés szervezői, képviseljük és szolidaritást mutatunk a történelmileg alulreprezentált tudósok és tudománypártolók iránt.  A tudásra való törekvésért és annak megosztásáért való közös szenvedélyünk egyesít bennünket.<br />
-Elismerjük, hogy a társadalom és a tudományos intézmények gyakran kudarcot vallanak az alulreprezentált csoportokból származó tudósok hozzájárulásainak az értékelésére.
+Elismerjük, hogy a társadalom és a tudományos intézmények gyakran kudarcot vallanak az alulreprezentált csoportokból származó tudósok hozzájárulásainak az értékelésére."
 </blockquote>
 </center>
 
 Miért kéne értékelni azon hozzájárulásokat, amelyek nem ütik meg a mércét, nem elég színvonalasak? A tudományban és a versenyszférában a rátermettebbek érvényesülnek, hiába követelőznek néhányan, csak mert például más a bőrszínük vagy a nemük, ha nem teljesítenek elég jól. A sikerért keményen meg kell dolgozni, és nem a nem létező diszkrimináció miatt kell hisztizni!
 
 <center>
-<blockquote>A <strong>privilégiumok rendszere</strong> (Sic!) befolyásolja, hogy ki válik a tudományos közösség részévé, milyen témát kutatunk, és hogyan alkalmazzuk a munkánkat új technológiák létrehozásában és a politikák kialakításában.<br />
+<blockquote>"<strong>Privilégiumok rendszere</strong> (Sic!) befolyásolja, hogy ki válik a tudományos közösség részévé, milyen témát kutatunk, és hogyan alkalmazzuk a munkánkat új technológiák létrehozásában és a politikák kialakításában.<br />
 Felismerjük, hogy mind történelmileg, mind napjainkban, egyes tudományos törekvéseket a háttérbe szorított, marginalizálódott közösségek megkárosítására és elnyomására használják. Politikai intézkedések – mint például a tudományos ügynökségek a kormányzat részéről való elhallgattatása, a pénzügyi támogatások befagyasztása, bevándorlási tilalmak és a klímaváltozás elleni harcot akadályozó politikai változások – nagyobb kárt okoznak a sérülékeny lakosság számára.<br />
-A tudomány önmagában lendületet adhat a <strong>sokszínűség</strong> fontosságával kapcsolatos párbeszédeknek, mivel <strong>adatokat</strong> biztosít számunkra annak megértésére, hogy a <strong>rendszerszintű torzítás és diszkrimináció</strong> (Sic!) hogyan hat a közösségeinkre és hogyan lehet azt legjobban megváltoztatni.
+A tudomány önmagában lendületet adhat a <strong>sokszínűség</strong> fontosságával kapcsolatos párbeszédeknek, mivel <strong>adatokat</strong> biztosít számunkra annak megértésére, hogy a <strong>rendszerszintű torzítás és diszkrimináció</strong> (Sic!) hogyan hat a közösségeinkre és hogyan lehet azt legjobban megváltoztatni."
 </blockquote>
 </center>
 
 A tudományos intézmények tekintélyét rombolják, társadalmi változásokat akarnak kikényszeríteni a „társadalmi igazságosság” elvont eszméinek a megvalósítása érdekében. Az ideológiai elvtársak a baloldal főhadiszállását képező egyetemeken pontosan úgy ferdíthetik el csaló statisztikával az adatokat, hogy a politikai céljaik megvalósításának a szükségességét alátámasszák.
 
 <center>
-<blockquote>Folytatni fogjuk a problematikus struktúrák, torzítások és cselekedetek megértésének elősegítését annak érdekében, hogy egy <strong>egészségesebb jövőt</strong> teremtsünk mindenki számára.
+<blockquote>"Folytatni fogjuk a problematikus struktúrák, torzítások és cselekedetek megértésének elősegítését annak érdekében, hogy egy <strong>egészségesebb jövőt</strong> teremtsünk mindenki számára."
 </blockquote>
 </center>
 
 Egyszerű felforgatók csupán, akik egy soha sem létezett, soha meg nem valósítható utópiát igyekeznek megvalósítani, miközben a társadalmi rendet bomlasztják.
 
 <center>
-<blockquote>Ezek a kinyilatkoztatások cselekedeteket igényelnek:
+<blockquote>"Ezek a kinyilatkoztatások cselekedeteket igényelnek:
 <ul>
     <li>Elkötelezzük magunkat saját magunk és mások oktatására a bevonás, a sokszínűség, méltányosság és a hozzáférhetőség ügyére a tudományban.</li>
     <li>Támogatjuk és bátorítjuk a kihívó párbeszédeket, amelyek ebből következnek.</li>
-    <li>Elkötelezzük magunkat az alulreprezentált tudósok munkáinak felerősítésében, és hogy a tudományos tereket igazságosabbá (Sic!) tegyük.</li>
+    <li>Elkötelezzük magunkat az alulreprezentált tudósok munkáinak felerősítésében, és hogy a tudományos tereket igazságosabbá (Sic!) tegyük."</li>
 </ul>
 </blockquote>
 </center>
@@ -93,7 +94,7 @@ Irving Babbitt (1865-1933) a liberális és a szocialista értelmiségi csoporto
 
 <center>
 <blockquote>
-Egyetlen mozgalom sem példázza az állítólagos demokratikus mozgalomnál jobban azt a módot, ahogyan egy jó szervezett és elszánt kisebbség a tehetetlen és szervezetlen tömegek akarata fölött uralkodhat.
+"Egyetlen mozgalom sem példázza az állítólagos demokratikus mozgalomnál jobban azt a módot, ahogyan egy jó szervezett és elszánt kisebbség a tehetetlen és szervezetlen tömegek akarata fölött uralkodhat."
 </blockquote>
 </center>
 
@@ -111,7 +112,7 @@ Az egyenlőség értéke és eszménye összeférhetetlen a konzervatív filozó
 
 <center>
 <blockquote>
-az egyszerűen nem veszi figyelembe, hogy az ész, az erő és a szépség vonzóbb, mint a butaság, a gyengeség és a csúfság (Roger Scruton).
+"az egyszerűen nem veszi figyelembe, hogy az ész, az erő és a szépség vonzóbb, mint a butaság, a gyengeség és a csúfság" (Roger Scruton).
 </blockquote>
 </center>
 <br/>
@@ -137,7 +138,7 @@ Ezek a szélső baloldali álhumanista liberálisok rá akarják erőszakolni a 
 <br />
 
 ## Felhasznált források
-<ul class="no-decoration" id="irodalom">
+<ul class="no-decoration-18px" id="irodalom">
     <li>Bihari Mihály – Pokol Béla (2009). Politológia. Nemzeti Tankönyvkiadó, Budapest. pp. 188-203.</li>
     <li>[1] Faye Flam: <a href="https://www.bloomberg.com/view/articles/2017-03-07/why-some-scientists-won-t-march-for-science" target="_blank">Why Some Scientists Won't March for Science.</a> Bloomberg, 2017-03-01.</li>
     <li>[2] Robert S. Young: <a href="https://www.nytimes.com/2017/01/31/opinion/a-scientists-march-on-washington-is-a-bad-idea.html" target="_blank">A Scientists’ March on Washington Is a Bad Idea.</a> The New York Times, 2017-01-31. </li>
@@ -145,8 +146,8 @@ Ezek a szélső baloldali álhumanista liberálisok rá akarják erőszakolni a 
     <li id="kulturalis_marxizmus">[4] Ennek részletezését a következő esszémre tartogatom. Karl Marx a tőkét kritizálta és nem a kultúrát. A „kulturális marxizmusnak” nem sok köze van Marx eredeti elképzeléseihez. Az új baloldalnak nevezett irányzat az 1960-as években jött létre a Frankfurti Iskola tevékenységéhez kötődően. A „társadalmi igazságosság” ideálja nevében felszámolnák a nyugati kultúrát. Ezt az irányzatot sokan „kulturális marxizmus” néven illetik, ezért használom én is.</li>
     <li><a href="https://satellites.marchforscience.com/" target="_blank">1. kép: A Séta a Tudományért mozgalom weboldala
 </a></li>
-    <li><a href="https://www.facebook.com/marchforscience/photos/pcb.360992090961778/360991287628525/?type=3&theater" target="_blank">2.kép: Republikánus ellenes demokrata tüntetők. Tényleg a tudományért tüntetnek?</a></li>
-    <li><a href="https://pbs.twimg.com/media/C-iyuLzU0AADign.jpg:large" target="_blank">3.kép: Tüntetők Washington D.C.-ben</a></li>
+    <li><a href="https://www.facebook.com/marchforscience/photos/pcb.360992090961778/360991287628525/?type=3&theater" target="_blank">2. kép: Republikánus ellenes demokrata tüntetők. Tényleg a tudományért tüntetnek?</a></li>
+    <li><a href="https://pbs.twimg.com/media/C-iyuLzU0AADign.jpg:large" target="_blank">3. kép: Tüntetők Washington D.C.-ben</a></li>
 </ul>
 
 

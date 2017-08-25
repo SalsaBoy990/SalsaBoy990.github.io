@@ -1,5 +1,5 @@
 _site
-_DRAFTS
+_drafts
 .sass-cache
 .jekyll-metadata
 Gemfile.lock
