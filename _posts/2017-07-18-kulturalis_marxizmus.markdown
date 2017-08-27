@@ -7,11 +7,11 @@ tags: "ideologia"
 categories: politika
 ---
 
-<center>
-<blockquote>"Az őrültség nem más, mint ugyanazt tenni újra és újra, és várni, hogy az eredmény más legyen."
+
+<blockquote>Az őrültség nem más, mint ugyanazt tenni újra és újra, és várni, hogy az eredmény más legyen.
 (Részlet a Narcotics Anonymous közösség egy 1981-es kiadványából)
 </blockquote>
-</center>
+
 
 <p>Az esszé első fele egy átvett cikk, amin csak kiemeléseket tettem. «A konzervatív Scruton és a felforgatók» címen jelent meg [<a href="http://www.metazin.hu/index.php/item/3242-a-konzervativ-scruton-es-a-felforgatok" target="_blank">1</a>].</p>
 
@@ -22,10 +22,10 @@ categories: politika
 <p>Scruton könyve, amely a bírálat tárgyát képezi, a «Bolondok, csalók, gyújtogatók» címet viseli, és a szerzőnek az <strong>új baloldal</strong> gondolkodóiról szóló írásait gyűjti egybe. Első változata harminc éve jelent meg, és mint maga Scruton írja, a kiadónak vissza kellett vonnia, annyira nagy volt a felzúdulás a brit egyetemeken domináns szerepet betöltő újbaloldali értelmiség körében. Azóta újabb tanulmányokkal bővítette ki a kötetet, s így a régi baloldali, félig-meddig kommunista gondolkodók közül Sartre és Lukács György, Hobsbawm és Habermas mellett most már Slavoj Žižekről is szó van benne. Új baloldalnak <strong>a hatvanas években azt az irányzatot nevezték, amely nem szakított a marxizmussal, sőt a leninizmussal sem szükségképpen, de nem a szovjet kommunizmus propagátora volt.</strong> Scruton ezt a változást alapjában mellékesnek tartja, nála ugyanis az a lényeg, hogy <strong>ezek a szerzők a társadalmi igazságosság ideálja nevében felszámolnák azokat az intézményeket, amelyek továbbviszik a társadalom örökségét.</strong> Scruton azt az egyet még nem találta meg írásaikban, hogy miként is fog megvalósulni a teljes egyenlőség, amelynek nevében a felforgatást szükségesnek tartják, ezért elméleteiket a hit fogalomkörébe utalja. Sőt, már elvben is megállapítja, hogy törekvésük <strong>csak a szabadság korlátozása árán</strong> valósulhatna meg, mivel az emberek, ha szabadságban tevékenykedhetnek, <strong>egyenlőtlen viszonyokat</strong> hoznak létre. A kétkezi dolgozók azonban, akiknek nevében a kommunisták a hagyományos erkölcs és intézményrendszer eltávolítását hirdették, <strong>sokkal szervesebben kötődtek</strong> nemzetükhöz, mint osztályukhoz, ezért a nagy változásnak semmi esélye sem volt. A kommunisták ekkor <strong>az egyetemeket és a kulturális életet</strong> kezdték elfoglalni, és Scruton szerint meg is nyerték az elmúlt évtizedek kultúrharcát. <strong>A baloldali értelmiség</strong> – írja Scruton – <strong>az elmúlt évtizedekben módszeresen rombolta a hagyományos intézményekbe, a családba, az iskolába, a jogba, a nemzetbe vetett bizalmat, pedig a nyugati civilizációt ezek örökítették ránk.</strong> Freeman szerint a brit filozófus a régieket, Sartre-ot és Foucault-t még mindennek ellenére is tisztelettel elemzi, az újabbak munkásságát viszont, Althussertől Žižekig „nonszensz-gépezetnek” minősíti.</p>
 
 
-<center>
+
 <img src="{{ site.url }}/assets/sztalin.jpg" class="image" alt="Rózsák Sztálinnak (1949)"/>
 <figcaption>1. kép: Boris Vladimirski - Rózsák Sztálinnak (1949)</figcaption>
-</center>
+
 
 <p>Freeman tagadja, hogy a radikális marxisták a szociális igazságosságot szorgalmaznák, de nem írja le, hol van a hiba Scruton gondolatmenetében. A brit konzervatív filozófus ugyanis úgy ismerteti a szocialista gondolat kiindulópontját, ahogyan kétszáz éve ismerjük: <strong>a javak egyenlőtlenül, tehát igazságtalanul oszlanak meg.</strong>  Ennél alaposabb kifogásnak látszik, hogy a hagyomány, a jogszokás, amely Scruton konzervativizmusa szerint a törvényalkotás alapja kell, hogy legyen, nyilvánvaló igazságtalanságokkal terhes. Például a rabszolga-kereskedelmet is szentesítette.</p>
 
@@ -35,10 +35,10 @@ categories: politika
 ## A marxizmus és a kulturális marxizmus
 <p>A sorozat <a href="https://salsaboy990.github.io/politika/2017/07/13/tudomanyosseta.html" target="_blank">első részében</a> már nagy vonalakban felvázoltam a konzervativizmus mibenlétét, és erős kritikával illettem a „Séta a Tudományért” mozgalmat, ami a nevével ellentétben sokkal inkább a társadalmi igazságosságról szólt. A tudományban nincs helye a politikai aktivizmusnak. Itt áttértek a „kulturális marxizmussal” kapcsolatos eszmefuttatásomra.</p>
 
-<center>
+
 <img src="{{ site.url }}/assets/a_mezon.jpg" class="image2" alt="A mezőn (1977)"/>
 <figcaption>2. kép: Nikolay Karacharskov - A mezőn (1977)</figcaption>
-</center>
+
 
 <p>A marxista ideológia Karl Marx (1818-1883) nevéhez fűződik, aki zsidó származású német filozófus és közgazdász volt. Két legjelentősebb munkája a Kommunista Kiáltvány (1848) és a Tőke (1867-1894) [<a href="https://hu.wikipedia.org/wiki/Karl_Marx" target="_blank">3</a>]. Karl Marx és Friedrich Engels tanainak, valamint az erre hivatkozó társadalomelméleti és politikai ideológiák együttesét marxizmusnak nevezzük. A fő célja, hogy létrehozza <strong>a társadalmi osztályok és magántulajdon nélküli, kizsákmányolásmentes, kommunista társadalmat.</strong> A marxizmus és a belőle sarjadt emberiségellenes ideológiák (leninizmus vagy bolsevizmus, sztálinizmus, maoizmus) jelentették a népirtó diktatúrák alapját. A marxizmus terjedésének a legmélyebb oka nem a közös tulajdon elvének akarása, hanem a <strong>hatalom akarása</strong> volt a hataloméhes emberek részéről.
 </p>
@@ -50,12 +50,12 @@ categories: politika
 
 Az emberek közti egyenlőtlenségek társadalmi egyenlőtlenségeket eredményeznek, ha az emberek szabadon élnek. Az egyenlőséget csak a szabadság rovására lehet kierőszakolni.
 
-<p>A politikai bölcsesség, a társadalom irányításához szükséges tudás nem lelhető fel egy-egy elszigetelt gondolkodó elméleti spekulációiban, hanem ezt a tapasztalati tudást a közösség egésze birtokolja. Az elvont elméleti konstrukciók nem alkalmasak a politikai gyakorlat szabályozására. Marx elméleti spekulációi (az anyagi javak egyenlőtlenül oszlanak fel, és ha ezt felszámoljuk, eljön az osztály nélküli társadalom, ahol nincsenek társadalmi egyenlőtlenségek) tévesek, mert Marx nem ismerte a hétköznapi emberek gondolkodását. „A kétkezi dolgozók azonban, akiknek nevében a kommunisták a hagyományos erkölcs és intézményrendszer eltávolítását hirdették, sokkal szervesebben kötődtek nemzetükhöz, mint osztályukhoz, ezért a nagy változásnak semmi esélye sem volt.” A emberek nem kértek belőle, és igazuk is volt.</p>
+<p>„A politikai bölcsesség, a társadalom irányításához szükséges tudás nem lelhető fel egy-egy elszigetelt gondolkodó elméleti spekulációiban, hanem ezt a tapasztalati tudást a közösség egésze birtokolja. Az elvont elméleti konstrukciók nem alkalmasak a politikai gyakorlat szabályozására. Marx elméleti spekulációi (az anyagi javak egyenlőtlenül oszlanak fel, és ha ezt felszámoljuk, eljön az osztály nélküli társadalom, ahol nincsenek társadalmi egyenlőtlenségek) tévesek, mert Marx nem ismerte a hétköznapi emberek gondolkodását. „A kétkezi dolgozók azonban, akiknek nevében a kommunisták a hagyományos erkölcs és intézményrendszer eltávolítását hirdették, sokkal szervesebben kötődtek nemzetükhöz, mint osztályukhoz, ezért a nagy változásnak semmi esélye sem volt.” A emberek nem kértek belőle, és igazuk is volt.</p>
+ 
 
-<center>
 <img src="{{ site.url}}/assets/kirov.jpg" class="image2" alt="Szergey Kirov köszönti a sportolók díszszemléjét (1935)"/>
 <figcaption>3. kép: A totalitárius művészet a rendszer tökéletes lenyomata. Grandiózus és uniformizált.</figcaption>
-</center>
+
 
 Karl Marx a tőkét kritizálta és nem a kultúrát. A „kulturális marxizmusnak” nem sok köze van Marx eredeti elképzeléseihez. Most egy a ZeroHedge-en megjelent tömör és velős cikk fordítását adom közre (csak a lényeget) [<a href="http://www.zerohedge.com/news/2016-08-12/birth-cultural-marxism-how-frankfurt-school-changed-america" target="_blank">6</a>].
 
@@ -82,7 +82,7 @@ Hitler hatalomra kerülése után (1933), a nemzeti szocializmus elől az USA-ba
 
 <p>Adorno és Horkheimer visszatértek Németországba, miután a második világháború véget ért. Herbert Marcuse, az iskola egy másik tagja, Amerikában maradt. 1955-ben kiadta az «Erósz és Civilizáció» (Eros and Civilization) címet viselő könyvét. Ebben Marcuse azt állította, hogy a nyugati kultúra benne rejlően <strong>elnyomó</strong>, mert feladta a boldogságot a társadalom előrehaladásáért.</p>
 
-<p>A könyv a Freud által kidolgozott „polimorf perverzió” koncepcióért kardoskodott. Felvetette <strong>a hagyományos normákon kívüli szexuális örömök</strong> elképzelését. Az Erósz és Civilizáció rendkívül nagy befolyással lett az 1960-as évek szexuális "forradalmára".</p>
+<p>A könyv a Freud által kidolgozott „polimorf perverzió” koncepcióért kardoskodott. Felvetette <strong>a hagyományos normákon kívüli szexuális örömök</strong> elképzelését. Az Erósz és Civilizáció rendkívül nagy befolyással lett az 1960-as évek szexuális „forradalmára”.</p>
 
 <p>Marcuse volt, aki megválaszolta Horkheimer kérdését az 1930-as évekből: <strong>Kik váltanák fel a munkásosztályt a marxista forradalom új élharcosaiként?</strong> Marcuse úgy vélte, hogy <strong>a kisebbségek áldozati koalíciója</strong> (feketék, nők és homoszexuálisok) lenne az.</p>
 
@@ -94,10 +94,10 @@ Hitler hatalomra kerülése után (1933), a nemzeti szocializmus elől az USA-ba
 <p>Marcuse itt találta ki a „felszabadító tolerancia” kifejezést. <strong>Toleranciát követelt minden olyan eszmével szemben, ami a baloldalról jött, viszont intoleranciát hirdetett a jobboldalról jövőkkel szemben.</strong> A Frankfurti Iskola egyik átívelő motívuma volt <strong>bármely, a sajátján kívüli nézőponttal szembeni teljes intolerancia.</strong> Napjainkban a politikai korrektség híveinek szintén ez az alapvető jellemvonása.
 </p>
 
-<center>
+
 <img src="{{ site.url}}/assets/feminists-min.jpg" class="image2" alt="Feminista tüntetők"/>
 <figcaption>4. kép: Feminista tüntetők az 1960-as évekből</figcaption>
-</center>
+
 
 A Frankfurti Iskola ténykedése mély hatást gyakorolt az amerikai kultúrára. Átalakította az 1950-es évek homogén (nem tudom, hogy ez alatt mit ért a cikk szerzője) Amerikáját a mai, megosztott, ellenségeskedéssel telt nemzetté. Másfelől hozzájárult a családi egység tagadhatatlan megbomlásához, valamint az identitáspolitikához, a radikális feminizmushoz és a faji polarizációhoz az USA-ban.
 
@@ -105,10 +105,10 @@ A politikai vezetés teljes mértékben felkarolta a Frankfurti Iskola elképzel
 
 Egy olyan túlérzékeny társadalomban élünk most már, ahol a társadalmi mémek és érzések átvették a biológiai és objektív valóság szerepét annak meghatározásában, hogy mi számít jónak és rossznak. Eddig tartott a második átvett cikk.
 
-<center>
+
 <img src="{{ site.url}}/assets/washington1963-min.jpg" class="image2" alt="Washington-i Séta, 1963"/>
 <figcaption>5. kép: A négerek Washington-i Sétája 1963-ban. Munkalehetőségekért és szabadságért tüntettek.</figcaption>
-</center>
+
 
 A „kulturális marxizmus” nem a tőkét kritizálja, hanem a kultúra felől támadja a nyugati társadalmakat. Az „áldozatoknak”, a felszabadítani kívánt „elnyomottaknak” egyesülnie kell a nyugati kultúra lerombolása érdekében, hogy eljöjjön a kommunista utópia, a szép új világ. Világ elnyomottjai, egyesüljetek!
 
@@ -134,16 +134,16 @@ Orbitálisan nagy baromságok! Ez megint egy utópia. Okkal alakult ki úgy ki a
 
 Sajnos sok geográfus bedőlt ezeknek az ostobaságoknak, és a zöld ideológia szócsövévé vált a nemzeti érdekeink ellenében.
 
-<center>
+
 <img src="{{ site.url }}/assets/green_activists-min.jpg" class="image2" alt="Zöld politikai aktivisták"/>
-<figcaption>6. kép: "Környezetvédő" aktivisták Cleveland-ban (Ohio állam), 1970-ben</figcaption>
-</center>
+<figcaption>6. kép: „Környezetvédő” aktivisták Cleveland-ban (Ohio állam), 1970-ben</figcaption>
+
 
 ## Végszó
 
-<center>
-<blockquote>"Mindig is voltak olyan félművelt értelmiségiek, akik azt hitték, hogy a lojalitásnak van alternatívája. Ezek értelmiségiek mindig azt gondolják, hogy a hétköznapi emberek ragaszkodása a családhoz, a hazához, vagy a valláshoz meghaladható valamilyen átfogó, globális vízióval. Csakhogy ez nem így van, ezeket nem lehet felülírni. A jelenlegi legjobb megoldás a nemzetállam." (Roger Scruton) [<a href="http://www.origo.hu/kultura/20101010-interju-roger-scrutonnal-napjaink-egyik-legelismertebb-konzervativ-filozofusaval.html" target="_blank">10</a>].</blockquote>
-</center>
+
+<blockquote>Mindig is voltak olyan félművelt értelmiségiek, akik azt hitték, hogy a lojalitásnak van alternatívája. Ezek értelmiségiek mindig azt gondolják, hogy a hétköznapi emberek ragaszkodása a családhoz, a hazához, vagy a valláshoz meghaladható valamilyen átfogó, globális vízióval. Csakhogy ez nem így van, ezeket nem lehet felülírni. A jelenlegi legjobb megoldás a nemzetállam. (Roger Scruton) [<a href="http://www.origo.hu/kultura/20101010-interju-roger-scrutonnal-napjaink-egyik-legelismertebb-konzervativ-filozofusaval.html" target="_blank">10</a>].</blockquote>
+
 <br />
 
 ## Felhasznált források
@@ -166,5 +166,5 @@ Sajnos sok geográfus bedőlt ezeknek az ostobaságoknak, és a zöld ideológia
     <li>3. kép: Alexander Nikolayevich Samokhvalov (1894-1971): <a href="http://sfmag.hu/wp-content/uploads/2011/02/ParadeKirov1.jpg" target="_blank">Szergey Kirov köszönti a sportolók díszszemléjét (1935). </a></li>  
     <li>4. kép: <a href="https://i.ytimg.com/vi/5xop3CMLDWg/hqdefault.jpg" target="_blank">Feministák</a></li> 
     <li>5. kép: <a href="https://blogs.ancestry.com/ancestry/files/2016/03/263488011-1024x575.jpg" target="_blank">Washington-i Séta (1963)</a></li>
-    <li>6. kép: <a href="https://i.ytimg.com/vi/7kJWJo-Elo0/maxresdefault.jpg" target="_blank">"Környezetvédő" aktivisták (1970)</a></li>
+    <li>6. kép: <a href="https://i.ytimg.com/vi/7kJWJo-Elo0/maxresdefault.jpg" target="_blank">„Környezetvédő” aktivisták (1970)</a></li>
 </ul>

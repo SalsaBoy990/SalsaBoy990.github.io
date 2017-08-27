@@ -13,7 +13,6 @@ Az 1. táblázatban az 1893-2003 közötti időszakban végzett mintavételek, c
 
 
 <br />
-<center>
     <figcaption>
     1. táblázat: A magyarországi cigányok száma az 1893. évi cigányösszeírás és a szociológiai adatfelvételek alapján (Kertesi G. – Kézdi G. 1998, Kemény I. 2004). * A trianoni határokon belül.
     </figcaption>
@@ -57,7 +56,7 @@ Az 1. táblázatban az 1893-2003 közötti időszakban végzett mintavételek, c
             <td>823</td>
         </tr>
     </table>
-</center>
+
 
 
 A cigányság száma **az elmúlt 110 évben megtízszereződött**: **60 ezer főről 600 ezer főre gyarapodott 2003-ig**. 2003-ban az össznépesség 10 millió 142 ezer fő volt, melynek **6%**-a a cigány nemzetiséghez tartozott. A népszámlálások kétszeresen alábecsülték a magyarországi cigányság tényleges számát!
@@ -65,11 +64,11 @@ A cigányság száma **az elmúlt 110 évben megtízszereződött**: **60 ezer f
 
 A cigányság 2015. évi számának becslésére és 2020-ig való előrejelzésére, egy egyszerű modellt készítettem. A rendelkezésre álló adatfelvételek adatpontjaira egy exponenciális függvényt illesztettem (1. ábra).
 
-<center>
-    <img src="{{ site.url }}/assets/Cigany_modell-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="image2" />
-    <figcaption>1. ábra: A cigányfelmérések eredményeire számolt exponenciális függvény (Hablicsek L. 2007). (Az R-ben írt kódot lásd az <a href="https://github.com/SalsaBoy990/R-codes" target="_blank">R-codes</a> gyűjteményemben.)
-    </figcaption>
-</center>
+
+<img src="{{ site.url }}/assets/Cigany_modell-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="image2" />
+<figcaption>1. ábra: A cigányfelmérések eredményeire számolt exponenciális függvény (Hablicsek L. 2007). (Az R-ben írt kódot lásd az <a href="https://github.com/SalsaBoy990/R-codes" target="_blank">R-codes</a> gyűjteményemben.)
+</figcaption>
+
 
 Szépen látható, hogy a modell teljesen reprodukálja az 1893. évi összeírás értékét (60 ezer fő). **A cigányság 2015-ös létszámára 743 ezer jött ki, míg 2020-ra meg fogja haladni a 800 ezer főt.** Az 1. táblázatban közöltem a modell alapján visszaszámolt értékeket, amelyek kitűnő egyezést mutatnak a valós értékekkel (r<sup>2</sup>=0,99, p<0,001).
 
@@ -78,7 +77,6 @@ A teljes termékenységi arányszám, vagyis az egy szülőképes korú (15-49 �
 
 
 <br />
-<center>
     <figcaption>
     2. táblázat: A teljes női lakosság és a cigány nők termékenységi arányszámai, 1930-31 és 1999-2002 között (Janky B. 2005)
     </figcaption>
@@ -117,7 +115,7 @@ A teljes termékenységi arányszám, vagyis az egy szülőképes korú (15-49 �
             <td>3,0</td>
         </tr>
     </table>
-</center>
+
 
 Kizárólag a magyar nők esetén az egy szülőképes nőre jutó gyerekszám katasztrofálisan alacsony: 1,3 alatt van, mivel a cigányok szaporasága javít a statisztikán. Sajnos nem áll rendelkezésemre külön, csak a magyarokra vonatkozó adat. Így is egészen ritka adatokat adok közre.
 
@@ -126,7 +124,6 @@ A teljes népesség és a cigányság élveszületési számának és arányána
 
 
 <br />
-<center>
     <figcaption>
     3. táblázat: Az élveszületések számának és arányának változása a teljes népesség és a cigányság körében 1971-2003 (Kemény I. 2004)
     </figcaption>
@@ -183,25 +180,24 @@ A teljes népesség és a cigányság élveszületési számának és arányána
             <td>3,9</td>
         </tr>
     </table>
-</center>
+
 
 
 A könnyebb összehasonlíthatóság kedvéért, a 2-3. ábrákon megjelenítettem a cigány és a magyar korfát a 2001. évi népszámlálás adatainak felhasználásával. Megjegyzés: a vízszintes tengely beosztása a két korfán eltérő. A magyar lakosság esetén 39 év az átlagéletkor, míg a cigányoknál csupán 25.
 
-<center>
-    <img src="{{ site.url }}/assets/Cigany_korfa-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="image2" />
-    <figcaption>2. ábra: A cigányságot jellemző korfa piramis alakú (KSH alapján). (Az R-ben írt kódot lásd az <a href="https://github.com/SalsaBoy990/R-codes" target="_blank">R-codes</a> gyűjteményemben.)
-    </figcaption>
-    <img src="{{ site.url }}/assets/Magyar_korfa-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="image2" />
-    <figcaption>3. ábra: A magyarság korfája elöregedő korszerkezetet tükröz, urna alakú (KSH alapján). (Az R-ben írt kódot lásd az <a href="https://github.com/SalsaBoy990/R-codes" target="_blank">R-codes</a> gyűjteményemben.)
-    </figcaption>
-</center>
+
+<img src="{{ site.url }}/assets/Cigany_korfa-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="image2" />
+<figcaption>2. ábra: A cigányságot jellemző korfa piramis alakú (KSH alapján). (Az R-ben írt kódot lásd az <a href="https://github.com/SalsaBoy990/R-codes" target="_blank">R-codes</a> gyűjteményemben.)
+</figcaption>
+<img src="{{ site.url }}/assets/Magyar_korfa-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="image2" />
+<figcaption>3. ábra: A magyarság korfája elöregedő korszerkezetet tükröz, urna alakú (KSH alapján). (Az R-ben írt kódot lásd az <a href="https://github.com/SalsaBoy990/R-codes" target="_blank">R-codes</a> gyűjteményemben.)
+</figcaption>
+
 
 
 **A cigányok 86,9%-ának végzettsége általános iskola** (8 évfolyam vagy annál kevesebb), **egyetemi, főiskolai végzettséggel mindössze 2607 fő rendelkezett** 2011-ben (5. táblázat).
 
 <br />
-<center>
     <figcaption>
     5. táblázat: A magyar és a cigány népesség megoszlása a legmagasabb befejezett iskolai végzettség szerint, 2011-ben (KSH alapján).
     </figcaption>
@@ -241,14 +237,13 @@ szakmai oklevéllel</td>
             <td>0,8</td>
         </tr>
     </table>
-</center>
+
 
 
 A 6. táblázatból világossá válik, hogy a szocializmus időszakában a cigányok foglalkoztatottsága (különösen a férfiak) jóval magasabb volt, egészen a rendszerváltozásig. Onnantól kezdve drasztikusan leesett a cigányok foglalkoztatottsága, és az adatok szerint 2003-ig változatlan volt. **1987-1993 között a férfiak esetén 45,6, a nők esetén 33, míg együtt 39,4%-kal csökkent a dolgozók aránya.**
 
 
 <br />
-<center>
     <figcaption>
     6. táblázat: A cigány férfiak és nők foglalkoztatottsága 1971-2003 között százalékban (Janky B. 2005). * Az 1971-es, 1993-as és 2003-as országos reprezentatív cigányvizsgálat alapján. N: a minta nagysága, az adatok a 15–54 éves nők és 15–59 éves férfiak százalékában értendők.
     </figcaption>
@@ -300,11 +295,11 @@ A 6. táblázatból világossá válik, hogy a szocializmus időszakában a cig�
             <td>3081</td>
         </tr>
     </table>
-</center>
+
 
 
 ## Végszó
-A szocializmus alatt kevés volt a "közveszélyes munkakerülő". A nehézipar, a bányászat sok alacsonyan képzett munkaerőt szívott fel, ami munkát adott, a cigányoknak is. Viszont a rendszerváltoztatás során szétbomlasztották a magyar ipart, jelentősen megnövelve ezzel a munkanélküliséget. Ma a szociális ellátórendszeren élősködnek az indiából származó cigányok (megélhetési gyerekcsinálók). A cigányokkal pedig csak keményen lehet bánni, hiszen a többségük csak az erőszakból ért.
+A szocializmus alatt kevés volt a „közveszélyes munkakerülő”. A nehézipar, a bányászat sok alacsonyan képzett munkaerőt szívott fel, ami munkát adott, a cigányoknak is. Viszont a rendszerváltoztatás során szétbomlasztották a magyar ipart, jelentősen megnövelve ezzel a munkanélküliséget. Ma a szociális ellátórendszeren élősködnek az indiából származó cigányok (megélhetési gyerekcsinálók). A cigányokkal pedig csak keményen lehet bánni, hiszen a többségük csak az erőszakból ért.
 
 A cigányok beilleszkedési képtelenségét a cigányok viselkedésében kell keresni. Nem a magyarok szegregálják a cigányokat, hanem a cigányok magukat, mert **nem akarnak integrálódni**!
 

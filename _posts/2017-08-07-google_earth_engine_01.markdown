@@ -13,9 +13,9 @@ Korunkban már nem az adatok hiánya jelenti a földrajzi kutatások korlátját
 <br />
 ## A Google Earth Engine bemutatása
 
-<center>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4E6yQLoGO2o" frameborder="0"></iframe>
-</center>
+
 
 A **felhő alapú** (cloud computing) **szolgáltatások** közös jellemzője, hogy a szolgáltatásokat nem egy dedikált hardvereszközön üzemeltetik, hanem a szolgáltató eszközein elosztva, a szolgáltatás üzemeltetési részleteit a felhasználótól elrejtve. Ezeket a szolgáltatásokat a felhasználók **a hálózaton keresztül** érhetik el. A **Google Earth Engine** is egy ilyen felhő alapú szolgáltatás. Ez egy olyan szoftverszolgáltatási módszer, amelynél a szoftver és a kapcsolódó adatok központilag vannak tárolva (tipikusan egy (internet) felhőben, esetünkben a Google szerverein), ugyanakkor a felhasználói hozzáférések egy vékony **kliens**en keresztül zajlanak, amely leggyakrabban egy valamilyen **webböngésző alkalmazás**. Esetünkben ez a Google Earth Engine alkalmazásprogramozási felülete vagy interfésze (application programming interface, API). A Google Earth Engine API a JavaScript és a Python programozási nyelveket használja. A Python használatához telepítésre is szükség van. Csak a JavaScript klienssel foglalkozom.
 
@@ -30,11 +30,10 @@ A GEE számítási módszere figyelemreméltóan hatékony: automatikusan párhu
 
 A GEE Code Editor fejlesztői környezet felületét a lenti kép mutatja: fent középen a **JavaScript kódszerkesztő**, alul a **térképnézet**, a bal felső ablakban a fülekkel a **szkriptkezelő** (Scripts), az **API dokumentáció** (Docs) és a **saját feltöltött adataink** (Assets) érhetők el. A jobb felső ablakban a **felügyelő** (Inspector) – pl. a térképre kattintva egy pont földrajzi koordinátáit írja ki –, a **konzol** (Console) – a `print()` függvény ide ír –, és a **feladatok** (Tasks) – pl. egy műholdkép GeoTIFF-be exportálása – jeleníthető meg a fülekre kattintva. A kódszerkesztő ablak fejlécében a **Get Link** gombra kattintva megkapjuk a szkriptünkre mutató egyedi html címet.
 
-<center>
-<img src="{{ site.url }}/assets/gee-800px-min.jpg" class="large" alt="Google Earth Engine kódszerkesztő" />
+
+<img src="{{ site.url }}/assets/gee/gee-800px-min.jpg" class="large" alt="Google Earth Engine kódszerkesztő" />
 <figcaption>1. kép: A Google Earth Engine kódszerkesztője
 </figcaption>
-</center>
 
 ### Fontos tudnivalók
 
@@ -150,45 +149,43 @@ Map.addLayer(
 
 Fontos tudnivaló, hogy a `Map.addLayer()` segítségével a térképen kirajzolt kép eltérő bemenetekből készül a nagyítási szint és a térképnézet határaitól függően. A lépték a GEE-ben **pixelméretet** jelent. A GEE az elemzés / a bemenő adat léptékét a kimenetből határozza meg, amit nekünk meg kell adnunk. A GEE ugyanis **képpiramisokat** használ, ahol minden egyes cella értéke egy adott piramisszinten az alatta levő szint 2x2-es blokkjának, azaz 4 cellájának az átlagértéke. Az aggregálás egy 256x256 cella felbontású képszelvényig történik. A GEE azt a piramisszintet választja, ami **legközelebb esik az általunk megadott léptékhez** (kisebb vagy egyenlő annál), és abból számol.
 
-<center>
-    <img src="{{ site.url }}/assets/keppiramisok.png" class="image2" alt="GEE képpiramisok" />
-    <figcaption>2. kép: Google Earth Engine képpiramisok
-    </figcaption>
-    <figcaption>1. táblázat: Pixelméretek a különböző nagyítási szinteknél (0-20) a Google Mercator vetülete esetén (EPSG:3857). Ha Magyarországra akarunk vonatkoztatni, akkor a földrajzi szélesség koszinuszával be kell szorozni az értékeket. Például a 12-es nagyítási szintnél: 38·cos(47°) = 25,6 m.
-    </figcaption>
-    <table>
-        <tr>
-            <th width="40%">Nagyítási szint
-            </th>
-            <th width="60%">Pixelméret az Egyenlítőnél
-            </th>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td>76 m</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>38 m</td>
-        </tr>
-        <tr>
-            <td>13</td>
-            <td>19 m</td>
-        </tr>
-        <tr>
-            <td>14</td>
-            <td>9,6 m</td>
-        </tr>
-        <tr>
-            <td>15</td>
-            <td>4,8 m</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>2,4 m</td>
-        </tr>
-    </table>
-</center>
+<img src="{{ site.url }}/assets/gee/keppiramisok.png" class="image2" alt="GEE képpiramisok" />
+<figcaption>2. kép: Google Earth Engine képpiramisok
+</figcaption>
+<figcaption>1. táblázat: Pixelméretek a különböző nagyítási szinteknél (0-20) a Google Mercator vetülete esetén (EPSG:3857). Ha Magyarországra akarunk vonatkoztatni, akkor a földrajzi szélesség koszinuszával be kell szorozni az értékeket. Például a 12-es nagyítási szintnél: 38·cos(47°) = 25,6 m.
+</figcaption>
+<table>
+    <tr>
+        <th width="40%">Nagyítási szint
+        </th>
+        <th width="60%">Pixelméret az Egyenlítőnél
+        </th>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>76 m</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>38 m</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>19 m</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>9,6 m</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>4,8 m</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>2,4 m</td>
+    </tr>
+</table>
 
 A Google a térképek megjelenítéséhez a **Mercator vetületet** használja (WGS 84 / Pseudo-Mercator, EPSG:3857), így aztán a képpiramis megfelelő szintjén, a megjelenítést megelőzően, vetületi transzformációra kerül sor (röptében). Ha lehetséges, akkor célszerű elkerülni az egyéb vetületi transzformációkat. Meg kell hagyni az adatokat eredeti vetületükben! Az EOV nem támogatott. Ne is próbáld használni, mert rossz lesz az eredmény!
 

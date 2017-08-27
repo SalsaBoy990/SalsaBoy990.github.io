@@ -28,6 +28,7 @@ A [Jekyll](https://jekyllrb.com/) statikus oldalgenerátort, a [jQuery](https://
         <li>Lakóhely: Szeged</li>
         <li>&#9742; {{ site.mobile }}</li>
         <li>&#9993; <a title="Az e-mail címem" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li><a href="www.linkedin.com/in/andrás-gulácsi-194784113">LinkedIn</a></li>
         <li id="age"></li>
     </ul>
     <span>
