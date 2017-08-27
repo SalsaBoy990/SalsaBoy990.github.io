@@ -2,6 +2,7 @@
 layout: post
 comments: false
 title: "A kommentelési szabályzat és a szerzői jogok"
+excerpt: "Ha nem tudományos céllal idézel az írásaimból, akkor az idézet mellett kötelező feltüntetni a cikkre mutató linket! Ha a tudományos publikációdhoz idézel részeket, akkor  a tudományos hivatkozás szabályainak megfelelően hivatkozz a cikkre! Például így: *Gulácsi A. (2017). A cikk címe. A cikkre mutató weblink.* Teljes cikk átvételéhez a saját írásos beleegyezésem szükséges."
 date: 2017-08-18 19:08
 ---
 
