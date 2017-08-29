@@ -71,7 +71,7 @@ A JS-ben az aposztróf `'` és az idézőjel `"` egyenértékű és a sztringek 
 
 A JS-ben **automatikus szemétgyűjtés** van (automatic garbage collection), tehát nem kell felszabadítanunk a lefoglalt tárhelyet (a C/C++ esetén csak a **dinamikus memóriakezelés** esetén kell explicit, azaz magunknak elvégezni a lefoglalt memóraterület felszabadítását), hanem a fordító automatikusan elvégzi: ha egy objektum már nem elérhető – amikor a program már nem tud hivatkozni rá – a fordító automatikusan felszabadítja a lefoglalt memóriaterületet. Éppen ezért **nincsen destruktor** függvény a JS-ben. **Mutatók sincsenek**, tehát nem férhetünk hozzá a memóriacímekhez. Helyette **referenciák vannak**, amiről a JS gondoskodik nekünk.
 
-<center><em>Az 1. JavaScript programod: Változók és függvények.</em></center>
+<figcaption>Az 1. JavaScript programod: Változók és függvények.</figcaption>>
 {% highlight javascript %}
 var valtozo = 10;
 valtozo = "Helló";
@@ -141,7 +141,7 @@ Referencia szerinti értékadás van az objektumok esetén, vagyis nem új máso
 
 Az objektumokat a **heap**-ben (a **dinamikusan lefoglalt** adatok tárterülete a memóriában) tároljuk el. Például tekintsük a `var o = { x:0 };` kifejezést! Mi történik a futáskor? A heap-ben megfelelő méretű tárhely foglalódik le az objektum `{ x:0 }` tárolására, majd az értékek inicializálódnak. A kifejezés értéke az objektumra mutató hivatkozás lesz `o`-n keresztül. Az `o` tehát nem magát az objektumot, csak egy referenciát tárol.
 
-<center><em>A 2. JavaScript példa: Az objektumok mutálódnak, míg a primitívek nem.</em></center>
+<figcaption>A 2. JavaScript példa: Az objektumok mutálódnak, míg a primitívek nem.</figcaption>
 {% highlight javascript %}
 var s = "Alma";
 var o = { nev: "Alma" };
