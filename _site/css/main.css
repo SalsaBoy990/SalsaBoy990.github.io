@@ -244,6 +244,9 @@ a {
     font-weight: 400;
     
 }
+.read-more a {
+    margin-top: 30px;
+}
 .read-more:hover {
     text-decoration: none;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);

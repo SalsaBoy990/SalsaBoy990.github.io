@@ -2,6 +2,7 @@
 layout: post
 comments: true
 title:  "A Séta a „Tudományért” tüntetések a társadalmi igazságosságért"
+excerpt: "A megvezetett tudósok, a tudományhívők, a „környezetvédő” politikai aktivisták és a „társadalmi igazságosság” harcosai az USA legtöbb nagyvárosában együtt kormányellenes tüntetéseket tartottak Donald Trump kormánya ellen, annak tudományellenes, illetve pontosabban a tudományos kutatásokra fordított kormányzati kiadásokat drasztikusan lefaragó politikai intézkedései ellen. Ebben van ráció, ugyanis egy hatalmas bürokrácia jött létre, ami az állami pénzek haszonélvezője. Miről szóltak a tüntetések valójában?"
 date:   2017-07-13 20:32
 tags: "ideologia"
 categories: politika

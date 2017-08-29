@@ -1,7 +1,8 @@
 ---
 layout: post
 comments: true
-title:  Hány cigány él Magyarországon?
+title:  "Hány cigány él Magyarországon?"
+excerpt: "A népszámlálások adataiból az derül ki, hogy Magyarországon 2001 és 2011 között 53%-kal, 205 720 főről 315 583 főre nőtt a cigányok száma. Mekkora a magyarországi cigányok valós száma?"
 date: 2017-08-07 17:27
 categories: tudomany
 ---

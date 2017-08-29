@@ -4,7 +4,6 @@ comments: false
 title: "A kommentelési szabályzat és a szerzői jogok"
 date: 2017-08-18 19:08
 excerpt: "Megfogalmaztam egy pár hozzászólási szabályt, amit be kell tartani. Itt nincsen politikai korrektség, ami megakadályozná, hogy szabadon, a valóságnak és a tényeknek megfelelően vitassunk meg társadalmi és tudományos kérdéseket. A szerzői jogokkal utólag kiegészítettem a bejegyzésemet."
-
 ---
 
 **Frissítés**: Ha nem tudományos céllal idézel az írásaimból, akkor az idézet mellett kötelező feltüntetni a cikkre mutató linket! Ha a tudományos publikációdhoz idézel részeket, akkor  a tudományos hivatkozás szabályainak megfelelően hivatkozz a cikkre! Például így: *Gulácsi A. (2017). A cikk címe. A cikkre mutató weblink.* Teljes cikk átvételéhez a saját írásos beleegyezésem szükséges. A hatályos jogszabály: az [1999. évi LXXVI. törvény a szerzői jogokról.](https://net.jogtar.hu/jr/gen/hjegy_doc.cgi?docid=99900076.TV) A bejegyzés címe is módosult. (2017. augusztus 27.)

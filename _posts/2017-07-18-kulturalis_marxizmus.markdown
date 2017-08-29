@@ -2,6 +2,7 @@
 layout: post
 comments: true
 title:  "Felforgatók, utópisták és a kulturális marxizmus"
+excerpt: "„Az őrültség nem más, mint ugyanazt tenni újra és újra, és várni, hogy az eredmény más legyen.”"
 date:   2017-07-18 01:26
 tags: "ideologia"
 categories: politika

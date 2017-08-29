@@ -1,7 +1,8 @@
 ---
 layout: post
 comments: true
-title:  A Google Earth Engine felhő alapú platform alkalmazása a geoinformatikában, 1. rész.
+title:  "A Google Earth Engine felhő alapú platform alkalmazása a geoinformatikában, 1. rész."
+excerpt: "Korunkban már nem az adatok hiánya jelenti a földrajzi kutatások korlátját, hanem annak a tömérdek rendelkezésre álló és ingyenes távérzékelt adatnak a rendkívül hosszadalmas feldolgozása. Hiszen csak nagy mennyiségű, empirikus adatból lehet szilárd, megbízható tudományos következtetéseket levonni, és megbízható modelleket megalapozni. A Google Earth Engine felhő alapú számítási platform alkalmazásával szeretném demonstrálni az objektum-orientált programozás elengedhetetlen szükségét a geoinformatikában."
 date: 2017-08-07 17:26
 tags: "javascript"
 categories: tudomany
