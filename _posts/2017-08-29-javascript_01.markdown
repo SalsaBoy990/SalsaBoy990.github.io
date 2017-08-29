@@ -8,10 +8,10 @@ tags: "javascript"
 categories: tudomany
 ---
 
-A Google Earth Engine (GEE) felhő alapú platform általános bemutatása után ([itt elérhető az 1. rész]()), ebben a részben egy rövid betekintést nyújtok az objektum-orientált programozásba és felhívom a figyelmet a JavaScript nyelv fontos jellemzőire, hogy hatékonyan ki tudjátok aknázni a GEE-ben rejlő lehetőségeket akár több száz GB-nyi adat gyors feldolgozására, minimális erőfeszítéssel.
+A Google Earth Engine (GEE) felhő alapú platform általános bemutatása után ([itt elérhető az 1. rész](http://www.newgeographer.com/tudomany/2017/08/07/google_earth_engine_01.html)), ebben a részben egy rövid betekintést nyújtok az objektum-orientált programozásba és felhívom a figyelmet a JavaScript nyelv fontos jellemzőire, hogy hatékonyan ki tudjátok aknázni a GEE-ben rejlő lehetőségeket akár több száz GB-nyi adat gyors feldolgozására, minimális erőfeszítéssel.
 
 **Előzetes programozói tapasztalat erősen javallott**, különben nem sokat értetek meg az egészből. Teljesen mindegy, hogy milyen nyelvet ismersz. A programozói gondolkodás az, ami valóban számít. Az alapelvek, a vezérlési szerkezetek, az algoritmusok stb. mind ugyanazok, csak a szintaxis és a szabvány más.
-Én a C nyelven keresztül tanultam meg a programozást, majd megismerkedtem a C++-szal és az objektum-orientált paradigmával. És csak ezt követően jött a [JavaScript](https://www.javascript.com/) (JS).
+Én a C nyelven keresztül tanultam meg a programozást, majd utána ismerkedtem meg a C++-szal és az objektum-orientált paradigmával. És csak ezt követően jött a [JavaScript](https://www.javascript.com/) (JS).
 
 A bejegyzésemben megadott kódrészleteket pedig próbáljátok ki! 
 Használhatjátok valamelyik böngésző konzolját (Google Chrome esetén: `F12`, Firefox esetén `CTRL+SHIFT+i`) vagy a GEE kódszerkesztőjét (ebben "strict mode"-ban használhatjátok a JS-t)!
@@ -24,7 +24,7 @@ A programrészleteket egyben letölthetitek [innen](https://github.com/SalsaBoy9
 
 Ez bevezető csak egy nagyon kurta betekintést nyújt az objektum orientált szemléletbe.
 
-A programozás célja mindig egy összetett probléma megoldása a számítógép számítási kapacitásának a lehető leghatékonyabb kihasználásával. A programozás során ezt **az összetett problémát fel kell bontanunk kisebb részproblémákra/részlépésekre** (például az adatok bekérése, a bemenet ellenőrzése, különböző műveletek, amelyeket az adatokon végzünk, adatok mentése stb.), amelyek megoldására külön függvényeket írunk. Ezáltal átláthatóvá válik számunkra a program.
+A programozás célja mindig egy összetett probléma megoldása a számítógép számítási kapacitásának a lehető leghatékonyabb kihasználásával. A programozás során ezt **az összetett problémát fel kell bontanunk kisebb részproblémákra/részlépésekre** (például az adatok bekérése, a bemenet ellenőrzése, különböző műveletek, amelyeket az adatokon végzünk, adatok mentése stb.), amelyek megoldására külön függvényeket írunk. Ezáltal átláthatóvá válik számunkra a program működése.
 
 A "hagyományos" nyelvekben (mint például a C-ben) megtanultuk, hogy **a változókat és a függvényeket külön kezeljük**, valamint a függvényeket a változók argumentumként való átadásával hívjuk meg. (Az argumentum az az érték, amit bemenő paraméterként megadunk egy függvénynek.). Lehet érték szerint, mutató szerint és referencia szerint paramétert átadni. A JavaScript-ben **kizárólag érték szerinti paraméterátadás** létezik (az objektum referenciák is érték szerint adódnak át)!
 
@@ -33,11 +33,11 @@ Az objektum orientált nyelveknek három alapelve van:
 2. **öröklés** (inheritance)
 3. **többalakúság** / polimorfizmus (polymorphism)
 
-Bár a klasszikus öröklés (és a polimorfizmus) JavaScript-ben is imitálható, de valójában kizárólag csak **prototípusos öröklés** létezik a JS-ben. Öröklés helyett **kompozíció**t is alkalmazhatunk. A prototípusos öröklésről majd máskor írok.
+A klasszikus öröklés (és a polimorfizmus) JavaScript-ben is imitálható, de valójában kizárólag csak **prototípusos öröklés** létezik a JS-ben. Öröklés helyett **kompozíció**t is alkalmazhatunk. A prototípusos öröklésről majd máskor írok.
 
-Csak az **egységbe foglalás**ba megyünk bele: **az objektum-orientált paradigma lényege, hogy együtt kezeljük a változókat és a rájuk meghívandó függvényeket egy osztályban** (`class`). Meglepően hangzik, de a JS-ben nincsenek tényleges osztályok, bár úgy programozunk, mintha lennének. Helyesebb inkább objektumokról beszélni (a függvények és a tömbök is objektumok).
+Csak az **egységbe foglalás**ba megyünk itt bele: **az objektum-orientált paradigma lényege, hogy együtt kezeljük a változókat és a rájuk meghívandó függvényeket egy osztályban** (`class`). Meglepően hangzik, de a JS-ben nincsenek tényleges osztályok, bár úgy programozunk, mintha lennének. Helyesebb inkább objektumokról beszélni (a függvények és a tömbök is objektumok).
 
-A C++-ban a hozzáférési szintek (**public**, **protected** és **private**) segítségével szabályozhatjuk a tagváltozók és tagfüggvények külső hozzáférését. A C++-ban az osztályok esetén alapértelmezetten privát a hozzáférés, és csak az általunk írt publikus hozzáférésű metódusokon keresztül férhetünk hozzájuk. Ez a biztonságot szolgálja. A JavaScript-ben **minden tagváltozó és metódus kívülről hozzáférhető** és módosítható. A **bezárás** (**closure**) alkalmazásával tehetjük priváttá (tehát kívülről nem hozzáférhetővé) az objektumok tulajdonságait.
+A C++-ban a hozzáférési szintek (**public**, **protected** és **private**) segítségével szabályozhatjuk a tagváltozók és tagfüggvények külső hozzáférését. A C++-ban az osztályok esetén alapértelmezetten privát a hozzáférés, és csak az általunk írt publikus hozzáférésű metódusokon keresztül férhetünk hozzá a tagváltozókhoz. Ez a biztonságot szolgálja. A JavaScript-ben **minden tagváltozó és metódus kívülről hozzáférhető** és módosítható. A **bezárás** (**closure**) alkalmazásával tehetjük priváttá (tehát kívülről nem hozzáférhetővé) az objektumok tulajdonságait.
 <br />
 <br />
 
@@ -45,7 +45,7 @@ A C++-ban a hozzáférési szintek (**public**, **protected** és **private**) s
 
 Ez a nagyon rövid bemutatás csak felületesen érinti a JS néhány jellemzőjét.
 
-A JavaScript (a későbbiekben: JS), a web nyelve, ECMAScript néven lett szabványosítva. A nevével ellentétben nincs köze a Java-hoz, és nem egyszerű szkriptnyelv, hanem sokkal több annál: egy dinamikus, objektum-orientált általános célú programozási nyelv.
+A JavaScript (a későbbiekben: JS), a web nyelve, ECMAScript néven lett szabványosítva. A nevével ellentétben nincs köze a Java-hoz, és nem egyszerű szkriptnyelv, hanem sokkal több annál: egy dinamikus, objektum-orientált, általános célú programozási nyelv.
 
 A JavaScript **interpretáló nyelv**, tehát a **fordítás futási időben történik**: a JS értelmező sorról-sorra halad végig az utasításokon, értelmezi és végrehajtja azokat. Nincsen main() függvény. Ilyen egyszerű. Míg a C esetén először lefordítjuk a forrásfájlt, bináris, futtatható állományt készítve belőle (.exe Windows esetén), majd utána lefuttatunk.
 
@@ -53,7 +53,7 @@ A legújabb szabvány az **ECMAScript 2017** (ES8), tavaly az ES7, két éve az 
 
 A szerver oldalon viszont lehet ES6 szabvány szerint programozni. Például az egyszerűsített függvényszintaxis is használható: `(args) => { /* utasítások */ }` a `function (args) { /* utasítások */ }` helyett. Ez az úgynevezett **callback függvényeknél** hasznos, amelyeknek ugyanis nem kell nevet adni. 
 
-A JS-ben **nincsen `main()` függvény**, bár lehet ilyen néven függvényt létrehozni. A változók típusa változhat, ugyanis a JS gyengén típusos nyelv. Azonban a típusos nyelveknél, mint például a C vagy a C++, mindig meg kell adni a változók típusát:
+A JS-ben **nincsen `main()` függvény**, bár lehet ilyen néven függvényt létrehozni. A **változók típusa változhat**, ugyanis a JS gyengén típusos nyelv. Azonban a típusos nyelveknél, mint például a C vagy a C++, mindig meg kell adni a változók típusát:
 
 * `char` (karakter, ASCII)
 * `int` (egész szám)
@@ -63,11 +63,11 @@ A JS-ben **nincsen `main()` függvény**, bár lehet ilyen néven függvényt l�
 * `bool` (logikai: `true`/`false`)
 
 
-A JS-ben a **`var`** kulcsszóval hozhatunk létre változókat, amelyekhez értéket, objektumot és függvényt is rendelhetünk. Az objektum tulajdonságainál alapértelmezett a **public** hozzáférés, vagyis kívülről elérhetők és módosíthatók, de ez a viselkedés megváltoztatható. Private hozzáférés is lehetséges a JS-ben a **bezárás**nak, angulul **closure**-nek nevezett eljárással.
+A JS-ben a **`var`** kulcsszóval hozhatunk létre változókat, amelyekhez bármilyen típusú értéket, objektumot és függvényt is rendelhetünk. Az objektum tulajdonságainál alapértelmezett a **public** hozzáférés, vagyis kívülről elérhetők és módosíthatók, de ez a viselkedés megváltoztatható. Private hozzáférés is lehetséges a JS-ben a **bezárás**nak, illetve angulul **closure**-nek nevezett eljárással.
 
 Az ES6-ban már lehet használni a `var` helyett a **`let`**-et, aminek már **blokkhatóköre van**, így egy csomó nem várt "mellékhatástól" megkímél bennünket. Például magának a `this`-nek az értéke a kontextustól függ, azonban nem kötődik **függvényhatókör**höz! A függvényhatókörről és a `this`-ről a következő részben lesz szó.
 
-A JS-ben az aposztróf `'` és az idézőjel `"` egyenértékű és a sztringek jelölésére használatos. De keverni ne keverjük őket! A `"dupla idézőjeleket"` használjuk inkább. **Unicode karakterkészletet használ** a JS, így majnem minden írott nyelvet támogat (az Unicode tábla maximum 1 millió 114 ezer 112 különféle betűt és jelet képes maximum eltárolni, jelenleg több mint 136 ezer karaktert tartalmaz). Ez hatalmas előny. A változónevekben és a függvény nevekben lehet ékezetes karakter is, de ez nem ajánlott programozói gyakorlat. Sőt lehetséges `$` nevű függvény/változó is: gondoljunk itt a **jQuery** keretrendszerre, ahol van egy `$()` nevű függvény. Az ékezetes karakterekkel nincsen probléma a JavaScript-ben, mert nem ASCII karaktertáblát használunk.
+A JS-ben az aposztróf `'` és az idézőjel `"` egyenértékű és a sztringek jelölésére használatos. De keverni ne keverjük őket! A `"dupla idézőjeleket"` használjuk inkább. **Unicode karakterkészletet használ** a JS, így majnem minden írott nyelvet támogat (az Unicode tábla maximum 1 millió 114 ezer 112 különféle betűt és jelet képes maximum eltárolni, jelenleg több mint 136 ezer karaktert tartalmaz). Ez hatalmas előny. A változónevekben és a függvény nevekben lehet ékezetes karakter is, de ez nem ajánlott programozói gyakorlat. Sőt lehetséges `$` nevű függvény/változó is: gondoljunk itt a **jQuery** keretrendszerre, ahol van egy `$()` nevű függvény. Az ékezetes karakterekkel nincsen probléma a JavaScript-ben, mert nem a szörnyű ASCII karaktertáblát használjunk.
 
 A JS-ben **automatikus szemétgyűjtés** van (automatic garbage collection), tehát nem kell felszabadítanunk a lefoglalt tárhelyet (a C/C++ esetén csak a **dinamikus memóriakezelés** esetén kell explicit, azaz magunknak elvégezni a lefoglalt memóraterület felszabadítását), hanem a fordító automatikusan elvégzi: ha egy objektum már nem elérhető – amikor a program már nem tud hivatkozni rá – a fordító automatikusan felszabadítja a lefoglalt memóriaterületet. Éppen ezért **nincsen destruktor** függvény a JS-ben. **Mutatók sincsenek**, tehát nem férhetünk hozzá a memóriacímekhez. Helyette **referenciák vannak**, amiről a JS gondoskodik nekünk.
 
@@ -105,7 +105,7 @@ console.log(false === false); //=> true
 console.log("róka" === "róka"); //=> true
 {% endhighlight %}
 
-Az **objektumok (beleértve a tömböket és a függvényeket)** másként viselkednek, mint a primitív típusok, ugyanis ezek **mutálódónak** (mutable), **értékük megváltoztatható**. A primitív típusoknál:
+Az **objektumok (beleértve a tömböket és a függvényeket)** másként viselkednek, mint a primitív típusok, ugyanis ezek **mutálódnak** (mutable), azaz **értékük megváltoztatható**. A primitív típusoknál:
 
 {% highlight javascript %}
 var a = 3.14;
@@ -124,7 +124,7 @@ console.log(a === b); //=> true
 // 'a' és 'b' ugyanarra a tömbre hivatkozik.
 {% endhighlight %}
 
-Amikor a `b`-hez rendeljük az `a` tömböt, akkor nem egy új másolat jön létre az `a` tömb objektumról, hanem csupán egy referencia, pontosabban a **referencia egy másolata**, adódik át, ami az `a` tömb címére mutat. Tehát a `b` ugyanarra a tömbre egy második referencia. Tulajdonképpen **sekély másolás** történik. Mély másolat készítéséhez explicite másolnunk kell az erdeti tömb összes elemét egy újabb memóraterületre (új tömböt hozunk létre):
+Amikor a `b`-hez rendeljük az `a` tömböt, akkor nem egy új másolat jön létre az `a` tömb objektumról, hanem csupán egy referencia, pontosabban a **referencia egy másolata**, adódik át, ami az `a` tömb címére mutat. Tehát a `b` ugyanarra a tömbre egy második referencia. Tulajdonképpen **sekély másolás** történik. Mély másolat készítéséhez explicite kell másolnunk az erdeti tömb összes elemét egy újabb memóraterületre (új tömböt hozunk létre):
 
 {% highlight javascript %}
 var a = [1, 2, 3];
@@ -161,7 +161,7 @@ console.log(o); //=> "{ nev: "Körte" }"
 
 Összefoglalva tehát, **a Javascript-ben kizárólag érték szerinti paraméterátadás van!** Az objektumoknál a **referenciák másolatai** érték szerint adódnak át a függvényeknek (az objektum értékei mutálódnak), míg a primitív típusoknál **lokális másolat** készül a változók értékeiről (az eredeti értékek nem mutálódnak).
 
-A JS-ben számos implicit (rejtett) típuskonverzió van. A változók típusa változhat a program futása során, amit az implicit típuskonverziók tesznek lehetővé.
+A JS-ben számos implicit (rejtett) típuskonverzió van. A változók típusa változhat a program futása során, amit az implicit típuskonverziók tesznek lehetővé:
 
 {% highlight javascript %}
 var szam = 101, szoveg = " kiskutya";
@@ -182,7 +182,7 @@ y = Number(y); // Számmá castoljuk a sztringet.
 console.log(x + y); //=> 1552
 {% endhighlight %}
 
-Amikor az egyenlőség és az egyenlőtlenség operátorokat használjuk, akkor életbevágóan fontos tisztában lenni az implicit típuskonverziókkal. Létezik az egyenlőség operátor (`==`) és a szigorú egyenlőség operátor (`===`). Az utóbbi az azonosság szigorú definícióját használja és határozza meg a két operanduszának az azonosságát. A nemegyenlőség operátor sokkal megengedőbb, hiszen engedélyezi a típuskonverziókat. A nemegyenlőség operátorból szintén kettő van: `!=` és `!==`. Egy rövid kódrészleten bemutatva ez világosabb lesz:
+Amikor az egyenlőség és az egyenlőtlenség operátorokat használjuk, akkor életbevágóan fontos tisztában lenni az implicit típuskonverziókkal. Létezik az egyenlőség operátor (`==`) és a szigorú egyenlőség operátor (`===`). Az utóbbi az azonosság szigorú definícióját használja és az alapján határozza meg a két operanduszának az azonosságát. A "sima" egyenlőség operátor (`==`) sokkal megengedőbb, hiszen engedélyezi a típuskonverziókat. A nemegyenlőség operátorból szintén kettő van: a "sima" (`!=`) és szigorú (`!==`) változat. Egy rövid kódrészleten bemutatva ez világosabb lesz:
 
 {% highlight javascript %}
 console.log(60 == "60"); //=> true, a "60"-ból szám lesz
@@ -200,12 +200,12 @@ console.log(isNaN(NaN)); //=> true
 A NaN érték (not-a-number) a "nem szám" jelölésére való. Akkor kapjuk értékül például, ha számot osztunk sztringgel: `10/"a"`. Ez nyilvánvalóan értelmetlen eredményre vezet. A NaN semmilyen másik értékkel, de még önmagával sem azonos!
 
 A JS-ben az összes számot **64-bites lebegőpontos formátum**ban reprezentálja az **IEEE 754 szabvány** szerint. Ez azt jelenti, hogy maximum az olyan nagy számot képes eltárolni, mint a `±1.7976931348623157 x 10^308`, és olyan kicsit, mint `5 x 10^-324` (
-**alulcsordulás** történik amikor olyan kicsi a szám, hogy a számítógép nem tudja megkülönböztetni a 0-tól).
+**alulcsordulás** történik amikor olyan kicsi a szám, hogy a számítógép nem tudja megkülönböztetni a 0-tól). A túlcsordulást szerinten nem kell magyaráznom.
 A JavaScript számformátuma pontosan reprezentálja az egész számokat `-9007199254740992` (`-2^53`) és `9007199254740992` (`2^53`) között. Bizonyos operátorok viszont (mint például a tömbök indexelése vagy a bitenkénti műveletek) 32-bites egész számokkal működnek.
 
 A **hexadecimális számok is támogatottak** az ECMAScript szabványban, viszont az oktális számok nem!
 
-Legyél tisztában azzal is, hogy **a lebegőpontos értékek bizonyos esetekben nem pontosak**, így ne lepődjetek meg, ha ezt tapasztaljátok:
+Legyetek tisztában azzal is, hogy **a lebegőpontos értékek bizonyos esetekben nem pontosak**, így ne lepődjetek meg, ha ezt tapasztaljátok:
 
 {% highlight javascript %}
 console.log(0.1 + 0.2); //=> 0.30000000000000004
