@@ -71,7 +71,7 @@ A JS-ben az aposztróf `'` és az idézőjel `"` egyenértékű és a sztringek 
 
 A JS-ben **automatikus szemétgyűjtés** van (automatic garbage collection), tehát nem kell felszabadítanunk a lefoglalt tárhelyet (a C/C++ esetén csak a **dinamikus memóriakezelés** esetén kell explicit, azaz magunknak elvégezni a lefoglalt memóraterület felszabadítását), hanem a fordító automatikusan elvégzi: ha egy objektum már nem elérhető – amikor a program már nem tud hivatkozni rá – a fordító automatikusan felszabadítja a lefoglalt memóriaterületet. Éppen ezért **nincsen destruktor** függvény a JS-ben. **Mutatók sincsenek**, tehát nem férhetünk hozzá a memóriacímekhez. Helyette **referenciák vannak**, amiről a JS gondoskodik nekünk.
 
-<figcaption>Az 1. JavaScript programod: Változók és függvények.</figcaption>>
+<figcaption>Az 1. JavaScript programod: Változók és függvények.</figcaption>
 {% highlight javascript %}
 var valtozo = 10;
 valtozo = "Helló";
