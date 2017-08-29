@@ -45,53 +45,51 @@ A fenti pontokban lefektetett szabályok kötelező érvényűek mindenkire, kiv
         <title>Hány cigány él Magyarországon?</title>
         <description>&lt;p&gt;A népszámlálások adataiból az derül ki, hogy Magyarországon 2001 és 2011 között 53%-kal, 205 720 főről 315 583 főre nőtt a cigányok száma. A Központi Statisztikai Hivatal (KSH) népszámlálásai a nemzetiségre, az anyanyelvre, a családi, baráti közösségben használt nyelvre, és a kulturális kötődésre kérdeznek rá, de ezekre a válaszadás megtagadható. A nemzetiségi hovatartozásukról nem nyilatkozók száma 2001 és 2011 között két és félszeresére, 543 317 főről 1 398 731 főre emelkedett.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-Az 1. táblázatban az 1893-2003 közötti időszakban végzett mintavételek, cigányösszeírások eredményeit foglaltam össze. A reprezentatív szociológiai mintavételek a cigányok tényleges, a lakókörnyezet minősítése által meghatározott számát becsülték meg 1971-ben, 1993-ban és 2003-ban. Az 1893. évi cigányösszeírás egyedülálló a maga nevében, mivel hazánkban a mai napig nem történt ehhez hasonló, kifejezetten a cigányok számbavételét célzó kutatás.&lt;/p&gt;
+&lt;p&gt;Az 1. táblázatban az 1893-2003 közötti időszakban végzett mintavételek, cigányösszeírások eredményeit foglaltam össze. A reprezentatív szociológiai mintavételek a cigányok tényleges, a lakókörnyezet minősítése által meghatározott számát becsülték meg 1971-ben, 1993-ban és 2003-ban. Az 1893. évi cigányösszeírás egyedülálló a maga nevében, mivel hazánkban a mai napig nem történt ehhez hasonló, kifejezetten a cigányok számbavételét célzó kutatás.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-    &amp;lt;figcaption&amp;gt;
-    1. táblázat: A magyarországi cigányok száma az 1893. évi cigányösszeírás és a szociológiai adatfelvételek alapján (Kertesi G. – Kézdi G. 1998, Kemény I. 2004). * A trianoni határokon belül.
-    &amp;lt;/figcaption&amp;gt;
-    &amp;lt;table&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;th&amp;gt;Év
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;Felmérések, ezer fő (középérték)
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;A modell szerint (ezer fő)
-            &amp;lt;/th&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;1893&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;59,982*&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;60&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;1971&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;270-370 (320)&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;300&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;1993&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;449-461 (455)&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;472&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;2003&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;520-650 (585)&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;580&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;2015&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;743&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;2020&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;823&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-    &amp;lt;/table&amp;gt;&lt;/p&gt;
+&lt;figcaption&gt;
+1. táblázat: A magyarországi cigányok száma az 1893. évi cigányösszeírás és a szociológiai adatfelvételek alapján (Kertesi G. – Kézdi G. 1998, Kemény I. 2004). * A trianoni határokon belül.
+&lt;/figcaption&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Év
+        &lt;/th&gt;
+        &lt;th&gt;Felmérések, ezer fő (középérték)
+        &lt;/th&gt;
+        &lt;th&gt;A modell szerint (ezer fő)
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1893&lt;/td&gt;
+        &lt;td&gt;59,982*&lt;/td&gt;
+        &lt;td&gt;60&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1971&lt;/td&gt;
+        &lt;td&gt;270-370 (320)&lt;/td&gt;
+        &lt;td&gt;300&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1993&lt;/td&gt;
+        &lt;td&gt;449-461 (455)&lt;/td&gt;
+        &lt;td&gt;472&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;2003&lt;/td&gt;
+        &lt;td&gt;520-650 (585)&lt;/td&gt;
+        &lt;td&gt;580&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;2015&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;743&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;2020&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;823&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
 
 &lt;p&gt;A cigányság száma &lt;strong&gt;az elmúlt 110 évben megtízszereződött&lt;/strong&gt;: &lt;strong&gt;60 ezer főről 600 ezer főre gyarapodott 2003-ig&lt;/strong&gt;. 2003-ban az össznépesség 10 millió 142 ezer fő volt, melynek &lt;strong&gt;6%&lt;/strong&gt;-a a cigány nemzetiséghez tartozott. A népszámlálások kétszeresen alábecsülték a magyarországi cigányság tényleges számát!&lt;/p&gt;
 
@@ -105,107 +103,105 @@ Az 1. táblázatban az 1893-2003 közötti időszakban végzett mintavételek, c
 
 &lt;p&gt;A teljes termékenységi arányszám, vagyis az egy szülőképes korú (15-49 év) nőre eső gyerekszám, jó mutatja, hogy 1970 óta a magyar nők kevesebb gyereket szülnek (&lt;strong&gt;a teljes népesség körében 1,3 gyerek/nő&lt;/strong&gt;, de ebbe a cigányok is beletartoznak), mint amennyi a népességszám szinten tartásához (2,1 gyerek/szülőképes nő) elegendő lenne. Ezzel szemben, kizárólag &lt;strong&gt;a cigány nők esetén&lt;/strong&gt;, a termékenységi arányszám még mindig jelentősen meghaladja az átlagot (&lt;strong&gt;3,0&lt;/strong&gt;). A cigányság gyerekszáma gyorsabban nő, mint a magyaroké. A születő magyar gyerekek száma viszont az elöregedő magyar társadalom halálozási ütemét nem képes ellensúlyozni. A cigányság számaránya a népességen belül pedig tovább növekszik, de szerencsére &lt;strong&gt;az utóbbi tíz évben a cigány nők termékenységi arányszáma is lassan csökkenésnek indult&lt;/strong&gt; (2. táblázat).&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-    &amp;lt;figcaption&amp;gt;
-    2. táblázat: A teljes női lakosság és a cigány nők termékenységi arányszámai, 1930-31 és 1999-2002 között (Janky B. 2005)
-    &amp;lt;/figcaption&amp;gt;
-    &amp;lt;table&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;th&amp;gt;Időszak
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;A teljes lakosság körében
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;A cigány nők körében
-            &amp;lt;/th&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;1930-31&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;2,8&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;n/a&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;1969-70&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;2,0&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;n/a&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;1990-93&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;1,8&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;3,3&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;1995-98&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;1,4&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;3,3&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;1999-2002&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;1,3&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;3,0&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-    &amp;lt;/table&amp;gt;&lt;/p&gt;
+&lt;figcaption&gt;
+2. táblázat: A teljes női lakosság és a cigány nők termékenységi arányszámai, 1930-31 és 1999-2002 között (Janky B. 2005)
+&lt;/figcaption&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Időszak
+        &lt;/th&gt;
+        &lt;th&gt;A teljes lakosság körében
+        &lt;/th&gt;
+        &lt;th&gt;A cigány nők körében
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1930-31&lt;/td&gt;
+        &lt;td&gt;2,8&lt;/td&gt;
+        &lt;td&gt;n/a&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1969-70&lt;/td&gt;
+        &lt;td&gt;2,0&lt;/td&gt;
+        &lt;td&gt;n/a&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1990-93&lt;/td&gt;
+        &lt;td&gt;1,8&lt;/td&gt;
+        &lt;td&gt;3,3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1995-98&lt;/td&gt;
+        &lt;td&gt;1,4&lt;/td&gt;
+        &lt;td&gt;3,3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1999-2002&lt;/td&gt;
+        &lt;td&gt;1,3&lt;/td&gt;
+        &lt;td&gt;3,0&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
 
 &lt;p&gt;Kizárólag a magyar nők esetén az egy szülőképes nőre jutó gyerekszám katasztrofálisan alacsony: 1,3 alatt van, mivel a cigányok szaporasága javít a statisztikán. Sajnos nem áll rendelkezésemre külön, csak a magyarokra vonatkozó adat. Így is egészen ritka adatokat adok közre.&lt;/p&gt;
 
 &lt;p&gt;A teljes népesség és a cigányság élveszületési számának és arányának változásából kiderül, hogy &lt;strong&gt;2003-ban már minden hatodik újszülött cigány volt&lt;/strong&gt; (3. táblázat) (Kemény I. 2004). A cigányság korösszetétele is teljesen eltér a magyarságétól: &lt;strong&gt;a 15 év alattiak aránya a cigányok esetén megközelíti a 37%-ot&lt;/strong&gt;, míg &lt;strong&gt;a 60 éven felüliek aránya 3,9%&lt;/strong&gt;-ot tesz ki. Ez fiatalos korszerkezetet jelent. Az össznépesség esetén azonban, a cigányokhoz képest, &lt;strong&gt;a 15 éven aluliak aránya kevesebb, mint feleakkora&lt;/strong&gt; (16,1%), illetve &lt;strong&gt;a 60 éven felüliek aránya több, mint ötször akkora&lt;/strong&gt; (20,8%). A tizenöt éven aluliak aránya meghaladja a hatvan éven felüliekét, ami elöregedő korszerkezetre utal (4. táblázat).&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-    &amp;lt;figcaption&amp;gt;
-    3. táblázat: Az élveszületések számának és arányának változása a teljes népesség és a cigányság körében 1971-2003 (Kemény I. 2004)
-    &amp;lt;/figcaption&amp;gt;
-    &amp;lt;table&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;th&amp;gt;Év
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;A teljes lakosság körében (ezer fő)
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;A cigány népesség körében
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;A cigány születések aránya
-            &amp;lt;/th&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;1971&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;151&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;10&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;&amp;lt;7%&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;1993&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;116&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;13&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;&amp;gt;11%&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;2003&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;94,647&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;15&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;15,8%&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-    &amp;lt;/table&amp;gt;
-    &amp;lt;figcaption&amp;gt;
-    4. táblázat: A cigány háztartásokban élő és az országos népesség a 0-14 év közötti és a 60 év feletti korcsoportjainak százalékos megoszlása 2003-ban (Kemény I. 2004)
-    &amp;lt;/figcaption&amp;gt;
-    &amp;lt;table&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;th&amp;gt;Korcsoport
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;A teljes népesség esetén
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;A cigányok körében
-            &amp;lt;/th&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;15 éven aluliak&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;16,1&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;36,8&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;60 éven felüliek&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;20,8&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;3,9&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-    &amp;lt;/table&amp;gt;&lt;/p&gt;
+&lt;figcaption&gt;
+3. táblázat: Az élveszületések számának és arányának változása a teljes népesség és a cigányság körében 1971-2003 (Kemény I. 2004)
+&lt;/figcaption&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Év
+        &lt;/th&gt;
+        &lt;th&gt;A teljes lakosság körében (ezer fő)
+        &lt;/th&gt;
+        &lt;th&gt;A cigány népesség körében
+        &lt;/th&gt;
+        &lt;th&gt;A cigány születések aránya
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1971&lt;/td&gt;
+        &lt;td&gt;151&lt;/td&gt;
+        &lt;td&gt;10&lt;/td&gt;
+        &lt;td&gt;&amp;lt;7%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1993&lt;/td&gt;
+        &lt;td&gt;116&lt;/td&gt;
+        &lt;td&gt;13&lt;/td&gt;
+        &lt;td&gt;&amp;gt;11%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;2003&lt;/td&gt;
+        &lt;td&gt;94,647&lt;/td&gt;
+        &lt;td&gt;15&lt;/td&gt;
+        &lt;td&gt;15,8%&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;figcaption&gt;
+4. táblázat: A cigány háztartásokban élő és az országos népesség a 0-14 év közötti és a 60 év feletti korcsoportjainak százalékos megoszlása 2003-ban (Kemény I. 2004)
+&lt;/figcaption&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Korcsoport
+        &lt;/th&gt;
+        &lt;th&gt;A teljes népesség esetén
+        &lt;/th&gt;
+        &lt;th&gt;A cigányok körében
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;15 éven aluliak&lt;/td&gt;
+        &lt;td&gt;16,1&lt;/td&gt;
+        &lt;td&gt;36,8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;60 éven felüliek&lt;/td&gt;
+        &lt;td&gt;20,8&lt;/td&gt;
+        &lt;td&gt;3,9&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
 
 &lt;p&gt;A könnyebb összehasonlíthatóság kedvéért, a 2-3. ábrákon megjelenítettem a cigány és a magyar korfát a 2001. évi népszámlálás adatainak felhasználásával. Megjegyzés: a vízszintes tengely beosztása a két korfán eltérő. A magyar lakosság esetén 39 év az átlagéletkor, míg a cigányoknál csupán 25.&lt;/p&gt;
 
@@ -218,101 +214,99 @@ Az 1. táblázatban az 1893-2003 közötti időszakban végzett mintavételek, c
 
 &lt;p&gt;&lt;strong&gt;A cigányok 86,9%-ának végzettsége általános iskola&lt;/strong&gt; (8 évfolyam vagy annál kevesebb), &lt;strong&gt;egyetemi, főiskolai végzettséggel mindössze 2607 fő rendelkezett&lt;/strong&gt; 2011-ben (5. táblázat).&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-    &amp;lt;figcaption&amp;gt;
-    5. táblázat: A magyar és a cigány népesség megoszlása a legmagasabb befejezett iskolai végzettség szerint, 2011-ben (KSH alapján).
-    &amp;lt;/figcaption&amp;gt;
-    &amp;lt;table&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;th&amp;gt;Legmagasabb iskolai végzettség
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;Magyar (%)
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;Cigány (%)
-            &amp;lt;/th&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;8 évfolyamnál alacsonyabb&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;18,1&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;47,5&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;8 évfolyam&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;23,5&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;39,4&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;Középfokú iskola érettségi nélkül,
-szakmai oklevéllel&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;18,0&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;8,8&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;Érettségi&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;25,6&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;3,4&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;Főiskola, egyetem&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;14,7&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;0,8&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-    &amp;lt;/table&amp;gt;&lt;/p&gt;
+&lt;figcaption&gt;
+5. táblázat: A magyar és a cigány népesség megoszlása a legmagasabb befejezett iskolai végzettség szerint, 2011-ben (KSH alapján).
+&lt;/figcaption&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Legmagasabb iskolai végzettség
+        &lt;/th&gt;
+        &lt;th&gt;Magyar (%)
+        &lt;/th&gt;
+        &lt;th&gt;Cigány (%)
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;8 évfolyamnál alacsonyabb&lt;/td&gt;
+        &lt;td&gt;18,1&lt;/td&gt;
+        &lt;td&gt;47,5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;8 évfolyam&lt;/td&gt;
+        &lt;td&gt;23,5&lt;/td&gt;
+        &lt;td&gt;39,4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Középfokú iskola érettségi nélkül,
+szakmai oklevéllel&lt;/td&gt;
+        &lt;td&gt;18,0&lt;/td&gt;
+        &lt;td&gt;8,8&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Érettségi&lt;/td&gt;
+        &lt;td&gt;25,6&lt;/td&gt;
+        &lt;td&gt;3,4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Főiskola, egyetem&lt;/td&gt;
+        &lt;td&gt;14,7&lt;/td&gt;
+        &lt;td&gt;0,8&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
 
 &lt;p&gt;A 6. táblázatból világossá válik, hogy a szocializmus időszakában a cigányok foglalkoztatottsága (különösen a férfiak) jóval magasabb volt, egészen a rendszerváltozásig. Onnantól kezdve drasztikusan leesett a cigányok foglalkoztatottsága, és az adatok szerint 2003-ig változatlan volt. &lt;strong&gt;1987-1993 között a férfiak esetén 45,6, a nők esetén 33, míg együtt 39,4%-kal csökkent a dolgozók aránya.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-    &amp;lt;figcaption&amp;gt;
-    6. táblázat: A cigány férfiak és nők foglalkoztatottsága 1971-2003 között százalékban (Janky B. 2005). * Az 1971-es, 1993-as és 2003-as országos reprezentatív cigányvizsgálat alapján. N: a minta nagysága, az adatok a 15–54 éves nők és 15–59 éves férfiak százalékában értendők.
-    &amp;lt;/figcaption&amp;gt;
-    &amp;lt;table&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;th&amp;gt;
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;1971
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;1978
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;1987
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;1993
-            &amp;lt;/th&amp;gt;
-            &amp;lt;th&amp;gt;2003
-            &amp;lt;/th&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;Férfiak&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;85,2&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;77,3&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;74,4&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;28,8&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;29,2&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;Nők&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;30,3&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;47,0&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;49,3&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;16,3&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;16,3&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;Együtt&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;n/a&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;62,0&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;62,0&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;22,6&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;22,7&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-        &amp;lt;tr&amp;gt;
-            &amp;lt;td&amp;gt;N&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;n/a&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;2875&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;3888&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;4842&amp;lt;/td&amp;gt;
-            &amp;lt;td&amp;gt;3081&amp;lt;/td&amp;gt;
-        &amp;lt;/tr&amp;gt;
-    &amp;lt;/table&amp;gt;&lt;/p&gt;
+&lt;figcaption&gt;
+6. táblázat: A cigány férfiak és nők foglalkoztatottsága 1971-2003 között százalékban (Janky B. 2005). * Az 1971-es, 1993-as és 2003-as országos reprezentatív cigányvizsgálat alapján. N: a minta nagysága, az adatok a 15–54 éves nők és 15–59 éves férfiak százalékában értendők.
+&lt;/figcaption&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;
+        &lt;/th&gt;
+        &lt;th&gt;1971
+        &lt;/th&gt;
+        &lt;th&gt;1978
+        &lt;/th&gt;
+        &lt;th&gt;1987
+        &lt;/th&gt;
+        &lt;th&gt;1993
+        &lt;/th&gt;
+        &lt;th&gt;2003
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Férfiak&lt;/td&gt;
+        &lt;td&gt;85,2&lt;/td&gt;
+        &lt;td&gt;77,3&lt;/td&gt;
+        &lt;td&gt;74,4&lt;/td&gt;
+        &lt;td&gt;28,8&lt;/td&gt;
+        &lt;td&gt;29,2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Nők&lt;/td&gt;
+        &lt;td&gt;30,3&lt;/td&gt;
+        &lt;td&gt;47,0&lt;/td&gt;
+        &lt;td&gt;49,3&lt;/td&gt;
+        &lt;td&gt;16,3&lt;/td&gt;
+        &lt;td&gt;16,3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Együtt&lt;/td&gt;
+        &lt;td&gt;n/a&lt;/td&gt;
+        &lt;td&gt;62,0&lt;/td&gt;
+        &lt;td&gt;62,0&lt;/td&gt;
+        &lt;td&gt;22,6&lt;/td&gt;
+        &lt;td&gt;22,7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;N&lt;/td&gt;
+        &lt;td&gt;n/a&lt;/td&gt;
+        &lt;td&gt;2875&lt;/td&gt;
+        &lt;td&gt;3888&lt;/td&gt;
+        &lt;td&gt;4842&lt;/td&gt;
+        &lt;td&gt;3081&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
 
 &lt;h2 id=&quot;végszó&quot;&gt;Végszó&lt;/h2&gt;
 &lt;p&gt;A szocializmus alatt kevés volt a „közveszélyes munkakerülő”. A nehézipar, a bányászat sok alacsonyan képzett munkaerőt szívott fel, ami munkát adott, a cigányoknak is. Viszont a rendszerváltoztatás során szétbomlasztották a magyar ipart, jelentősen megnövelve ezzel a munkanélküliséget. Ma a szociális ellátórendszeren élősködnek az indiából származó cigányok (megélhetési gyerekcsinálók). A cigányokkal pedig csak keményen lehet bánni, hiszen a többségük csak az erőszakból ért.&lt;/p&gt;
@@ -324,7 +318,7 @@ szakmai oklevéllel&amp;lt;/td&amp;gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;felhasznált-irodalom&quot;&gt;Felhasznált irodalom&lt;/h2&gt;
 
-&lt;ul class=&quot;no-decoration-16px&quot;&gt;
+&lt;ul class=&quot;no-decoration-18px&quot;&gt;
     &lt;li&gt;Hablicsek L. (2007). &lt;a href=&quot;http://demografia.hu/kiadvanyokonline/index.php/demografia/article/viewFile/540/483&quot; target=&quot;_blank&quot;&gt;Kísérleti számítások a roma lakosság területi jellemzőinek alakulására és 2021-ig történő előrebecslésére.&lt;/a&gt; – Demográfia 50(1), pp. 7-54. &lt;/li&gt;
     &lt;li&gt;Janky B. (2005). &lt;a href=&quot;www.szmm.gov.hu/download.php?ctag=download&amp;amp;docID=20471&quot; target=&quot;_blank&quot;&gt;A cigány nők társadalmi helyzete és termékenysége.&lt;/a&gt; – In. Nagy I. – Pongrácz T. –Tóth I. Gy. (szerk.): Szerepváltozások. Jelentés a nők és férfiak helyzetéről, 2005. – TÁRKI, Ifjúsági, Családügyi, Szociális és Esélyegyenlőségi Minisztérium, Budapest. pp. 136–148.&lt;/li&gt;
     &lt;li&gt;Kemény I. 2004: &lt;a href=&quot;http://www.demografia.hu/kiadvanyokonline/index.php/demografia/article/download/615/427&quot; target=&quot;_blank&quot;&gt;A magyarországi cigány népesség demográfiája.&lt;/a&gt; – Demográfia 47(3-4), pp. 335-346. &lt;/li&gt;
