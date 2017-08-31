@@ -212,6 +212,9 @@ console.log(0.1 + 0.2); //=> 0.30000000000000004
 console.log(0.1 + 0.2 == 0.3); //=> false
 {% endhighlight %}
 
+Apró kiegészítés: két fontos dolog kell itt pótolnom. Az egyik a változók elnevezési konvenciója. Ha a változó egyszerű szó, akkor nincs probléma, mivel minden betűjét kisbetűvel írjuk. Az összetett szavak esetén az első tagot mindig kisbetűvel írjuk, viszont az utána következő tagokat nagy kezdőbetűvel írjuk: `likeThis`, illetve használhatunk egy alulvonást is a tagok elválasztására: `like_this`. Ezt nem kötelező betartani, de erősen ajánlott. A másik dolog az úgynevezett **"hamisértékek"** (falsy values) bevezetése a JS-ben. Ezek közé tartozik: a `false`, a `0`, a `null`, az `undefined`,  az `""` (üres sztring) és a `NaN`. Ezek a kifejezésekben **mindig hamisnak** (`false`) **értékelődnek ki** a szabvány szerint. (2017. augusztus 31.)
+{: .update}
+
 Szerintem ennyi érdekesség elég.
 
 Egy részbe elég ennyi, majd a folytatom ezt az oktató sorozatot. A következő részekben ezekről tervezek írni:
