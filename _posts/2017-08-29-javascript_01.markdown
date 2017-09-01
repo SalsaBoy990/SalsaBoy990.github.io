@@ -72,6 +72,7 @@ A JS-ben az aposztróf `'` és az idézőjel `"` egyenértékű és a sztringek 
 A JS-ben **automatikus szemétgyűjtés** van (automatic garbage collection), tehát nem kell felszabadítanunk a lefoglalt tárhelyet (a C/C++ esetén csak a **dinamikus memóriakezelés** esetén kell explicit, azaz magunknak elvégezni a lefoglalt memóraterület felszabadítását), hanem a fordító automatikusan elvégzi: ha egy objektum már nem elérhető – amikor a program már nem tud hivatkozni rá – a fordító automatikusan felszabadítja a lefoglalt memóriaterületet. Éppen ezért **nincsen destruktor** függvény a JS-ben. **Mutatók sincsenek**, tehát nem férhetünk hozzá a memóriacímekhez. Helyette **referenciák vannak**, amiről a JS gondoskodik nekünk.
 
 <figcaption>Az 1. JavaScript programod: Változók és függvények.</figcaption>
+
 {% highlight javascript %}
 var valtozo = 10;
 valtozo = "Helló";
@@ -87,6 +88,7 @@ A JavaScript-ben a **primitív adattípusok** (`undefined`, `null`, logikai, sz�
 
 Hiába hívjuk meg a `toUpperCase()` globális metódust (nagybetűssé alakítja a szöveget) a `nev` változóra, a `nev` változó értékét nem változtatja meg. Ha primitívekre hívunk meg függvényeket, illetve paraméterként átadjuk azokat függvénynek, akkor lokális másolat készül róluk (lefoglalódik számukra új memóriaterület) és a módosítások azokon hajtódnak végre. Az eredeti változó értéke változatlan marad:
 
+
 {% highlight javascript %}
 var nev = "Juliska";
 console.log(nev.toUpperCase()); //=> JULISKA
@@ -99,6 +101,7 @@ Az eredeti változó értéke nem változott! Egyetlen sztring metódus sem kép
 
 A primitíveket érték szerint hasonlítjuk össze: **két primitív azonos, ha értékük megegyezik** (két sztring egyenlő, ha hosszuk és minden egyes karakterük megegyezik):
 
+
 {% highlight javascript %}
 console.log(101 === 101); //=> true
 console.log(false === false); //=> true
@@ -106,6 +109,7 @@ console.log("róka" === "róka"); //=> true
 {% endhighlight %}
 
 Az **objektumok (beleértve a tömböket és a függvényeket)** másként viselkednek, mint a primitív típusok, ugyanis ezek **mutálódnak** (mutable), azaz **értékük megváltoztatható**. A primitív típusoknál:
+
 
 {% highlight javascript %}
 var a = 3.14;
@@ -115,6 +119,8 @@ alert(b) // 3.14-et ír ki, b nem változott meg.
 {% endhighlight %}
 
 De mi a helyzet az objektumoknál, amelyeket **referencia típus**oknak is nevezünk:
+
+
 {% highlight javascript %}
 var a = [1, 2, 3]; // Egy 3 elemű tömb létrehozása.
 var b = a; // A 'b' tömb ugyanarra a tömbre hivatkozik.
@@ -125,6 +131,7 @@ console.log(a === b); //=> true
 {% endhighlight %}
 
 Amikor a `b`-hez rendeljük az `a` tömböt, akkor nem egy új másolat jön létre az `a` tömb objektumról, hanem csupán egy referencia, pontosabban a **referencia egy másolata**, adódik át, ami az `a` tömb címére mutat. Tehát a `b` ugyanarra a tömbre egy második referencia. Tulajdonképpen **sekély másolás** történik. Mély másolat készítéséhez explicite kell másolnunk az erdeti tömb összes elemét egy újabb memóraterületre (új tömböt hozunk létre):
+
 
 {% highlight javascript %}
 var a = [1, 2, 3];
@@ -142,6 +149,8 @@ Referencia szerinti értékadás van az objektumok esetén, vagyis nem új máso
 Az objektumokat a **heap**-ben (a **dinamikusan lefoglalt** adatok tárterülete a memóriában) tároljuk el. Például tekintsük a `var o = { x:0 };` kifejezést! Mi történik a futáskor? A heap-ben megfelelő méretű tárhely foglalódik le az objektum `{ x:0 }` tárolására, majd az értékek inicializálódnak. A kifejezés értéke az objektumra mutató hivatkozás lesz `o`-n keresztül. Az `o` tehát nem magát az objektumot, csak egy referenciát tárol.
 
 <figcaption>A 2. JavaScript példa: Az objektumok mutálódnak, míg a primitívek nem.</figcaption>
+
+
 {% highlight javascript %}
 var s = "Alma";
 var o = { nev: "Alma" };
@@ -162,6 +171,7 @@ console.log(o); //=> "{ nev: "Körte" }"
 Összefoglalva tehát, **a Javascript-ben kizárólag érték szerinti paraméterátadás van!** Az objektumoknál a **referenciák másolatai** érték szerint adódnak át a függvényeknek (az objektum értékei mutálódnak), míg a primitív típusoknál **lokális másolat** készül a változók értékeiről (az eredeti értékek nem mutálódnak).
 
 A JS-ben számos implicit (rejtett) típuskonverzió van. A változók típusa változhat a program futása során, amit az implicit típuskonverziók tesznek lehetővé:
+
 
 {% highlight javascript %}
 var szam = 101, szoveg = " kiskutya";
@@ -184,6 +194,7 @@ console.log(x + y); //=> 1552
 
 Amikor az egyenlőség és az egyenlőtlenség operátorokat használjuk, akkor életbevágóan fontos tisztában lenni az implicit típuskonverziókkal. Létezik az egyenlőség operátor (`==`) és a szigorú egyenlőség operátor (`===`). Az utóbbi az azonosság szigorú definícióját használja és az alapján határozza meg a két operanduszának az azonosságát. A "sima" egyenlőség operátor (`==`) sokkal megengedőbb, hiszen engedélyezi a típuskonverziókat. A nemegyenlőség operátorból szintén kettő van: a "sima" (`!=`) és szigorú (`!==`) változat. Egy rövid kódrészleten bemutatva ez világosabb lesz:
 
+
 {% highlight javascript %}
 console.log(60 == "60"); //=> true, a "60"-ból szám lesz
 console.log(60 === "60"); //=> false; szám és sztring különbözik
@@ -192,10 +203,10 @@ console.log(1 === true); //=> false; szám !== logikai érték
 console.log(NaN == NaN); //=> false
 console.log(NaN === NaN); //=> false
 
-/* Ezzel a függvénnyel meghatározható, hogy
-* NaN-e a vizsgált érték. */
+/* Ezzel a függvénnyel meghatározható, hogy NaN-e a vizsgált érték. */
 console.log(isNaN(NaN)); //=> true
 {% endhighlight %}
+
 
 A NaN érték (not-a-number) a "nem szám" jelölésére való. Akkor kapjuk értékül például, ha számot osztunk sztringgel: `10/"a"`. Ez nyilvánvalóan értelmetlen eredményre vezet. A NaN semmilyen másik értékkel, de még önmagával sem azonos!
 
@@ -206,6 +217,7 @@ A JavaScript számformátuma pontosan reprezentálja az egész számokat `-90071
 A **hexadecimális számok is támogatottak** az ECMAScript szabványban, viszont az oktális számok nem!
 
 Legyetek tisztában azzal is, hogy **a lebegőpontos értékek bizonyos esetekben nem pontosak**, így ne lepődjetek meg, ha ezt tapasztaljátok:
+
 
 {% highlight javascript %}
 console.log(0.1 + 0.2); //=> 0.30000000000000004
