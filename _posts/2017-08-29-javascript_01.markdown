@@ -71,10 +71,8 @@ A JS-ben az aposztróf `'` és az idézőjel `"` egyenértékű és a sztringek 
 
 A JS-ben **automatikus szemétgyűjtés** van (automatic garbage collection), tehát nem kell felszabadítanunk a lefoglalt tárhelyet (a C/C++ esetén csak a **dinamikus memóriakezelés** esetén kell explicit, azaz magunknak elvégezni a lefoglalt memóraterület felszabadítását), hanem a fordító automatikusan elvégzi: ha egy objektum már nem elérhető – amikor a program már nem tud hivatkozni rá – a fordító automatikusan felszabadítja a lefoglalt memóriaterületet. Éppen ezért **nincsen destruktor** függvény a JS-ben. **Mutatók sincsenek**, tehát nem férhetünk hozzá a memóriacímekhez. Helyette **referenciák vannak**, amiről a JS gondoskodik nekünk.
 
-<figcaption>Az 1. JavaScript programod: Változók és függvények.</figcaption>
-
-{% highlight javascript %}
-var valtozo = 10;
+<figcaption class="code-caption">Az 1. JavaScript programod: Változók és függvények.</figcaption>
+<pre><code class="language-javascript">var valtozo = 10;
 valtozo = "Helló";
 var f = function (s) {
     console.log(s + ", világ!");
@@ -82,65 +80,55 @@ var f = function (s) {
 f(valtozo); //=> Helló, világ!
 var nev = prompt("Add meg a keresztneved!");
 console.log("Szia " + nev + "!");
-{% endhighlight %}
+</code></pre>
 
 A JavaScript-ben a **primitív adattípusok** (`undefined`, `null`, logikai, szám és sztring) **nem mutálódnak** (immutable), azaz létrehozásuk után az értékük már nem megváltoztatható! Ezek a nyelv legalacsonyabb szintű elemei.
 
 Hiába hívjuk meg a `toUpperCase()` globális metódust (nagybetűssé alakítja a szöveget) a `nev` változóra, a `nev` változó értékét nem változtatja meg. Ha primitívekre hívunk meg függvényeket, illetve paraméterként átadjuk azokat függvénynek, akkor lokális másolat készül róluk (lefoglalódik számukra új memóriaterület) és a módosítások azokon hajtódnak végre. Az eredeti változó értéke változatlan marad:
 
-
-{% highlight javascript %}
-var nev = "Juliska";
+<pre><code class="language-javascript">var nev = "Juliska";
 console.log(nev.toUpperCase()); //=> JULISKA
 console.log(nev); //=> Juliska
 nev = nev.toUpperCase();
 console.log(nev); //=> JULISKA
-{% endhighlight %}
+</code></pre>
 
 Az eredeti változó értéke nem változott! Egyetlen sztring metódus sem képes megváltoztatni azt, hanem egy új sztring értéket adnak vissza ("JULISKA"). Viszont új értéket adhatunk a `nev` változónak. A megváltoztathatatlanság nem az értékadásra vonatkozik.
 
 A primitíveket érték szerint hasonlítjuk össze: **két primitív azonos, ha értékük megegyezik** (két sztring egyenlő, ha hosszuk és minden egyes karakterük megegyezik):
 
-
-{% highlight javascript %}
-console.log(101 === 101); //=> true
+<pre><code class="language-javascript">console.log(101 === 101); //=> true
 console.log(false === false); //=> true
 console.log("róka" === "róka"); //=> true
-{% endhighlight %}
+</code></pre>
 
 Az **objektumok (beleértve a tömböket és a függvényeket)** másként viselkednek, mint a primitív típusok, ugyanis ezek **mutálódnak** (mutable), azaz **értékük megváltoztatható**. A primitív típusoknál:
 
-
-{% highlight javascript %}
-var a = 3.14;
+<pre><code class="language-javascript">var a = 3.14;
 var b = a; // Az a változó értékét egy új változóba másoljuk.
 a = 4; // Új értéket adunk az eredeti változónak.
 alert(b) // 3.14-et ír ki, b nem változott meg.
-{% endhighlight %}
+</code></pre>
 
 De mi a helyzet az objektumoknál, amelyeket **referencia típus**oknak is nevezünk:
 
-
-{% highlight javascript %}
-var a = [1, 2, 3]; // Egy 3 elemű tömb létrehozása.
+<pre><code class="language-javascript">var a = [1, 2, 3]; // Egy 3 elemű tömb létrehozása.
 var b = a; // A 'b' tömb ugyanarra a tömbre hivatkozik.
 a[0] = 99; // Módosítsuk az eredeti tömböt!
 alert(b); // A 'b' elemei is változnak: [99, 2, 3].
 console.log(a === b); //=> true
 // 'a' és 'b' ugyanarra a tömbre hivatkozik.
-{% endhighlight %}
+</code></pre>
 
 Amikor a `b`-hez rendeljük az `a` tömböt, akkor nem egy új másolat jön létre az `a` tömb objektumról, hanem csupán egy referencia, pontosabban a **referencia egy másolata**, adódik át, ami az `a` tömb címére mutat. Tehát a `b` ugyanarra a tömbre egy második referencia. Tulajdonképpen **sekély másolás** történik. Mély másolat készítéséhez explicite kell másolnunk az erdeti tömb összes elemét egy újabb memóraterületre (új tömböt hozunk létre):
 
-
-{% highlight javascript %}
-var a = [1, 2, 3];
+<pre><code class="language-javascript">var a = [1, 2, 3];
 var b = [];
 for(var i = 0; i < a.length; i++) {
     b[i] = a[i];
 }
 console.log(a === b); //=> false: különböző tömbök sosem egyenlők.
-{% endhighlight %}
+</code></pre>
 
 Az objektumokat **referencia szerint** különböztetjük meg egymástól: **két objektum akkor sem egyenlő, ha ugyanazokkal a tulajdonságokkal és értékekkel rendelkeznek**. Két tömb sem egyenlő, mégha megegyezik az összes elemük, és azok sorrendje is. **Csak akkor azonos** két objektum érték, **ha ugyanarra az objektumra hivatkoznak**.
 
@@ -148,11 +136,8 @@ Referencia szerinti értékadás van az objektumok esetén, vagyis nem új máso
 
 Az objektumokat a **heap**-ben (a **dinamikusan lefoglalt** adatok tárterülete a memóriában) tároljuk el. Például tekintsük a `var o = { x:0 };` kifejezést! Mi történik a futáskor? A heap-ben megfelelő méretű tárhely foglalódik le az objektum `{ x:0 }` tárolására, majd az értékek inicializálódnak. A kifejezés értéke az objektumra mutató hivatkozás lesz `o`-n keresztül. Az `o` tehát nem magát az objektumot, csak egy referenciát tárol.
 
-<figcaption>A 2. JavaScript példa: Az objektumok mutálódnak, míg a primitívek nem.</figcaption>
-
-
-{% highlight javascript %}
-var s = "Alma";
+<figcaption class="code-caption">A 2. JavaScript példa: Az objektumok mutálódnak, míg a primitívek nem.</figcaption>
+<pre><code class="language-javascript">var s = "Alma";
 var o = { nev: "Alma" };
 
 var foo = function (arg) {
@@ -166,15 +151,13 @@ foo(s);
 foo(o);
 console.log(s); //=> "Alma"
 console.log(o); //=> "{ nev: "Körte" }"
-{% endhighlight %}
+</code></pre>
 
 Összefoglalva tehát, **a Javascript-ben kizárólag érték szerinti paraméterátadás van!** Az objektumoknál a **referenciák másolatai** érték szerint adódnak át a függvényeknek (az objektum értékei mutálódnak), míg a primitív típusoknál **lokális másolat** készül a változók értékeiről (az eredeti értékek nem mutálódnak).
 
 A JS-ben számos implicit (rejtett) típuskonverzió van. A változók típusa változhat a program futása során, amit az implicit típuskonverziók tesznek lehetővé:
 
-
-{% highlight javascript %}
-var szam = 101, szoveg = " kiskutya";
+<pre><code class="language-javascript">var szam = 101, szoveg = " kiskutya";
 /* A + operátor az n számot sztringgé konvertálja
  * és összefűzi s-sel.
  */
@@ -190,13 +173,11 @@ var x = "62" - 10; //=> 52
 var y = "1500";
 y = Number(y); // Számmá castoljuk a sztringet.
 console.log(x + y); //=> 1552
-{% endhighlight %}
+</code></pre>
 
 Amikor az egyenlőség és az egyenlőtlenség operátorokat használjuk, akkor életbevágóan fontos tisztában lenni az implicit típuskonverziókkal. Létezik az egyenlőség operátor (`==`) és a szigorú egyenlőség operátor (`===`). Az utóbbi az azonosság szigorú definícióját használja és az alapján határozza meg a két operanduszának az azonosságát. A "sima" egyenlőség operátor (`==`) sokkal megengedőbb, hiszen engedélyezi a típuskonverziókat. A nemegyenlőség operátorból szintén kettő van: a "sima" (`!=`) és szigorú (`!==`) változat. Egy rövid kódrészleten bemutatva ez világosabb lesz:
 
-
-{% highlight javascript %}
-console.log(60 == "60"); //=> true, a "60"-ból szám lesz
+<pre><code class="language-javascript">console.log(60 == "60"); //=> true, a "60"-ból szám lesz
 console.log(60 === "60"); //=> false; szám és sztring különbözik
 console.log(1 == true); //=> true
 console.log(1 === true); //=> false; szám !== logikai érték
@@ -205,8 +186,7 @@ console.log(NaN === NaN); //=> false
 
 /* Ezzel a függvénnyel meghatározható, hogy NaN-e a vizsgált érték. */
 console.log(isNaN(NaN)); //=> true
-{% endhighlight %}
-
+</code></pre>
 
 A NaN érték (not-a-number) a "nem szám" jelölésére való. Akkor kapjuk értékül például, ha számot osztunk sztringgel: `10/"a"`. Ez nyilvánvalóan értelmetlen eredményre vezet. A NaN semmilyen másik értékkel, de még önmagával sem azonos!
 
@@ -218,11 +198,9 @@ A **hexadecimális számok is támogatottak** az ECMAScript szabványban, viszon
 
 Legyetek tisztában azzal is, hogy **a lebegőpontos értékek bizonyos esetekben nem pontosak**, így ne lepődjetek meg, ha ezt tapasztaljátok:
 
-
-{% highlight javascript %}
-console.log(0.1 + 0.2); //=> 0.30000000000000004
+<pre><code class="language-javascript">console.log(0.1 + 0.2); //=> 0.30000000000000004
 console.log(0.1 + 0.2 == 0.3); //=> false
-{% endhighlight %}
+</code></pre>
 
 Apró kiegészítés: két fontos dolgot kell itt pótolnom. Az egyik a változók elnevezési konvenciója. Ha a változó egyszerű szó, akkor nincs probléma, mivel minden betűjét kisbetűvel írjuk. Az összetett szavak esetén az első tagot mindig kisbetűvel írjuk, viszont az utána következő tagokat nagy kezdőbetűvel írjuk: `likeThis`, illetve használhatunk egy alulvonást is a tagok elválasztására: `like_this`. Ezt nem kötelező betartani, de erősen ajánlott. A másik dolog az úgynevezett **"hamisértékek"** (falsy values) bevezetése a JS-ben. Ezek közé tartozik: a `false`, a `0`, a `null`, az `undefined`,  az `""` (üres sztring) és a `NaN`. Ezek a kifejezésekben **mindig hamisnak** (`false`) **értékelődnek ki** a szabvány szerint. (2017. augusztus 31.)
 {: .update}

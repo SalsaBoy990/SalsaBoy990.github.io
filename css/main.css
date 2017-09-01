@@ -108,6 +108,9 @@ figcaption {
     font-size: 18px;
     padding-bottom: 20px;
 }
+.code-caption {
+    padding-bottom: 0px;
+}
 
 
 /**
@@ -313,7 +316,7 @@ code {
     font-size: 18px;
     font-family: Consolas, monaco, monospace;
     font-weight: 400;
-    background-color: #faf2eb;
+    background-color: #f5f2f0;
     }
     code {
         padding: 1px 5px;
