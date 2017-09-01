@@ -193,7 +193,7 @@ console.log(NaN == NaN); //=> false
 console.log(NaN === NaN); //=> false
 
 /* Ezzel a függvénnyel meghatározható, hogy
- * NaN-e a vizsgált érték. */
+* NaN-e a vizsgált érték. */
 console.log(isNaN(NaN)); //=> true
 {% endhighlight %}
 
