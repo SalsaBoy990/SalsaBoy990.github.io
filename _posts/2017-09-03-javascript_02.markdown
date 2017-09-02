@@ -1,0 +1,351 @@
+---
+layout: post
+comments: false
+title: "Rövid elméleti bevezető a JavaScript nyelvbe, 2.rész."
+excerpt: "A JavaScript sorozatom folytatása, az alábbi témákra térek ki: a függvényhatókör, a felemelés (hoisting), a globális objektum (`Window`), a szigorú mód (strict mode) és a korlátozás, objektumok és függvények létrehozása, tömbök és tömbszerű objektumok, valamint a hozzáférés az objektumok tulajdonságaihoz."
+date: 2017-09-03 1:11
+tag: "javascript"
+categories: tudomany
+---
+
+
+Az [előző részben]() az objektum-orientált paradigmáról írtam, valamint a JavaScript bemutatásába kezdtem bele. Az alábbi dolgokra tértem ki: a JavaScript interpretáló nyelv, vagyis a fordítás futási időben történik; az ECMAScript szabványok; gyengén típusos nyelv; két adattípus létezik: a primitív (változók) és a referencia (objektumok); a primitív típusok nem, míg a referencia típusok mutálódnak; az automatikus szemétgyűjtés miatt nem kell foglalkoznunk a dinamikus tárhelyek felszabadításával (nincsen destruktor), továbbá nincsenek mutatók, amiken keresztül hozzáférhetnénk a memóriacímekhez; egy tömb példáján keresztük rávilágítottam a sekély és a mély másolás különbségére; az implicit típuskonverziókra és a szigorú azonosság, illetve szigorú nemegyenlőség operátorokra is kitértem; leírtam, hogy a JS Unicode karakterkészletet használ, illetve a számokat 64 bites lebegőpontos formátumban tárolja el. Kitértem a hamisértékekre is.
+
+És most jön a folytatás, az alábbi részekkel, ebben a sorrendben:
+* A **függvény- és a blokkhatókör** közötti különbség, **felemelés** (hoisting),
+* A globális objektum (`Window`),
+* A `"use strict"` pragma,
+* Objektumok és függvények, illetve objektum literál és függvény szintaxis,
+* Tömbök és tömbszerű objektumok,
+* Hozzáférés az objektumok tulajdonságaihoz.
+
+<br />
+## A függvényhatókör és a felemelés (hoisting)
+
+Mi a függvényhatókör? Ezt néhány példával lehet a legegyszerűbben elmagyarázni. A blokkhatókört már megszokhattuk más nyelvekben, így például a C-ben, ezért furcsának tűnhet elsőre, amit bemutatok.
+
+<pre><code class="language-javascript">function foo () {
+    console.log("i = " + i); //=> i = undefined
+    for (var i = 0; i < 10; i++) {
+        /* üres ciklus */;
+    }
+    console.log("i = " + i); //=> i = 10
+}
+foo();
+</code></pre>
+
+A `for` ciklus előtt és után is hozzáférhető az `i` változó. Ha blokk hatókör lenne érvényben, akkor az `i` kizárólag a for ciklus `{}` blokkján belül lenne hozzáférhető, de ez a függvény hatókörnél nincsen így, ugyanis ebben az esetben a blokkon kívül is hozzáférhető `i`, az éppen aktuális függvényen belül.
+
+Mint említettem, a `for` ciklus előtt hozzáférhető az `i`, viszont az értéke `undefined` lesz, mivel az értékadás csak  később, a `for` ciklusba ágyazottan történik (alapértelmezetten minden deklarált változó értéke `undefined`). **Egy függvényen belül deklarált változó hatóköre kiterjed az egész függvényre** és a **változók felemelése** (hoisting) történik a függvény első sorába. Az `i` változó felemelődik. Az előző kódrészlet egyenértékű ezzel:
+
+<pre><code class="language-javascript">function foo () {
+    var i; // Felemelődés az első sorba.
+    console.log("i = " + i); //=> i = undefined
+    for (i = 0; i < 10; i++) {
+        /* üres ciklus */;
+    }
+    console.log("i = " + i); //=> i = 10
+}
+foo();
+console.log("i = " + i); // Referenciahiba lesz.
+</code></pre>
+
+Természetesen függvényen kívül nem elérhető az `i`. A kód utolsó sora referenciahibát fog dobni (`i` nincs definiálva).
+
+A változó hatókör a kód azon régiója, amiben definiáltuk a változót. A globális változók globális hatókörrel rendelkeznek, tehát a forráskódban mindenhol definiálva vannak (hozzáférhetők). Ezzel szemben a függvényen belül deklarált változók lokálisak, és csak az adott függvényen (függvényhatókörön) belül hozzáférhetők. Kívülről nem.
+
+Ha ugyanolyan nevű lokális változót deklarálunk a függvényen belül, akkor az elrejti a globális változót, így a két `scope` változó nem ugyanaz a változó:
+
+
+<pre><code class="language-javascript">var scope = "globális";
+function checkScope() {
+    var scope = "lokális";
+    return scope;
+}
+checkScope(); //=> lokális
+</code></pre>
+
+De mi történik ebben az esetben?
+
+<pre><code class="language-javascript">var scope = "globális";
+function checkScope() {
+    scope = "lokális";
+    return scope;
+}
+checkScope(); //=> lokális
+console.log(scope); //=> lokális
+</code></pre>
+
+
+A függvényen belül lehagytam a `var`-t, ezért az a `scope` a globális változó, aminek az értékét sikeresen felülírtuk `"lokális"`-ra.
+
+A lokális változókat tekinthetjük egy objektum tulajdonságainak. Minden kódrészlethez kapcsolódik egy **hatókör-láncolat** (scope chain), ami objektumok egy listája, ami a hatókörökhöz tartozó változókat definiálja. Például amikor a JS egy `x` változó értékét keresi, akkor a hatókörlánc első objektumában keresi először. Ha ennek van `x` tulajdonsága, akkor azt használja. Ha nem található ilyen nevű változó, akkor a következő objektumban keresi, és így tovább, míg végül eljutunk a globális objektumig. Ha ott sem találja `x`-et, akkor referenciahiba lép fel (`x` nem található). Az előbbi példában a függvényen belül a `scope` változó értékét módosítottuk. No de melyik `scope` változót? A `checkScope()` függvényen belül nincsen `scope` változó deklarálva (nem használtuk a `var`-t). Ilyenkor a JS értelmező a következő, fölötte levő szinten keresi a `scope`-ot. Ez a globális objektum, és itt megtalálja a globális `scope` változót.
+
+A hatókörlánc a JS legfelső szintjén (az a kódrész, ami a függvénydefiníciókon kívül van) egyetlen objektumból áll: ez a globális objektum.
+
+Természetesen az **ES6**-tól kezdődően a függvényhatókörű `var` helyett használhatjuk a blokkhatókörű `let`-et, így a függvényhatókörnél jelentkező szoktalan jelenségek nem lépnek fel. Szintén bevezetésre került a `const`, ami egy konstans, azaz állandó érték jelölésére szolgál. Egy konstansnak kötelező értéket adni annak deklarációjakor. Ezután az értéke semmilyen módon nem lesz megváltoztatható.
+
+Az előző részben említettem, hogy a webböngészők még nem implementálták az új nyelvi elemek  egy jó részét, tehát kliens oldali kódban nem biztos, hogy működni fognak. Szerver oldalon (pl. Node.js) már támogatottak, ott nyugodtan használd azokat, beleértve az egyszerűsített függvényszintaxist a callback függvényeknél! Az aszinkron függvényhívásról máskor írok.
+
+<br />
+## A globális objektum (Window)
+
+Említettem többször is a **globális objektum**ot. Ez egy szokványos JavaScript objektum, ami  rendkívül fontos szerepet játszik. **A globális objektum tulajdonságai globálisan definiáltak**, vagyis hozzáférhetők a programunk számára:
+
+* olyan globális tulajdonságok, mint például az `undefined`, az `Infinity` és a `NaN`,
+* olyan globális függvények mint az `isNaN()`, `parseInt()`, `eval()`, `setTimeout()` stb.,
+* konstruktor függvények: `Date()`, `RegExp()`, `String()`, `Object()` és `Array()`,
+* olyan globális objektumok, mint a `Math` és a `JSON`.
+
+A kliens oldali JavaScript-ben a `Window` objektum a böngészőablakban található összes JS kódunk globális objektumaként funkcionál. Például a `console` objektum a megnyitott böngészőablakunk konzolja. Ennek a `log()` metódusát szoktuk meghívni, ha a konzolra akarunk írni. A `console` objektum is része a globális objektumnak. Így tudjuk lekérdezni a `Window` objektum összes tulajdonságát:
+
+<pre><code class="language-javascript">/* A window a Window objektum önmagát meghivatkozó tulajdonsága.
+ * Ezen a referencián keresztül férünk hozzá a globális objektumhoz.
+ */
+for (var prop in window) {
+    console.log(prop);
+} 
+</code></pre>
+<br />
+## A szigorú mód ("strict mode") és a JS korlátozása
+
+A JS-ben egyaránt vannak **jó és rossz részek**. **Douglas Crockford** (neves JS guru) szerint korlátozni kell a JS programozási nyelvet, és **kizárólag csak a jó részeket** használni belőle. Ezzel jobb programokat írunk és jobb programozóvá is válunk. Crockford jóvoltából rendelkezésünkre áll a [JSLint](http://www.jslint.com/) kódellenőrző, ami megvizsgálja, hogy a programunk megfelel-e a szigorúbb követelményeknek (beleértve a szintaktikai megfontolásokat - magyarul hogyan nézzen ki a kód), és csak a jó részeket alkalmazza. Az ajánlott irodalomban feltüntettem Crockford könyvét. Akit bővebben érdekel, utánanézhet.
+
+Az egész korlátozás egyrészt a kód jobb értelmezhetőségét, másrészt pedig a biztonság növelését szolgálja. A kliens oldali JS sebezhető a támadásokkal szemben a hekkerek részéről, így célszerű olyan kódot írni, ami biztonságosabb. Például nem használ `eval`-t ellenőrzés nélkül. Az `eval` a JavaScript fordítót hívja meg egy sztringre, ami JavaSript kódot tartalmaz, amit végrehajt. Az `eval` használatát lehetőség szerint kerüld el! Egyébként nagyon ritkán van szükség rá.
+
+Az alábbi kódrészlet állandóan egy felugró ablakot hoz létre egy végtelen ciklus segítségével:
+
+<pre><code class="language-javascript">// Idegesítő kód.
+var text = "for (;;) alert(\"Muhaha!!\");";
+/* Nem vizsgálok rá a sztring tartalmára
+ * és úgy hívom meg rá az eval-t. */
+eval(text);
+</code></pre>
+
+
+Ha nem ismerjük a sztring tartalmát, akkor előfordulhatnak benne kártékony, vagy legalábbis kellemetlen kódrészletek. A fenti példát módosítva elkerülhetjük, hogy a kód lefusson:
+
+<pre><code class="language-javascript">var text = "for(;;) alert(\"Muhaha!!\");";
+
+var pattern = /for/; // egy RegExp objektum.
+// Most rávizsgálok a sztring tartalmára
+var result = text.match(pattern);
+if (result !== null) {
+    throw "A for ciklusok nem engedélyezettek!";
+} else {
+    eval(text);
+} // Mi történik?
+</code></pre>
+
+Egy `RegExp` objektum (a következő részben bővebben) segítségével megkeresem a szövegben található `for` kulcsszót. A `/` jelek közötti kifejezést, vagyis a `"for"`-t keressük a `RegExp` objektum `match()` metódusának segítségével. Ha nem talál a sztringünkben ilyet, akkor `null`-t ad vissza. Hibát dobok, ha találtam `for` ciklust, ami leállítja a kód futását. A hibakezelés a következő részben lesz kifejtve.
+
+
+Az ECMAScript5 szabványban bevezették a **szigorú módot** (`"strict mode"`), ami bizonyos korlátozásokat vezetett be a biztonság növelésre. Több hibaellenőrzés is van benne (több hibát is jelez a fordító, ami leállítja a kód futását). Nagyon erősen ajánlott a használata, mivel rengeteg sérülékenység van a JS-ben, amit a hekkerek kihasználhatnak. Nem tekinthető jó kódnak, ami nem alkalmazza ezt a fontos korlátozást. Bővebb tájékoztatást a [Mozilla honlapján](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) találtok. A GEE kódszerkesztőjében is `"strict mode"` van érvényben. Használata egyszerű, az utasítások elé kell beilleszteni:
+
+<pre><code class="language-javascript">"use strict";
+var v = "Szigorú módban vagyok!";
+
+// Referenciahibát dob a fordító:
+x = "A globális objektumnak nem adhatunk tulajdonságot";
+
+// Függvényeknél:
+var f = function (a) {
+    "use strict";
+    /* utasítások */
+}
+</code></pre>
+
+<br />
+## Objektumok és függvények létrehozása
+
+Az egyik módja a függvények létrehozásának, ha egy `var` változóba tároljuk el a függvényt. Az objetum literál létrehozása `var o = { x: 0 };` szintaxissal történik. Mivel ezek utasítások és nem kifejezések szükség van az utasítást záró `;`-ra.
+
+<figcaption class="code-caption">
+Az 1. JavaScript példa: Objektum literál, tulajdonságok és metódusok.
+</figcaption>
+
+<pre><code class="language-javascript">var square = function (x) {
+    return x * x;
+};
+console.log("A megadott szám négyzete: " + square(200));
+
+var point = {
+  x: 0,
+  y: 0,
+  print_1: function () {
+     console.log("x: " + point.x + ", y: " + point.y);
+  } 
+};
+point.print_2 = function () {
+  console.log("x: " + point.x + ", y: " + point.y);
+};
+point.x = 5, point.y = 15;
+point.print_1(); //=> x: 5, y: 15
+</code></pre>
+
+A függvény szintaxissal felírt függvények kifejezések, tehát nem kell ; utánuk. A példában szereplő `Point()` függvény egy pont „osztály” konstruktora. A konstruktor egy olyan függvény, amit objektumok létrehozására, illetve azok tulajdonságainak inicializálására használunk. A prototípusos öröklést a következő részre tartogtatom. Az osztályt azért tettem idezőjelbe, mert mint már említettem, nincsenek igazi osztályok (`class`) a JS-ben.
+
+
+<figcaption class="code-caption">A 2. JavaScript példa: Függvény szintaxis, konstruktor és osztály.</figcaption>
+<pre><code class="language-javascript">function square (x) {
+    return x * x;
+}
+console.log("A megadott szám négyzete: " + square(200));
+
+/* Ez egy pont osztály konstruktora. */
+function Point(x, y) {
+    this.x = x || 0;
+    this.y = x || 0;
+
+    this.print = function () {
+        console.log("x: " + this.x + ", y: " + this.y);
+    };
+}
+/* Az osztály példányosítása: egy változóban
+ * eltároljuk az objektumot.
+ */
+var object = new Point(10, 20);
+</code></pre>
+
+
+A `this.x = x || 0;` utasításban a `this` az éppen aktuális objektumpéldányra mutat (egy referencia), amin keresztül hozzáférünk az éppen aktuális objektum tulajdonságaihoz. A konstruktor önmagában nem hoz létre egy új objektumot, hanem azt nekünk kell megtennünk a new kulcsszó használatával, például: `var object = new Point(10, 20);`.
+
+Ha nem adunk át egyetlen argumentumot sem a konstruktornak, akkor `0` lesz az `x` és `y` tulajdonság értéke. Miért? A logikai VAGY operátor (`||`) abban az esetben, **ha mindkét részkifejezése hamis, akkor a jobb oldali operandusz értékét adja vissza**, vagyis a nullát.
+
+A logikai operátorok (ÉS, VAGY) **rövidzár kiértékelést** alkalmaznak. ÉS kapcsolat esetén (`&&` operátor) akkor igaz az összetett kifejezés, ha mindegyik feltétel igaz (ha már a bal oldali részkifejezés hamis, akkor az egész kifejezés hamis - fölösleges megvizsgálni a jobb oldali részkifejezést). VAGY kapcsolat esetén legalább az egyik feltételnek igaznak kell lennie, hogy az egész kifejezés igaz legyen. A `x || 0;` kifejezésben, ha igaz értéket adunk meg az x helyére, akkor a `||` operátor már nem vizsgál rá a második kifejezésre, hanem visszadja az első kifejezés értékét. További információ a logikai operátorokról [itt található](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators).
+
+Felhívom itt a figyelmet arra, hogy vannak az úgynevezett **„hamisértékek”** (falsy values), amelyek mindig `false`-nak értékelődnek ki, ezek: `false`, `0`, `null`, `undefined`, `""`, `NaN`! Ha ezek bármelyikét is megadnánk az `x` argumentum helyére, akkor is megfelelően működik ez a roppant hasznos technika.
+
+ **Alapértelmezett függvényargumentumokat** az ES5-ben még nem implementálták (viszont egyes böngészők már támogathatják), de a fenti technikával megoldható. Az ES6 szintaxis így néz ki:
+
+<pre><code class="language-javascript">function Point(x = 0, y = 0) {
+    this.x = x;
+    this.y = y;
+}
+var p = new Point(45);
+console.log(p); // Mit fog kiírni?
+</code></pre>
+
+A Mozilla Firefox és a Google Chrome esetén működik. A többi böngészőnél nem néztem.
+
+Egy **nagyon fontos különbség van** az objektum literál (illetve változó) szintaxis és a függvény/konstruktor szintaxis között. Ha objektum literál segítségével hozunk létre egy objektumot, akkor az a deklarációkor létrejön. A deklaráció előtt nem használható (ugyanúgy, mint egy egyszerű változó esetén). A konstruktor esetén viszon egy függvényt hozunk létre, amit ha meghívunk, létrehozzuk az objektum egy példányát (tetszőleges számú példányt hozhatunk létre). A függvény definíció előtt is létrehozhatunk objektum példányokat. A példa talán érthetőbb lesz:
+
+<pre><code class="language-javascript">// Példányosítás a konstruktor definíciója előtt.
+var x = new Point(233,455);
+x.print();
+function Point(x, y) {
+    this.x = x || 0;
+    this.y = x || 0;
+    this.print = function () {
+        console.log("x: " + this.x + ", y: " + this.y);
+    };
+}
+
+// Objektum literál esetén nem működik.
+/* Típushibát dob, hiszen még a point objektum nem létezik,
+ * a következő sorban hozzuk létre! */
+point.print();
+var point = {
+  x: 0,
+  y: 0,
+  print: function () {
+     console.log("x: " + point.x + ", y: " + point.y);
+  } 
+};
+</code></pre>
+<br />
+## Tömbök, tömbszerű objektumok és hozzáférés az objektumok tulajdonságaihoz
+
+A tömbök is objektumok. Az objektumok tulajdonságokból épülnek fel, amelyek lehetnek változók, tömbök, tömbszerű objektumok, objektumok és függvények. Értsétek ezt úgy, hogy tetszőlegesen egymásba ágyazhatók. **A tulajdonságok azonosító-érték párok.** `x: 6` esetén az `x` azonosító a `6`-os értéket jelöli, amit valamelyik memóriacímen tároljuk. Emlékezzünk vissza, hogy az objektumok mind referenciák, amelyek a dinamikus memóriában lefoglalt tárhelyre hivatkoznak, ahol megtalálhatók az objektum tulajdonságai. Az objektumok tulajdonságaihoz a `.` **pont operátor** segítségével férhetünk hozzá (is), míg a tömbök esetén a `[0]` **tömbelem-hivatkozás** segítségével. A függvények esetén az érték maga a függvény teste, az azonosító pedig a függvény neve.
+
+<figcaption class="code-caption">A 3. JavaScript példa: Tömbök, tömbszerű objektumok és az objektum tulajdonságok elérése.</figcaption>
+<pre><code class="language-javascript">// A tömbök.
+var ures_tomb = [];
+var tomb = [1, 2, 3, 4, 5];
+console.log(tomb[0]);
+
+/* Elemek hozzáadása a tömb végére. */
+tomb.push(-200, 1552, 9999);
+/* Az utolsó elem törlése. */
+tomb.pop();
+/* A tömb elemeinek kiíratása. */
+for (var i = 0; i < tomb.length; i++) {
+    console.log("A tömb " + (i+1) + ". eleme: " + tomb[i]);
+}
+/* Ezzel a 4. index utáni elemeket törlöm. */
+tomb.length = 4;
+
+var array = [
+    { x: 0 },
+    "kizomba",
+    26,
+    true,
+    function(nev) { console.log("Helló, " + nev + "!"); }
+];
+// Utolsó elem.
+array[array.length-1];
+// Hívjuk is meg a függvényt!
+array[array.length-1]("Jancsi");
+</code></pre>
+
+A tömbök tulajdonságait a tömb **elemeinek** hívjuk, amelyek azonosítója szám. Ezt a számot **indexnek** nevezzük. **A többi objektumnál a tulajdonságok azononosítói** nem számok, hanem **sztringek**. A tömböknek van egy hossz / length tulajdonságuk, ami az éppen aktuális tömbelemek számát, a **tömb méretét** tartalmazza. A fenti `for` ciklus helyett használhatunk **for-in ciklust** is, ami egy változón keresztül iteráltatja egy objektum tulajdonságait:
+
+<pre><code class="language-javascript">/* Ugyanaz, mint az előző, csak for-in ciklussal. */
+var temp;
+for (var p in tomb) {
+  /* Számmá kellett konvertálni. */
+  temp = Number(p)+1;
+  console.log("A tömb " + temp + ". eleme: " + tomb[p]);
+}
+</code></pre>
+
+**Tömbszerű objektumokat** is létrehozhatunk (ilyen az `arguments` tulajdonság, ami egy tömbszerű objektum, de erről majd később), ha azonosítónak számot adunk meg, valamint szükség van az elemek számának eltárolására egy változóba (`length`): 
+<pre><code class="language-javascript">/* Tömbszerű objektumok. */
+/* Üres objektum. */
+var a = {};
+var i = 0;
+while (i < 10) {
+  a[i] = i * i;
+  i++;
+}
+/* A tömböknek van hossz tulajdonsága. Itt is létrehozzuk. */
+a.length = i;
+
+var osszeg = 0;
+for (var j = 0; j < a.length; j++) {
+  osszeg += a[j];
+}
+console.log(osszeg);
+</code></pre>
+
+Az előbbiekből következik, hogy az objektum tulajdonságok elérése kétféleképpen történhet: az `objektum.tulajdonsag` és az `objektum["tulajdonsag"]` szintaxissal. A tömbök esetén csak a `[]` zárójelek segítségével.
+
+<pre><code class="language-javascript">/* A két példával ezelőtti "a"
+ * tömbszerű objektum szerepel itt.
+ * A`for in` ciklus a length tulajdonságot is kiírja a konzolra! */
+for (var prop in a) {
+    console.log(prop + " = " + a[prop]);
+}
+// Hozzáférés az objektumok tulajdonságaihoz.
+var o = {};
+o.x = 10, o.y = 25;
+o.print = function () {
+    console.log("x: " + o.x + ", y: " + o.y);
+};
+console.log(o["x"]);
+console.log(o.y);
+// A print metódus meghívása.
+o["print"]();
+</code></pre>
+
+A következő rész tartalma:
+* Mi a `this`, honnan származik?
+* Aszinkron programozás, bezárás (closure) és a privát hozzáférés
+* Egymásba ágyazott függvények
+* Kivételkezelés (exeption handling)
+* A `RegExp` objektumok
+
+<br />
+
+## Ajánlott irodalom
+1. Douglas Crockford (2008). [JavaScript: The Good Parts. 1th Edition.](https://www.amazon.com/exec/obidos/ASIN/0596517742/wrrrldwideweb) O’Reilly, USA.
