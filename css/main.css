@@ -285,12 +285,13 @@ blockquote {
       margin-bottom: 0;
     }
 
-    blockquote:before, blockquote:after {
+    blockquote:before {
         position: absolute;
+        padding-left: 10px;
         width: 40px;
         height: 40px;
         font-size: 60px;
-        line-height: 1;
+        line-height: 0.85;
     }
     blockquote:before {
         top: 0;
@@ -298,12 +299,12 @@ blockquote {
         content: "\201D";
         color: #828282;
     }
-    blockquote:after {
+    /*blockquote:after {
         top: 0;
         right: 0;
         content: "\201C";
         color: #828282;
-    }
+    }*/
 
 /**
 * Code formatting
