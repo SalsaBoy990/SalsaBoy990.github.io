@@ -1,6 +1,6 @@
 ---
 layout: post
-comments: false
+comments: true
 title: "Rövid elméleti bevezető a JavaScript nyelvbe, 2. rész."
 excerpt: "A JavaScript sorozatom folytatása, az alábbi témákra térek ki: a függvényhatókör, a felemelés (hoisting), a globális objektum (`Window`), a szigorú mód (strict mode) és a korlátozás, objektumok és függvények létrehozása, tömbök és tömbszerű objektumok, valamint a hozzáférés az objektumok tulajdonságaihoz."
 date: 2017-09-03 1:11
