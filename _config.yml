@@ -41,11 +41,6 @@ mobile: +36 20 442 7225
 github_username: SalsaBoy990
 twitter_username: "@UjGeografus"
 
-# Google Analytics
-# Remove # found before google_analytics to include Google Analytics to your
-# Jekyll site. Then replace UA-########-# with your Google Analytics tracking ID
-# google_analytics: UA-########-#
-
 # set timezone
 timezone: Europe/Budapest
 

@@ -5,7 +5,7 @@ layout: compress
 <!DOCTYPE html>
 <html lang="hu">
   {% include head.html %}
-  <body oncopy="copyLink()" class="body-style">
+  <body class="body-style">
     {% include header.html %}
 
     <div class="page-content">
@@ -24,10 +24,10 @@ layout: compress
       variable exists in _config.yml and if the environment for Jekyll is set to
       production `JEKYLL_ENV=production jekyll build`. It will not render when running
       `jekyll serve` because by default, the environment is set to `development`.
-    
-    {% if jekyll.environment == "production" and site.google_analytics %}
-  {% include google_analytics.html %}
-    {% endif %}
     {% endcomment %}
+    {% if jekyll.environment == "production" and site.google_analytics %}
+      {% include google_analytics.html %}
+    {% endif %}
+    
   </body>
 </html>
