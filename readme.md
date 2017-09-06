@@ -1,3 +1,3 @@
-# Jekyll Alpha ⍺
+# New Geographer
 
-Alpha is a bare bones Jekyll project to build your Jekyll theme on top of.
+[www.newgeographer.com](http://www.newgeographer.com/)
