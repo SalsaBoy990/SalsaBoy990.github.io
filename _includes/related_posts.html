@@ -11,7 +11,8 @@
                 {% if page.tags contains tag %}
                     {% assign related = related | plus: 1 %}
                     <h4>
-                        <span><a class="archive-a" href="{{ post.url | prepend: site.baseurl }}"> ({{ post.title }}</a>{% assign date = post.date %} {% include date.html %})</span>
+                        <a class="archive-a" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><span 
+class="post-date"> ({% assign date = post.date %} {% include date.html %})</span>
                     </h4>
                 {% endif %}  
             {% endif %}
