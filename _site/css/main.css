@@ -775,3 +775,9 @@ article {
     -moz-column-gap: 30px;
     column-gap: 30px;
 }
+
+.info-box {
+    border: 1px solid #29293f;
+    padding: 10px;
+    border-radius: 3px;
+}
