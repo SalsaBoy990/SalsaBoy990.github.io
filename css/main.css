@@ -53,6 +53,7 @@ ul, ol, dl, figure,
 }
 
 
+
 /**
  * Images
  */
@@ -197,7 +198,7 @@ li > ol {
  */
 h1, h2, h3, h4, h5, h6 {
     font-family: "Open Sans", "Arial", Helvetica, sans-serif;
-    font-weight: 400;
+    font-weight: 800;
     line-height: 1.2;
     color:  #29293f;
 }
@@ -559,7 +560,7 @@ article {
 
 .post-title {
     font-size: 36px;
-    font-weight: 400;
+    font-weight: 800;
     letter-spacing: 0px;
     line-height: 1.2;
       
@@ -600,7 +601,7 @@ article {
 .post-link {
     display: block;
     font-size: 36px;
-    font-weight: 400;
+    font-weight: 800;
     letter-spacing: 0px;
     line-height: 1.2;
     color: #29293f;

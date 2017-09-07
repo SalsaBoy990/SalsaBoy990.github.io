@@ -14,7 +14,7 @@ layout: page
   {% capture prev_month %}{{ post.previous.date | date: "%-m" }}{% endcapture %}
 
   {% if forloop.first %}
-    <h2>{{ this_year }}. {% assign m = this_month %}
+    <h3>{{ this_year }}. {% assign m = this_month %}
                             {% case m %}
                               {% when '1' %}janu&#225;r
                               {% when '2' %}febru&#225;r
@@ -28,7 +28,7 @@ layout: page
                               {% when '10' %}okt&#243;ber
                               {% when '11' %}november
                               {% when '12' %}december
-                            {% endcase %}</h2>
+                            {% endcase %}</h3>
     <ul>
   {% endif %}
   <li><a href="{{ post.url }}" class="archive-a">{{ post.title }}</a></li>
@@ -36,7 +36,7 @@ layout: page
   {% unless forloop.last %}
     {% if this_year != prev_year %}
       </ul>
-      <h2>{{ prev_year }}. {% assign m = prev_month %}
+      <h3>{{ prev_year }}. {% assign m = prev_month %}
                             {% case m %}
                               {% when '1' %}janu&#225;r
                               {% when '2' %}febru&#225;r
@@ -50,12 +50,12 @@ layout: page
                               {% when '10' %}okt&#243;ber
                               {% when '11' %}november
                               {% when '12' %}december
-                            {% endcase %} </h2>
+                            {% endcase %} </h3>
       <ul>
     {% else %}
       {% if this_month != prev_month %}
         </ul>
-        <h2>{{ prev_year }}. {% assign m = prev_month %}
+        <h3>{{ prev_year }}. {% assign m = prev_month %}
                             {% case m %}
                               {% when '1' %}janu&#225;r
                               {% when '2' %}febru&#225;r
@@ -69,7 +69,7 @@ layout: page
                               {% when '10' %}okt&#243;ber
                               {% when '11' %}november
                               {% when '12' %}december
-                            {% endcase %}</h2>
+                            {% endcase %}</h3>
         <ul>
       {% endif %}
     {% endif %}
