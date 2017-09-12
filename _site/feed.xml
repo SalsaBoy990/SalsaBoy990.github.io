@@ -15,6 +15,141 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>SAGA GIS és GDAL: Földrajzi adatfeldolgozás a parancssorban</title>
+        <description>&lt;h2 id=&quot;1-bevezetés&quot;&gt;1. Bevezetés&lt;/h2&gt;
+
+&lt;p&gt;A SAGA mozaikszó a System for Automated Geoscientific Analyses (Automatizált Földtudományi Elemző Rendszer) rövidítése.
+A SAGA GIS egy C++-ban írt szabad forráskódú térinformatikai szoftver. A legújabb verzió az &lt;strong&gt;5.0&lt;/strong&gt;. Bővebb információért keressétek fel a program &lt;a href=&quot;http://www.saga-gis.org/en/index.html&quot;&gt;honlapját&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A &lt;strong&gt;SAGA GIS térinformatikai szoftver&lt;/strong&gt; kifejlesztésének elképzelése az 1990-es évek végén született meg a németországi Göttingeni Egyetem Természetföldrajzi Tanszékén. A kutatási projektek középpontjában a raszteres adatok, azon belül is kifejezetten a digitális domborzatmodellek, elemzése volt, amit többek közt a talajtulajdonságok, terep által irányított folyamatok, valamint éghajlati paraméterek modellezésére, előrejelzésére használtak. A SAGA GIS fejlesztése Jürgen Böhner és Olaf Conrad vezetésével történt és történik napjainkban is.&lt;/p&gt;
+
+&lt;p&gt;A kereskedelmi szoftverek közül az ERDAS Imagine ingyenes alternatívája lehet a SAGA GIS.&lt;/p&gt;
+
+&lt;p&gt;A &lt;a href=&quot;http://www.gdal.org/&quot;&gt;GDAL&lt;/a&gt; (Geospatial Data Abstraction Library) egy szabad forrású földrajzi adatfeldolgozó szoftverkönyvtár, ami számos vektoros és raszteres adatokat manipuláló modult tartalmaz, amelyek a paranccssorban vagy valamilyen héjalkalmazáson (&lt;a href=&quot;https://trac.osgeo.org/osgeo4w/&quot;&gt;OSGeo4W Shell&lt;/a&gt;) keresztül érhetők el. A gépemen lévő változat a &lt;a href=&quot;http://www.qgis.org/hu/site/&quot;&gt;Quantum GIS (QGIS)&lt;/a&gt; szabad forráskódú térinformatikai szoftver mellett települ fel (ugyanis a QGIS is használja a GDAL moduljait), és az &lt;strong&gt;OSGeo4W Shell&lt;/strong&gt; héjalkalmazáson keresztül futtatom. A &lt;strong&gt;GDAL verzióm: 1.11.2&lt;/strong&gt; (2015. február 10.). A QGIS 2.8.1-Wien változatot telepítettem fel. A legújabb kiadáshoz már biztosan egy újabb GDAL verzió jár. Ezzel nem teszteltem le a szkriptjeimet.&lt;/p&gt;
+
+&lt;p&gt;A fenti verziókat használtam a parancssori szkriptek futtatására, tehát más verziókkal nem 100%, hogy tökéletesen működnek.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-adat-és-módszer&quot;&gt;2. Adat és módszer&lt;/h2&gt;
+
+&lt;p&gt;Egy 15 éves 2000 és 2015 közötti műholdas adatsort használtam fel a parancssori földrajzi adatfeldolgozás demostrálására. A Terra műhold MODIS szenzorának &lt;a href=&quot;https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1_v006&quot;&gt;250 méteres felbontású, 16 napos EVI és NDVI kompozitképeit&lt;/a&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;MOD13Q1: MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid V005&lt;/code&gt;) elemeztem a Duna-Tisza-közi erdőterületekre, amelyek az Európai Uniós &lt;a href=&quot;https://www.eea.europa.eu/publications/COR0-landcover&quot;&gt;CORINE&lt;/a&gt; (Coordination of Information on the Environment) felszínborítási adatbázis segítségével lettek lehatárolva.
+Az EU tagállamok nagyjából 6 évente felmérik a felszínborítás változásait különböző felszínborítási kategóriák szerint, 1:100 000-es méretarányban. A CLC_2000 (a 2000-05 közötti), a CLC_2006 (a 2006-11 közötti) és a CLC_2012 (2012-től kezdődő műholdképekre) adatok alapján határoltuk le az erdőket.&lt;/p&gt;
+
+&lt;p&gt;Azokat a 250*250 méteres cellákat válogattuk le, aminek legalább 2/3 részét erdő borította. Külön vizsgáljuk a lomb-, a tűlevelű és az elegyes erdőket. A cél a vegetáció egészségi állapotának monitorozása a szárazodó Homokhátságon március vége és szeptember vége között. Az 1970-es évektől számítva a talajvízkút-hálózat mérései szerint átlagosan 3 méterrel süllyedt a régióban a talajvízszint (a magasabban fekvő térségekben ennél nagyobb csökkenés is megfigyelhető).&lt;/p&gt;
+
+&lt;p&gt;A 16 napos kompozitképeket úgy kell érteni, hogy a 16 nap alatt készült összes felvételből raknak össze egy képet: a legjobb minőségű, azaz tiszta, felhőktől mentes értékeket használják fel minden egyes cellára (pixelre). A legnagyobb hátulütője az optikai (a látható és az infravörös tartományban mérő) szenzoroknak, hogy a felhőkön nem látnak át, szemben a lézeres vagy radaros mérésekkel szemben. A kompozit készítésével sokkal teljesebb adatokat kapunk, hiszen egy hosszabb időszakra nézve valószínűbb, hogy lesznek olyan felhőmentes képek, amelyek lefedik a földfelszín nagy részét, így használható információkat nyerhetünk.&lt;/p&gt;
+
+&lt;p&gt;Mik azok a spektrális indexek?&lt;/p&gt;
+
+&lt;p&gt;NDVI = (ρNIR − ρred) / (ρNIR + ρred)
+NDWI = (ρNIR − ρSWIR) / (ρNIR + ρSWIR)	
+ahol NDVI normalizált differenciált vegetációindex, NDWI normalizált differenciált vízindex, ami a növényzeti nedvességtartalmat fejezi ki, ρred a látható vörös sáv (620-670 nm), ρNIR a közeli infravörös sáv (841-876 nm), és ρSWIR az egyik középső infravörös sáv (2105-2155 nm).&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-feldolgozás-a-parancssorban&quot;&gt;3. Feldolgozás a parancssorban&lt;/h2&gt;
+
+&lt;p&gt;A Windows parancssorban úgynevezett &lt;a href=&quot;https://hu.wikipedia.org/wiki/K%C3%B6tegelt_%C3%A1llom%C3%A1ny&quot;&gt;&lt;strong&gt;kötegelt állományokat&lt;/strong&gt;&lt;/a&gt; futtatok. Egyszerű és hatékony kis programokat lehet batch-ban írni. Az általában .cmd vagy .bat kiterjesztésű kötegelt állományokat (angolból átvett néven &lt;a href=&quot;https://hu.wikipedia.org/wiki/Batch_programoz%C3%A1s&quot;&gt;batch fájlokat&lt;/a&gt;) Windows, OS/2, és MS-DOS rendszerekben szokták használni. Formailag egy szövegfájlhoz hasonlítanak, tartalmuk pedig parancsok (DOS/Windows parancsok) egymásutánja. Futtatásuk a tartalom sorról sorra való olvasásával történik például a &lt;strong&gt;cmd.exe&lt;/strong&gt;-vel a Windows operációs rendszer alatt. A SAGA GIS parancssorban is futtatható, de célszerű kötegelt fájlkánt futtatni az utasítások sorozatát.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;31-saga-gis-saga_cmd&quot;&gt;3.1. SAGA GIS (saga_cmd)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-batch&quot;&gt;REM @ECHO OFF
+ECHO
+REM *****************************************************************
+REM Create mean and median images and clip them with polygons
+REM Author: András Gulácsi
+REM E-mail: admin@newgeographer.com
+REM Date: September 10th, 2017
+REM SAGA GIS és GDAL: Földrajzi adatfeldolgozás a parancssorban
+REM link
+REM *****************************************************************
+REM *************** PATHS ******************
+REM Path to saga_cmd.exe
+set PATH=%PATH%;g:\saga-5.0.0_x64\
+
+REM Path to working dir
+SET WORK=g:\modis\2005\EOV_2005\ndvi\
+SET RESULT=g:\modis\TEMP
+SET SHAPES=g:\modis\
+SET POLYGON=00_l_250_66sz_poli.shp
+SET POSTFIX=_00_l
+REM ****************************************
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;saga_cmd io_gdal 0&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-batch&quot;&gt;FOR /F %%i IN ('dir /b %WORK%\*.tif') DO (
+
+REM Tool: Import Raster
+
+saga_cmd io_gdal 0 ^
+-GRIDS=%WORK%\%%i.sgrd ^
+-FILES=%WORK%\%%i ^
+-TRANSFORM=0
+
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/excel.png&quot; class=&quot;large&quot; alt=&quot;Elérési utak, fájlnevek generálása az ÖSSZEFŰZ() függvény segítségével&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ha van egy bonyolult probléma és ha lehetséges, akkor mindig térj vissza egy olyan megoldáshoz, amit már ismersz!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-batch&quot;&gt;REM Tool: Statistics for Grids
+
+saga_cmd statistics_grid 4 ^
+-GRIDS=%WORK%\NDVI2005081_eov_kiv.tif.sgrd;%WORK%\NDVI2005097_eov_kiv.tif.sgrd;%WORK%\NDVI2005113_eov_kiv.tif.sgrd;%WORK%\NDVI2005129_eov_kiv.tif.sgrd;%WORK%\NDVI2005145_eov_kiv.tif.sgrd;%WORK%\NDVI2005161_eov_kiv.tif.sgrd;%WORK%\NDVI2005177_eov_kiv.tif.sgrd;%WORK%\NDVI2005193_eov_kiv.tif.sgrd;%WORK%\NDVI2005209_eov_kiv.tif.sgrd;%WORK%\NDVI2005225_eov_kiv.tif.sgrd;%WORK%\NDVI2005241_eov_kiv.tif.sgrd;%WORK%\NDVI2005257_eov_kiv.tif.sgrd;%WORK%\NDVI2005273_eov_kiv.tif.sgrd ^
+-MEAN=%RESULT%\atlag.sgrd ^
+-PCTL=%RESULT%\median.sgrd ^
+-PCTL_VAL=50
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-batch&quot;&gt;REM Tool: Clip Grid with Polygon
+
+saga_cmd shapes_grid 7 ^
+-INPUT=%RESULT%\atlag.sgrd ^
+-OUTPUT=%RESULT%\atlag%POSTFIX%.sgrd ^
+-POLYGONS=%SHAPES%\%POLYGON% ^
+-EXTENT=0
+
+saga_cmd shapes_grid 7 ^
+-INPUT=%RESULT%\median.sgrd ^
+-OUTPUT=%RESULT%\median%POSTFIX%.sgrd ^
+-POLYGONS=%SHAPES%\%POLYGON% ^
+-EXTENT=0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_results.png&quot; class=&quot;large&quot; alt=&quot;A mintaterületek sikeresen kivágva az átlagképből&quot; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-batch&quot;&gt;REM Tool: Export GeoTIFF
+
+saga_cmd io_gdal 2 ^
+-GRIDS=%RESULT%\atlag%POSTFIX%.sgrd ^
+-FILE=%RESULT%\atlag%POSTFIX%.tif
+
+saga_cmd io_gdal 2 ^
+-GRIDS=%RESULT%\median%POSTFIX%.sgrd ^
+-FILE=%RESULT%\median%POSTFIX%.tif
+
+
+PAUSE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;32-virtuális-raszter-készítése-gdal-ban&quot;&gt;3.2. Virtuális raszter készítése GDAL-ban&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/shell.png&quot; class=&quot;image3&quot; alt=&quot;Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;összefoglalás&quot;&gt;Összefoglalás&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 11 Sep 2017 02:22:05 +0200</pubDate>
+        <link>http://localhost:4000//tudomany/2017/09/11/parancssor_a_geoinformatikaban.html</link>
+        <guid isPermaLink="true">http://localhost:4000//tudomany/2017/09/11/parancssor_a_geoinformatikaban.html</guid>
+      </item>
+    
+      <item>
         <title>Rövid elméleti bevezető a JavaScript nyelvbe, 2. rész.</title>
         <description>&lt;p&gt;Az &lt;a href=&quot;http://www.newgeographer.com/tudomany/2017/08/29/javascript_01.html&quot;&gt;előző részben&lt;/a&gt; az objektum-orientált paradigmáról írtam, valamint a JavaScript bemutatásába kezdtem bele. Az alábbi dolgokra tértem ki: a JavaScript interpretáló nyelv, vagyis a fordítás futási időben történik; az ECMAScript szabványok; gyengén típusos nyelv; két adattípus létezik: a primitív (változók) és a referencia (objektumok); a primitív típusok nem, míg a referencia típusok mutálódnak; az automatikus szemétgyűjtés miatt nem kell foglalkoznunk a dinamikus tárhelyek felszabadításával (nincsen destruktor), továbbá nincsenek mutatók, amiken keresztül hozzáférhetnénk a memóriacímekhez; egy tömb példáján keresztük rávilágítottam a sekély és a mély másolás különbségére; az implicit típuskonverziókra és a szigorú azonosság, illetve szigorú nemegyenlőség operátorokra is kitértem; leírtam, hogy a JS Unicode karakterkészletet használ, illetve a számokat 64 bites lebegőpontos formátumban tárolja el. Kitértem a hamisértékekre is.&lt;/p&gt;
 
@@ -923,228 +1058,6 @@ szakmai oklevéllel&lt;/td&gt;
         <pubDate>Mon, 07 Aug 2017 17:27:00 +0200</pubDate>
         <link>http://localhost:4000//tudomany/2017/08/07/ciganyok_magyarorszagon.html</link>
         <guid isPermaLink="true">http://localhost:4000//tudomany/2017/08/07/ciganyok_magyarorszagon.html</guid>
-      </item>
-    
-      <item>
-        <title>A Google Earth Engine felhő alapú platform alkalmazása a geoinformatikában, 1. rész.</title>
-        <description>&lt;p&gt;Korunkban már nem az adatok hiánya jelenti a földrajzi kutatások korlátját, hanem annak a tömérdek rendelkezésre álló és ingyenes távérzékelt adatnak a rendkívül hosszadalmas feldolgozása. Hiszen csak nagy mennyiségű, empirikus adatból lehet szilárd, megbízható tudományos következtetéseket levonni, és megbízható modelleket megalapozni. A Google Earth Engine felhő alapú számítási platform alkalmazásával szeretném demonstrálni az objektum-orientált programozás elengedhetetlen szükségét a geoinformatikában.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;a-google-earth-engine-bemutatása&quot;&gt;A Google Earth Engine bemutatása&lt;/h2&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/4E6yQLoGO2o&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;A &lt;strong&gt;felhő alapú&lt;/strong&gt; (cloud computing) &lt;strong&gt;szolgáltatások&lt;/strong&gt; közös jellemzője, hogy a szolgáltatásokat nem egy dedikált hardvereszközön üzemeltetik, hanem a szolgáltató eszközein elosztva, a szolgáltatás üzemeltetési részleteit a felhasználótól elrejtve. Ezeket a szolgáltatásokat a felhasználók &lt;strong&gt;a hálózaton keresztül&lt;/strong&gt; érhetik el. A &lt;strong&gt;Google Earth Engine&lt;/strong&gt; is egy ilyen felhő alapú szolgáltatás. Ez egy olyan szoftverszolgáltatási módszer, amelynél a szoftver és a kapcsolódó adatok központilag vannak tárolva (tipikusan egy (internet) felhőben, esetünkben a Google szerverein), ugyanakkor a felhasználói hozzáférések egy vékony &lt;strong&gt;kliens&lt;/strong&gt;en keresztül zajlanak, amely leggyakrabban egy valamilyen &lt;strong&gt;webböngésző alkalmazás&lt;/strong&gt;. Esetünkben ez a Google Earth Engine alkalmazásprogramozási felülete vagy interfésze (application programming interface, API). A Google Earth Engine API a JavaScript és a Python programozási nyelveket használja. A Python használatához telepítésre is szükség van. Csak a JavaScript klienssel foglalkozom.&lt;/p&gt;
-
-&lt;p&gt;A Google Earth Engine (a későbbiekben: GEE) felhő alapú platformját műholdképek és egyéb földi megfigyelési adatok feldolgozására hozták létre. Hozzáférést nyújt a Google képi adattáraihoz (909 terrabájtnyi, azaz majdnem 1 petabájtnyi (10&lt;sup&gt;15&lt;/sup&gt; bájt) adat) és biztosítja azt a gigászi számítási teljesítményt, ami a képek feldolgozásához szükséges.&lt;/p&gt;
-
-&lt;p&gt;A tudomány tekintélyes adat- és technológiai erőforrásokkal való párosítása több &lt;strong&gt;előnnyel&lt;/strong&gt; jár:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Példa nélküli sebesség:&lt;/strong&gt; még a legerősebb felhasználói számítógépekkel is napokba vagy hetekbe telik egy elemzés lefuttatása a földfelszín bármely nagyobb szegletére. A felhő alapú számítással nagyságrendileg lecsökken a számítási idő.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Könnyen használható és alacsony költségű:&lt;/strong&gt; egy internetes felület, amely könnyű hozzáférést nyújtva az adatokhoz (Landsat, MODIS, Sentinel stb.), a tudományos algoritmusokhoz és a számítási teljesítményhez. Drámaian lecsökkenti a földrajzi adatok elemzésének költségeit és összetettségét. Ez lehetővé teszi a magas befolyású, adat-vezérelte tudományt.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;A GEE számítási módszere figyelemreméltóan hatékony: automatikusan párhuzamosítja az elemzéseket, így aztán számos számítógép CPU-ján egy időben futnak a Google adatközpontokban. A számításokat „lustán” hajtja végre, csak a kijelző megtöltéséhez vagy a kért értékek számításához szükséges bemenő adatokat kéri be. Ez az &lt;strong&gt;éppen időben&lt;/strong&gt; (just-in-time) &lt;strong&gt;megosztott számítási modell&lt;/strong&gt; lehetővé teszi az eredmények valós idejű felfedezését. A számítás után, az eredményeket gyorsítótárazza a memóriában azért, hogy az ugyanarra a műholdképre vagy értékre vonatkozó többszörös HTTP lekérések ne vezessenek fölösleges újraszámításhoz.&lt;/p&gt;
-
-&lt;p&gt;A GEE Code Editor fejlesztői környezet felületét a lenti kép mutatja: fent középen a &lt;strong&gt;JavaScript kódszerkesztő&lt;/strong&gt;, alul a &lt;strong&gt;térképnézet&lt;/strong&gt;, a bal felső ablakban a fülekkel a &lt;strong&gt;szkriptkezelő&lt;/strong&gt; (Scripts), az &lt;strong&gt;API dokumentáció&lt;/strong&gt; (Docs) és a &lt;strong&gt;saját feltöltött adataink&lt;/strong&gt; (Assets) érhetők el. A jobb felső ablakban a &lt;strong&gt;felügyelő&lt;/strong&gt; (Inspector) – pl. a térképre kattintva egy pont földrajzi koordinátáit írja ki –, a &lt;strong&gt;konzol&lt;/strong&gt; (Console) – a &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; függvény ide ír –, és a &lt;strong&gt;feladatok&lt;/strong&gt; (Tasks) – pl. egy műholdkép GeoTIFF-be exportálása – jeleníthető meg a fülekre kattintva. A kódszerkesztő ablak fejlécében a &lt;strong&gt;Get Link&lt;/strong&gt; gombra kattintva megkapjuk a szkriptünkre mutató egyedi html címet.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/gee/gee-800px-min.jpg&quot; class=&quot;large&quot; alt=&quot;Google Earth Engine kódszerkesztő&quot; /&gt;&lt;/p&gt;
-&lt;figcaption&gt;1. kép: A Google Earth Engine kódszerkesztője
-&lt;/figcaption&gt;
-
-&lt;h3 id=&quot;fontos-tudnivalók&quot;&gt;Fontos tudnivalók&lt;/h3&gt;
-
-&lt;p&gt;A GEE nem kereskedelmi célra ingyenesen elérhető, viszont a használata az &lt;strong&gt;Earth Engine Kiértékelők&lt;/strong&gt; (Earth Engine Evaluators) számára korlátozott.&lt;/p&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;A Google Earth Engine használatához &lt;a href=&quot;https://accounts.google.com/SignUp?hl=hu&quot; target=&quot;_blank&quot;&gt;Google Fiók&lt;/a&gt;kal kell rendelkezni.
-    &lt;/li&gt;
-    &lt;li&gt;Egy űrlapot kell kitölteni &lt;a href=&quot;https://signup.earthengine.google.com/&quot; target=&quot;_blank&quot;&gt;itt&lt;/a&gt;. Kb. 1 hét alatt bírálják el, és adnak hozzáférést a platformhoz.
-    &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Csak ez a két lépés után tudod használni a Google Earth Engine-t.&lt;/p&gt;
-
-&lt;p&gt;A továbbiakban dióhéjban bemutatom a GEE működését. Az &lt;strong&gt;objektum-orientált programozás&lt;/strong&gt; és a &lt;strong&gt;JavaScript&lt;/strong&gt; nyelv rövid bemutatását egy későbbi blogbejegyzésben pótolom.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;hogyan-működik-a-google-earth-engine&quot;&gt;Hogyan működik a Google Earth Engine?&lt;/h2&gt;
-
-&lt;h3 id=&quot;1-kliens-kontra-szerver&quot;&gt;1. Kliens kontra szerver&lt;/h3&gt;
-
-&lt;p&gt;Fontos megkülönböztetni az &lt;strong&gt;EE objektumokat&lt;/strong&gt; más JavaScript objektumoktól vagy elemi grafikus objektumoktól (ún. primitívek), amelyek a kódban lehetnek. A szerveren található objektumokat &lt;strong&gt;kliens oldali „proxy” objektumok&lt;/strong&gt; (tárolók) manipulálásával lehet változtatni.  A webböngészőt hívjuk kliensnek: esetünkben ez a Google Earth Engine API. &lt;strong&gt;Minden „ee”-vel kezdődő „valami” egy proxy objektum.&lt;/strong&gt; Ezek nem tartalmaznak semmilyen tényleges adatot, mert ezek csupán a szerveren található objektumok kezelői.&lt;/p&gt;
-
-&lt;p&gt;A következő példában a kliensSztring sztring típusú változót becsomagoljuk egy tárolóba (az &lt;code class=&quot;highlighter-rouge&quot;&gt;ee.Date()&lt;/code&gt; konstruktorát hívjuk meg). Ezeket a tárolókat küldjük el a szervernek feldolgozásra!&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;kliensSztring&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2017-04-01&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;kliensSztring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//=&amp;gt; sztring&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// Az ee.Date() konstruktorát meghívjuk.&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;szerverSztring&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kliensSztring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;Ez egy EE objektum?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;szerverSztring&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ComputedObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//=&amp;gt; igaz&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;A dátum objektumok segítségével könnyedén le tudjuk válogatni a megadott időszakban készült műholdképeket a képkollekcióból (&lt;code class=&quot;highlighter-rouge&quot;&gt;ee.ImageCollection&lt;/code&gt; osztály).&lt;/p&gt;
-
-&lt;p&gt;A szerver oldali objektumok és metódusok (tagfüggvények) szintaxisa &lt;code class=&quot;highlighter-rouge&quot;&gt;ee.Thing&lt;/code&gt;, illetve &lt;code class=&quot;highlighter-rouge&quot;&gt;ee.Thing.method()&lt;/code&gt;. Bármely másik objektum, ami nem „ee”-vel kezdődik az mind kliens oldali. Például a &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt;, a &lt;code class=&quot;highlighter-rouge&quot;&gt;Map&lt;/code&gt;, az &lt;code class=&quot;highlighter-rouge&quot;&gt;Export&lt;/code&gt; vagy a &lt;code class=&quot;highlighter-rouge&quot;&gt;Chart&lt;/code&gt;. Mivel a kliens nem tudja, hogy mi található a szerver oldali &lt;code class=&quot;highlighter-rouge&quot;&gt;ee.Thing&lt;/code&gt; objektumokban, így aztán &lt;strong&gt;a rajtuk végzett for ciklusok és feltételes kifejezések (if-else) nem működnek!&lt;/strong&gt; Helyette a &lt;strong&gt;szerver oldali&lt;/strong&gt; funkciókat kell használni:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Normalizált Differenciált Vegetációindex számítása.&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;addNDVIBand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;use strict&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addBands&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;normalizedDifference&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;B5&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;B4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;NDVI&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;cm&quot;&gt;/* Landsat 8 kollekció szűrése, NDVI számítása az
- * összes képre a map() metódussal. */&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Geometry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;19.064&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;47.547&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;landsat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;LANDSAT/LC8_L1T_TOA_FMASK&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;filteredCollection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ImageCollection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;landsat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filterBounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filterDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2016-08-01&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2016-08-31&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addNDVIBand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;landsat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Növekvő sorrend a %-os felhőborítás alapján.&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CLOUD_COVER&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;2-késleltetett-végrehajtás&quot;&gt;2. Késleltetett végrehajtás&lt;/h3&gt;
-
-&lt;p&gt;Ha egy szkriptet írunk, akkor a kód nem közvetlenül fut le az EE szerverein. Ehelyett, a kliens könyvtár (GEE API) átkódolja a szkriptet &lt;strong&gt;JSON objektumok&lt;/strong&gt; sorozatává, majd ezeket elküldi a Google-nek, és válaszra vár. Semmi sem lesz elküldve a Google számára feldolgozásra, ha explicite nem adunk rá utasítást. Tehát fölöslegesen nem dolgoz fel semmit a szerver, ha nem utasítjuk rá. A &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; vagy a &lt;code class=&quot;highlighter-rouge&quot;&gt;Map.addLayer()&lt;/code&gt; utasítás már elegendő a kérés elküldéséhez:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Az első kép leválogatása (a legkevesebb felhő).&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;filteredCollection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;landsatImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// A kép tulajdonságainak kiírása a konzolra.&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;landsatImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;studyArea&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Geometry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Rectangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;mf&quot;&gt;19.1223&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;mf&quot;&gt;46.7513&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;mf&quot;&gt;19.2341&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;mf&quot;&gt;46.8884&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Megjelenítési paraméterek beállítása.&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vizParams&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;bands&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;B5&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;B4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;B3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;gamma&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.3&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// A 11. piramisszinthez tartozó felbontás 76 méter!&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;19.17826&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;46.81987&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Megjelenítés a térképnézeten.&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;studyArea&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addLayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;landsatImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;studyArea&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;vizParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;Landsat 8 hamis színes kompozit&quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;3-a-lépték-és-a-vetületek-kezelése&quot;&gt;3. A lépték és a vetületek kezelése&lt;/h3&gt;
-
-&lt;p&gt;Fontos tudnivaló, hogy a &lt;code class=&quot;highlighter-rouge&quot;&gt;Map.addLayer()&lt;/code&gt; segítségével a térképen kirajzolt kép eltérő bemenetekből készül a nagyítási szint és a térképnézet határaitól függően. A lépték a GEE-ben &lt;strong&gt;pixelméretet&lt;/strong&gt; jelent. A GEE az elemzés / a bemenő adat léptékét a kimenetből határozza meg, amit nekünk meg kell adnunk. A GEE ugyanis &lt;strong&gt;képpiramisokat&lt;/strong&gt; használ, ahol minden egyes cella értéke egy adott piramisszinten az alatta levő szint 2x2-es blokkjának, azaz 4 cellájának az átlagértéke. Az aggregálás egy 256x256 cella felbontású képszelvényig történik. A GEE azt a piramisszintet választja, ami &lt;strong&gt;legközelebb esik az általunk megadott léptékhez&lt;/strong&gt; (kisebb vagy egyenlő annál), és abból számol.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/gee/keppiramisok.png&quot; class=&quot;image2&quot; alt=&quot;GEE képpiramisok&quot; /&gt;&lt;/p&gt;
-&lt;figcaption&gt;2. kép: Google Earth Engine képpiramisok
-&lt;/figcaption&gt;
-&lt;figcaption&gt;1. táblázat: Pixelméretek a különböző nagyítási szinteknél (0-20) a Google Mercator vetülete esetén (EPSG:3857). Ha Magyarországra akarunk vonatkoztatni, akkor a földrajzi szélesség koszinuszával be kell szorozni az értékeket. Például a 12-es nagyítási szintnél: 38·cos(47°) = 25,6 m.
-&lt;/figcaption&gt;
-&lt;table&gt;
-    &lt;tr&gt;
-        &lt;th width=&quot;40%&quot;&gt;Nagyítási szint
-        &lt;/th&gt;
-        &lt;th width=&quot;60%&quot;&gt;Pixelméret az Egyenlítőnél
-        &lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;11&lt;/td&gt;
-        &lt;td&gt;76 m&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;12&lt;/td&gt;
-        &lt;td&gt;38 m&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;13&lt;/td&gt;
-        &lt;td&gt;19 m&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;14&lt;/td&gt;
-        &lt;td&gt;9,6 m&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;15&lt;/td&gt;
-        &lt;td&gt;4,8 m&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;16&lt;/td&gt;
-        &lt;td&gt;2,4 m&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;A Google a térképek megjelenítéséhez a &lt;strong&gt;Mercator vetületet&lt;/strong&gt; használja (WGS 84 / Pseudo-Mercator, EPSG:3857), így aztán a képpiramis megfelelő szintjén, a megjelenítést megelőzően, vetületi transzformációra kerül sor (röptében). Ha lehetséges, akkor célszerű elkerülni az egyéb vetületi transzformációkat. Meg kell hagyni az adatokat eredeti vetületükben! Az EOV nem támogatott. Ne is próbáld használni, mert rossz lesz az eredmény!&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Az első sáv kiválasztása; vetület, lépték kiírása.&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;landsatImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;Vetület, crs, és crs_transform:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;myImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;projection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;Felbontás méterben:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;myImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;projection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nominalScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;4-inputoutput-műveletek&quot;&gt;4. Input/output műveletek&lt;/h3&gt;
-
-&lt;p&gt;Több lehetőség áll rendelkezésünkre az exportálásra: az adatainkat &lt;strong&gt;GeoTIFF-be/HD videóba&lt;/strong&gt; menthetjük a &lt;strong&gt;Google Drive&lt;/strong&gt;-ra, a Google felhő-alapú tárolóegységre (&lt;strong&gt;Google Cloud Storage&lt;/strong&gt;) vagy az &lt;strong&gt;Assets&lt;/strong&gt; mappánkba. Ez utóbbi helyre a saját GeoTIFF raszterállományainkat is feltölthetünk. A vektoros adatokat &lt;strong&gt;KML formátumban&lt;/strong&gt; ajánlott feltölteni, amiből &lt;strong&gt;Fusion Table&lt;/strong&gt; készül, amit betölthetünk a szkriptünkbe az azonosítója segítségével. A készített idősorok adatai is lementhetők CSV-be (pontosvesszővel tagolt értékek).&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* Mindig adjuk meg az eredeti felbontást!
- * A kép eredeti vetületébe (WGS 84 / UTM) menti. */&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;Export&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toDrive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;landsatImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;NDVI&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NDVI_image&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;region&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;studyArea&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Próbáljátok ki a szkriptet a &lt;a href=&quot;https://code.earthengine.google.com/&quot; target=&quot;_blank&quot;&gt;Google Earth Engine Code Editor&lt;/a&gt;ban! A teljes kódot töltsd le az &lt;a href=&quot;https://github.com/SalsaBoy990/EarthEngine/blob/master/tutorial1.js&quot; target=&quot;_blank&quot;&gt;Earth Engine&lt;/a&gt; gyűjteményemből!&lt;/p&gt;
-
-&lt;p&gt;A Google Earth Engine-nek nem csak alkalmazásprogramozási felülete (API) van, hanem rendelkezésre áll a &lt;a href=&quot;https://explorer.earthengine.google.com&quot; target=&quot;_blank&quot;&gt;Google Earth Engine Explorer&lt;/a&gt;, ami egy grafikus felhasználói felület (graphical user interface, GUI), ahol programozási ismeretek nélkül is hozzáférhetünk az adatokhoz. Természetesen sokkal korlátozottabb funkcionalitással bír, mint a kódszerkesztő. Ennek a használata is regisztrációhoz kötött és szintén ingyenes nem kereskedelmi célokra.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;felhasznált-irodalom&quot;&gt;Felhasznált irodalom&lt;/h2&gt;
-
-&lt;ul class=&quot;no-decoration-18px&quot;&gt;
-    &lt;li&gt;Google Earth Engine Team (2015). &lt;a href=&quot;https://earthengine.google.com&quot; target=&quot;_blank&quot;&gt;Google Earth Engine: A planetary-scale geospatial analysis platform.&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://developers.google.com/earth-engine/&quot; target=&quot;_blank&quot;&gt;Google Earth Engine API kézikönyv.&lt;/a&gt; 
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://code.earthengine.google.com/&quot; target=&quot;_blank&quot;&gt;Google Earth Engine Code Editor.&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://explorer.earthengine.google.com&quot; target=&quot;_blank&quot;&gt;Google Earth Engine Explorer.&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;Egy Earth Engine Kiértékelő felhasználói fiókért egy elektronikus űrlap kitöltésével &lt;a href=&quot;https://signup.earthengine.google.com/&quot; target=&quot;_blank&quot;&gt;itt&lt;/a&gt; lehet jelentkezni. 
-    &lt;/li&gt;
-    &lt;li&gt;További JavaScript kódok a &lt;a href=&quot;https://github.com/SalsaBoy990/EarthEngine&quot; target=&quot;_blank&quot;&gt;GitHub&lt;/a&gt; gyűjteményemből érhetők el. 
-    &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 07 Aug 2017 17:26:00 +0200</pubDate>
-        <link>http://localhost:4000//tudomany/2017/08/07/google_earth_engine_01.html</link>
-        <guid isPermaLink="true">http://localhost:4000//tudomany/2017/08/07/google_earth_engine_01.html</guid>
       </item>
     
   </channel>

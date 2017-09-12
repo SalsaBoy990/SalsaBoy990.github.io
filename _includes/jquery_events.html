@@ -24,15 +24,16 @@ $(document).ready(function () {
     });
     $("#close-contact").click(function() {
       $("#contact-me").slideToggle(300);
-      /*$(window).scrollTop(0);*/
     });
 
     $("#toggle-book-contents").on("click", function() {
       var temp = $("#book-contents");
-      temp.css("border", "1px solid #828282");
-      temp.css("border-radius", "7px");
+      temp.css("background", "oldlace");
       temp.slideToggle(200);
-      /*$("html,body").animate({ scrollTop: temp.offset().top }, 200);*/
+    });
+
+    $("#menu-button").on("click", function() {
+      $("#dropdown").slideToggle();
     });
     
     $('table tr:even').addClass('color');

@@ -5,20 +5,18 @@ permalink: /book/
 weight: 6
 ---
 
-<div class="center-align-div">
-<h2>Rendezett emberi környezetet a világon!</h2>
-</div>
+<br />
+## Rendezett emberi környezetet a világon!
 
 Igyekszem vele, amennyire az időmből kitelik. Úgy néz ki, hogy két kötetre kell bontanom az anyagot, mert olyan hosszú lesz (500-600 oldal). Majd eldöntöm hogyan lesz. Mintaként egy fejezetet ingyenesen elérhetővé tettem. Megtekintés/letöltés pdf-ben:
 
 <a href="https://www.docdroid.net/AfviHbV/gulacsiandras-kivonat-19-gmo-2017-07-19.pdf" target="_blank">Félelemkeltés a GMO-kkal és a vegyszerekkel. A zöld szervezetek kapcsolata az organikus élelmiszerlobbival.</a>
+
 <br />
 
 <div class="center-align-div">
-<a id="toggle-book-contents" class="gomb-2">Tartalomjegyzék</a>
-</div>
-
-<br />
+<a id="toggle-book-contents" class="gomb">Tartalomjegyzék</a>
+</div> 
 
 <div id="book-contents">
 	<ol class="no-decoration">

@@ -1,20 +1,18 @@
 <footer class="site-footer">
-    <div class="wrapper">
-        {% include contact.html %}
-        {% include about_block.html %}
-      <nav class="footer-bar">
-        <span class="footer-nav" id="back-to-top">Az oldal tetejére</span>
-        <span class="footer-nav" id="open-mission">A blogról</span>
-        <span class="footer-nav" id="open-contact">Kapcsolat</span>
-        <span class="footer-nav" id="footer-archive-link">
-          <a href="{{ site.url}}/archive">Archívum</a>
-        </span>  
-      </nav>
+  <div class="wrapper">
+    <div class="footer-content">
+      {% include signup_form.html %}
       
-      <span class="copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | escape }}</span> 
-    {% comment %}
-    site.time generates the current time when the site is built. The filter, date
-    is used to show just the year for the date.
-    {% endcomment %}
+      {% include contact.html %}
     </div>
+
+    {% comment %}
+      site.time generates the current time when the site is built. The filter, date
+      is used to show just the year for the date.
+    {% endcomment %}
+    <div class="copyright">
+      <span>&copy; {{ site.name | escape }} {{ site.time | date: '%Y' }}</span> 
+    </div>
+
+  </div>
 </footer>

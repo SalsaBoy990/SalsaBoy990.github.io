@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Magamról
+title: Önéletrajz
 permalink: /about/
-weight: 4
+weight: 5
 ---
 
 Gulácsi András vagyok, 1990-ben születtem Szegeden, geográfus és okleveles környezetkutató végzettséggel rendelkezem. Szakterületem a távérzékelés és a térinformatika.
@@ -13,11 +13,7 @@ A jövőben **frontend** webfejlesztőként szeretnék elhelyezkedni.
 
 Egyedi kinézetű, okostelefonra is optimalizált, villámgyors, statikus honlapok készítését vállalom némi fizetésért cserébe (megbeszélés szerint).
 
-A [Jekyll](https://jekyllrb.com/) statikus oldalgenerátort, a [jQuery](https://jquery.com/) keretrendszert és a [GitHub](https://github.com/) ingyenes tárhelyét használom. Egyedüli költséget a domain név (a weboldal választott címe) megvásárlása jelenti. A blogbejegyzésekhez a hozzászólási lehetőséget a népszerű és már szinte általánossá vált [Disqus](https://disqus.com/) kommentelési rendszeren keresztül biztosítom.
-
-
-Állásajánlattal kapcsolatos megkereséseket az e-mail címemre várom: [guland@protonmail.com](mailto:guland@protonmail.com). Az önéletrajzomat lásd alább:
-
+Állásajánlattal kapcsolatos megkereséseket a privát e-mail címemre várom: [guland@protonmail.com](mailto:guland@protonmail.com). Az önéletrajzomat lásd alább:
 
 <br/>
 
@@ -57,6 +53,8 @@ function getAge(year, month, day, id) {
 </script>
 <script>window.onload = getAge(1990, 8, 2,"age");</script>
 
+<br/>
+
 ### Erősségeim, referenciák
 <ul class="lista">
 	<li>Objektum orientált programozás: <strong>C/C++</strong>, <strong>JavaScript</strong> és R alapok</li>
@@ -69,11 +67,15 @@ function getAge(year, month, day, id) {
 	<li><a href="https://github.com/SalsaBoy990" target="_blank">Munkáim a GitHub-on!</a></li>
 </ul>
 
+<br/>
+
 ### Nyelvismeret
 <ul class="lista">
     <li><strong>Angol</strong>: alapfok (az informatikai szaknyelvet is értem)</li>
 	<li>Német: felsőfok (nem aktív a nyelvtudásom) </li>
 </ul>
+
+<br/>
 
 ### Tanulmányok
 <ul class="lista">
@@ -83,12 +85,16 @@ function getAge(year, month, day, id) {
 	<li><strong>2005 – 2010:</strong><br />Tömörkény István Gimnázium és Művészeti Szakközépiskola, Magyar-német kéttannyelvű osztály nyelvi előkészítő évvel, érettségi bizonyítvány</li>
 </ul>
 
+<br/>
+
 ### Szakmai tapasztalat
 <ul class="lista">
 	<li><strong>2015:</strong><br />A Meló Diák közvetítőcégen keresztül a Florin Vegyipari és Kereskedelmi Zrt.-nél diákmunka, 3 hónap</li>
 	<li><strong>2014:</strong><br />Alsó-Tisza-vidéki Vízügyi Igazgatóság Vízvédelmi és Vízgyűjtőgazdálkodási Osztály, 4 hetes szakmai gyakorlat</li>
 	<li><strong>2012:</strong><br />Bács-Kiskun Megyei Erdészeti Igazgatóság szegedi kirendeltsége, 6 hetes szakmai gyakorlat</li>
 </ul>
+
+<br/>
 
 ### Szakmai elismerések
 <ul class="lista">
@@ -98,10 +104,14 @@ function getAge(year, month, day, id) {
 	<li>Az SZTE TTIK által rendezett 2014. évi őszi Tudományos Diákköri Konferencia földrajz-földtudomány I. szekciójában <strong>1. helyezés</strong>. Szeged, 2014. október 20.</li>
 </ul>
 
+<br/>
+
 ### Tudományos publikációk
 <ul class="lista">
 	<li><a href="https://vm.mtmt.hu//search/slist.php?nwi=1&inited=1&ty_on=1&url_on=1&cite_type=2&orderby=3D1a&location=mtmt&stn=1&AuthorID=10059234" target="_blank">Teljes publikációs lista</a></li>
 </ul>
+
+<br/>
 
 ### Szabadidő
 <ul class="lista">

@@ -10,19 +10,17 @@ layout: default
 <article>
   <header class="post-header">
     <h2>
-      <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      <a class="post-link" href="{{ post.url | relative_url }}"><span>{{ post.title | escape }}</span></a>
     </h2>
     <div class="post-date">{% assign date = post.date %} {% include date.html %}</div>
   </header>
-  <div>
+  <div style="display: inline-block;">
     {{ post.excerpt }}
-    <br />
-    <div style="margin-top: 20px;">
-    <a class="read-more" href="{{ post.url | relative_url }}">Tovább a teljes cikkre</a>
-    </div>
-    <br/>
-    <br/>
+    <a class="read-more" href="{{ post.url | relative_url }}">Tovább olvasom</a>
   </div>
 </article>
+<br/>
+<hr>
 <br />
 {% endfor %}
+<p style="text-align: center">A régebbi írásokat az <a href="http://www.newgeographer.com/archive/">Archívum</a>ban találod!</p>

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/* IDs coming */
+#menu-button {
+  cursor:pointer;
+  color: #e7e7e7;
+  height: 45px;
+}
+
+#book-contents {
+  display: none;
+}
+
+#back-to-top {
+  float: left;
+  cursor: pointer;
+  }
+  #back-to-top:hover {
+    color:Peru;
+    transition: 0.3s;
+  }

@@ -1,0 +1,256 @@
+@charset "UTF-8";
+
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+ 
+ 
+ /**
+  * Basic styling
+  */
+body {
+  height: 100%;
+  width: 100%;
+ 
+  color: #242424;
+  background-color: #F2F2FF;
+ 
+  font: 400 26px/1.45 "EB Garamond", Garamond, "Times New Roman", serif;
+  text-align: left;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+ 
+ 
+ /**
+  * Set `margin-bottom` to maintain vertical rhythm
+  */
+h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+.highlight {
+  margin-bottom: 15px;
+}
+ 
+
+ /**
+  * Images
+  */
+img {
+  display: block;
+  text-align: center;
+ 
+  margin: auto;
+     
+  height: auto;
+  max-width: 100%;
+  /*vertical-align: middle;*/ /* Or remove display: block; */
+ 
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/**
+ * Figures
+ */
+figure > img {
+  display: block; }
+
+figcaption {
+  display: block;
+
+  margin: auto;
+  padding-bottom: 20px;
+
+  text-align: center;
+  font-size: 20px;
+}
+
+
+/**
+ * Videos
+ */
+iframe {
+  text-align: center; 
+  display: block;
+
+  margin:auto;
+  padding-bottom: 20px;
+}
+
+
+/**
+ * Tables
+ */ 
+table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+    
+  border: 1px solid #828282;
+  border-collapse: collapse;
+
+  font-size: 22px;
+  }
+  table tr, table td, table th {
+    border: 1px solid #828282;
+    padding: 0px 10px;
+  }
+
+
+/**
+ * Lists
+ */
+ul, ol {
+  margin-left: 30px;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
+
+/*
+ * Headings
+ */
+ h1, h2, h3, h4, h5, h6 {
+  font-family: "Archivo Black", "Impact", "Arial Black", serif;
+  line-height: 1.2;
+  color:  #29293f;
+}
+
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 26px;
+}
+h4 {
+  font-size: 22px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 18px;
+}
+
+
+/*
+ * Links
+ */
+a {
+  line-height: 1.2;
+  text-decoration: none;
+  border-bottom: 2px solid peru;
+  color: #242424;
+  }
+  a:hover {
+    transition: 0.3s;
+    border-bottom: 2px solid orangered;
+  }
+
+
+/**
+ * Blockquotes with very nice styling
+ */
+blockquote {
+  position: relative;
+  display: block;
+
+  width: 75%;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+
+  padding: 30px 40px;
+
+  border-left: 4px solid peru;
+ 
+  line-height: 1.35;
+  text-align: left;
+  font-style: italic;
+
+  color: #383838;
+  background: #fff;
+  }
+  blockquote > :last-child { /* ??? */
+    margin-bottom: 0;
+  }
+
+  blockquote:before {
+      position: absolute;
+
+      width: 40px;
+      height: 40px;
+
+      padding-left: 10px;
+      
+      font-size: 60px;
+      line-height: 0.85;
+  }
+  blockquote:before {
+      top: 0;
+      left: 0; 
+      content: "\201D";
+
+      color: peru;
+  }
+
+
+/**
+* Code formatting
+*/
+pre,
+code {
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+
+  font-size: 18px;
+  font-family: Consolas, monaco, monospace;
+  font-weight: 400;
+
+  background-color: #f5f2f0;
+  }
+  code {
+    padding: 1px 5px;
+  }
+  pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+
+    padding: 8px 12px;
+    overflow-x: auto;
+  }
+  pre > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+
+/**
+* Article border
+*/
+article {
+  padding-left: 10px;
+  padding-top: 10px;
+}

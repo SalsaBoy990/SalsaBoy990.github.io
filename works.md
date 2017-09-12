@@ -1,18 +1,20 @@
 ---
 layout: page
-title: Referenciák
+title: Programok
 permalink: /works/
 weight: 8
 ---
 
 Az alábbi egyszerű programokat JavaScript-ben írtam.
-ECMAScript 5 kompatibilisek és a <a href="http://jslint.com/" target="_blank">JSLint</a> kódellenőrzőn is átmentek. Továbbá "strict" módot használtam. Mindegyik program esetén a hibák megfelelően "le vannak kezelve" (exception handling).
+ECMAScript 5 kompatibilisek és a <a href="http://jslint.com/" target="_blank">JSLint</a> kódellenőrzőn is átmentek.
 
+<br />
 
 ### Az eddigi munkáim:
 1. [Egyszerű számológép (verzió: 1.0b)](/simpleCalculator.html)
 2. [RGB színinvertáló és hex-RGB konverter program (verzió: 1.0b)](/colours.html)
 
+<br />
 
 A GitHub oldalamon a <a href="https://github.com/SalsaBoy990/MyWorks" target="_blank">MyWorks<a/> repository-mban megtalálhatók a programkódok!
 

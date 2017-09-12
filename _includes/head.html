@@ -4,8 +4,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   <meta lang="hu-HU">
+
   {% include og-meta.html %}
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -18,15 +20,17 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-  <!-- CSS style. New Geographer theme (NGv4).-->
-  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black|EB+Garamond&amp;subset=latin-ext" rel="stylesheet" type="text/css">
+
+  <!-- CSS style. New Geographer theme (NGv5).-->
+  <link rel="stylesheet" type="text/css" href="/css/basic.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/ids.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/classes.css"/>
   <link rel="stylesheet" type="text/css" href="/css/media.css"/>
+  
   <!-- CSS style. Syntax highlight rules for code snippets.-->
   <link rel="stylesheet" type="text/css" href="/css/prism.css"/>
-  <link rel="stylesheet" type="text/css" href="/css/form.css">
-  
-  <!-- Important JavaScript code comes here -->
+
+  <!-- Important JavaScript code comes here if there is any. -->
   <script src="/js/prism.js"></script>
 </head>
