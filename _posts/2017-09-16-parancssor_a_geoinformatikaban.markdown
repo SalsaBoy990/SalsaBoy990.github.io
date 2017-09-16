@@ -128,7 +128,7 @@ A raszterállományokra (grid-ek) statisztikákat (átlagképeket, szórást stb
 Viszont van egy problémánk: évenként meg kell adnunk a 13 db kép teljes elérési útvonalát, amit begépelni kényelmetlen és időigényes volna. FOR ciklust itt nem használhatunk. Ilyenkor mit tehetünk? Van egy fontos alapelvem, ami így szól: **ha lehetséges, akkor mindig térj vissza egy olyan megoldáshoz, amit már ismersz!** Az Excelben mindenki ismeri a függvényeket. Az ÖSSZEFŰZ() függvény segítségével könnyedén legenerálhatjuk az elérési utakat, és csak az éveket kell átírni. Az összefűzött szöveget pedig egyben bemásoljuk a szkriptünkbe. (Itt zárójelben megjegyzem, ha esetleg valamelyikőtök nem tudná, hogy a .bat fájlokat úgy szerkeszthetjük, hogy átírjuk a fájlkiterjesztést .txt-re.). A grid-ek elérési útvonalait `;`-vel kell elválasztanunk egymástól.
 
 <img src="{{ site.url }}/assets/sagagis/excel.png" class="large" alt="Elérési utak, fájlnevek generálása az ÖSSZEFŰZ() függvény segítségével"/>
-
+<br />
 
 <pre><code class="language-batch">REM Tool: Statistics for Grids
 
@@ -139,7 +139,7 @@ saga_cmd statistics_grid 4 ^
 -PCTL_VAL=50
 </code></pre>
 
-
+Ezután az átlag- és mediánképekből ki kell vágnunk az erdőterületeket a poligonok segítségével. Erre a `shapes_grid` modul **Grid vágása poligonnal** eszközét használjuk. Meg kell adni a bemenetet, a kimenetet, a poligonokat tartalmazó shape fájlt és az `-EXTENT` argumentumot, ami a kimenő grid terjedelmét határozza meg. Mi ezt 0-ra állítjuk. Ebben az esetben az eredeti terjedelmet megtartjuk. Ez az alapértelmezett beállítás:
 
 <pre><code class="language-batch">REM Tool: Clip Grid with Polygon
 
@@ -158,7 +158,8 @@ saga_cmd shapes_grid 7 ^
 
 <img src="{{ site.url }}/assets/sagagis/saga_results.png" class="large" alt="A mintaterületek sikeresen kivágva az átlagképből"/>
 
-Miután eredményül kaptuk a mintaterületünkre kivágott átlag- és mediánképekett, ki kell exportálnunk őket GeoTIFF-be. Ehhez megint csak az `io_gdal` modult használjuk. A `-GRIDS`-nél az exportálandó grid-et, a `-FILE`-nál a kimenő fájlt adjuk meg:
+<br />
+Miután eredményül kaptuk a mintaterületünkre kivágott átlag- és mediánképeket, ki kell exportálnunk őket GeoTIFF-be. Ehhez megint csak az `io_gdal` modult használjuk. A `-GRIDS`-nél az exportálandó grid-et, a `-FILE`-nál a kimenő fájlt adjuk meg:
 
 <pre><code class="language-batch">REM Tool: Export GeoTIFF
 
