@@ -33,7 +33,7 @@
     padding-left: 15px;
   }
 
-  .image, .image2 {
+  .image, .image2, .image3 {
     height: 80%;
     width: 80%;
   }
@@ -70,12 +70,12 @@
     font-size: 22px; 
   }
     
-  read-more {
+  .read-more {
     font-size: 20px;
   }
 
   a {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .archive-a {
@@ -94,7 +94,7 @@
     font-size:13px;
   }
 
-  .image, .image2 {
+  .image, .image2, .image3 {
     height: 95%;
     width: 95%;
   }

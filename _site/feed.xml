@@ -15,49 +15,76 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>SAGA GIS és GDAL: Földrajzi adatfeldolgozás a parancssorban</title>
-        <description>&lt;h2 id=&quot;1-bevezetés&quot;&gt;1. Bevezetés&lt;/h2&gt;
+        <title>Földrajzi adatfeldolgozás a parancssorban: a SAGA GIS és a GDAL</title>
+        <description>&lt;p&gt;A SAGA mozaikszó a System for Automated Geoscientific Analyses (Automatizált Földtudományi Elemző Rendszer) rövidítése.
+A &lt;a href=&quot;http://www.saga-gis.org/en/index.html&quot;&gt;SAGA GIS&lt;/a&gt; egy C++-ban írt szabad forráskódú térinformatikai szoftver. A legújabb, &lt;strong&gt;5.0&lt;/strong&gt;-ás verziót használtam a tutoriálhoz.&lt;/p&gt;
 
-&lt;p&gt;A SAGA mozaikszó a System for Automated Geoscientific Analyses (Automatizált Földtudományi Elemző Rendszer) rövidítése.
-A SAGA GIS egy C++-ban írt szabad forráskódú térinformatikai szoftver. A legújabb verzió az &lt;strong&gt;5.0&lt;/strong&gt;. Bővebb információért keressétek fel a program &lt;a href=&quot;http://www.saga-gis.org/en/index.html&quot;&gt;honlapját&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;A &lt;strong&gt;SAGA GIS térinformatikai szoftver&lt;/strong&gt; kifejlesztésének elképzelése az 1990-es évek végén született meg a németországi Göttingeni Egyetem Természetföldrajzi Tanszékén. A kutatási projektek középpontjában a raszteres adatok, azon belül is kifejezetten a digitális domborzatmodellek, elemzése volt, amit többek közt a talajtulajdonságok, terep által irányított folyamatok, valamint éghajlati paraméterek modellezésére, előrejelzésére használtak. A SAGA GIS fejlesztése Jürgen Böhner és Olaf Conrad vezetésével történt és történik napjainkban is.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;SAGA GIS térinformatikai szoftver&lt;/strong&gt; kifejlesztésének ötlete az 1990-es évek végén született meg a németországi Göttingeni Egyetem Természetföldrajzi Tanszékén. A tanszéken futó kutatási projektek középpontjában a raszteres adatok, azon belül is kifejezetten a digitális domborzatmodellek, elemzése volt, amit többek közt a talajtulajdonságok, terep által irányított folyamatok, valamint éghajlati paraméterek modellezésére, előrejelzésére használtak. A SAGA GIS-t tehát kifejezetten raszteres adatokfeldolgozására, elemzésére írták. A SAGA GIS fejlesztése &lt;em&gt;Jürgen Böhner&lt;/em&gt; és &lt;em&gt;Olaf Conrad&lt;/em&gt; vezetésével történt és történik napjainkban is.&lt;/p&gt;
 
 &lt;p&gt;A kereskedelmi szoftverek közül az ERDAS Imagine ingyenes alternatívája lehet a SAGA GIS.&lt;/p&gt;
 
-&lt;p&gt;A &lt;a href=&quot;http://www.gdal.org/&quot;&gt;GDAL&lt;/a&gt; (Geospatial Data Abstraction Library) egy szabad forrású földrajzi adatfeldolgozó szoftverkönyvtár, ami számos vektoros és raszteres adatokat manipuláló modult tartalmaz, amelyek a paranccssorban vagy valamilyen héjalkalmazáson (&lt;a href=&quot;https://trac.osgeo.org/osgeo4w/&quot;&gt;OSGeo4W Shell&lt;/a&gt;) keresztül érhetők el. A gépemen lévő változat a &lt;a href=&quot;http://www.qgis.org/hu/site/&quot;&gt;Quantum GIS (QGIS)&lt;/a&gt; szabad forráskódú térinformatikai szoftver mellett települ fel (ugyanis a QGIS is használja a GDAL moduljait), és az &lt;strong&gt;OSGeo4W Shell&lt;/strong&gt; héjalkalmazáson keresztül futtatom. A &lt;strong&gt;GDAL verzióm: 1.11.2&lt;/strong&gt; (2015. február 10.). A QGIS 2.8.1-Wien változatot telepítettem fel. A legújabb kiadáshoz már biztosan egy újabb GDAL verzió jár. Ezzel nem teszteltem le a szkriptjeimet.&lt;/p&gt;
+&lt;p&gt;A &lt;a href=&quot;http://www.gdal.org/&quot;&gt;GDAL&lt;/a&gt; (Geospatial Data Abstraction Library) egy szabad forrású földrajzi adatfeldolgozó szoftverkönyvtár, ami számos vektoros és raszteres adatokat manipuláló modult tartalmaz, amelyek a paranccssorban vagy valamilyen héjalkalmazáson (&lt;a href=&quot;https://trac.osgeo.org/osgeo4w/&quot;&gt;OSGeo4W Shell&lt;/a&gt;) keresztül érhetők el. A gépemen lévő változat a &lt;a href=&quot;http://www.qgis.org/hu/site/&quot;&gt;Quantum GIS (QGIS)&lt;/a&gt; szabad forráskódú térinformatikai szoftver mellett települ fel (ugyanis a QGIS is használja a GDAL moduljait), és az &lt;strong&gt;OSGeo4W Shell&lt;/strong&gt; héjalkalmazáson keresztül futtatom. A &lt;strong&gt;GDAL verzióm: 1.11.2&lt;/strong&gt; (2015. február 10.). A QGIS 2.8.1-Wien változatot telepítettem fel.&lt;/p&gt;
 
-&lt;p&gt;A fenti verziókat használtam a parancssori szkriptek futtatására, tehát más verziókkal nem 100%, hogy tökéletesen működnek.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-adat-és-módszer&quot;&gt;2. Adat és módszer&lt;/h2&gt;
-
-&lt;p&gt;Egy 15 éves 2000 és 2015 közötti műholdas adatsort használtam fel a parancssori földrajzi adatfeldolgozás demostrálására. A Terra műhold MODIS szenzorának &lt;a href=&quot;https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1_v006&quot;&gt;250 méteres felbontású, 16 napos EVI és NDVI kompozitképeit&lt;/a&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;MOD13Q1: MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid V005&lt;/code&gt;) elemeztem a Duna-Tisza-közi erdőterületekre, amelyek az Európai Uniós &lt;a href=&quot;https://www.eea.europa.eu/publications/COR0-landcover&quot;&gt;CORINE&lt;/a&gt; (Coordination of Information on the Environment) felszínborítási adatbázis segítségével lettek lehatárolva.
-Az EU tagállamok nagyjából 6 évente felmérik a felszínborítás változásait különböző felszínborítási kategóriák szerint, 1:100 000-es méretarányban. A CLC_2000 (a 2000-05 közötti), a CLC_2006 (a 2006-11 közötti) és a CLC_2012 (2012-től kezdődő műholdképekre) adatok alapján határoltuk le az erdőket.&lt;/p&gt;
-
-&lt;p&gt;Azokat a 250*250 méteres cellákat válogattuk le, aminek legalább 2/3 részét erdő borította. Külön vizsgáljuk a lomb-, a tűlevelű és az elegyes erdőket. A cél a vegetáció egészségi állapotának monitorozása a szárazodó Homokhátságon március vége és szeptember vége között. Az 1970-es évektől számítva a talajvízkút-hálózat mérései szerint átlagosan 3 méterrel süllyedt a régióban a talajvízszint (a magasabban fekvő térségekben ennél nagyobb csökkenés is megfigyelhető).&lt;/p&gt;
-
-&lt;p&gt;A 16 napos kompozitképeket úgy kell érteni, hogy a 16 nap alatt készült összes felvételből raknak össze egy képet: a legjobb minőségű, azaz tiszta, felhőktől mentes értékeket használják fel minden egyes cellára (pixelre). A legnagyobb hátulütője az optikai (a látható és az infravörös tartományban mérő) szenzoroknak, hogy a felhőkön nem látnak át, szemben a lézeres vagy radaros mérésekkel szemben. A kompozit készítésével sokkal teljesebb adatokat kapunk, hiszen egy hosszabb időszakra nézve valószínűbb, hogy lesznek olyan felhőmentes képek, amelyek lefedik a földfelszín nagy részét, így használható információkat nyerhetünk.&lt;/p&gt;
-
-&lt;p&gt;Mik azok a spektrális indexek?&lt;/p&gt;
-
-&lt;p&gt;NDVI = (ρNIR − ρred) / (ρNIR + ρred)
-NDWI = (ρNIR − ρSWIR) / (ρNIR + ρSWIR)	
-ahol NDVI normalizált differenciált vegetációindex, NDWI normalizált differenciált vízindex, ami a növényzeti nedvességtartalmat fejezi ki, ρred a látható vörös sáv (620-670 nm), ρNIR a közeli infravörös sáv (841-876 nm), és ρSWIR az egyik középső infravörös sáv (2105-2155 nm).&lt;/p&gt;
+&lt;p&gt;A fenti verziójú alkalmazásokat használtam a parancssori szkriptek futtatására, tehát más verziókkal nem 100%, hogy tökéletesen működnek.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;3-feldolgozás-a-parancssorban&quot;&gt;3. Feldolgozás a parancssorban&lt;/h2&gt;
+&lt;h2 id=&quot;1-adat-és-módszer&quot;&gt;1. Adat és módszer&lt;/h2&gt;
 
-&lt;p&gt;A Windows parancssorban úgynevezett &lt;a href=&quot;https://hu.wikipedia.org/wiki/K%C3%B6tegelt_%C3%A1llom%C3%A1ny&quot;&gt;&lt;strong&gt;kötegelt állományokat&lt;/strong&gt;&lt;/a&gt; futtatok. Egyszerű és hatékony kis programokat lehet batch-ban írni. Az általában .cmd vagy .bat kiterjesztésű kötegelt állományokat (angolból átvett néven &lt;a href=&quot;https://hu.wikipedia.org/wiki/Batch_programoz%C3%A1s&quot;&gt;batch fájlokat&lt;/a&gt;) Windows, OS/2, és MS-DOS rendszerekben szokták használni. Formailag egy szövegfájlhoz hasonlítanak, tartalmuk pedig parancsok (DOS/Windows parancsok) egymásutánja. Futtatásuk a tartalom sorról sorra való olvasásával történik például a &lt;strong&gt;cmd.exe&lt;/strong&gt;-vel a Windows operációs rendszer alatt. A SAGA GIS parancssorban is futtatható, de célszerű kötegelt fájlkánt futtatni az utasítások sorozatát.&lt;/p&gt;
+&lt;p&gt;Egy 15 éves 2000 és 2015 közötti műholdas adatsort használtam fel a parancssorban történő adatfeldolgozás demonstrálására. A NASA Terra műhold MODIS szenzorának &lt;a href=&quot;https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1_v006&quot;&gt;250 méteres felbontású, 16 napos EVI és NDVI kompozitképeit&lt;/a&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;MOD13Q1: MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid V005&lt;/code&gt;) elemeztem a Duna-Tisza-közi erdőterületekre, amelyek az Európai Uniós &lt;a href=&quot;https://www.eea.europa.eu/publications/COR0-landcover&quot;&gt;CORINE&lt;/a&gt; (Coordination of Information on the Environment) felszínborítási adatbázis segítségével lettek lehatárolva.
+Az EU tagállamok nagyjából 6 évente felmérik a felszínborítás változásait különböző felszínborítási kategóriák szerint, 1:100 000-es méretarányban. A &lt;code class=&quot;highlighter-rouge&quot;&gt;CLC_2000&lt;/code&gt; (a 2000-05 közötti), a &lt;code class=&quot;highlighter-rouge&quot;&gt;CLC_2006&lt;/code&gt; (a 2006-11 közötti) és a &lt;code class=&quot;highlighter-rouge&quot;&gt;CLC_2012&lt;/code&gt; (2012-től kezdődő műholdképekre) adatok alapján határoltuk le az erdőket.&lt;/p&gt;
+
+&lt;p&gt;Azokat a 250*250 méteres cellákat válogattuk le, aminek legalább 2/3 részét erdő borította. Külön vizsgáljuk a lomb-, a tűlevelű és az elegyes erdőket. A cél a vegetáció egészségi állapotának monitorozása, valamint trendszerű változásainak kimutatása a szárazodó Homokhátságon március vége és szeptember vége között. Az 1970-es évektől számítva a talajvízkút-hálózat mérései szerint átlagosan 3 méterrel süllyedt a régióban a talajvízszint (a magasabban fekvő térségekben ennél nagyobb csökkenés is megfigyelhető, de kizárólag csak ott).&lt;/p&gt;
+
+&lt;p&gt;A 16 napos kompozitképeket úgy kell érteni, hogy a 16 nap alatt készült összes felvételből raknak össze egy képet: a legjobb minőségű, azaz tiszta, felhőktől mentes értékeket használják fel minden egyes cellára (pixelre). A legnagyobb hátulütője az optikai (a látható és az infravörös tartományban mérő) szenzoroknak, hogy a felhőkön nem látnak át, szemben a lézeres vagy radaros mérésekkel. A kompozit készítésével sokkal teljesebb adatokat kapunk, hiszen egy hosszabb időszakra nézve valószínűbb, hogy lesznek olyan felhőmentes képek, amelyek lefedik a földfelszín nagy részét, így használható információkhoz jutunk.&lt;/p&gt;
+
+&lt;p&gt;Az &lt;strong&gt;EVI&lt;/strong&gt; (Enhanced Vegetation Index, Továbbfejlesztett Vegetációindex) és az &lt;strong&gt;NDVI&lt;/strong&gt; (Normalized Difference Vegetation Index, &lt;a href=&quot;https://www.agroinform.hu/gazdasag/hogyan-hasznosithatom-a-vegetacios-index-kepeket-demo-32500-001&quot;&gt;Normalizált Vegetációindex&lt;/a&gt;) spektrális index. A &lt;a href=&quot;http://www.geo.u-szeged.hu/~feri/kornyezeti_informatika/ch10s02.html&quot;&gt;&lt;strong&gt;spektrális indexek&lt;/strong&gt;&lt;/a&gt; olyan származtatott mérőszámok, amelyek a műholdkép-sávokon (például látható kék, látható zöld, látható vörös, közeli, középhullámú és hosszúhullámú, azaz termális infravörös hullámhossz-tartományú sávok) végzett aritmetikai műveletek (osztás, szorzás, kivonás, összeadás) eredményeképpen állnak elő.&lt;/p&gt;
+
+&lt;p&gt;A műholdkép sávok értékei reflektancia értékek, vagyis a különböző hullámhossz tartományokban mért, felszínre beérkező és onnan visszaverődő sugárzás hányadosai (0 és 1 közötti értékek lehetnek). Például a hófelszín a beérkező napsugárzás 90%-át veri vissza a látható hullámhossz-tartományban. Ezzel szemben a homok csak 30-40%-ot ver vissza, ezért nem csoda, hogy nyáron nagyon felforrósodik a tűző napon. A különböző felszínek/anyagok másképpen vernek vissza a különböző hullámhosszakon. Ez azért fontos, mert ennek segítségével jól el tudjuk határolni egymástól a felszínborítás-típusokat és feltérképezni a változásokat.&lt;/p&gt;
+
+&lt;p&gt;A vegetációs indexek segítségével a levélzetben bekövetkező biológiai változásokat számszerűsíthetjük (cifrán mondva: kvantifikálhatjuk). Szoros kapcsolat áll fenn a levélzet klorofilltartalma és a vegetációs indexek értékei között. A vegetációs indexeket az 1970-es évek eleje óta használják a növényzet/biomassza változásainak értékelére (&lt;em&gt;Rouse, J. W. et al. 1973&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;A klorofill molekulák (klorofill-a és klorofill-b) a zöld színtestekben (kloroplasztisz) találhatók. A kloroplasztisz a szén-dioxidból és a vízből fény hatására cukrot (glükózt) állít elő. Ez a fotoszintézis folyamata. A klorofill molekulák nagyon fontos szerepet töltenek be a növények energiatermelő folyamataiban, ugyanis ezek nyelik el (abszorbeálják) a látható vörös és kék tartományba eső napfényt. (&lt;a href=&quot;http://miert.webclub.hu/miert-zoldek-a-levelek&quot;&gt;A zöld tartományban viszont nagy a visszaverődés, és innen a levelek zöld színe.&lt;/a&gt;) Az így elnyelt fotonok energiáját összegyűjtik és továbbítják a fotoszintézis enzimei, fehérjéi felé.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Egészséges vegetáció&lt;/strong&gt; esetén magas a klorofilltartalom a levelekben. Ilyenkor &lt;strong&gt;a látható vörös tartományban nagyon alacsony a reflektancia&lt;/strong&gt; (a visszaverődés), hiszen a klorofill elnyeli a sugárzást. Ezzel szemben, a közeli infravörös tartományban reflektancia csúcs jelentkezik, ugyanis itt a levélzet erősen visszaverő. &lt;strong&gt;A vegetációindexek a vörös és a közeli infravörös sáv reflektanciaértékei közötti különbségen alapszanak.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A hosszan tartó szárazság, illetve aszály hatására&lt;/strong&gt; a növény nem jut elegendő vízhez, ezért a levelek elkezdenek barnulni, csökken a klorofill-tartalmuk, a fotoszintetikus aktivitás lecsökken. Ilyenkor &lt;strong&gt;a klorofill kevesebb vörös tartományú fényt nyel el, tehát a reflektancia itt megnő.&lt;/strong&gt; Ezzel együtt a közeli infravörös tartományban is csökken egy kicsit a reflektancia, vagyis &lt;strong&gt;kisebb lesz a különbség a két sáv értékei között.&lt;/strong&gt; A magasabb vegetációindex értékek nagyobb klorofill tartalmat, míg a kisebbek lecsökkent klorofilltartalmat jeleznek. Másképpen kifejezve, egyenes arányosság áll fenn az indexértékek és a fotoszintetikus aktivitás között.&lt;/p&gt;
+
+&lt;p&gt;A vegetációs indexek esetén szokás normalizálást alkalmazni, amivel [-1; +1] intervallumba transzformáljuk az értékeket. Ez azért előnyös, mert különböző lejtőszög és megvilágítás hatásait kiküszöbölhetjük vele.&lt;/p&gt;
+
+&lt;p&gt;Az &lt;a href=&quot;https://en.wikipedia.org/wiki/Enhanced_vegetation_index&quot;&gt;EVI index&lt;/a&gt; a hagyományos NDVI továbbfejlesztett, optimalizált változata, melynek számításához a közeli infravörös és a vörös sávok mellett a kék sávot is felhasználják azon célból, hogy javítsák a talaj háttérjeleket és csökkentsék a légköri befolyásokat, mint például az aeroszol szétszóródást.&lt;/p&gt;
+
+&lt;p&gt;Itt vannak a vegetációindexek képletei:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NDVI = (NIR − Red) / (NIR + Red)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;EVI = G * ((NIR − Red) / (NIR + C1 * Red − C2 * Blue + L))&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;ahol &lt;code class=&quot;highlighter-rouge&quot;&gt;NIR&lt;/code&gt; a közeli infravörös sáv (841-876 nm), &lt;code class=&quot;highlighter-rouge&quot;&gt;Red&lt;/code&gt; a látható vörös sáv (620-670 nm) és &lt;code class=&quot;highlighter-rouge&quot;&gt;Blue&lt;/code&gt; a látható kék sáv (459-479 nm).  nm: nanométer, &lt;code class=&quot;highlighter-rouge&quot;&gt;10^-9&lt;/code&gt; m. A korrekciós együtthatók értékei &lt;code class=&quot;highlighter-rouge&quot;&gt;C1 = 6&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;C2 = 2,5&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;L = 1&lt;/code&gt; és &lt;code class=&quot;highlighter-rouge&quot;&gt;G = 7,5&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;31-saga-gis-saga_cmd&quot;&gt;3.1. SAGA GIS (saga_cmd)&lt;/h3&gt;
+&lt;h2 id=&quot;2-feldolgozás-a-parancssorban&quot;&gt;2. Feldolgozás a parancssorban&lt;/h2&gt;
+
+&lt;p&gt;A Windows parancssorban úgynevezett &lt;a href=&quot;https://hu.wikipedia.org/wiki/K%C3%B6tegelt_%C3%A1llom%C3%A1ny&quot;&gt;&lt;strong&gt;kötegelt állományokat&lt;/strong&gt;&lt;/a&gt; futtatok. Egyszerű és hatékony kis programokat lehet batch-ban írni. Az általában .cmd vagy &lt;strong&gt;.bat&lt;/strong&gt; kiterjesztésű kötegelt állományokat (angolból átvett néven &lt;a href=&quot;https://hu.wikipedia.org/wiki/Batch_programoz%C3%A1s&quot;&gt;batch fájlokat&lt;/a&gt;) Windows, OS/2, és MS-DOS rendszerekben szokták használni. Formailag egy szövegfájlhoz hasonlítanak, tartalmuk pedig parancsok (DOS/Windows parancsok) egymásutánja. Futtatásuk a tartalom sorról sorra való olvasásával történik például a &lt;strong&gt;cmd.exe&lt;/strong&gt;-vel a Windows operációs rendszer alatt. A SAGA GIS parancssorban is futtatható, de célszerű kötegelt fájlkánt futtatni az utasítások sorozatát.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;21-saga-gis-saga_cmd&quot;&gt;2.1. SAGA GIS (saga_cmd)&lt;/h3&gt;
+
+&lt;p&gt;A SAGA GIS moduljai a parancssorban is elérhetők. Ha írunk egy programot vagy egy szkriptet, akkor mindig adjuk meg kommentekben, hogy mit csinál a program, milyen probléma megoldására írtuk! A batch-ban a &lt;code class=&quot;highlighter-rouge&quot;&gt;REM&lt;/code&gt; paranccsal tudunk kommentet elhelyezni a szkriptünkbe. Ezeket a számítógép parancsértelmezője figyelmen kívül hagyja. Az &lt;code class=&quot;highlighter-rouge&quot;&gt;ECHO&lt;/code&gt; (visszhang) parancs üzeneteket jelenít meg a kijelzőn (a kommenteket és a parancsokat). Alapértelmezetten &lt;code class=&quot;highlighter-rouge&quot;&gt;ON&lt;/code&gt; módban van (&lt;code class=&quot;highlighter-rouge&quot;&gt;ECHO ON&lt;/code&gt;), de ki is kapcsolható az &lt;code class=&quot;highlighter-rouge&quot;&gt;ECHO OFF&lt;/code&gt; paranccsal. Az &lt;code class=&quot;highlighter-rouge&quot;&gt;@&lt;/code&gt; jel azt a célt szolgálja hogy az &lt;code class=&quot;highlighter-rouge&quot;&gt;echo off&lt;/code&gt;-ot tartalmazó sorra is kikapcsolja a visszhangot. A parancsokat kisbetűsen és nagybetűsen is írhatjuk.&lt;/p&gt;
+
+&lt;p&gt;He beírjátok a parancssorba, hogy &lt;code class=&quot;highlighter-rouge&quot;&gt;help&lt;/code&gt;, akkor kilistázza az összes parancsot és rövid leírásukat, valamint útmutatókat a használatukról. Ha pedig a &lt;code class=&quot;highlighter-rouge&quot;&gt;help parancs_neve&lt;/code&gt; sort írátok be, akkor még részletesebb magyarázatot kaptok a parancs használatáról. &lt;a href=&quot;https://www.tutorialspoint.com/batch_script/batch_script_quick_guide.htm&quot;&gt;Ezen a linken&lt;/a&gt; egy jó tutoriált találtok a batch használatáról.&lt;/p&gt;
+
+&lt;p&gt;A helyi változók a felhasználó által megadott azonosítók, melyek az értékadás során jönnek létre. Értékadás a &lt;code class=&quot;highlighter-rouge&quot;&gt;SET&lt;/code&gt; parancs segítségével történik az alábbi szintaxis szerint: &lt;code class=&quot;highlighter-rouge&quot;&gt;SET azonosito = ertek&lt;/code&gt;. A helyi változók csak az adott programban érvényesek. A változók értéke rejtve marad, ha a visszhang ki van kapcsolva az &lt;code class=&quot;highlighter-rouge&quot;&gt;echo off&lt;/code&gt; parancs segítségével.&lt;/p&gt;
+
+&lt;p&gt;A környezeti változók (például a &lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt; a futtatható fájlok keresési útja) a gép működésére nézve fontos információkat tartalmaznak. A szkriptünkben külső programokat (a SAGA GIS moduljait) futtatunk. Ezeknek vannak bemenő parancssori argumentumai, amiket meg kell adni.&lt;/p&gt;
+
+&lt;p&gt;Ahhoz, hogy hozzáférjünk a SAGA modulokhoz, ideiglenesen módosítanunk kell a &lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt; környezeti változót, hogy az a &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;saga_cmd.exe&lt;/code&gt;&lt;/strong&gt; elérési útjára mutasson (&lt;code class=&quot;highlighter-rouge&quot;&gt;set PATH=%PATH%;g:\saga-5.0.0_x64\&lt;/code&gt;). Csak így tudjuk meghívni a programot. A &lt;code class=&quot;highlighter-rouge&quot;&gt;SETLOCAL&lt;/code&gt; parancs segítségével lokálissá tehetjük a &lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt; változónkat, így csak a szkriptünkben lesz látható, vagyis kívülről nem lesz hozzáférhető.&lt;/p&gt;
+
+&lt;p&gt;Évenként dolgozom fel az adatokat, tehát minden év esetén módosítani kell egy kicsit a változókat! Itt van a programom eleje:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-batch&quot;&gt;REM @ECHO OFF
-ECHO
 REM *****************************************************************
 REM Create mean and median images and clip them with polygons
 REM Author: András Gulácsi
@@ -68,6 +95,7 @@ REM link
 REM *****************************************************************
 REM *************** PATHS ******************
 REM Path to saga_cmd.exe
+SETLOCAL
 set PATH=%PATH%;g:\saga-5.0.0_x64\
 
 REM Path to working dir
@@ -76,15 +104,19 @@ SET RESULT=g:\modis\TEMP
 SET SHAPES=g:\modis\
 SET POLYGON=00_l_250_66sz_poli.shp
 SET POSTFIX=_00_l
+SET YEAR=2005
 REM ****************************************
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;saga_cmd io_gdal 0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Létrehoztam néhány fontos változót a fájlok elérési útjait/nevét eltárolva bennük. A &lt;code class=&quot;highlighter-rouge&quot;&gt;WORK&lt;/code&gt; a bemenő képfájlok (GeoTIFF-ben), a &lt;code class=&quot;highlighter-rouge&quot;&gt;SHAPES&lt;/code&gt; a bemenő shape fájlok elérési útvonala. A &lt;code class=&quot;highlighter-rouge&quot;&gt;RESULT&lt;/code&gt; az eredményfájlok kimenő útvonala, a &lt;code class=&quot;highlighter-rouge&quot;&gt;POLYGON&lt;/code&gt; a shape fájl neve, amivel kivágjuk a mintaterületet a képből. Ez egy poligon típusú vektoros állomány.&lt;/p&gt;
+
+&lt;p&gt;A következő lépésben &lt;strong&gt;egy &lt;code class=&quot;highlighter-rouge&quot;&gt;FOR&lt;/code&gt; ciklus segítségével beolvassuk a bemenő fájlokat tartalmazó mappánkban található összes .tif állományt, majd átkonvertáljuk azokat a SAGA GIS saját fájlformátumába, .sgrd-be.&lt;/strong&gt; A &lt;code class=&quot;highlighter-rouge&quot;&gt;%WORK%&lt;/code&gt; helyére a &lt;code class=&quot;highlighter-rouge&quot;&gt;WORK&lt;/code&gt; változónk tartalma helyettesítődik be. A &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; az egy tetszőleges sztringet helyettesít, vagyis tetszőleges nevű, de .tif állományokat olvasunk be.&lt;/p&gt;
+
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;saga_cmd io_gdal 0&lt;/code&gt; parancs a SAGA GIS &lt;strong&gt;io_gdal&lt;/strong&gt; moduljának egyik eszközét hívja meg (raszter importálása). Ezután &lt;strong&gt;a parancssori argumentumokat&lt;/strong&gt; kell megadnunk: &lt;code class=&quot;highlighter-rouge&quot;&gt;-GRIDS&lt;/code&gt; (bemenő fájl), &lt;code class=&quot;highlighter-rouge&quot;&gt;-FILES&lt;/code&gt; (eredményfájl), &lt;code class=&quot;highlighter-rouge&quot;&gt;-TRANSFORM&lt;/code&gt; (transzformáció, ez nekünk nem kell). A &lt;code class=&quot;highlighter-rouge&quot;&gt;%%i&lt;/code&gt; az éppen aktuális fájl nevét jelöli. A továbbiakban a .sgrd fájlokkal dolgozunk. A &lt;code class=&quot;highlighter-rouge&quot;&gt;^&lt;/code&gt; &lt;strong&gt;beszúrási jelre&lt;/strong&gt; azért van szükség, mert egy sorba kellene írni a parancsot, de a láthatóság kedvéért sortöréseket használtam. A &lt;code class=&quot;highlighter-rouge&quot;&gt;^&lt;/code&gt; jel a sor végéhez hozzáfűzi a következő sort (a beszúrási jel és a rá következő újsor karakter törlődik). Fontos a sorköz a &lt;code class=&quot;highlighter-rouge&quot;&gt;^&lt;/code&gt; előtt!&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-batch&quot;&gt;FOR /F %%i IN ('dir /b %WORK%\*.tif') DO (
 
 REM Tool: Import Raster
-
 saga_cmd io_gdal 0 ^
 -GRIDS=%WORK%\%%i.sgrd ^
 -FILES=%WORK%\%%i ^
@@ -93,9 +125,13 @@ saga_cmd io_gdal 0 ^
 )
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/excel.png&quot; class=&quot;large&quot; alt=&quot;Elérési utak, fájlnevek generálása az ÖSSZEFŰZ() függvény segítségével&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;A modulokról és azok használatáról a &lt;a href=&quot;http://www.saga-gis.org/saga_tool_doc/5.0.0/a2z.html&quot;&gt;SAGA GIS dokumentációban&lt;/a&gt; találhattok bővebb leírást.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Ha van egy bonyolult probléma és ha lehetséges, akkor mindig térj vissza egy olyan megoldáshoz, amit már ismersz!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A raszterállományokra (grid-ek) statisztikákat (átlagképeket, szórást stb.) a &lt;strong&gt;Statistics for Grids&lt;/strong&gt; eszközzel számolhatunk. Argumentumként meg kell adni a bemenő grid-eket (amiket az előzőekben .sgrd-be alakítottunk át), valamint azokat a statisztikákat, amiket ki akarunk számolni (&lt;code class=&quot;highlighter-rouge&quot;&gt;-MEAN&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-PCTL&lt;/code&gt;). A &lt;code class=&quot;highlighter-rouge&quot;&gt;-PCTL&lt;/code&gt; a percentilis rövidítése, ehhez tartozik egy másik argumentum (&lt;code class=&quot;highlighter-rouge&quot;&gt;-PCTL_VAL&lt;/code&gt;), ahol meg kell adni, hogy hányadik percentilist akarjuk kiszámítani. Az 50. percentilis a medián , ami egyébként az alapértelmezett érték, tehát meg sem kéne adnunk külön.&lt;/p&gt;
+
+&lt;p&gt;Viszont van egy problémánk: évenként meg kell adnunk a 13 db kép teljes elérési útvonalát, amit begépelni kényelmetlen és időigényes volna. FOR ciklust itt nem használhatunk. Ilyenkor mit tehetünk? Van egy fontos alapelvem, ami így szól: &lt;strong&gt;ha lehetséges, akkor mindig térj vissza egy olyan megoldáshoz, amit már ismersz!&lt;/strong&gt; Az Excelben mindenki ismeri a függvényeket. Az ÖSSZEFŰZ() függvény segítségével könnyedén legenerálhatjuk az elérési utakat, és csak az éveket kell átírni. Az összefűzött szöveget pedig egyben bemásoljuk a szkriptünkbe. (Itt zárójelben megjegyzem, ha esetleg valamelyikőtök nem tudná, hogy a .bat fájlokat úgy szerkeszthetjük, hogy átírjuk a fájlkiterjesztést .txt-re.). A grid-ek elérési útvonalait &lt;code class=&quot;highlighter-rouge&quot;&gt;;&lt;/code&gt;-vel kell elválasztanunk egymástól.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/excel.png&quot; class=&quot;large&quot; alt=&quot;Elérési utak, fájlnevek generálása az ÖSSZEFŰZ() függvény segítségével&quot; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-batch&quot;&gt;REM Tool: Statistics for Grids
 
@@ -123,30 +159,71 @@ saga_cmd shapes_grid 7 ^
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_results.png&quot; class=&quot;large&quot; alt=&quot;A mintaterületek sikeresen kivágva az átlagképből&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;Miután eredményül kaptuk a mintaterületünkre kivágott átlag- és mediánképekett, ki kell exportálnunk őket GeoTIFF-be. Ehhez megint csak az &lt;code class=&quot;highlighter-rouge&quot;&gt;io_gdal&lt;/code&gt; modult használjuk. A &lt;code class=&quot;highlighter-rouge&quot;&gt;-GRIDS&lt;/code&gt;-nél az exportálandó grid-et, a &lt;code class=&quot;highlighter-rouge&quot;&gt;-FILE&lt;/code&gt;-nál a kimenő fájlt adjuk meg:&lt;/p&gt;
+
 &lt;pre&gt;&lt;code class=&quot;language-batch&quot;&gt;REM Tool: Export GeoTIFF
 
 saga_cmd io_gdal 2 ^
 -GRIDS=%RESULT%\atlag%POSTFIX%.sgrd ^
--FILE=%RESULT%\atlag%POSTFIX%.tif
+-FILE=%RESULT%\%YEAR%_atlag%POSTFIX%.tif
 
 saga_cmd io_gdal 2 ^
 -GRIDS=%RESULT%\median%POSTFIX%.sgrd ^
--FILE=%RESULT%\median%POSTFIX%.tif
-
+-FILE=%RESULT%\%YEAR%_median%POSTFIX%.tif
 
 PAUSE
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;32-virtuális-raszter-készítése-gdal-ban&quot;&gt;3.2. Virtuális raszter készítése GDAL-ban&lt;/h3&gt;
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;PAUSE&lt;/code&gt; paranccsal megállítjuk a szkript futását, hogy ne lépjen ki azonnal a konzolból, hanem várja meg egy billentyű lenyomását, és utána lépjen ki. Ez olyan, mint amikor a C-ben a &lt;code class=&quot;highlighter-rouge&quot;&gt;system(&quot;PAUSE&quot;);&lt;/code&gt; utasítással tesszük ugyanezt. (Megjegyzendő, hogy C-ben nem ajánlom ezt a megoldást, mert &lt;a href=&quot;http://www.cplusplus.com/articles/j3wTURfi/&quot;&gt;erőforrásigényes, nem biztonságos és csak Windows rendszeren működik&lt;/a&gt;. Ennél sokkal egyszerűbb a &lt;code class=&quot;highlighter-rouge&quot;&gt;getchar()&lt;/code&gt;-t használni.)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/shell.png&quot; class=&quot;image3&quot; alt=&quot;Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;A következő részben pedig az idősorok számtani átlagát és egyéb statisztikai jellemzőjét exportáljuk ki szöveges fájlba.&lt;/p&gt;
 
-&lt;h2 id=&quot;összefoglalás&quot;&gt;Összefoglalás&lt;/h2&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;22-virtuális-raszter-készítése-gdal-ban&quot;&gt;2.2. Virtuális raszter készítése GDAL-ban&lt;/h3&gt;
+
+&lt;p&gt;Először létrehozunk egy virtuális raszter (&lt;a href=&quot;http://www.gdal.org/gdal_vrttut.html&quot;&gt;.vrt fájl, a GDAL saját formátuma&lt;/a&gt;) fájlkatalógust, ami XML formátumban tartalmazza az együtt kezelt képfájlok leíró adatait, de magukat az adatokat nem. Ezt a virtuális rasztert fogjuk megnyitni a SAGA GIS-ben.&lt;/p&gt;
+
+&lt;p&gt;Nyissunk az OSGeo4W héjalkalmazást és gépeljük be ezt a rövid parancsot egyben:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gdalvrtbuild -separate g:\modis\TEMP\raszter\layer_stack.vrt g:\modis\TEMP\raszter\*.tif&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/shell.png&quot; class=&quot;image3&quot; alt=&quot;Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;-separate&lt;/code&gt; logikai argumentumot megadva külön sávokba helyezi a képeket (ha ezt lehagynánk, akkor virtuális mozaikot készítene nekünk a GDAL), utána következik a kimenet és a bemenet. Ebben a sorrendben! Az elérési útvonalakat pedig módosítsátok, ha szükséges.&lt;/p&gt;
+
+&lt;p&gt;Indítsuk el a &lt;strong&gt;saga_gui.exe&lt;/strong&gt;-t, utána a menüsorban válasszuk ki a &lt;strong&gt;File -&amp;gt; Open&lt;/strong&gt; parancsot (vagy a mappa ikonra is kattinthatunk a fájl megnyitásához) és nyissuk meg a virtuális raszterünket (&lt;code class=&quot;highlighter-rouge&quot;&gt;layer_stack.vrt&lt;/code&gt;)! Utána navigáljunk el ide: &lt;strong&gt;Geoprocessing -&amp;gt; Spatial and Geostatistics -&amp;gt; Grids -&amp;gt; Save Grid Statistics to Table&lt;/strong&gt;. Nyissuk meg az eszközt! A &lt;strong&gt;Grid Systems&lt;/strong&gt;-nél adjuk meg grid rendszerünket (a raszter terjedelem és felbontás) a legördülő listából. Utána a &lt;strong&gt;Grids&lt;/strong&gt;-nél a &lt;code class=&quot;highlighter-rouge&quot;&gt;...&lt;/code&gt; gombra kattintva a felugró kéthasábos ablak bal oldali oszlopában válasszuk ki a képkötegünket és a dupla vagy a szimpla nyílra kattintva pakoljuk át a jobb oldali ablakba (így lesz kiválasztva), majd kattintsunk az oké gombra! A táblázat részt hagyjuk úgy, ahogy van. Végül válasszuk ki, hogy milyen statisztikákat számoljon a képekre, és kattintsunk az okéra.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_gui_1.png&quot; class=&quot;image3&quot; alt=&quot;Grid statisztikák mentése táblázatba eszköz&quot; /&gt;
+&lt;br /&gt;
+A létrehozott táblázatra kattintsunk jobb egérgombbal és válasszuk ki a &lt;strong&gt;„mentés mint”&lt;/strong&gt; opciót és mentsük el .txt formátumba. Ez utána könnyedén beilleszthető az MS Excel-be vagy más táblázatkezelő szoftverbe.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_gui_2.png&quot; class=&quot;image3&quot; alt=&quot;A statisztikákat tartalmazó táblázat exportálása szöveges formátumba&quot; /&gt;
+&lt;br /&gt;
+Feltöltöttem nektek a Google Drive-ra a MODIS minta-adatbázisomat (&lt;a href=&quot;https://drive.google.com/open?id=0B8pLujeireG7YjBmWTMtbm85UzQ&quot;&gt;&lt;strong&gt;modis_sample_data.rar&lt;/strong&gt;&lt;/a&gt;, 561 MB, kitömörítve 2,71 GB), amin gyakorolhatjátok a parancssori adatfeldolgozást. A batch szkriptet megtaláljátok a &lt;a href=&quot;https://github.com/SalsaBoy990/saga_gis_batch&quot;&gt;&lt;strong&gt;saga_gis_batch&lt;/strong&gt;&lt;/a&gt; repository-mban.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;em&gt;&lt;strong&gt;Házi feladat:&lt;/strong&gt; Készíts egy tudományos színvonalú elemzést egy tetszőlegesen választott mintaterület erdőiben (pl. Keszthelyi-hegység) bekövetkezett változásokról az NDVI adatok alapján, 2000 és 2016 között! Milyen kapcsolat áll fenn a megfigyelt változások és az éves meteorológiai viszonyok között? (A minta-adatbázisban az ország egész területére megvannak az NDVI-képek.) A Keszthelyi-hegységet azért ajánlom mintaterületnek, mert ott egy igen jelentős erdőpusztulás következett be 2011-től kezdődően. Ennek okainak feltárása egy nagyon jó BSc-s szakdolgozat témája lehet.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ajánlott-irodalom&quot;&gt;Ajánlott irodalom&lt;/h2&gt;
+
+&lt;ul class=&quot;no-decoration-18px&quot;&gt;
+    &lt;li&gt;&lt;em&gt;Gulácsi A. - Kovács F. (2015).&lt;/em&gt; &lt;a href=&quot;http://www.tajokologiailapok.szie.hu/pdf/201502/04_Gulacsi_Kovacs.pdf&quot;&gt;Aszályvizsgálat lehetősége MODIS műholdképekből számított spektrális indexekkel Magyarországon.&lt;/a&gt;Tájökológiai Lapok 13(2), pp. 235-248.
+    &lt;/li&gt;
+    &lt;li&gt;
+    &lt;em&gt;Gulácsi A. - Kovács F. (2015).&lt;/em&gt; &lt;a href=&quot;http://publicatio.bibl.u-szeged.hu/11921/&quot;&gt;Drought monitoring with spectral indices calculated from MODIS satellite images in Hungary.&lt;/a&gt; Journal of Environmental Geography 8(3-4), pp. 11-20.
+    &lt;/li&gt;
+    &lt;li&gt;
+    &lt;em&gt;Rouse, J. W. - Haas, H. R. - Schell, A. J. - Deering, W. D. (1973).&lt;/em&gt; &lt;a href=&quot;https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19740022614.pdf&quot;&gt;Monitoring vegetation systems in the Great Plains
+with ERTS.&lt;/a&gt; Third ERTS Symposium, NASA SP-351 1. pp. 309–317. 
+    &lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Mon, 11 Sep 2017 02:22:05 +0200</pubDate>
-        <link>http://localhost:4000//tudomany/2017/09/11/parancssor_a_geoinformatikaban.html</link>
-        <guid isPermaLink="true">http://localhost:4000//tudomany/2017/09/11/parancssor_a_geoinformatikaban.html</guid>
+        <pubDate>Sat, 16 Sep 2017 20:50:00 +0200</pubDate>
+        <link>http://localhost:4000//tudomany/2017/09/16/parancssor_a_geoinformatikaban.html</link>
+        <guid isPermaLink="true">http://localhost:4000//tudomany/2017/09/16/parancssor_a_geoinformatikaban.html</guid>
       </item>
     
       <item>
