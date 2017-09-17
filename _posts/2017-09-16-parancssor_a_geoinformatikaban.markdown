@@ -24,7 +24,7 @@ A fenti verziójú alkalmazásokat használtam a parancssori szkriptek futtatás
 
 ## 1. Adat és módszer
 
-Egy 15 éves 2000 és 2015 közötti műholdas adatsort használtam fel a parancssorban történő adatfeldolgozás demonstrálására. A NASA Terra műhold MODIS szenzorának [250 méteres felbontású, 16 napos EVI és NDVI kompozitképeit](https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1_v006) (`MOD13Q1: MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid V005`) elemeztem a Duna-Tisza-közi erdőterületekre, amelyek az Európai Uniós [CORINE](https://www.eea.europa.eu/publications/COR0-landcover) (Coordination of Information on the Environment) felszínborítási adatbázis segítségével lettek lehatárolva.
+Egy 15 éves 2000 és 2016 közötti műholdas adatsort használtam fel a parancssorban történő adatfeldolgozás demonstrálására. A NASA Terra műhold MODIS szenzorának [250 méteres felbontású, 16 napos EVI és NDVI kompozitképeit](https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1_v006) (`MOD13Q1: MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid V005`) elemeztem a Duna-Tisza-közi erdőterületekre, amelyek az Európai Uniós [CORINE](https://www.eea.europa.eu/publications/COR0-landcover) (Coordination of Information on the Environment) felszínborítási adatbázis segítségével lettek lehatárolva.
 Az EU tagállamok nagyjából 6 évente felmérik a felszínborítás változásait különböző felszínborítási kategóriák szerint, 1:100 000-es méretarányban. A `CLC_2000` (a 2000-05 közötti), a `CLC_2006` (a 2006-11 közötti) és a `CLC_2012` (2012-től kezdődő műholdképekre) adatok alapján határoltuk le az erdőket.
 
 
@@ -187,7 +187,7 @@ Nyissunk az OSGeo4W héjalkalmazást és gépeljük be ezt a rövid parancsot eg
 
 `gdalvrtbuild -separate g:\modis\TEMP\raszter\layer_stack.vrt g:\modis\TEMP\raszter\*.tif`
 
-<img src="{{ site.url }}/assets/sagagis/shell.png" class="image3" alt="Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva"/>
+<img src="{{ site.url }}/assets/sagagis/shell.png" class="large" alt="Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva"/>
 <br />
 
 A `-separate` logikai argumentumot megadva külön sávokba helyezi a képeket (ha ezt lehagynánk, akkor virtuális mozaikot készítene nekünk a GDAL), utána következik a kimenet és a bemenet. Ebben a sorrendben! Az elérési útvonalakat pedig módosítsátok, ha szükséges.
@@ -195,7 +195,7 @@ A `-separate` logikai argumentumot megadva külön sávokba helyezi a képeket (
 Indítsuk el a **saga_gui.exe**-t, utána a menüsorban válasszuk ki a **File -> Open** parancsot (vagy a mappa ikonra is kattinthatunk a fájl megnyitásához) és nyissuk meg a virtuális raszterünket (`layer_stack.vrt`)! Utána navigáljunk el ide: **Geoprocessing -> Spatial and Geostatistics -> Grids -> Save Grid Statistics to Table**. Nyissuk meg az eszközt! A **Grid Systems**-nél adjuk meg grid rendszerünket (a raszter terjedelem és felbontás) a legördülő listából. Utána a **Grids**-nél a `...` gombra kattintva a felugró kéthasábos ablak bal oldali oszlopában válasszuk ki a képkötegünket és a dupla vagy a szimpla nyílra kattintva pakoljuk át a jobb oldali ablakba (így lesz kiválasztva), majd kattintsunk az oké gombra! A táblázat részt hagyjuk úgy, ahogy van. Végül válasszuk ki, hogy milyen statisztikákat számoljon a képekre, és kattintsunk az okéra.
 
 
-<img src="{{ site.url }}/assets/sagagis/saga_gui_1.png" class="image3" alt="Grid statisztikák mentése táblázatba eszköz"/>
+<img src="{{ site.url }}/assets/sagagis/saga_gui_1.png" class="large" alt="Grid statisztikák mentése táblázatba eszköz"/>
 <br />
 A létrehozott táblázatra kattintsunk jobb egérgombbal és válasszuk ki a **„mentés mint”** opciót és mentsük el .txt formátumba. Ez utána könnyedén beilleszthető az MS Excel-be vagy más táblázatkezelő szoftverbe.
 
