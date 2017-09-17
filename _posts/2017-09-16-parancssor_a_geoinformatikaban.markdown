@@ -185,7 +185,7 @@ Először létrehozunk egy virtuális raszter ([.vrt fájl, a GDAL saját formá
 
 Nyissunk az OSGeo4W héjalkalmazást és gépeljük be ezt a rövid parancsot egyben:
 
-`gdalvrtbuild -separate g:\modis\TEMP\raszter\layer_stack.vrt g:\modis\TEMP\raszter\*.tif`
+`gdalbuildvrt -separate g:\modis\TEMP\raszter\layer_stack.vrt g:\modis\TEMP\raszter\*.tif`
 
 <img src="{{ site.url }}/assets/sagagis/shell.png" class="large" alt="Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva"/>
 <br />
