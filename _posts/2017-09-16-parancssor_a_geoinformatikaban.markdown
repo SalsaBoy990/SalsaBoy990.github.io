@@ -200,7 +200,7 @@ Indítsuk el a **saga_gui.exe**-t, utána a menüsorban válasszuk ki a **File -
 A létrehozott táblázatra kattintsunk jobb egérgombbal és válasszuk ki a **„mentés mint”** opciót és mentsük el .txt formátumba. Ez utána könnyedén beilleszthető az MS Excel-be vagy más táblázatkezelő szoftverbe.
 
 
-<img src="{{ site.url }}/assets/sagagis/saga_gui_2.png" class="image3" alt="A statisztikákat tartalmazó táblázat exportálása szöveges formátumba"/>
+<img src="{{ site.url }}/assets/sagagis/saga_gui_2.png" class="large" alt="A statisztikákat tartalmazó táblázat exportálása szöveges formátumba"/>
 <br />
 Feltöltöttem nektek a Google Drive-ra a MODIS minta-adatbázisomat ([**modis_sample_data.rar**](https://drive.google.com/open?id=0B8pLujeireG7YjBmWTMtbm85UzQ), 561 MB, kitömörítve 2,71 GB), amin gyakorolhatjátok a parancssori adatfeldolgozást. A batch szkriptet megtaláljátok a [**saga_gis_batch**](https://github.com/SalsaBoy990/saga_gis_batch) repository-mban.
 
