@@ -1,0 +1,301 @@
+---
+layout: post
+comments: true
+title: "Rövid elméleti bevezető a JavaScript nyelvbe, 3. rész."
+excerpt: "Ebben a részben a felemelésről (hoisting), a this értékről, annak eredetéről, a bezárásról (closure), a privát hozzáférésről és a beágyazott függvényekről lesz szó."
+date: 2017-09-20 16:37
+tags: "javascript"
+categories: tudomany
+---
+
+Az előző részben az írtam, hogy a végrehajtási kontextusban (execution context) (globális szinten vagy függvényen belül) a változók „felemelése” (hoisting) történik az első sorba. **Ez a felemelés csak látszólagos**, mivel a JS motor fizikailag nem változtatja meg a változók helyét (a kód hányadik sorában lettek deklarálva)! Mi történik, amikor a böngészőben futtatjuk a kódunkat?
+
+Először a JS motor létrehozza a böngészőablakunkban a **globális futtatási környezetet** (a globális objektumot, ami a Window objektumot és a `this` értéket, ami a globális objektumra hivatkozik). Ezután a **Syntax Parser** végigfut a kódunkon és megkeresi az összes `var`-t és `function`-t. A következő, **létrehozási fázisban** (creation phase) a JS motor lefoglalja a memóriát a változóink/objektumaink számára, értéküket ideiglenesen `undefined`-ra állítja (az értékeket majd később fogjuk definiálni). A kódunk még mindig nem futott le, de már létrejöttek azok a változók, amiket majd használni fogunk.
+
+Ezután jön a **futtatási fázis**, amikor a JS értelmező végrehajtja az utasításokat. A JS nyelv egy menetben (single threaded) és szinkron módban (synchronous) futtatja a kódot. Egyszerre csak egy sort, illetve utasítást hajt végre.
+
+Mint írtam, a futtatási szakasz előtt már léteznek a memóriában a változóink, értékük `undefined`, tehát hozzájuk férünk még azelőtt, hogy értéket adtunk volna nekik az `=` operátorral. Ezért tűnik úgy, mintha felemelődnének. Ez a JS motor működésének a következménye. Így most már jobban érthető az alábbi kódrészlet:
+
+<pre><code class="language-javascript">console.log(a); //-> undefined lesz.
+var a = 7;
+</code></pre>
+ 
+A JS ezt a valóságban nem fogja átírni erre:
+<pre><code class="language-javascript">var a;
+console.log(a); //-> undefined lesz.
+a = 7;
+</code></pre>
+
+Arról van itt szó, hogy a kódunk futtatása előtt már lefoglalódnak a változóink, objektumaink a memóriában, tehát a `console.log()` segítségével már hozzáférünk az értékükhöz (`undefined`) még azelőtt, míg mi értékül adnánk valamit a változónknak. Ennyi és nem több. Semmi **tényleges** felemelődés nem történik!
+
+A JavaScript gyengén típusos nyelv, tehát `var`-ral lefoglalt változóink típusa a kódunk futtatásakor dől el és futás közben változhat. A JS a szabvány szerint megállapítja a változóink típusát és gondoskodik az adattípusok közötti konverzióról.
+
+Térjünk át most a `this` érték és annak eredetének boncolgatására, majd utána a bezárással (closure), a privát hozzáféréssel és az egymásba ágyazott függvényekkel fogunk foglalkozni.
+
+<br />
+
+## Mi a `this`, honnan származik?
+
+Az előző részben egy félmondat erejéig megemlítettem, hogy a `this` az éppen aktuális objektumpéldányra mutató referencia, amin keresztül hozzáférünk az éppen aktuális objektum tulajdonságaihoz. (Objektum: azonosító-érték párok gyűjteménye.) Ehhez lássunk egy könnyű példát:
+
+<pre><code class="language-javascript">/* Ez egy pont osztály konstruktora. */
+function Point(x, y) {
+    this.x = x || 0;
+    this.y = x || 0;
+
+    this.print = function () {
+        console.log("x: " + this.x + ", y: " + this.y);
+    };
+}
+// Az osztály példányosítása.
+var o = new Point(10, 20);
+o.print();
+</code></pre>
+
+
+A konstruktor meghívásával példányosítjuk a `Point` „osztályt”: létrehozunk egy `o` nevű objektumot. Amikor meghívjuk a `print()` metódusát, mi helyettesítődik be a `this` helyére? Természetesen az aktuális objektumpéldány referenciája, vagyis az `o`.
+
+A `this` kulcsszó ismerős lehet annak, akinek van tapasztalata a C++-szal vagy a Java-val.
+
+A `this` eredetének a tisztázásához vissza kell térnünk a C nyelvhez, méghozzá a struktúrákhoz. A struktúrák olyan öszetett adatszerkezetek, amelyek különféle változókat fognak össze, kezelnek együtt. A struktúra (`struct`) az osztály (`class`) ősének mondható. A struktúra-tagok hozzáférése alapértelmezetten publikus. Ez a rövid C kódrészletem rámutat a lényegre:
+
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;locale.h&gt;
+
+/* Egy egyszerű struktúra megvalósítása C-ben. */
+struct Kijelzo {
+    // A kijelző oldalai.
+    int szelesseg;
+    int magassag;
+};
+void printKijelzo (struct Kijelzo *);
+
+int main() {
+    // Az ékezetes karakterek miatt.
+    setlocale(LC_ALL, "hun");
+    // A struktúra példányosítása.
+    struct Kijelzo elso;
+    // Kijelzo típusú mutató létrehozása
+    struct Kijelzo *p;
+    // A struktúra példányunk kezdőcímére mutat.
+    p = &elso;
+
+    (*p).szelesseg = 1024;
+    (*p).magassag = 768;
+    printKijelzo(p);
+
+    /* Helyette ezt is írhatnám: */
+    p->szelesseg = 1280;
+    p->magassag = 1024;
+    printKijelzo(p);
+
+    getchar();
+    return 0;
+}
+void printKijelzo (struct Kijelzo *ptr) {
+    printf("A kijelző szélessége: %d, magassága: %d\n",
+        ptr->szelesseg, ptr->magassag);
+}
+</code></pre>
+
+Magyarázat: egy `struct Kijelzo` típusú struktúrát jelölő mutatót hoztam létre `p` néven. Ha `p` egy `Kijelzo` struktúrát címez, akkor `*p` maga a struktúra (memóriacím, ahol `elso` megtalálható), és `(*p).szelesseg`, illetve `(*p).magassag` az `elso` struktúra tagjai. A zárójelre szükség van, mivel a `.` struktúratag operátor precedenciája magasabb, mint a `*` operátoré. A szintaxis egyszerűsítésére vezették be a `->` nyíl operátort (balról jobbra köt).
+
+(A `*` operátor segítségével a mutató által mutatott memóriacímen található értéket érhetjük el. Az `&` operátor pedig a memóriacímek lekérdezésére használatos. Az `&p` a mutató memóriacímét adja vissza. A mutató memóriacímén egy másik változó, mutató, tömb stb. memóriacímét tároljuk el.)
+
+Természetesen egyszerűen használhatnánk a `.` struktúra-adattag operátort is a struktúratagok lekérdezésére, így: `elso.szelesseg = 1920;`. De mi a helyzet akkor, ha több száz struktúrapéldánnyal vagy struktúratömbökkel kell dolgoznunk? Ilyenkor sok hasznát vesszük a mutatóknak.
+
+A C++-ban a `this` az osztály példányát jelölő (annak kezdőcímét tároló) belső mutató, amivel az osztály tagváltozóihoz és metódusaihoz hozzáférünk. Átírtam az előbbi példaprogramunkat C++-ba:
+
+
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;locale.h&gt;
+
+using namespace std;
+
+class Kijelzo {
+private:
+    int szelesseg;
+    int magassag;
+public:
+    Kijelzo() {}; // Alapértelmezett konstruktor.
+    // Saját konstruktor inicializálási listával.
+    Kijelzo(int szelesseg, int magassag): 
+        szelesseg(szelesseg), magassag(magassag) {};
+    // Destruktor.
+    ~Kijelzo() {};
+
+    inline void printKijelzo() const {
+        cout << "A kijelző szélessége: " << this->szelesseg
+        << ", magassága: " << this->magassag << endl;
+    }
+    inline void setSzelesseg(int x) { this->szelesseg = x; }
+    inline int getSzelesseg() const { return this->szelesseg; }
+    inline void setMagassag(int x) { this->magassag = x; }
+    inline int getMagassag() const { return this->magassag; }
+    void this_erteke() const;
+};
+
+int main()
+{
+    setlocale(LC_ALL, "hun");
+    // Az osztály példányosítása.
+    Kijelzo elso(1024, 768);
+    elso.printKijelzo();
+    elso.setMagassag(600);
+    cout << elso.getMagassag() << endl;
+
+    Kijelzo *p;
+    p = &elso;
+    cout << p->getSzelesseg() << endl; //=> 1024
+
+    elso.this_erteke();
+    cin.get();
+    return 0;
+}
+/* A this értékének kiírása. */
+void Kijelzo::this_erteke() const {
+    cout << "A this értéke: " << this << endl;
+};
+</code></pre>
+
+A `this` **az osztály aktuális példányának** (az `elso`-nek) **a belső mutatója**, amivel a tagváltozókat és a tagfüggvényeket (más szóval metódusokat) érhetjük el a `->` (nyíl) operátor segítségével. Ez egy valódi mutató, amit a `this` kulcsszóval helyettesítünk és jelen esetben az `elso` osztálypéldány címére mutat. Figyeljétek meg jobban a példaprogramot: létrehoztam egy `p` nevű mutatót, aminek értékül adtam az `elso` memóriacímét. A `p` mutató használatával a `->` operátor segítségével is hozzáférek az osztálytagokhoz (természetesen a privát tagváltozókhoz nem férünk hozzá). A `this` pontosan egy ilyen mutató, csak ennek jelölésére bevezették a `this` kulcsszót: `p->szelesseg` helyett `this->szelesseg`-et írunk. A program végén kiírtam a `this` értékét, ami egy memóriacím.
+
+A JavaScript-ben szintén létezik a `this`. A `this` **az éppen aktuális objektumpéldányra hivatkozik.** A `this` egy **referencia**. Mivel a JS-ben nincsen mutató, ezért nincs szükség a nyíl operátorra, helyette a `.` operátorral érhetjük el az objektum tulajdonságait a `this`-en keresztül, vagyis a `this.x` a helyes szintaxis.
+
+<br />
+
+## A bezárás (closure), a privát hozzáférés és a beágyazott függvények
+
+A JavaScript-ben nem blokkhatókör van, hanem **függvényhatókör**, tehát nem `{}` segítségével tudunk lokális, kívülről nem hozzáférhető változókat bezárni, hanem `()` használatával. Tetszőleges számú függvényhatókört (és végrehajtási kontextust) hozhatunk létre a `()` zárójelpár segítségével. Ezt a technikát **bezárásnak** nevezzük. A függvényen belül a `var` kulcsszóval deklarált változók privátak, vagyis kívülről nem elérhetők. A külső környezetben, tehát a függvényen kívül deklarált ugyanolyan nevű változókat elrejtik az aktuális függvényen belül deklarált változók (ha vannak ilyenek).
+
+Ez nem jelent több védelmet, mint amikor a C++-ban privát hozzáférést alkalmazok a `private` kulcsszó segítségével. Az újabb JS-szabványok a jövőben majd támogatni fogják a `private`, `protected` és a `public` hozzáférési szinteket.
+
+Nézzünk néhány nagyon egyszerű példát:
+
+<pre><code class="language-javascript">function b() {
+    console.log(myVar);
+}
+function a() {
+    var myVar = 2;
+    b();
+}
+var myVar = 1;
+a(); // Mit fog kiírni?
+</code></pre>
+
+Nyilván az `1`-et fogja kiírni. Erre gondoltatok ti is? Az `a()` függvényen belül deklarált `myVar` hatóköre az `a()` függvény. A másik `myVar` változó nincs függvényen belül, tehát globális. A hatókör láncolatra kell itt visszaemlékeznünk. A `b()` függvényünk külső környezete a globális végrehajtási környezet. A `b()` függvény elsőként a saját hatókörén belül keresi a `myVar`-t, de mivel itt nem találja, egy fölötte levő hatókörben, a globális hatókörben keresi tovább. Ez van a hatókörlánc legtetején. Itt található egy `myVar` változó, és ennek az értékét írja ki a `b()` függvény. Hiába az `a()` függvényen belül hívtuk meg. **A lényeg, hogy fizikailag hol található a függvény deklaráció.** Csak erre figyeljetek!
+
+Ha a `b()` függvényt az `a()` függvényen belül deklaráltuk volna, akkor a külső környezete az `a()` függvény lenne, az `a()` függvényé pedig a globális futtatási környezet. Ebben az esetben a JS motor elsőként a `b()`-ben keresné a `myVar`-t, utána az `a()`-ban és végül a globális környezetben. Ez a **hatókörlánc**. Kicsit módosítva az előbbi kódot:
+
+<pre><code class="language-javascript">function a() {
+    var myVar = 2;
+    function b() {
+        console.log(myVar);
+    }
+    b();
+}
+var myVar = 1;
+a(); //=> 2
+</code></pre>
+
+Az `a()` függvényen belüli `myVar` változó értékét írja ki a `b()` függvény A függvény-definíció után természetesen egyszer meg kell hívunk a `b()`-t. Azt nézzétek, hol található a függvénydeklaráció, mibe van beágyazva.
+
+A bezárásra is hoztam példát:
+<pre><code class="language-javascript">var a = "krumpli";
+function szulo () {
+    var b = "körte";
+    function beagyazott () {
+        var c = "paprika";
+        console.log(a); //=> krumpli
+        console.log(b); //=> körte
+    }
+    beagyazott();
+    console.log(c); // Referenciahiba: c nincs definiálva.
+}
+szulo();
+
+console.log(b); //=> Referenciahiba: b nincs definiálva.
+console.log(c); //=> Referenciahiba: c nincs definiálva.
+console.log(a); //=> krumpli
+</code></pre>
+
+A kódban a `beagyazott()` függvényt ágyaztam be a `szulo()` függvénybe, tehát így néz ki a hatókörlánc: `beagyazott()` -> `szulo()` -> `global`. A legbelső függvény változóihoz kívülről nem fér hozzá a `szulo()` függvény, sem pedig globálisan nem hozzáférhetők. Ez fordítva nem igaz! A `beagyazott()` függvény hozzáfér a `szulo()` változóihoz, valamint az összes globális változóhoz, hiszen végighalad az hatókör láncon a nyilak szerinti irányban. Viszont amikor a `szulo()`-n belül megpróbáljuk a `beagyazott()` függvény `c` változóját elérni, akkor referenciahibát dob a JS értelmező: nem találja a `c`-t. De hol keresi a `c`-t? A szülő függvényhez tartozó hatókör lánc: `szulo()` -> `global`. Tehát a külső, globális hatókörben keresi, de ott nem találja és ezért dob hibát. (A hibakezelésről egy későbbi részben lesz szó.)
+
+**Privát tulajdonságokat vagy változókat** függvénybe zárás és a `var` kulcsszó használatával hozhatunk létre:
+
+<pre><code class="language-javascript">function Hallgato(nev, eha, email) {
+    var nev = nev;
+    this.getNev = function() { return this.nev; };
+
+    var eha_kod = eha;
+    this.setEha = function(x) { this.eha_kod = x; };
+    this.getEha = function() { return this.eha_kod; };
+
+    this.email = email;
+}
+var sanyi = new Hallgato(
+                        "Petőfi Sándor",
+                        "PESAABT.SZE",
+                        "sanyi1848@freemail.hu"
+);
+sanyi.eha_kod = "ABCDEFG.SZE"; //=> Hiba.
+sanyi.email = "sanyi1848@gmail.com" 
+console.log(sanyi.email); //=> sanyi1848@gmail.com
+console.log(sanyi);
+</code></pre>
+
+Ha kiíratod a konzolra `sanyi` tartalmát, akkor nem fogod látni a `nev` és az `eha_kod` tulajdonságát, hiszen a `console.log()` nem fér hozzájuk! Csak a get és a set függvények láthatók. Csak ezeken keresztül, szabályozottan férhetünk hozzá ezekhez a tulajdonságokhoz. Tehát „illetéktelenek” nem férnek hozzájuk.
+
+<br />
+
+## A beágyazott függvények és a `this`
+
+A `this` érték a változókkal ellentétben nem kapcsolódik hatókörhöz és a beágyazott függvények sem férnek hozzá a befoglaló függvény `this` értékéhez. A `this`-nek mi nem adhatunk értéket, pl. a `this = obj;` utasítás érvénytelen.
+
+A `this` értéke nem fix a JS-ben, hanem futási időben, a függvényhíváskor dől el. Ha nem az `objektumnev.metodus()` szintaxist használjuk, amikor a `this` helyére az `objektumnev` helyettesítődik be, hanem egy egyszerű függvény hívunk meg, akkor a `this` a globális objektumra hivatkozik:
+
+<pre><code class="language-javascript">var obj = {
+    id: "egy objektum",
+    method: function() {
+        console.log(this);
+    }
+}
+obj.method(); //=> az obj-ra hivatkozik
+
+function f2() {
+    console.log(this.toString()); // [object Window]
+    console.log(this === window); //=> true
+}
+f2();
+</code></pre>
+
+Ha függvényeket ágyazunk egymásba, akkor a befoglaló függvényben el kell tárolnunk a `this` értékét egy változóban, amit megegyezés szerint `self`-nek szokás elnevezni.
+
+<pre><code class="language-javascript">var obj = {
+    elemek: ["Gandalf", "Aragorn", "Legolas", "Gimli"],
+    feldolgoz: function() {
+        var self = this;
+        this.elemek.forEach(function(elem) {
+            self.kiir(elem);
+        });
+    },
+    kiir: function(elem) {
+        console.log('*' + elem + '*');
+    }
+};
+obj.feldolgoz();
+</code></pre>
+
+Ha a `forEach` cikluson belüli függvényben a `self` helyett a `this`-t használtuk volna, akkor rossz objektumra hivatkoztunk volna, így a `kiir()` meghívása sikertelen lett volna (a JS fordító típushibát dobna: a `this.kiir` nem függvény). Ilyenkor a `kiir()` függvény minden egyes meghívásakor a `this` értéke nem a mi objektumunk, hanem a globális objektum lesz (szigorú módban pedig `undefined`)! A globális objektumnak pedig nincsen `kiir()` nevű metódusa. Az első függvény, a `feldolgoz()` meghívásakor a `this` az `obj`-ra hivatkozik. A `this` értékét eltároljuk a `self` változóban. A `forEach` ciklus az `elemek` tömb minden elemére meghív egy úgynevezett callback függvényt. Ebben a függvényben a `self.kiir(elem)` szintaxissal hivatkozunk az `obj` `kiir()` metódusára, és mivel a `self` tartalma az `obj`-ra hivatkozik, elérjük a függvényt.
+
+Egyelőre elég ennyi. A következő két részben foglalkozni fogok a kivételkezeléssel (exeption handling), a RegExp objektumokkal, a JSON-nal (JavaScript Object Notation) és a metóduslánccal (method chain). Végül a prototípusos öröklést mutatom be.
+
+Ezek után pedig rá fogok térni a funkcionális programozásra és a Google Earth Engine API (Application Programming Interface, vagyis alkamazásprogramozási felület) használatára. 
+
+<br />
+## Ajánlott irodalom
+
+1. Anthony Alicea (2015). [**JavaScript: Understanding the Weird Parts - The First 3.5 Hours.**](https://www.youtube.com/watch?v=Bv_5Zv5c-Ts) A teljes 12 órás kurzus az [udemy.com](https://www.udemy.com/understand-javascript/?utm_content=_._pd_364426_._&utm_source=facebook-row&utm_medium=udemyads&utm_campaign=NEW-FB-VRT-ROW-Tech-EN-ALL_._ci_._sl_ALL_._vi_._sd_All_._la_EN_.&utm_term=_._ag_NEW-FB-VRT-ROW-Tech-EN-ALL_._ci_._sl_ALL_._vi_._sd_All_._la_EN_._-_._ci_._._pi_1814585708581485_._gi_all_._ai_18--65_._an_M3oTyZ&k_clickid=97b08e8c-94fa-4830-ad99-8b6239fe4a0d_131994849)-on megtalálható. Nem biztos, hogy érdemes kiadni rá a pénzt. Én csak az első 3,5 órát néztem meg a youtube-on.
+2. Brian W. Kernighan - Dennis M. Richie: **A C programozási nyelv. 2. kiadás.** - Műszaki Kiadó, Budapest.
+3. Benedek Zoltán - Levendovszky Tihamér (2013). **Szoftverfejlesztés C++ nyelven.** SZAK Kiadó Kft., Bicske.

@@ -15,6 +15,305 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Rövid elméleti bevezető a JavaScript nyelvbe, 3. rész.</title>
+        <description>&lt;p&gt;Az előző részben az írtam, hogy a végrehajtási kontextusban (execution context) (globális szinten vagy függvényen belül) a változók „felemelése” (hoisting) történik az első sorba. &lt;strong&gt;Ez a felemelés csak látszólagos&lt;/strong&gt;, mivel a JS motor fizikailag nem változtatja meg a változók helyét (a kód hányadik sorában lettek deklarálva)! Mi történik, amikor a böngészőben futtatjuk a kódunkat?&lt;/p&gt;
+
+&lt;p&gt;Először a JS motor létrehozza a böngészőablakunkban a &lt;strong&gt;globális futtatási környezetet&lt;/strong&gt; (a globális objektumot, ami a Window objektumot és a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; értéket, ami a globális objektumra hivatkozik). Ezután a &lt;strong&gt;Syntax Parser&lt;/strong&gt; végigfut a kódunkon és megkeresi az összes &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;-t és &lt;code class=&quot;highlighter-rouge&quot;&gt;function&lt;/code&gt;-t. A következő, &lt;strong&gt;létrehozási fázisban&lt;/strong&gt; (creation phase) a JS motor lefoglalja a memóriát a változóink/objektumaink számára, értéküket ideiglenesen &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;-ra állítja (az értékeket majd később fogjuk definiálni). A kódunk még mindig nem futott le, de már létrejöttek azok a változók, amiket majd használni fogunk.&lt;/p&gt;
+
+&lt;p&gt;Ezután jön a &lt;strong&gt;futtatási fázis&lt;/strong&gt;, amikor a JS értelmező végrehajtja az utasításokat. A JS nyelv egy menetben (single threaded) és szinkron módban (synchronous) futtatja a kódot. Egyszerre csak egy sort, illetve utasítást hajt végre.&lt;/p&gt;
+
+&lt;p&gt;Mint írtam, a futtatási szakasz előtt már léteznek a memóriában a változóink, értékük &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;, tehát hozzájuk férünk még azelőtt, hogy értéket adtunk volna nekik az &lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt; operátorral. Ezért tűnik úgy, mintha felemelődnének. Ez a JS motor működésének a következménye. Így most már jobban érthető az alábbi kódrészlet:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;console.log(a); //-&amp;gt; undefined lesz.
+var a = 7;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A JS ezt a valóságban nem fogja átírni erre:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var a;
+console.log(a); //-&amp;gt; undefined lesz.
+a = 7;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Arról van itt szó, hogy a kódunk futtatása előtt már lefoglalódnak a változóink, objektumaink a memóriában, tehát a &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log()&lt;/code&gt; segítségével már hozzáférünk az értékükhöz (&lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;) még azelőtt, míg mi értékül adnánk valamit a változónknak. Ennyi és nem több. Semmi &lt;strong&gt;tényleges&lt;/strong&gt; felemelődés nem történik!&lt;/p&gt;
+
+&lt;p&gt;A JavaScript gyengén típusos nyelv, tehát &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;-ral lefoglalt változóink típusa a kódunk futtatásakor dől el és futás közben változhat. A JS a szabvány szerint megállapítja a változóink típusát és gondoskodik az adattípusok közötti konverzióról.&lt;/p&gt;
+
+&lt;p&gt;Térjünk át most a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; érték és annak eredetének boncolgatására, majd utána a bezárással (closure), a privát hozzáféréssel és az egymásba ágyazott függvényekkel fogunk foglalkozni.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;mi-a-this-honnan-származik&quot;&gt;Mi a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;, honnan származik?&lt;/h2&gt;
+
+&lt;p&gt;Az előző részben egy félmondat erejéig megemlítettem, hogy a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; az éppen aktuális objektumpéldányra mutató referencia, amin keresztül hozzáférünk az éppen aktuális objektum tulajdonságaihoz. (Objektum: azonosító-érték párok gyűjteménye.) Ehhez lássunk egy könnyű példát:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/* Ez egy pont osztály konstruktora. */
+function Point(x, y) {
+    this.x = x || 0;
+    this.y = x || 0;
+
+    this.print = function () {
+        console.log(&quot;x: &quot; + this.x + &quot;, y: &quot; + this.y);
+    };
+}
+// Az osztály példányosítása.
+var o = new Point(10, 20);
+o.print();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A konstruktor meghívásával példányosítjuk a &lt;code class=&quot;highlighter-rouge&quot;&gt;Point&lt;/code&gt; „osztályt”: létrehozunk egy &lt;code class=&quot;highlighter-rouge&quot;&gt;o&lt;/code&gt; nevű objektumot. Amikor meghívjuk a &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; metódusát, mi helyettesítődik be a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; helyére? Természetesen az aktuális objektumpéldány referenciája, vagyis az &lt;code class=&quot;highlighter-rouge&quot;&gt;o&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; kulcsszó ismerős lehet annak, akinek van tapasztalata a C++-szal vagy a Java-val.&lt;/p&gt;
+
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; eredetének a tisztázásához vissza kell térnünk a C nyelvhez, méghozzá a struktúrákhoz. A struktúrák olyan öszetett adatszerkezetek, amelyek különféle változókat fognak össze, kezelnek együtt. A struktúra (&lt;code class=&quot;highlighter-rouge&quot;&gt;struct&lt;/code&gt;) az osztály (&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;) ősének mondható. A struktúra-tagok hozzáférése alapértelmezetten publikus. Ez a rövid C kódrészletem rámutat a lényegre:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+#include &amp;lt;locale.h&amp;gt;
+
+/* Egy egyszerű struktúra megvalósítása C-ben. */
+struct Kijelzo {
+    // A kijelző oldalai.
+    int szelesseg;
+    int magassag;
+};
+void printKijelzo (struct Kijelzo *);
+
+int main() {
+    // Az ékezetes karakterek miatt.
+    setlocale(LC_ALL, &quot;hun&quot;);
+    // A struktúra példányosítása.
+    struct Kijelzo elso;
+    // Kijelzo típusú mutató létrehozása
+    struct Kijelzo *p;
+    // A struktúra példányunk kezdőcímére mutat.
+    p = &amp;elso;
+
+    (*p).szelesseg = 1024;
+    (*p).magassag = 768;
+    printKijelzo(p);
+
+    /* Helyette ezt is írhatnám: */
+    p-&amp;gt;szelesseg = 1280;
+    p-&amp;gt;magassag = 1024;
+    printKijelzo(p);
+
+    getchar();
+    return 0;
+}
+void printKijelzo (struct Kijelzo *ptr) {
+    printf(&quot;A kijelző szélessége: %d, magassága: %d\n&quot;,
+        ptr-&amp;gt;szelesseg, ptr-&amp;gt;magassag);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Magyarázat: egy &lt;code class=&quot;highlighter-rouge&quot;&gt;struct Kijelzo&lt;/code&gt; típusú struktúrát jelölő mutatót hoztam létre &lt;code class=&quot;highlighter-rouge&quot;&gt;p&lt;/code&gt; néven. Ha &lt;code class=&quot;highlighter-rouge&quot;&gt;p&lt;/code&gt; egy &lt;code class=&quot;highlighter-rouge&quot;&gt;Kijelzo&lt;/code&gt; struktúrát címez, akkor &lt;code class=&quot;highlighter-rouge&quot;&gt;*p&lt;/code&gt; maga a struktúra (memóriacím, ahol &lt;code class=&quot;highlighter-rouge&quot;&gt;elso&lt;/code&gt; megtalálható), és &lt;code class=&quot;highlighter-rouge&quot;&gt;(*p).szelesseg&lt;/code&gt;, illetve &lt;code class=&quot;highlighter-rouge&quot;&gt;(*p).magassag&lt;/code&gt; az &lt;code class=&quot;highlighter-rouge&quot;&gt;elso&lt;/code&gt; struktúra tagjai. A zárójelre szükség van, mivel a &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; struktúratag operátor precedenciája magasabb, mint a &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; operátoré. A szintaxis egyszerűsítésére vezették be a &lt;code class=&quot;highlighter-rouge&quot;&gt;-&amp;gt;&lt;/code&gt; nyíl operátort (balról jobbra köt).&lt;/p&gt;
+
+&lt;p&gt;(A &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; operátor segítségével a mutató által mutatott memóriacímen található értéket érhetjük el. Az &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&lt;/code&gt; operátor pedig a memóriacímek lekérdezésére használatos. Az &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;p&lt;/code&gt; a mutató memóriacímét adja vissza. A mutató memóriacímén egy másik változó, mutató, tömb stb. memóriacímét tároljuk el.)&lt;/p&gt;
+
+&lt;p&gt;Természetesen egyszerűen használhatnánk a &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; struktúra-adattag operátort is a struktúratagok lekérdezésére, így: &lt;code class=&quot;highlighter-rouge&quot;&gt;elso.szelesseg = 1920;&lt;/code&gt;. De mi a helyzet akkor, ha több száz struktúrapéldánnyal vagy struktúratömbökkel kell dolgoznunk? Ilyenkor sok hasznát vesszük a mutatóknak.&lt;/p&gt;
+
+&lt;p&gt;A C++-ban a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; az osztály példányát jelölő (annak kezdőcímét tároló) belső mutató, amivel az osztály tagváltozóihoz és metódusaihoz hozzáférünk. Átírtam az előbbi példaprogramunkat C++-ba:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-cpp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;locale.h&amp;gt;
+
+using namespace std;
+
+class Kijelzo {
+private:
+    int szelesseg;
+    int magassag;
+public:
+    Kijelzo() {}; // Alapértelmezett konstruktor.
+    // Saját konstruktor inicializálási listával.
+    Kijelzo(int szelesseg, int magassag): 
+        szelesseg(szelesseg), magassag(magassag) {};
+    // Destruktor.
+    ~Kijelzo() {};
+
+    inline void printKijelzo() const {
+        cout &amp;lt;&amp;lt; &quot;A kijelző szélessége: &quot; &amp;lt;&amp;lt; this-&amp;gt;szelesseg
+        &amp;lt;&amp;lt; &quot;, magassága: &quot; &amp;lt;&amp;lt; this-&amp;gt;magassag &amp;lt;&amp;lt; endl;
+    }
+    inline void setSzelesseg(int x) { this-&amp;gt;szelesseg = x; }
+    inline int getSzelesseg() const { return this-&amp;gt;szelesseg; }
+    inline void setMagassag(int x) { this-&amp;gt;magassag = x; }
+    inline int getMagassag() const { return this-&amp;gt;magassag; }
+    void this_erteke() const;
+};
+
+int main()
+{
+    setlocale(LC_ALL, &quot;hun&quot;);
+    // Az osztály példányosítása.
+    Kijelzo elso(1024, 768);
+    elso.printKijelzo();
+    elso.setMagassag(600);
+    cout &amp;lt;&amp;lt; elso.getMagassag() &amp;lt;&amp;lt; endl;
+
+    Kijelzo *p;
+    p = &amp;elso;
+    cout &amp;lt;&amp;lt; p-&amp;gt;getSzelesseg() &amp;lt;&amp;lt; endl; //=&amp;gt; 1024
+
+    elso.this_erteke();
+    cin.get();
+    return 0;
+}
+/* A this értékének kiírása. */
+void Kijelzo::this_erteke() const {
+    cout &amp;lt;&amp;lt; &quot;A this értéke: &quot; &amp;lt;&amp;lt; this &amp;lt;&amp;lt; endl;
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; &lt;strong&gt;az osztály aktuális példányának&lt;/strong&gt; (az &lt;code class=&quot;highlighter-rouge&quot;&gt;elso&lt;/code&gt;-nek) &lt;strong&gt;a belső mutatója&lt;/strong&gt;, amivel a tagváltozókat és a tagfüggvényeket (más szóval metódusokat) érhetjük el a &lt;code class=&quot;highlighter-rouge&quot;&gt;-&amp;gt;&lt;/code&gt; (nyíl) operátor segítségével. Ez egy valódi mutató, amit a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; kulcsszóval helyettesítünk és jelen esetben az &lt;code class=&quot;highlighter-rouge&quot;&gt;elso&lt;/code&gt; osztálypéldány címére mutat. Figyeljétek meg jobban a példaprogramot: létrehoztam egy &lt;code class=&quot;highlighter-rouge&quot;&gt;p&lt;/code&gt; nevű mutatót, aminek értékül adtam az &lt;code class=&quot;highlighter-rouge&quot;&gt;elso&lt;/code&gt; memóriacímét. A &lt;code class=&quot;highlighter-rouge&quot;&gt;p&lt;/code&gt; mutató használatával a &lt;code class=&quot;highlighter-rouge&quot;&gt;-&amp;gt;&lt;/code&gt; operátor segítségével is hozzáférek az osztálytagokhoz (természetesen a privát tagváltozókhoz nem férünk hozzá). A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; pontosan egy ilyen mutató, csak ennek jelölésére bevezették a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; kulcsszót: &lt;code class=&quot;highlighter-rouge&quot;&gt;p-&amp;gt;szelesseg&lt;/code&gt; helyett &lt;code class=&quot;highlighter-rouge&quot;&gt;this-&amp;gt;szelesseg&lt;/code&gt;-et írunk. A program végén kiírtam a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; értékét, ami egy memóriacím.&lt;/p&gt;
+
+&lt;p&gt;A JavaScript-ben szintén létezik a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;. A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; &lt;strong&gt;az éppen aktuális objektumpéldányra hivatkozik.&lt;/strong&gt; A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; egy &lt;strong&gt;referencia&lt;/strong&gt;. Mivel a JS-ben nincsen mutató, ezért nincs szükség a nyíl operátorra, helyette a &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; operátorral érhetjük el az objektum tulajdonságait a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;-en keresztül, vagyis a &lt;code class=&quot;highlighter-rouge&quot;&gt;this.x&lt;/code&gt; a helyes szintaxis.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;a-bezárás-closure-a-privát-hozzáférés-és-a-beágyazott-függvények&quot;&gt;A bezárás (closure), a privát hozzáférés és a beágyazott függvények&lt;/h2&gt;
+
+&lt;p&gt;A JavaScript-ben nem blokkhatókör van, hanem &lt;strong&gt;függvényhatókör&lt;/strong&gt;, tehát nem &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;/code&gt; segítségével tudunk lokális, kívülről nem hozzáférhető változókat bezárni, hanem &lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt; használatával. Tetszőleges számú függvényhatókört (és végrehajtási kontextust) hozhatunk létre a &lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt; zárójelpár segítségével. Ezt a technikát &lt;strong&gt;bezárásnak&lt;/strong&gt; nevezzük. A függvényen belül a &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; kulcsszóval deklarált változók privátak, vagyis kívülről nem elérhetők. A külső környezetben, tehát a függvényen kívül deklarált ugyanolyan nevű változókat elrejtik az aktuális függvényen belül deklarált változók (ha vannak ilyenek).&lt;/p&gt;
+
+&lt;p&gt;Ez nem jelent több védelmet, mint amikor a C++-ban privát hozzáférést alkalmazok a &lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt; kulcsszó segítségével. Az újabb JS-szabványok a jövőben majd támogatni fogják a &lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;protected&lt;/code&gt; és a &lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt; hozzáférési szinteket.&lt;/p&gt;
+
+&lt;p&gt;Nézzünk néhány nagyon egyszerű példát:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function b() {
+    console.log(myVar);
+}
+function a() {
+    var myVar = 2;
+    b();
+}
+var myVar = 1;
+a(); // Mit fog kiírni?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nyilván az &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;-et fogja kiírni. Erre gondoltatok ti is? Az &lt;code class=&quot;highlighter-rouge&quot;&gt;a()&lt;/code&gt; függvényen belül deklarált &lt;code class=&quot;highlighter-rouge&quot;&gt;myVar&lt;/code&gt; hatóköre az &lt;code class=&quot;highlighter-rouge&quot;&gt;a()&lt;/code&gt; függvény. A másik &lt;code class=&quot;highlighter-rouge&quot;&gt;myVar&lt;/code&gt; változó nincs függvényen belül, tehát globális. A hatókör láncolatra kell itt visszaemlékeznünk. A &lt;code class=&quot;highlighter-rouge&quot;&gt;b()&lt;/code&gt; függvényünk külső környezete a globális végrehajtási környezet. A &lt;code class=&quot;highlighter-rouge&quot;&gt;b()&lt;/code&gt; függvény elsőként a saját hatókörén belül keresi a &lt;code class=&quot;highlighter-rouge&quot;&gt;myVar&lt;/code&gt;-t, de mivel itt nem találja, egy fölötte levő hatókörben, a globális hatókörben keresi tovább. Ez van a hatókörlánc legtetején. Itt található egy &lt;code class=&quot;highlighter-rouge&quot;&gt;myVar&lt;/code&gt; változó, és ennek az értékét írja ki a &lt;code class=&quot;highlighter-rouge&quot;&gt;b()&lt;/code&gt; függvény. Hiába az &lt;code class=&quot;highlighter-rouge&quot;&gt;a()&lt;/code&gt; függvényen belül hívtuk meg. &lt;strong&gt;A lényeg, hogy fizikailag hol található a függvény deklaráció.&lt;/strong&gt; Csak erre figyeljetek!&lt;/p&gt;
+
+&lt;p&gt;Ha a &lt;code class=&quot;highlighter-rouge&quot;&gt;b()&lt;/code&gt; függvényt az &lt;code class=&quot;highlighter-rouge&quot;&gt;a()&lt;/code&gt; függvényen belül deklaráltuk volna, akkor a külső környezete az &lt;code class=&quot;highlighter-rouge&quot;&gt;a()&lt;/code&gt; függvény lenne, az &lt;code class=&quot;highlighter-rouge&quot;&gt;a()&lt;/code&gt; függvényé pedig a globális futtatási környezet. Ebben az esetben a JS motor elsőként a &lt;code class=&quot;highlighter-rouge&quot;&gt;b()&lt;/code&gt;-ben keresné a &lt;code class=&quot;highlighter-rouge&quot;&gt;myVar&lt;/code&gt;-t, utána az &lt;code class=&quot;highlighter-rouge&quot;&gt;a()&lt;/code&gt;-ban és végül a globális környezetben. Ez a &lt;strong&gt;hatókörlánc&lt;/strong&gt;. Kicsit módosítva az előbbi kódot:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function a() {
+    var myVar = 2;
+    function b() {
+        console.log(myVar);
+    }
+    b();
+}
+var myVar = 1;
+a(); //=&amp;gt; 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Az &lt;code class=&quot;highlighter-rouge&quot;&gt;a()&lt;/code&gt; függvényen belüli &lt;code class=&quot;highlighter-rouge&quot;&gt;myVar&lt;/code&gt; változó értékét írja ki a &lt;code class=&quot;highlighter-rouge&quot;&gt;b()&lt;/code&gt; függvény A függvény-definíció után természetesen egyszer meg kell hívunk a &lt;code class=&quot;highlighter-rouge&quot;&gt;b()&lt;/code&gt;-t. Azt nézzétek, hol található a függvénydeklaráció, mibe van beágyazva.&lt;/p&gt;
+
+&lt;p&gt;A bezárásra is hoztam példát:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var a = &quot;krumpli&quot;;
+function szulo () {
+    var b = &quot;körte&quot;;
+    function beagyazott () {
+        var c = &quot;paprika&quot;;
+        console.log(a); //=&amp;gt; krumpli
+        console.log(b); //=&amp;gt; körte
+    }
+    beagyazott();
+    console.log(c); // Referenciahiba: c nincs definiálva.
+}
+szulo();
+
+console.log(b); //=&amp;gt; Referenciahiba: b nincs definiálva.
+console.log(c); //=&amp;gt; Referenciahiba: c nincs definiálva.
+console.log(a); //=&amp;gt; krumpli
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A kódban a &lt;code class=&quot;highlighter-rouge&quot;&gt;beagyazott()&lt;/code&gt; függvényt ágyaztam be a &lt;code class=&quot;highlighter-rouge&quot;&gt;szulo()&lt;/code&gt; függvénybe, tehát így néz ki a hatókörlánc: &lt;code class=&quot;highlighter-rouge&quot;&gt;beagyazott()&lt;/code&gt; -&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;szulo()&lt;/code&gt; -&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;global&lt;/code&gt;. A legbelső függvény változóihoz kívülről nem fér hozzá a &lt;code class=&quot;highlighter-rouge&quot;&gt;szulo()&lt;/code&gt; függvény, sem pedig globálisan nem hozzáférhetők. Ez fordítva nem igaz! A &lt;code class=&quot;highlighter-rouge&quot;&gt;beagyazott()&lt;/code&gt; függvény hozzáfér a &lt;code class=&quot;highlighter-rouge&quot;&gt;szulo()&lt;/code&gt; változóihoz, valamint az összes globális változóhoz, hiszen végighalad az hatókör láncon a nyilak szerinti irányban. Viszont amikor a &lt;code class=&quot;highlighter-rouge&quot;&gt;szulo()&lt;/code&gt;-n belül megpróbáljuk a &lt;code class=&quot;highlighter-rouge&quot;&gt;beagyazott()&lt;/code&gt; függvény &lt;code class=&quot;highlighter-rouge&quot;&gt;c&lt;/code&gt; változóját elérni, akkor referenciahibát dob a JS értelmező: nem találja a &lt;code class=&quot;highlighter-rouge&quot;&gt;c&lt;/code&gt;-t. De hol keresi a &lt;code class=&quot;highlighter-rouge&quot;&gt;c&lt;/code&gt;-t? A szülő függvényhez tartozó hatókör lánc: &lt;code class=&quot;highlighter-rouge&quot;&gt;szulo()&lt;/code&gt; -&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;global&lt;/code&gt;. Tehát a külső, globális hatókörben keresi, de ott nem találja és ezért dob hibát. (A hibakezelésről egy későbbi részben lesz szó.)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Privát tulajdonságokat vagy változókat&lt;/strong&gt; függvénybe zárás és a &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; kulcsszó használatával hozhatunk létre:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function Hallgato(nev, eha, email) {
+    var nev = nev;
+    this.getNev = function() { return this.nev; };
+
+    var eha_kod = eha;
+    this.setEha = function(x) { this.eha_kod = x; };
+    this.getEha = function() { return this.eha_kod; };
+
+    this.email = email;
+}
+var sanyi = new Hallgato(
+                        &quot;Petőfi Sándor&quot;,
+                        &quot;PESAABT.SZE&quot;,
+                        &quot;sanyi1848@freemail.hu&quot;
+);
+sanyi.eha_kod = &quot;ABCDEFG.SZE&quot;; //=&amp;gt; Hiba.
+sanyi.email = &quot;sanyi1848@gmail.com&quot; 
+console.log(sanyi.email); //=&amp;gt; sanyi1848@gmail.com
+console.log(sanyi);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ha kiíratod a konzolra &lt;code class=&quot;highlighter-rouge&quot;&gt;sanyi&lt;/code&gt; tartalmát, akkor nem fogod látni a &lt;code class=&quot;highlighter-rouge&quot;&gt;nev&lt;/code&gt; és az &lt;code class=&quot;highlighter-rouge&quot;&gt;eha_kod&lt;/code&gt; tulajdonságát, hiszen a &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log()&lt;/code&gt; nem fér hozzájuk! Csak a get és a set függvények láthatók. Csak ezeken keresztül, szabályozottan férhetünk hozzá ezekhez a tulajdonságokhoz. Tehát „illetéktelenek” nem férnek hozzájuk.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;a-beágyazott-függvények-és-a-this&quot;&gt;A beágyazott függvények és a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; érték a változókkal ellentétben nem kapcsolódik hatókörhöz és a beágyazott függvények sem férnek hozzá a befoglaló függvény &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; értékéhez. A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;-nek mi nem adhatunk értéket, pl. a &lt;code class=&quot;highlighter-rouge&quot;&gt;this = obj;&lt;/code&gt; utasítás érvénytelen.&lt;/p&gt;
+
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; értéke nem fix a JS-ben, hanem futási időben, a függvényhíváskor dől el. Ha nem az &lt;code class=&quot;highlighter-rouge&quot;&gt;objektumnev.metodus()&lt;/code&gt; szintaxist használjuk, amikor a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; helyére az &lt;code class=&quot;highlighter-rouge&quot;&gt;objektumnev&lt;/code&gt; helyettesítődik be, hanem egy egyszerű függvény hívunk meg, akkor a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; a globális objektumra hivatkozik:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var obj = {
+    id: &quot;egy objektum&quot;,
+    method: function() {
+        console.log(this);
+    }
+}
+obj.method(); //=&amp;gt; az obj-ra hivatkozik
+
+function f2() {
+    console.log(this.toString()); // [object Window]
+    console.log(this === window); //=&amp;gt; true
+}
+f2();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ha függvényeket ágyazunk egymásba, akkor a befoglaló függvényben el kell tárolnunk a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; értékét egy változóban, amit megegyezés szerint &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt;-nek szokás elnevezni.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var obj = {
+    elemek: [&quot;Gandalf&quot;, &quot;Aragorn&quot;, &quot;Legolas&quot;, &quot;Gimli&quot;],
+    feldolgoz: function() {
+        var self = this;
+        this.elemek.forEach(function(elem) {
+            self.kiir(elem);
+        });
+    },
+    kiir: function(elem) {
+        console.log('*' + elem + '*');
+    }
+};
+obj.feldolgoz();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ha a &lt;code class=&quot;highlighter-rouge&quot;&gt;forEach&lt;/code&gt; cikluson belüli függvényben a &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt; helyett a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;-t használtuk volna, akkor rossz objektumra hivatkoztunk volna, így a &lt;code class=&quot;highlighter-rouge&quot;&gt;kiir()&lt;/code&gt; meghívása sikertelen lett volna (a JS fordító típushibát dobna: a &lt;code class=&quot;highlighter-rouge&quot;&gt;this.kiir&lt;/code&gt; nem függvény). Ilyenkor a &lt;code class=&quot;highlighter-rouge&quot;&gt;kiir()&lt;/code&gt; függvény minden egyes meghívásakor a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; értéke nem a mi objektumunk, hanem a globális objektum lesz (szigorú módban pedig &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;)! A globális objektumnak pedig nincsen &lt;code class=&quot;highlighter-rouge&quot;&gt;kiir()&lt;/code&gt; nevű metódusa. Az első függvény, a &lt;code class=&quot;highlighter-rouge&quot;&gt;feldolgoz()&lt;/code&gt; meghívásakor a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; az &lt;code class=&quot;highlighter-rouge&quot;&gt;obj&lt;/code&gt;-ra hivatkozik. A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; értékét eltároljuk a &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt; változóban. A &lt;code class=&quot;highlighter-rouge&quot;&gt;forEach&lt;/code&gt; ciklus az &lt;code class=&quot;highlighter-rouge&quot;&gt;elemek&lt;/code&gt; tömb minden elemére meghív egy úgynevezett callback függvényt. Ebben a függvényben a &lt;code class=&quot;highlighter-rouge&quot;&gt;self.kiir(elem)&lt;/code&gt; szintaxissal hivatkozunk az &lt;code class=&quot;highlighter-rouge&quot;&gt;obj&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;kiir()&lt;/code&gt; metódusára, és mivel a &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt; tartalma az &lt;code class=&quot;highlighter-rouge&quot;&gt;obj&lt;/code&gt;-ra hivatkozik, elérjük a függvényt.&lt;/p&gt;
+
+&lt;p&gt;Egyelőre elég ennyi. A következő két részben foglalkozni fogok a kivételkezeléssel (exeption handling), a RegExp objektumokkal, a JSON-nal (JavaScript Object Notation) és a metóduslánccal (method chain). Végül a prototípusos öröklést mutatom be.&lt;/p&gt;
+
+&lt;p&gt;Ezek után pedig rá fogok térni a funkcionális programozásra és a Google Earth Engine API (Application Programming Interface, vagyis alkamazásprogramozási felület) használatára.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ajánlott-irodalom&quot;&gt;Ajánlott irodalom&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Anthony Alicea (2015). &lt;a href=&quot;https://www.youtube.com/watch?v=Bv_5Zv5c-Ts&quot;&gt;&lt;strong&gt;JavaScript: Understanding the Weird Parts - The First 3.5 Hours.&lt;/strong&gt;&lt;/a&gt; A teljes 12 órás kurzus az &lt;a href=&quot;https://www.udemy.com/understand-javascript/?utm_content=_._pd_364426_._&amp;amp;utm_source=facebook-row&amp;amp;utm_medium=udemyads&amp;amp;utm_campaign=NEW-FB-VRT-ROW-Tech-EN-ALL_._ci_._sl_ALL_._vi_._sd_All_._la_EN_.&amp;amp;utm_term=_._ag_NEW-FB-VRT-ROW-Tech-EN-ALL_._ci_._sl_ALL_._vi_._sd_All_._la_EN_._-_._ci_._._pi_1814585708581485_._gi_all_._ai_18--65_._an_M3oTyZ&amp;amp;k_clickid=97b08e8c-94fa-4830-ad99-8b6239fe4a0d_131994849&quot;&gt;udemy.com&lt;/a&gt;-on megtalálható. Nem biztos, hogy érdemes kiadni rá a pénzt. Én csak az első 3,5 órát néztem meg a youtube-on.&lt;/li&gt;
+  &lt;li&gt;Brian W. Kernighan - Dennis M. Richie: &lt;strong&gt;A C programozási nyelv. 2. kiadás.&lt;/strong&gt; - Műszaki Kiadó, Budapest.&lt;/li&gt;
+  &lt;li&gt;Benedek Zoltán - Levendovszky Tihamér (2013). &lt;strong&gt;Szoftverfejlesztés C++ nyelven.&lt;/strong&gt; SZAK Kiadó Kft., Bicske.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 20 Sep 2017 16:37:00 +0200</pubDate>
+        <link>http://localhost:4000//tudomany/2017/09/20/javascript_03.html</link>
+        <guid isPermaLink="true">http://localhost:4000//tudomany/2017/09/20/javascript_03.html</guid>
+      </item>
+    
+      <item>
         <title>Földrajzi adatfeldolgozás a parancssorban: a SAGA GIS és a GDAL</title>
         <description>&lt;p&gt;A SAGA mozaikszó a System for Automated Geoscientific Analyses (Automatizált Földtudományi Elemző Rendszer) rövidítése.
 A &lt;a href=&quot;http://www.saga-gis.org/en/index.html&quot;&gt;SAGA GIS&lt;/a&gt; egy C++-ban írt szabad forráskódú térinformatikai szoftver. A legújabb, &lt;strong&gt;5.0&lt;/strong&gt;-ás verziót használtam a tutoriálhoz.&lt;/p&gt;
@@ -31,7 +330,7 @@ A &lt;a href=&quot;http://www.saga-gis.org/en/index.html&quot;&gt;SAGA GIS&lt;/a
 
 &lt;h2 id=&quot;1-adat-és-módszer&quot;&gt;1. Adat és módszer&lt;/h2&gt;
 
-&lt;p&gt;Egy 15 éves 2000 és 2015 közötti műholdas adatsort használtam fel a parancssorban történő adatfeldolgozás demonstrálására. A NASA Terra műhold MODIS szenzorának &lt;a href=&quot;https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1_v006&quot;&gt;250 méteres felbontású, 16 napos EVI és NDVI kompozitképeit&lt;/a&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;MOD13Q1: MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid V005&lt;/code&gt;) elemeztem a Duna-Tisza-közi erdőterületekre, amelyek az Európai Uniós &lt;a href=&quot;https://www.eea.europa.eu/publications/COR0-landcover&quot;&gt;CORINE&lt;/a&gt; (Coordination of Information on the Environment) felszínborítási adatbázis segítségével lettek lehatárolva.
+&lt;p&gt;Egy 15 éves 2000 és 2016 közötti műholdas adatsort használtam fel a parancssorban történő adatfeldolgozás demonstrálására. A NASA Terra műhold MODIS szenzorának &lt;a href=&quot;https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1_v006&quot;&gt;250 méteres felbontású, 16 napos EVI és NDVI kompozitképeit&lt;/a&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;MOD13Q1: MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid V005&lt;/code&gt;) elemeztem a Duna-Tisza-közi erdőterületekre, amelyek az Európai Uniós &lt;a href=&quot;https://www.eea.europa.eu/publications/COR0-landcover&quot;&gt;CORINE&lt;/a&gt; (Coordination of Information on the Environment) felszínborítási adatbázis segítségével lettek lehatárolva.
 Az EU tagállamok nagyjából 6 évente felmérik a felszínborítás változásait különböző felszínborítási kategóriák szerint, 1:100 000-es méretarányban. A &lt;code class=&quot;highlighter-rouge&quot;&gt;CLC_2000&lt;/code&gt; (a 2000-05 közötti), a &lt;code class=&quot;highlighter-rouge&quot;&gt;CLC_2006&lt;/code&gt; (a 2006-11 közötti) és a &lt;code class=&quot;highlighter-rouge&quot;&gt;CLC_2012&lt;/code&gt; (2012-től kezdődő műholdképekre) adatok alapján határoltuk le az erdőket.&lt;/p&gt;
 
 &lt;p&gt;Azokat a 250*250 méteres cellákat válogattuk le, aminek legalább 2/3 részét erdő borította. Külön vizsgáljuk a lomb-, a tűlevelű és az elegyes erdőket. A cél a vegetáció egészségi állapotának monitorozása, valamint trendszerű változásainak kimutatása a szárazodó Homokhátságon március vége és szeptember vége között. Az 1970-es évektől számítva a talajvízkút-hálózat mérései szerint átlagosan 3 méterrel süllyedt a régióban a talajvízszint (a magasabban fekvő térségekben ennél nagyobb csökkenés is megfigyelhető, de kizárólag csak ott).&lt;/p&gt;
@@ -131,7 +430,8 @@ saga_cmd io_gdal 0 ^
 
 &lt;p&gt;Viszont van egy problémánk: évenként meg kell adnunk a 13 db kép teljes elérési útvonalát, amit begépelni kényelmetlen és időigényes volna. FOR ciklust itt nem használhatunk. Ilyenkor mit tehetünk? Van egy fontos alapelvem, ami így szól: &lt;strong&gt;ha lehetséges, akkor mindig térj vissza egy olyan megoldáshoz, amit már ismersz!&lt;/strong&gt; Az Excelben mindenki ismeri a függvényeket. Az ÖSSZEFŰZ() függvény segítségével könnyedén legenerálhatjuk az elérési utakat, és csak az éveket kell átírni. Az összefűzött szöveget pedig egyben bemásoljuk a szkriptünkbe. (Itt zárójelben megjegyzem, ha esetleg valamelyikőtök nem tudná, hogy a .bat fájlokat úgy szerkeszthetjük, hogy átírjuk a fájlkiterjesztést .txt-re.). A grid-ek elérési útvonalait &lt;code class=&quot;highlighter-rouge&quot;&gt;;&lt;/code&gt;-vel kell elválasztanunk egymástól.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/excel.png&quot; class=&quot;large&quot; alt=&quot;Elérési utak, fájlnevek generálása az ÖSSZEFŰZ() függvény segítségével&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/excel.png&quot; class=&quot;large&quot; alt=&quot;Elérési utak, fájlnevek generálása az ÖSSZEFŰZ() függvény segítségével&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-batch&quot;&gt;REM Tool: Statistics for Grids
 
@@ -141,6 +441,8 @@ saga_cmd statistics_grid 4 ^
 -PCTL=%RESULT%\median.sgrd ^
 -PCTL_VAL=50
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ezután az átlag- és mediánképekből ki kell vágnunk az erdőterületeket a poligonok segítségével. Erre a &lt;code class=&quot;highlighter-rouge&quot;&gt;shapes_grid&lt;/code&gt; modul &lt;strong&gt;Grid vágása poligonnal&lt;/strong&gt; eszközét használjuk. Meg kell adni a bemenetet, a kimenetet, a poligonokat tartalmazó shape fájlt és az &lt;code class=&quot;highlighter-rouge&quot;&gt;-EXTENT&lt;/code&gt; argumentumot, ami a kimenő grid terjedelmét határozza meg. Mi ezt 0-ra állítjuk. Ebben az esetben az eredeti terjedelmet megtartjuk. Ez az alapértelmezett beállítás:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-batch&quot;&gt;REM Tool: Clip Grid with Polygon
 
@@ -159,7 +461,8 @@ saga_cmd shapes_grid 7 ^
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_results.png&quot; class=&quot;large&quot; alt=&quot;A mintaterületek sikeresen kivágva az átlagképből&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Miután eredményül kaptuk a mintaterületünkre kivágott átlag- és mediánképekett, ki kell exportálnunk őket GeoTIFF-be. Ehhez megint csak az &lt;code class=&quot;highlighter-rouge&quot;&gt;io_gdal&lt;/code&gt; modult használjuk. A &lt;code class=&quot;highlighter-rouge&quot;&gt;-GRIDS&lt;/code&gt;-nél az exportálandó grid-et, a &lt;code class=&quot;highlighter-rouge&quot;&gt;-FILE&lt;/code&gt;-nál a kimenő fájlt adjuk meg:&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+Miután eredményül kaptuk a mintaterületünkre kivágott átlag- és mediánképeket, ki kell exportálnunk őket GeoTIFF-be. Ehhez megint csak az &lt;code class=&quot;highlighter-rouge&quot;&gt;io_gdal&lt;/code&gt; modult használjuk. A &lt;code class=&quot;highlighter-rouge&quot;&gt;-GRIDS&lt;/code&gt;-nél az exportálandó grid-et, a &lt;code class=&quot;highlighter-rouge&quot;&gt;-FILE&lt;/code&gt;-nál a kimenő fájlt adjuk meg:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-batch&quot;&gt;REM Tool: Export GeoTIFF
 
@@ -185,20 +488,20 @@ PAUSE
 
 &lt;p&gt;Nyissunk az OSGeo4W héjalkalmazást és gépeljük be ezt a rövid parancsot egyben:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gdalvrtbuild -separate g:\modis\TEMP\raszter\layer_stack.vrt g:\modis\TEMP\raszter\*.tif&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gdalbuildvrt -separate g:\modis\TEMP\raszter\layer_stack.vrt g:\modis\TEMP\raszter\*.tif&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/shell.png&quot; class=&quot;image3&quot; alt=&quot;Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/shell.png&quot; class=&quot;large&quot; alt=&quot;Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;-separate&lt;/code&gt; logikai argumentumot megadva külön sávokba helyezi a képeket (ha ezt lehagynánk, akkor virtuális mozaikot készítene nekünk a GDAL), utána következik a kimenet és a bemenet. Ebben a sorrendben! Az elérési útvonalakat pedig módosítsátok, ha szükséges.&lt;/p&gt;
 
 &lt;p&gt;Indítsuk el a &lt;strong&gt;saga_gui.exe&lt;/strong&gt;-t, utána a menüsorban válasszuk ki a &lt;strong&gt;File -&amp;gt; Open&lt;/strong&gt; parancsot (vagy a mappa ikonra is kattinthatunk a fájl megnyitásához) és nyissuk meg a virtuális raszterünket (&lt;code class=&quot;highlighter-rouge&quot;&gt;layer_stack.vrt&lt;/code&gt;)! Utána navigáljunk el ide: &lt;strong&gt;Geoprocessing -&amp;gt; Spatial and Geostatistics -&amp;gt; Grids -&amp;gt; Save Grid Statistics to Table&lt;/strong&gt;. Nyissuk meg az eszközt! A &lt;strong&gt;Grid Systems&lt;/strong&gt;-nél adjuk meg grid rendszerünket (a raszter terjedelem és felbontás) a legördülő listából. Utána a &lt;strong&gt;Grids&lt;/strong&gt;-nél a &lt;code class=&quot;highlighter-rouge&quot;&gt;...&lt;/code&gt; gombra kattintva a felugró kéthasábos ablak bal oldali oszlopában válasszuk ki a képkötegünket és a dupla vagy a szimpla nyílra kattintva pakoljuk át a jobb oldali ablakba (így lesz kiválasztva), majd kattintsunk az oké gombra! A táblázat részt hagyjuk úgy, ahogy van. Végül válasszuk ki, hogy milyen statisztikákat számoljon a képekre, és kattintsunk az okéra.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_gui_1.png&quot; class=&quot;image3&quot; alt=&quot;Grid statisztikák mentése táblázatba eszköz&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_gui_1.png&quot; class=&quot;large&quot; alt=&quot;Grid statisztikák mentése táblázatba eszköz&quot; /&gt;
 &lt;br /&gt;
 A létrehozott táblázatra kattintsunk jobb egérgombbal és válasszuk ki a &lt;strong&gt;„mentés mint”&lt;/strong&gt; opciót és mentsük el .txt formátumba. Ez utána könnyedén beilleszthető az MS Excel-be vagy más táblázatkezelő szoftverbe.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_gui_2.png&quot; class=&quot;image3&quot; alt=&quot;A statisztikákat tartalmazó táblázat exportálása szöveges formátumba&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_gui_2.png&quot; class=&quot;large&quot; alt=&quot;A statisztikákat tartalmazó táblázat exportálása szöveges formátumba&quot; /&gt;
 &lt;br /&gt;
 Feltöltöttem nektek a Google Drive-ra a MODIS minta-adatbázisomat (&lt;a href=&quot;https://drive.google.com/open?id=0B8pLujeireG7YjBmWTMtbm85UzQ&quot;&gt;&lt;strong&gt;modis_sample_data.rar&lt;/strong&gt;&lt;/a&gt;, 561 MB, kitömörítve 2,71 GB), amin gyakorolhatjátok a parancssori adatfeldolgozást. A batch szkriptet megtaláljátok a &lt;a href=&quot;https://github.com/SalsaBoy990/saga_gis_batch&quot;&gt;&lt;strong&gt;saga_gis_batch&lt;/strong&gt;&lt;/a&gt; repository-mban.&lt;/p&gt;
 
@@ -834,307 +1137,6 @@ A fenti pontokban lefektetett szabályok kötelező érvényűek mindenkire, kiv
         <pubDate>Fri, 18 Aug 2017 19:08:00 +0200</pubDate>
         <link>http://localhost:4000//2017/08/18/kommentelesi_szabalyzat.html</link>
         <guid isPermaLink="true">http://localhost:4000//2017/08/18/kommentelesi_szabalyzat.html</guid>
-      </item>
-    
-      <item>
-        <title>Hány cigány él Magyarországon?</title>
-        <description>&lt;p&gt;A népszámlálások adataiból az derül ki, hogy Magyarországon 2001 és 2011 között 53%-kal, 205 720 főről 315 583 főre nőtt a cigányok száma. A Központi Statisztikai Hivatal (KSH) népszámlálásai a nemzetiségre, az anyanyelvre, a családi, baráti közösségben használt nyelvre, és a kulturális kötődésre kérdeznek rá, de ezekre a válaszadás megtagadható. A nemzetiségi hovatartozásukról nem nyilatkozók száma 2001 és 2011 között két és félszeresére, 543 317 főről 1 398 731 főre emelkedett.&lt;/p&gt;
-
-&lt;p&gt;Az 1. táblázatban az 1893-2003 közötti időszakban végzett mintavételek, cigányösszeírások eredményeit foglaltam össze. A reprezentatív szociológiai mintavételek a cigányok tényleges, a lakókörnyezet minősítése által meghatározott számát becsülték meg 1971-ben, 1993-ban és 2003-ban. Az 1893. évi cigányösszeírás egyedülálló a maga nevében, mivel hazánkban a mai napig nem történt ehhez hasonló, kifejezetten a cigányok számbavételét célzó kutatás.&lt;/p&gt;
-
-&lt;figcaption&gt;
-1. táblázat: A magyarországi cigányok száma az 1893. évi cigányösszeírás és a szociológiai adatfelvételek alapján (Kertesi G. – Kézdi G. 1998, Kemény I. 2004). * A trianoni határokon belül.
-&lt;/figcaption&gt;
-&lt;table&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Év
-        &lt;/th&gt;
-        &lt;th&gt;Felmérések, ezer fő (középérték)
-        &lt;/th&gt;
-        &lt;th&gt;A modell szerint (ezer fő)
-        &lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;1893&lt;/td&gt;
-        &lt;td&gt;59,982*&lt;/td&gt;
-        &lt;td&gt;60&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;1971&lt;/td&gt;
-        &lt;td&gt;270-370 (320)&lt;/td&gt;
-        &lt;td&gt;300&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;1993&lt;/td&gt;
-        &lt;td&gt;449-461 (455)&lt;/td&gt;
-        &lt;td&gt;472&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;2003&lt;/td&gt;
-        &lt;td&gt;520-650 (585)&lt;/td&gt;
-        &lt;td&gt;580&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;2015&lt;/td&gt;
-        &lt;td&gt;&lt;/td&gt;
-        &lt;td&gt;743&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;2020&lt;/td&gt;
-        &lt;td&gt;&lt;/td&gt;
-        &lt;td&gt;823&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;A cigányság száma &lt;strong&gt;az elmúlt 110 évben megtízszereződött&lt;/strong&gt;: &lt;strong&gt;60 ezer főről 600 ezer főre gyarapodott 2003-ig&lt;/strong&gt;. 2003-ban az össznépesség 10 millió 142 ezer fő volt, melynek &lt;strong&gt;6%&lt;/strong&gt;-a a cigány nemzetiséghez tartozott. A népszámlálások kétszeresen alábecsülték a magyarországi cigányság tényleges számát!&lt;/p&gt;
-
-&lt;p&gt;A cigányság 2015. évi számának becslésére és 2020-ig való előrejelzésére, egy egyszerű modellt készítettem. A rendelkezésre álló adatfelvételek adatpontjaira egy exponenciális függvényt illesztettem (1. ábra).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/Cigany_modell-min.jpg&quot; alt=&quot;A cigányok számának előrejelzése 2020-ig&quot; class=&quot;image2&quot; /&gt;&lt;/p&gt;
-&lt;figcaption&gt;1. ábra: A cigányfelmérések eredményeire számolt exponenciális függvény (Hablicsek L. 2007). (Az R-ben írt kódot lásd az &lt;a href=&quot;https://github.com/SalsaBoy990/R-codes&quot; target=&quot;_blank&quot;&gt;R-codes&lt;/a&gt; gyűjteményemben.)
-&lt;/figcaption&gt;
-
-&lt;p&gt;Szépen látható, hogy a modell teljesen reprodukálja az 1893. évi összeírás értékét (60 ezer fő). &lt;strong&gt;A cigányság 2015-ös létszámára 743 ezer jött ki, míg 2020-ra meg fogja haladni a 800 ezer főt.&lt;/strong&gt; Az 1. táblázatban közöltem a modell alapján visszaszámolt értékeket, amelyek kitűnő egyezést mutatnak a valós értékekkel (r&lt;sup&gt;2&lt;/sup&gt;=0,99, p&amp;lt;0,001).&lt;/p&gt;
-
-&lt;p&gt;A teljes termékenységi arányszám, vagyis az egy szülőképes korú (15-49 év) nőre eső gyerekszám, jó mutatja, hogy 1970 óta a magyar nők kevesebb gyereket szülnek (&lt;strong&gt;a teljes népesség körében 1,3 gyerek/nő&lt;/strong&gt;, de ebbe a cigányok is beletartoznak), mint amennyi a népességszám szinten tartásához (2,1 gyerek/szülőképes nő) elegendő lenne. Ezzel szemben, kizárólag &lt;strong&gt;a cigány nők esetén&lt;/strong&gt;, a termékenységi arányszám még mindig jelentősen meghaladja az átlagot (&lt;strong&gt;3,0&lt;/strong&gt;). A cigányság gyerekszáma gyorsabban nő, mint a magyaroké. A születő magyar gyerekek száma viszont az elöregedő magyar társadalom halálozási ütemét nem képes ellensúlyozni. A cigányság számaránya a népességen belül pedig tovább növekszik, de szerencsére &lt;strong&gt;az utóbbi tíz évben a cigány nők termékenységi arányszáma is lassan csökkenésnek indult&lt;/strong&gt; (2. táblázat).&lt;/p&gt;
-
-&lt;figcaption&gt;
-2. táblázat: A teljes női lakosság és a cigány nők termékenységi arányszámai, 1930-31 és 1999-2002 között (Janky B. 2005)
-&lt;/figcaption&gt;
-&lt;table&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Időszak
-        &lt;/th&gt;
-        &lt;th&gt;A teljes lakosság körében
-        &lt;/th&gt;
-        &lt;th&gt;A cigány nők körében
-        &lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;1930-31&lt;/td&gt;
-        &lt;td&gt;2,8&lt;/td&gt;
-        &lt;td&gt;n/a&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;1969-70&lt;/td&gt;
-        &lt;td&gt;2,0&lt;/td&gt;
-        &lt;td&gt;n/a&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;1990-93&lt;/td&gt;
-        &lt;td&gt;1,8&lt;/td&gt;
-        &lt;td&gt;3,3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;1995-98&lt;/td&gt;
-        &lt;td&gt;1,4&lt;/td&gt;
-        &lt;td&gt;3,3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;1999-2002&lt;/td&gt;
-        &lt;td&gt;1,3&lt;/td&gt;
-        &lt;td&gt;3,0&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Kizárólag a magyar nők esetén az egy szülőképes nőre jutó gyerekszám katasztrofálisan alacsony: 1,3 alatt van, mivel a cigányok szaporasága javít a statisztikán. Sajnos nem áll rendelkezésemre külön, csak a magyarokra vonatkozó adat. Így is egészen ritka adatokat adok közre.&lt;/p&gt;
-
-&lt;p&gt;A teljes népesség és a cigányság élveszületési számának és arányának változásából kiderül, hogy &lt;strong&gt;2003-ban már minden hatodik újszülött cigány volt&lt;/strong&gt; (3. táblázat) (Kemény I. 2004). A cigányság korösszetétele is teljesen eltér a magyarságétól: &lt;strong&gt;a 15 év alattiak aránya a cigányok esetén megközelíti a 37%-ot&lt;/strong&gt;, míg &lt;strong&gt;a 60 éven felüliek aránya 3,9%&lt;/strong&gt;-ot tesz ki. Ez fiatalos korszerkezetet jelent. Az össznépesség esetén azonban, a cigányokhoz képest, &lt;strong&gt;a 15 éven aluliak aránya kevesebb, mint feleakkora&lt;/strong&gt; (16,1%), illetve &lt;strong&gt;a 60 éven felüliek aránya több, mint ötször akkora&lt;/strong&gt; (20,8%). A tizenöt éven aluliak aránya meghaladja a hatvan éven felüliekét, ami elöregedő korszerkezetre utal (4. táblázat).&lt;/p&gt;
-
-&lt;figcaption&gt;
-3. táblázat: Az élveszületések számának és arányának változása a teljes népesség és a cigányság körében 1971-2003 (Kemény I. 2004)
-&lt;/figcaption&gt;
-&lt;table&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Év
-        &lt;/th&gt;
-        &lt;th&gt;A teljes lakosság körében (ezer fő)
-        &lt;/th&gt;
-        &lt;th&gt;A cigány népesség körében
-        &lt;/th&gt;
-        &lt;th&gt;A cigány születések aránya
-        &lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;1971&lt;/td&gt;
-        &lt;td&gt;151&lt;/td&gt;
-        &lt;td&gt;10&lt;/td&gt;
-        &lt;td&gt;&amp;lt;7%&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;1993&lt;/td&gt;
-        &lt;td&gt;116&lt;/td&gt;
-        &lt;td&gt;13&lt;/td&gt;
-        &lt;td&gt;&amp;gt;11%&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;2003&lt;/td&gt;
-        &lt;td&gt;94,647&lt;/td&gt;
-        &lt;td&gt;15&lt;/td&gt;
-        &lt;td&gt;15,8%&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-&lt;figcaption&gt;
-4. táblázat: A cigány háztartásokban élő és az országos népesség a 0-14 év közötti és a 60 év feletti korcsoportjainak százalékos megoszlása 2003-ban (Kemény I. 2004)
-&lt;/figcaption&gt;
-&lt;table&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Korcsoport
-        &lt;/th&gt;
-        &lt;th&gt;A teljes népesség esetén
-        &lt;/th&gt;
-        &lt;th&gt;A cigányok körében
-        &lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;15 éven aluliak&lt;/td&gt;
-        &lt;td&gt;16,1&lt;/td&gt;
-        &lt;td&gt;36,8&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;60 éven felüliek&lt;/td&gt;
-        &lt;td&gt;20,8&lt;/td&gt;
-        &lt;td&gt;3,9&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;A könnyebb összehasonlíthatóság kedvéért, a 2-3. ábrákon megjelenítettem a cigány és a magyar korfát a 2001. évi népszámlálás adatainak felhasználásával. Megjegyzés: a vízszintes tengely beosztása a két korfán eltérő. A magyar lakosság esetén 39 év az átlagéletkor, míg a cigányoknál csupán 25.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/Cigany_korfa-min.jpg&quot; alt=&quot;A cigányok számának előrejelzése 2020-ig&quot; class=&quot;image2&quot; /&gt;&lt;/p&gt;
-&lt;figcaption&gt;2. ábra: A cigányságot jellemző korfa piramis alakú (KSH alapján). (Az R-ben írt kódot lásd az &lt;a href=&quot;https://github.com/SalsaBoy990/R-codes&quot; target=&quot;_blank&quot;&gt;R-codes&lt;/a&gt; gyűjteményemben.)
-&lt;/figcaption&gt;
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/Magyar_korfa-min.jpg&quot; alt=&quot;A cigányok számának előrejelzése 2020-ig&quot; class=&quot;image2&quot; /&gt;&lt;/p&gt;
-&lt;figcaption&gt;3. ábra: A magyarság korfája elöregedő korszerkezetet tükröz, urna alakú (KSH alapján). (Az R-ben írt kódot lásd az &lt;a href=&quot;https://github.com/SalsaBoy990/R-codes&quot; target=&quot;_blank&quot;&gt;R-codes&lt;/a&gt; gyűjteményemben.)
-&lt;/figcaption&gt;
-
-&lt;p&gt;&lt;strong&gt;A cigányok 86,9%-ának végzettsége általános iskola&lt;/strong&gt; (8 évfolyam vagy annál kevesebb), &lt;strong&gt;egyetemi, főiskolai végzettséggel mindössze 2607 fő rendelkezett&lt;/strong&gt; 2011-ben (5. táblázat).&lt;/p&gt;
-
-&lt;figcaption&gt;
-5. táblázat: A magyar és a cigány népesség megoszlása a legmagasabb befejezett iskolai végzettség szerint, 2011-ben (KSH alapján).
-&lt;/figcaption&gt;
-&lt;table&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Legmagasabb iskolai végzettség
-        &lt;/th&gt;
-        &lt;th&gt;Magyar (%)
-        &lt;/th&gt;
-        &lt;th&gt;Cigány (%)
-        &lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;8 évfolyamnál alacsonyabb&lt;/td&gt;
-        &lt;td&gt;18,1&lt;/td&gt;
-        &lt;td&gt;47,5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;8 évfolyam&lt;/td&gt;
-        &lt;td&gt;23,5&lt;/td&gt;
-        &lt;td&gt;39,4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Középfokú iskola érettségi nélkül,
-szakmai oklevéllel&lt;/td&gt;
-        &lt;td&gt;18,0&lt;/td&gt;
-        &lt;td&gt;8,8&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Érettségi&lt;/td&gt;
-        &lt;td&gt;25,6&lt;/td&gt;
-        &lt;td&gt;3,4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Főiskola, egyetem&lt;/td&gt;
-        &lt;td&gt;14,7&lt;/td&gt;
-        &lt;td&gt;0,8&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;A 6. táblázatból világossá válik, hogy a szocializmus időszakában a cigányok foglalkoztatottsága (különösen a férfiak) jóval magasabb volt, egészen a rendszerváltozásig. Onnantól kezdve drasztikusan leesett a cigányok foglalkoztatottsága, és az adatok szerint 2003-ig változatlan volt. &lt;strong&gt;1987-1993 között a férfiak esetén 45,6, a nők esetén 33, míg együtt 39,4%-kal csökkent a dolgozók aránya.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;figcaption&gt;
-6. táblázat: A cigány férfiak és nők foglalkoztatottsága 1971-2003 között százalékban (Janky B. 2005). * Az 1971-es, 1993-as és 2003-as országos reprezentatív cigányvizsgálat alapján. N: a minta nagysága, az adatok a 15–54 éves nők és 15–59 éves férfiak százalékában értendők.
-&lt;/figcaption&gt;
-&lt;table&gt;
-    &lt;tr&gt;
-        &lt;th&gt;
-        &lt;/th&gt;
-        &lt;th&gt;1971
-        &lt;/th&gt;
-        &lt;th&gt;1978
-        &lt;/th&gt;
-        &lt;th&gt;1987
-        &lt;/th&gt;
-        &lt;th&gt;1993
-        &lt;/th&gt;
-        &lt;th&gt;2003
-        &lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Férfiak&lt;/td&gt;
-        &lt;td&gt;85,2&lt;/td&gt;
-        &lt;td&gt;77,3&lt;/td&gt;
-        &lt;td&gt;74,4&lt;/td&gt;
-        &lt;td&gt;28,8&lt;/td&gt;
-        &lt;td&gt;29,2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Nők&lt;/td&gt;
-        &lt;td&gt;30,3&lt;/td&gt;
-        &lt;td&gt;47,0&lt;/td&gt;
-        &lt;td&gt;49,3&lt;/td&gt;
-        &lt;td&gt;16,3&lt;/td&gt;
-        &lt;td&gt;16,3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Együtt&lt;/td&gt;
-        &lt;td&gt;n/a&lt;/td&gt;
-        &lt;td&gt;62,0&lt;/td&gt;
-        &lt;td&gt;62,0&lt;/td&gt;
-        &lt;td&gt;22,6&lt;/td&gt;
-        &lt;td&gt;22,7&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;N&lt;/td&gt;
-        &lt;td&gt;n/a&lt;/td&gt;
-        &lt;td&gt;2875&lt;/td&gt;
-        &lt;td&gt;3888&lt;/td&gt;
-        &lt;td&gt;4842&lt;/td&gt;
-        &lt;td&gt;3081&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;végszó&quot;&gt;Végszó&lt;/h2&gt;
-&lt;p&gt;A szocializmus alatt kevés volt a „közveszélyes munkakerülő”. A nehézipar, a bányászat sok alacsonyan képzett munkaerőt szívott fel, ami munkát adott, a cigányoknak is. Viszont a rendszerváltoztatás során szétbomlasztották a magyar ipart, jelentősen megnövelve ezzel a munkanélküliséget. Ma a szociális ellátórendszeren élősködnek az indiából származó cigányok (megélhetési gyerekcsinálók). A cigányokkal pedig csak keményen lehet bánni, hiszen a többségük csak az erőszakból ért.&lt;/p&gt;
-
-&lt;p&gt;A cigányok beilleszkedési képtelenségét a cigányok viselkedésében kell keresni. Nem a magyarok szegregálják a cigányokat, hanem a cigányok magukat, mert &lt;strong&gt;nem akarnak integrálódni&lt;/strong&gt;!&lt;/p&gt;
-
-&lt;p&gt;A bőnözőket nem luxusbörtönbe kell zárni, hanem kemény munkatáborba, hogy társadalmilag hasznos tevékenységet folytassanak. Ez majd lelohasztja a cigányok bűnözésre való hajlamát.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;felhasznált-irodalom&quot;&gt;Felhasznált irodalom&lt;/h2&gt;
-
-&lt;ul class=&quot;no-decoration-18px&quot;&gt;
-    &lt;li&gt;Hablicsek L. (2007). &lt;a href=&quot;http://demografia.hu/kiadvanyokonline/index.php/demografia/article/viewFile/540/483&quot; target=&quot;_blank&quot;&gt;Kísérleti számítások a roma lakosság területi jellemzőinek alakulására és 2021-ig történő előrebecslésére.&lt;/a&gt; – Demográfia 50(1), pp. 7-54. &lt;/li&gt;
-    &lt;li&gt;Janky B. (2005). &lt;a href=&quot;www.szmm.gov.hu/download.php?ctag=download&amp;amp;docID=20471&quot; target=&quot;_blank&quot;&gt;A cigány nők társadalmi helyzete és termékenysége.&lt;/a&gt; – In. Nagy I. – Pongrácz T. –Tóth I. Gy. (szerk.): Szerepváltozások. Jelentés a nők és férfiak helyzetéről, 2005. – TÁRKI, Ifjúsági, Családügyi, Szociális és Esélyegyenlőségi Minisztérium, Budapest. pp. 136–148.&lt;/li&gt;
-    &lt;li&gt;Kemény I. 2004: &lt;a href=&quot;http://www.demografia.hu/kiadvanyokonline/index.php/demografia/article/download/615/427&quot; target=&quot;_blank&quot;&gt;A magyarországi cigány népesség demográfiája.&lt;/a&gt; – Demográfia 47(3-4), pp. 335-346. &lt;/li&gt;
-    &lt;li&gt;Kertesi G. – Kézdi G. 1998: &lt;a href=&quot;http://econ.core.hu/file/download/Kertesi_Kezdi/A_cigany_nepesseg_Mo-n.pdf&quot; target=&quot;_blank&quot;&gt;A cigány népesség Magyarországon.&lt;/a&gt; (Dokumentáció és adattár.) – Socio-typo, Budapest. 467 p. &lt;/li&gt;
-    &lt;li&gt;&lt;br /&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;http://www.nepszamlalas2001.hu/hun/kotetek/04/tabhun/tabl01/load01.html&quot; target=&quot;_blank&quot;&gt;KSH 2001. évi népszámlálás. 1.1.  Nemzetiség.&lt;/a&gt; (letöltve: 2015-05-27)&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;http://www.nepszamlalas2001.hu/hun/kotetek/24/tables/loadcig2_1.html&quot; target=&quot;_blank&quot;&gt;KSH 2001. évi népszámlálás. Cigány, roma:
-2.1. A népesség korév és nemek szerint, a nemek aránya.&lt;/a&gt; (letöltve: 2015-05-25)&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;http://www.nepszamlalas2001.hu/hun/kotetek/24/tables/loadmagy2_1.html&quot; target=&quot;_blank&quot;&gt;KSH 2001. évi népszámlálás. Magyar: 
-2.1. A népesség korév és nemek szerint, a nemek aránya.&lt;/a&gt; (letöltve: 2015-05-25)&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;http://www.ksh.hu/nepszamlalas/docs/tablak/nemzetiseg/09_02_15_01.xls&quot; target=&quot;_blank&quot;&gt;KSH 2011. évi népszámlálás. 2.15.1. A népesség korcsoport, településtípus és nemek szerint, a nemek aránya, 2011.
-&lt;/a&gt; (letöltve: 2015-05-27)&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;http://www.ksh.hu/nepszamlalas/docs/tablak/teruleti/00/00_2_1_6_1.xls&quot; target=&quot;_blank&quot;&gt;KSH 2011. évi népszámlálás. 2.1.6.1. A népesség nemzetiség, korcsoport, legmagasabb befejezett iskolai végzettség és nemek szerint, 2011.
-&lt;/a&gt; (letöltve: 2015-05-26)&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;http://www.ksh.hu/nepszamlalas/docs/tablak/nemzetiseg/09_01_01.xls&quot; target=&quot;_blank&quot;&gt;KSH 2011. 1.1. A népesség a nemzetiségi hovatartozást befolyásoló tényezők szerint
-&lt;/a&gt; (letöltve: 2015-05-27)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 07 Aug 2017 17:27:00 +0200</pubDate>
-        <link>http://localhost:4000//tudomany/2017/08/07/ciganyok_magyarorszagon.html</link>
-        <guid isPermaLink="true">http://localhost:4000//tudomany/2017/08/07/ciganyok_magyarorszagon.html</guid>
       </item>
     
   </channel>
