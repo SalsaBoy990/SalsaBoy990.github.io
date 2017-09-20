@@ -202,6 +202,7 @@ a(); //=> 2
 Az `a()` függvényen belüli `myVar` változó értékét írja ki a `b()` függvény A függvény-definíció után természetesen egyszer meg kell hívunk a `b()`-t. Azt nézzétek, hol található a függvénydeklaráció, mibe van beágyazva.
 
 Még egy példa:
+
 <pre><code class="language-javascript">var a = "krumpli";
 function szulo () {
     var b = "körte";
