@@ -48,6 +48,10 @@
     color: navy;
 }
 
+.poem {
+    width: 90%;
+}
+
 
 /* Lists without list marks */
 .no-decoration {
