@@ -15,6 +15,42 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Az „ego” miatt…</title>
+        <description>&lt;blockquote class=&quot;poem&quot;&gt;
+&lt;h4&gt;Gulácsi András: Az „ego” miatt…&lt;/h4&gt;
+&lt;p&gt;Az „ego” miatt épült fel a civilizáció és lett kapitalista.&lt;br /&gt;
+Az „ego” miatt jött a kuruzslás helyére modern orvoslás:&lt;br /&gt;
+Járványok és gyógyíthatatlan betegségek váltak múlttá.&lt;br /&gt;
+Az „ego” miatt lett alacsony a csecsemőhalandóság s&lt;br /&gt;
+nem hal meg minden hat nőből egy a szülés közben.
+&lt;/p&gt;
+
+&lt;p&gt;Az „ego” miatt nőtt meg a születéskor várható élettartam.&lt;br /&gt;
+Az „ego” miatt jött el az a jólét, amit azok a képmutató zöldek,&lt;br /&gt;
+akik a dolgozó embereket ostorozzák, ugyanúgy élveznek.&lt;br /&gt;
+Az „egoisták” mindig többet akartak, és mennyi jót tettek&lt;br /&gt;
+a világgal eközben.&lt;/p&gt;
+
+&lt;p&gt;A naplopó „értelmiségiek” nem tettek le semmit az asztalra.&lt;br /&gt;
+Nem úgy, mint a kiváló mérnökök és a tehetséges tudósok.&lt;br /&gt;
+Az „egoisták” nagyszerű épületeket húztak fel, a művészeteket&lt;br /&gt;
+felvirágoztatták, szólásszabadságot hoztak s a bűnözést letörték.&lt;/p&gt;
+
+&lt;p&gt;„Egoisták” voltak azok, akik megtisztították a levegőt, a vizeket&lt;br /&gt;
+és a vadvilágnak hatalmas területeket érintetlenül hagytak.&lt;br /&gt;
+Nézz meg egy amerikai szénerőművet és vesd össze a kínai szmoggal!&lt;br /&gt;
+Egyetlen egy „felvilágosult” utópista sem tagadhatja e tényeket.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/az_ego_miatt.jpg&quot; class=&quot;image&quot; alt=&quot;Ego kontra öko&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 23 Sep 2017 16:22:00 +0200</pubDate>
+        <link>http://localhost:4000//egyeb/2017/09/23/az_ego_miatt.html</link>
+        <guid isPermaLink="true">http://localhost:4000//egyeb/2017/09/23/az_ego_miatt.html</guid>
+      </item>
+    
+      <item>
         <title>Rövid elméleti bevezető a JavaScript nyelvbe, 3. rész.</title>
         <description>&lt;p&gt;Az előző részben az írtam, hogy a végrehajtási kontextusban (execution context) (globális szinten vagy függvényen belül) a változók „felemelése” (hoisting) történik az első sorba. &lt;strong&gt;Ez a felemelés csak látszólagos&lt;/strong&gt;, mivel a JS motor fizikailag nem változtatja meg a változók helyét (a kód hányadik sorában lettek deklarálva)! Mi történik, amikor a böngészőben futtatjuk a kódunkat?&lt;/p&gt;
 
@@ -207,7 +243,8 @@ a(); //=&amp;gt; 2
 
 &lt;p&gt;Az &lt;code class=&quot;highlighter-rouge&quot;&gt;a()&lt;/code&gt; függvényen belüli &lt;code class=&quot;highlighter-rouge&quot;&gt;myVar&lt;/code&gt; változó értékét írja ki a &lt;code class=&quot;highlighter-rouge&quot;&gt;b()&lt;/code&gt; függvény A függvény-definíció után természetesen egyszer meg kell hívunk a &lt;code class=&quot;highlighter-rouge&quot;&gt;b()&lt;/code&gt;-t. Azt nézzétek, hol található a függvénydeklaráció, mibe van beágyazva.&lt;/p&gt;
 
-&lt;p&gt;A bezárásra is hoztam példát:&lt;/p&gt;
+&lt;p&gt;Még egy példa:&lt;/p&gt;
+
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var a = &quot;krumpli&quot;;
 function szulo () {
     var b = &quot;körte&quot;;
@@ -1110,33 +1147,6 @@ console.log(0.1 + 0.2 == 0.3); //=&amp;gt; false
         <pubDate>Tue, 29 Aug 2017 19:49:00 +0200</pubDate>
         <link>http://localhost:4000//tudomany/2017/08/29/javascript_01.html</link>
         <guid isPermaLink="true">http://localhost:4000//tudomany/2017/08/29/javascript_01.html</guid>
-      </item>
-    
-      <item>
-        <title>A kommentelési szabályzat és a szerzői jogok</title>
-        <description>&lt;p class=&quot;update&quot;&gt;&lt;strong&gt;Frissítés&lt;/strong&gt;: Ha nem tudományos céllal idézel az írásaimból, akkor az idézet mellett kötelező feltüntetni a cikkre mutató linket! Ha a tudományos publikációdhoz idézel részeket, akkor  a tudományos hivatkozás szabályainak megfelelően hivatkozz a cikkre! Például így: &lt;em&gt;Gulácsi A. (2017). A cikk címe. A cikkre mutató weblink.&lt;/em&gt; Teljes cikk átvételéhez a saját írásos beleegyezésem szükséges. A hatályos jogszabály: az &lt;a href=&quot;https://net.jogtar.hu/jr/gen/hjegy_doc.cgi?docid=99900076.TV&quot;&gt;1999. évi LXXVI. törvény a szerzői jogokról.&lt;/a&gt; A bejegyzés címe is módosult. (2017. augusztus 27.)&lt;/p&gt;
-
-&lt;p&gt;Ezeket a kommentelési szabályokat vezetem be a honlapomon:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Csak a témához kötődő hozzászólások engedélyezettek.&lt;/li&gt;
-  &lt;li&gt;Pontosan „idézd”, hogy a bejegyzés mely részével (vagy részeivel) nem értesz egyet!&lt;/li&gt;
-  &lt;li&gt;A személyeskedést, a trollkodást és a spammelést moderálással szankcionálom.&lt;/li&gt;
-  &lt;li&gt;Mindent tudok a csaló érvelési technikákról (szalmabáb és társai). Ne is próbálkozz ilyenekkel!&lt;/li&gt;
-  &lt;li&gt;A reklámokat és a nem biztonságos honlapokra mutató linkeket automatikusan eltávolítom. Egyébként lehet hasznos linkeket megosztani.&lt;/li&gt;
-  &lt;li&gt;Itt nincsen semmilyen “politikai korrektség” (cenzúra, kettős mérce és társai), mint a liberális oldalakon.&lt;/li&gt;
-  &lt;li&gt;Előmoderációt nem alkalmazok. Utólag ellenőrzöm a kommenteket.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;
-A fenti pontokban lefektetett szabályok kötelező érvényűek mindenkire, kivétel nélkül.
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Kelt: Szeged, 2017. augusztus 18.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 18 Aug 2017 19:08:00 +0200</pubDate>
-        <link>http://localhost:4000//2017/08/18/kommentelesi_szabalyzat.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2017/08/18/kommentelesi_szabalyzat.html</guid>
       </item>
     
   </channel>
