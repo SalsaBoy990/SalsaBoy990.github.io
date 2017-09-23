@@ -10,6 +10,7 @@ categories: egyeb
 <img src="{{ site.url }}/assets/az_ego_miatt.jpg" class="image" alt="Ego kontra öko"/>
 
 <br />
+<blockquote>
 <p>Az „ego” miatt épült fel a civilizáció és lett kapitalista,<br>
 az „ego” miatt jött a kuruzslás helyére modern orvoslás:<br>
 járványok és gyógyíthatatlan betegségek váltak múlttá.<br>
@@ -31,7 +32,5 @@ felvirágoztatták, szólásszabadságot hoztak s a bűnözést letörték.</p>
 <p>„Egoisták” voltak azok, akik megtisztították a levegőt, a vizeket<br>
 és a vadvilágnak hatalmas területeket érintetlenül hagytak.<br>
 Nézz meg egy amerikai szénerőművet és hasonítsd össze a kínai szmoggal!<br>
-Egyetlen egy "felvilágosult" utópista sem tagadhatja e tényeket.</p>
-
-
-Minden az „ego” miatt.
+Egyetlen egy „felvilágosult” utópista sem tagadhatja e tényeket.</p>
+</blockquote>
