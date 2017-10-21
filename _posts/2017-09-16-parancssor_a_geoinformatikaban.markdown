@@ -1,6 +1,6 @@
 ---
 layout: post
-comments: true
+comments: false
 title: "Földrajzi adatfeldolgozás a parancssorban: a SAGA GIS és a GDAL"
 excerpt: "A parancssor ismerete elengedhetetlen minden webfejlesztő és geoinformatikus számára! Ebben a tutoriálban a parancssori adatfeldolgozásra mutatok egy példát a szabad forráskódú SAGA GIS és GDAL alkalmazásával Windows operációs rendszer alatt. Egy 17 éves MODIS vegetációs index adatsort dolgozok fel egy batch szkript segítségével."
 date:   2017-09-16 20:50
@@ -20,26 +20,23 @@ A [GDAL](http://www.gdal.org/) (Geospatial Data Abstraction Library) egy szabad 
 
 A fenti verziójú alkalmazásokat használtam a parancssori szkriptek futtatására, tehát más verziókkal nem 100%, hogy tökéletesen működnek.
 
-<br />
 
 ## 1. Adat és módszer
 
 Egy 15 éves 2000 és 2016 közötti műholdas adatsort használtam fel a parancssorban történő adatfeldolgozás demonstrálására. A NASA Terra műhold MODIS szenzorának [250 méteres felbontású, 16 napos EVI és NDVI kompozitképeit](https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1_v006) (`MOD13Q1: MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid V005`) dolgoztam fel a Duna-Tisza-közi erdőterületekre, melyeket az Európai Uniós [CORINE](https://www.eea.europa.eu/publications/COR0-landcover) (Coordination of Information on the Environment) felszínborítási adatbázis segítségével határolt le a témavezetőm (*Dr. Kovács Ferenc*).
 Az EU tagállamok nagyjából 6 évente felmérik a felszínborítás változásait különböző felszínborítási kategóriák szerint, 1:100 000-es méretarányban. A `CLC_2000` (a 2000-05 közötti), a `CLC_2006` (a 2006-11 közötti) és a `CLC_2012` (2012-től kezdődő műholdképekre) adatok alapján lettek lehatárolva az erdők.
 
-
 Azokat a 250*250 méteres cellákat válogattuk le, aminek legalább 2/3 részét erdő borította. Külön vizsgáljuk a lomb-, a tűlevelű és az elegyes erdőket. A cél a vegetáció egészségi állapotának monitorozása, valamint trendszerű változásainak kimutatása a szárazodó Homokhátságon március vége és szeptember vége között. Az 1970-es évektől számítva a talajvízkút-hálózat mérései szerint átlagosan 3 méterrel süllyedt a régióban a talajvízszint (a magasabban fekvő térségekben ennél nagyobb csökkenés is megfigyelhető, de kizárólag csak ott).
 
+A 16 napos kompozitképeket úgy kell érteni, hogy a 16 nap alatt készült összes felvételből raknak össze egy képet: a legjobb minőségű, azaz tiszta, felhőktől mentes értékeket használják fel minden egyes cellára (képpontra). A legnagyobb hátulütője az optikai (a látható és az infravörös tartományban mérő) szenzoroknak, hogy a felhőkön nem látnak át, szemben a lézeres vagy radaros mérésekkel. A kompozit készítésével sokkal teljesebb adatokat kapunk, hiszen egy hosszabb időszakra nézve valószínűbb, hogy lesznek olyan felhőmentes képek, amelyek lefedik a földfelszín nagy részét, így használható információkhoz jutunk.
 
-A 16 napos kompozitképeket úgy kell érteni, hogy a 16 nap alatt készült összes felvételből raknak össze egy képet: a legjobb minőségű, azaz tiszta, felhőktől mentes értékeket használják fel minden egyes cellára (pixelre). A legnagyobb hátulütője az optikai (a látható és az infravörös tartományban mérő) szenzoroknak, hogy a felhőkön nem látnak át, szemben a lézeres vagy radaros mérésekkel. A kompozit készítésével sokkal teljesebb adatokat kapunk, hiszen egy hosszabb időszakra nézve valószínűbb, hogy lesznek olyan felhőmentes képek, amelyek lefedik a földfelszín nagy részét, így használható információkhoz jutunk.
-
-Az **EVI** (Enhanced Vegetation Index, Továbbfejlesztett Vegetációindex) és az **NDVI** (Normalized Difference Vegetation Index, [Normalizált Vegetációindex](https://www.agroinform.hu/gazdasag/hogyan-hasznosithatom-a-vegetacios-index-kepeket-demo-32500-001)) spektrális index. A [**spektrális indexek**](http://www.geo.u-szeged.hu/~feri/kornyezeti_informatika/ch10s02.html) olyan származtatott mérőszámok, amelyek a műholdkép-sávokon (például látható kék, látható zöld, látható vörös, közeli, középhullámú és hosszúhullámú, azaz termális infravörös hullámhossz-tartományú sávok) végzett aritmetikai műveletek (osztás, szorzás, kivonás, összeadás) eredményeképpen állnak elő.
+Az **EVI** (Enhanced Vegetation Index, Továbbfejlesztett Vegetációindex) és az **NDVI** (Normalized Difference Vegetation Index, [Normalizált Vegetációindex](https://www.agroinform.hu/gazdasag/hogyan-hasznosithatom-a-vegetacios-index-kepeket-demo-32500-001)) spektrális index. A [spektrális indexek](http://www.geo.u-szeged.hu/~feri/kornyezeti_informatika/ch10s02.html) olyan származtatott mérőszámok, amelyek a műholdkép-sávokon (például látható kék, látható zöld, látható vörös, közeli, középhullámú és hosszúhullámú, azaz termális infravörös hullámhossz-tartományú sávok) végzett aritmetikai műveletek (osztás, szorzás, kivonás, összeadás) eredményeképpen állnak elő.
 
 A műholdkép sávok értékei reflektancia értékek, vagyis a különböző hullámhossz tartományokban mért, felszínre beérkező és onnan visszaverődő sugárzás hányadosai (0 és 1 közötti értékek lehetnek). Például a hófelszín a beérkező napsugárzás 90%-át veri vissza a látható hullámhossz-tartományban. Ezzel szemben a homok csak 30-40%-ot ver vissza, ezért nem csoda, hogy nyáron nagyon felforrósodik a tűző napon. A különböző felszínek/anyagok másképpen vernek vissza a különböző hullámhosszakon. Ez azért fontos, mert ennek segítségével jól el tudjuk határolni egymástól a felszínborítás-típusokat és feltérképezni a változásokat.
 
 A vegetációs indexek segítségével a levélzetben bekövetkező biológiai változásokat számszerűsíthetjük (cifrán mondva: kvantifikálhatjuk). Szoros kapcsolat áll fenn a levélzet klorofilltartalma és a vegetációs indexek értékei között. A vegetációs indexeket az 1970-es évek eleje óta használják a növényzet/biomassza változásainak értékelére (*Rouse, J. W. et al. 1973*).
 
-A klorofill molekulák (klorofill-a és klorofill-b) a zöld színtestekben (kloroplasztisz) találhatók. A kloroplasztisz a szén-dioxidból és a vízből fény hatására cukrot (glükózt) állít elő. Ez a fotoszintézis folyamata. A klorofill molekulák nagyon fontos szerepet töltenek be a növények energiatermelő folyamataiban, ugyanis ezek nyelik el (abszorbeálják) a látható vörös és kék tartományba eső napfényt. (A zöld tartományban viszont nagy a visszaverődés, és [innen a levelek zöld színe.](http://miert.webclub.hu/miert-zoldek-a-levelek)) Az így elnyelt fotonok energiáját összegyűjtik és továbbítják a fotoszintézis enzimei, fehérjéi felé.
+A klorofill molekulák (klorofill-a és klorofill-b) a zöld színtestekben (kloroplasztisz) találhatók. A kloroplasztisz a szén-dioxidból és a vízből fény hatására cukrot (glükózt) állít elő. Ez a fotoszintézis folyamata. A klorofill molekulák nagyon fontos szerepet töltenek be a növények energiatermelő folyamataiban, ugyanis ezek nyelik el (abszorbeálják) a látható vörös és kék tartományba eső napfényt. (A zöld tartományban viszont nagy a visszaverődés, és innen a levelek zöld színe.) Az így elnyelt fotonok energiáját összegyűjtik és továbbítják a fotoszintézis enzimei, fehérjéi felé.
 
 **Egészséges vegetáció** esetén magas a klorofilltartalom a levelekben. Ilyenkor **a látható vörös tartományban nagyon alacsony a reflektancia** (a visszaverődés), hiszen a klorofill elnyeli a sugárzást. Ezzel szemben, a közeli infravörös tartományban reflektancia csúcs jelentkezik, ugyanis itt a levélzet erősen visszaverő. **A vegetációindexek a vörös és a közeli infravörös sáv reflektanciaértékei közötti különbségen alapszanak.**
 
@@ -57,13 +54,11 @@ Itt vannak a vegetációindexek képletei:
 
 ahol `NIR` a közeli infravörös sáv (841-876 nm), `Red` a látható vörös sáv (620-670 nm) és `Blue` a látható kék sáv (459-479 nm).  nm: nanométer, `10^-9` m. A korrekciós együtthatók értékei `C1 = 6`, `C2 = 2,5`, `L = 1` és `G = 7,5`.
 
-<br />
 
 ## 2. Feldolgozás a parancssorban
 
-A Windows parancssorban úgynevezett [**kötegelt állományokat**](https://hu.wikipedia.org/wiki/K%C3%B6tegelt_%C3%A1llom%C3%A1ny) futtatok. Egyszerű és hatékony kis programokat lehet batch-ban írni. Az általában .cmd vagy **.bat** kiterjesztésű kötegelt állományokat (angolból átvett néven [batch fájlokat](https://hu.wikipedia.org/wiki/Batch_programoz%C3%A1s)) Windows, OS/2, és MS-DOS rendszerekben szokták használni. Formailag egy szövegfájlhoz hasonlítanak, tartalmuk pedig parancsok (DOS/Windows parancsok) egymásutánja. Futtatásuk a tartalom sorról sorra való olvasásával történik például a **cmd.exe**-vel a Windows operációs rendszer alatt. A SAGA GIS parancssorban is futtatható, de célszerű kötegelt fájlként futtatni az utasítások sorozatát.
+A Windows parancssorban úgynevezett [kötegelt állományokat](https://hu.wikipedia.org/wiki/K%C3%B6tegelt_%C3%A1llom%C3%A1ny) futtatok. Egyszerű és hatékony kis programokat lehet batch-ban írni. Az általában .cmd vagy **.bat** kiterjesztésű kötegelt állományokat (angolból átvett néven [batch fájlokat](https://hu.wikipedia.org/wiki/Batch_programoz%C3%A1s)) Windows, OS/2, és MS-DOS rendszerekben szokták használni. Formailag egy szövegfájlhoz hasonlítanak, tartalmuk pedig parancsok (DOS/Windows parancsok) egymásutánja. Futtatásuk a tartalom sorról sorra való olvasásával történik például a **cmd.exe**-vel a Windows operációs rendszer alatt. A SAGA GIS parancssorban is futtatható, de célszerű kötegelt fájlként futtatni az utasítások sorozatát.
 
-<br />
 
 ### 2.1. SAGA GIS (saga_cmd)
 
@@ -187,7 +182,7 @@ Nyissunk az OSGeo4W héjalkalmazást és gépeljük be ezt a rövid parancsot eg
 
 `gdalbuildvrt -separate g:\modis\TEMP\raszter\layer_stack.vrt g:\modis\TEMP\raszter\*.tif`
 
-<img src="{{ site.url }}/assets/sagagis/shell.png" class="image3" alt="Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva"/>
+<img src="{{ site.url }}/assets/sagagis/shell.png" class="medium" alt="Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva"/>
 <br />
 
 A `-separate` logikai argumentumot megadva külön sávokba helyezi a képeket (ha ezt lehagynánk, akkor virtuális mozaikot készítene nekünk a GDAL), utána következik a kimenet és a bemenet. Ebben a sorrendben! Az elérési útvonalakat pedig módosítsátok, ha szükséges.
@@ -202,23 +197,16 @@ A létrehozott táblázatra kattintsunk jobb egérgombbal és válasszuk ki a **
 
 <img src="{{ site.url }}/assets/sagagis/saga_gui_2.png" class="large" alt="A statisztikákat tartalmazó táblázat exportálása szöveges formátumba"/>
 <br />
-Feltöltöttem nektek a Google Drive-ra a MODIS minta-adatbázisomat ([**modis_sample_data.rar**](https://drive.google.com/open?id=0B8pLujeireG7YjBmWTMtbm85UzQ), 561 MB, kitömörítve 2,71 GB), amin gyakorolhatjátok a parancssori adatfeldolgozást. A batch szkriptet megtaláljátok a [**saga_gis_batch**](https://github.com/SalsaBoy990/saga_gis_batch) repository-mban.
+Feltöltöttem nektek a Google Drive-ra a MODIS minta-adatbázisomat ([modis_sample_data.rar](https://drive.google.com/open?id=0B8pLujeireG7YjBmWTMtbm85UzQ), 561 MB, kitömörítve 2,71 GB), amin gyakorolhatjátok a parancssori adatfeldolgozást. A batch szkriptet megtaláljátok a [saga_gis_batch](https://github.com/SalsaBoy990/saga_gis_batch) repository-mban.
 
-<br />
-***Házi feladat:** Készíts egy tudományos színvonalú elemzést egy tetszőlegesen választott mintaterület erdőiben (pl. Keszthelyi-hegység) bekövetkezett változásokról az NDVI adatok alapján, 2000 és 2016 között! Milyen kapcsolat áll fenn a megfigyelt változások és az éves meteorológiai viszonyok között? (A minta-adatbázisban az ország egész területére megvannak az NDVI-képek.) A Keszthelyi-hegységet azért ajánlom mintaterületnek, mert ott egy igen jelentős erdőpusztulás következett be 2011-től kezdődően. Ennek okainak feltárása egy nagyon jó BSc-s szakdolgozat témája lehet.*
 
-<br />
+***Házi feladat:** Készíts egy tudományos színvonalú elemzést egy tetszőlegesen választott mintaterület erdőiben (pl. Keszthelyi-hegység) bekövetkezett változásokról az NDVI adatok alapján, 2000 és 2016 között! Milyen kapcsolat áll fenn a megfigyelt változások és az éves meteorológiai viszonyok között? (A minta-adatbázisban az ország egész területére megvannak az NDVI-képek.) A Keszthelyi-hegységet azért ajánlom mintaterületnek, mert ott egy igen jelentős erdőpusztulás következett be 2011-től kezdődően.*
+
 
 ## Ajánlott irodalom
 
-<ul class="no-decoration-18px">
-    <li><em>Gulácsi A. - Kovács F. (2015).</em> <a href="http://www.tajokologiailapok.szie.hu/pdf/201502/04_Gulacsi_Kovacs.pdf">Aszályvizsgálat lehetősége MODIS műholdképekből számított spektrális indexekkel Magyarországon.</a>Tájökológiai Lapok 13(2), pp. 235-248.
-    </li>
-    <li>
-    <em>Gulácsi A. - Kovács F. (2015).</em> <a href="http://publicatio.bibl.u-szeged.hu/11921/">Drought monitoring with spectral indices calculated from MODIS satellite images in Hungary.</a> Journal of Environmental Geography 8(3-4), pp. 11-20.
-    </li>
-    <li>
-    <em>Rouse, J. W. - Haas, H. R. - Schell, A. J. - Deering, W. D. (1973).</em> <a href="https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19740022614.pdf">Monitoring vegetation systems in the Great Plains
-with ERTS.</a> Third ERTS Symposium, NASA SP-351 1. pp. 309–317. 
-    </li>
-</ul>
+1. *Gulácsi András - Kovács Ferenc* (2015). [Aszályvizsgálat lehetősége MODIS műholdképekből számított spektrális indexekkel Magyarországon.](http://www.tajokologiailapok.szie.hu/pdf/201502/04_Gulacsi_Kovacs.pdf) Tájökológiai Lapok 13(2), pp. 235-248.
+2. *Gulácsi András - Kovács Ferenc* (2015). [Drought monitoring with spectral indices calculated from MODIS satellite images in Hungary.](http://publicatio.bibl.u-szeged.hu/11921/) Journal of Environmental Geography 8(3-4), pp. 11-20.
+3. *Rouse, J. W. - Haas, H. R. - Schell, A. J. - Deering, W. D.* (1973). [Monitoring vegetation systems in the Great Plains
+with ERTS.](https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19740022614.pdf) Third ERTS Symposium, NASA SP-351 1. pp. 309–317. 
+

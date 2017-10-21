@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="15.968636"
+   height="24.231178"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="placemark2.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="15.839192"
+     inkscape:cx="10.284917"
+     inkscape:cy="17.657607"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1280"
+     inkscape:window-height="947"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-466.11607,-396.96459)">
+    <g
+       id="g837"
+       transform="matrix(0.16441926,0,0,0.16441926,394.64507,339.78779)">
+      <path
+         sodipodi:nodetypes="sszczss"
+         inkscape:connector-curvature="0"
+         id="rect3780"
+         d="m 483.20689,349.0725 c -26.08569,0 -47.19689,21.19386 -47.19689,47.27955 0,29.69406 21.47431,40.35681 29.2705,51.84683 7.79616,11.49003 16.54908,24.12854 17.92639,46.84507 1.37927,-22.65162 9.03551,-33.68218 17.50975,-46.84507 8.47426,-13.16289 29.76979,-25.76085 29.76979,-51.84683 0,-26.08569 -21.19385,-47.27955 -47.27954,-47.27955 z"
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#37c837;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.64500928;marker:none;enable-background:accumulate" />
+      <circle
+         transform="matrix(2.6450093,0,0,2.6450093,-719.05016,-569.21953)"
+         id="path3793"
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+         cx="454.55356"
+         cy="364.77289"
+         r="5.0892859" />
+    </g>
+  </g>
+  <metadata
+     id="metadata828">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Open Clip Art Library</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title></dc:title>
+        <dc:date>2012-05-11T03:36:53</dc:date>
+        <dc:description>This is a generic placemark symbol used in maps.</dc:description>
+        <dc:source>http://openclipart.org/detail/169978/placemark-by-sagar_ns</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>sagar_ns</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>baloon</rdf:li>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>landmark</rdf:li>
+            <rdf:li>maps</rdf:li>
+            <rdf:li>marker</rdf:li>
+            <rdf:li>placemark</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

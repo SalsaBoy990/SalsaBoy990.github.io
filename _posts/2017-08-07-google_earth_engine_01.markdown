@@ -1,6 +1,6 @@
 ---
 layout: post
-comments: true
+comments: false
 title:  "A Google Earth Engine felhő alapú platform alkalmazása a geoinformatikában, 1. rész."
 excerpt: "Korunkban már nem az adatok hiánya jelenti a földrajzi kutatások korlátját, hanem annak a tömérdek rendelkezésre álló és ingyenes távérzékelt adatnak a rendkívül hosszadalmas feldolgozása. Hiszen csak nagy mennyiségű, empirikus adatból lehet szilárd, megbízható tudományos következtetéseket levonni, és megbízható modelleket megalapozni. A Google Earth Engine felhő alapú számítási platform alkalmazásával szeretném demonstrálni az objektum-orientált programozás elengedhetetlen szükségét a geoinformatikában."
 date: 2017-08-07 17:26
@@ -11,7 +11,6 @@ categories: tudomany
 Korunkban már nem az adatok hiánya jelenti a földrajzi kutatások korlátját, hanem annak a tömérdek rendelkezésre álló és ingyenes távérzékelt adatnak a rendkívül hosszadalmas feldolgozása. Hiszen csak nagy mennyiségű, empirikus adatból lehet szilárd, megbízható tudományos következtetéseket levonni, és megbízható modelleket megalapozni. A Google Earth Engine felhő alapú számítási platform alkalmazásával szeretném demonstrálni az objektum-orientált programozás elengedhetetlen szükségét a geoinformatikában.
 
 
-<br />
 ## A Google Earth Engine bemutatása
 
 
@@ -52,7 +51,6 @@ Csak ez a két lépés után tudod használni a Google Earth Engine-t.
 A továbbiakban dióhéjban bemutatom a GEE működését. Az **objektum-orientált programozás** és a **JavaScript** nyelv rövid bemutatását egy későbbi blogbejegyzésben pótolom.
 
 
-<br />
 ## Hogyan működik a Google Earth Engine?
 
 ### 1. Kliens kontra szerver
@@ -72,7 +70,6 @@ print(
     (szerverSztring instanceof ee.ComputedObject)
 ); //=> igaz
 {% endhighlight %}
-
 
 
 A dátum objektumok segítségével könnyedén le tudjuk válogatni a megadott időszakban készült műholdképeket a képkollekcióból (`ee.ImageCollection` osztály).
@@ -105,7 +102,7 @@ var filteredCollection = ee.ImageCollection(landsat)
     .sort("CLOUD_COVER", true);
 {% endhighlight %}
 
-<br/>
+
 ### 2. Késleltetett végrehajtás
 
 Ha egy szkriptet írunk, akkor a kód nem közvetlenül fut le az EE szerverein. Ehelyett, a kliens könyvtár (GEE API) átkódolja a szkriptet **JSON objektumok** sorozatává, majd ezeket elküldi a Google-nek, és válaszra vár. Semmi sem lesz elküldve a Google számára feldolgozásra, ha explicite nem adunk rá utasítást. Tehát fölöslegesen nem dolgoz fel semmit a szerver, ha nem utasítjuk rá. A `print()` vagy a `Map.addLayer()` utasítás már elegendő a kérés elküldéséhez:
@@ -145,12 +142,12 @@ Map.addLayer(
 );
 {% endhighlight %}
 
-<br />
+
 ### 3. A lépték és a vetületek kezelése
 
 Fontos tudnivaló, hogy a `Map.addLayer()` segítségével a térképen kirajzolt kép eltérő bemenetekből készül a nagyítási szint és a térképnézet határaitól függően. A lépték a GEE-ben **pixelméretet** jelent. A GEE az elemzés / a bemenő adat léptékét a kimenetből határozza meg, amit nekünk meg kell adnunk. A GEE ugyanis **képpiramisokat** használ, ahol minden egyes cella értéke egy adott piramisszinten az alatta levő szint 2x2-es blokkjának, azaz 4 cellájának az átlagértéke. Az aggregálás egy 256x256 cella felbontású képszelvényig történik. A GEE azt a piramisszintet választja, ami **legközelebb esik az általunk megadott léptékhez** (kisebb vagy egyenlő annál), és abból számol.
 
-<img src="{{ site.url }}/assets/gee/keppiramisok.png" class="image2" alt="GEE képpiramisok" />
+<img src="{{ site.url }}/assets/gee/keppiramisok.png" class="small" alt="GEE képpiramisok" />
 <figcaption>2. kép: Google Earth Engine képpiramisok
 </figcaption>
 <figcaption>1. táblázat: Pixelméretek a különböző nagyítási szinteknél (0-20) a Google Mercator vetülete esetén (EPSG:3857). Ha Magyarországra akarunk vonatkoztatni, akkor a földrajzi szélesség koszinuszával be kell szorozni az értékeket. Például a 12-es nagyítási szintnél: 38·cos(47°) = 25,6 m.
@@ -204,7 +201,6 @@ print(
 {% endhighlight %}
 
 
-<br/>
 ### 4. Input/output műveletek
 
 Több lehetőség áll rendelkezésünkre az exportálásra: az adatainkat **GeoTIFF-be/HD videóba** menthetjük a **Google Drive**-ra, a Google felhő-alapú tárolóegységre (**Google Cloud Storage**) vagy az **Assets** mappánkba. Ez utóbbi helyre a saját GeoTIFF raszterállományainkat is feltölthetünk. A vektoros adatokat **KML formátumban** ajánlott feltölteni, amiből **Fusion Table** készül, amit betölthetünk a szkriptünkbe az azonosítója segítségével. A készített idősorok adatai is lementhetők CSV-be (pontosvesszővel tagolt értékek).
@@ -225,22 +221,15 @@ Próbáljátok ki a szkriptet a <a href="https://code.earthengine.google.com/" t
 
 A Google Earth Engine-nek nem csak alkalmazásprogramozási felülete (API) van, hanem rendelkezésre áll a <a href="https://explorer.earthengine.google.com" target="_blank">Google Earth Engine Explorer</a>, ami egy grafikus felhasználói felület (graphical user interface, GUI), ahol programozási ismeretek nélkül is hozzáférhetünk az adatokhoz. Természetesen sokkal korlátozottabb funkcionalitással bír, mint a kódszerkesztő. Ennek a használata is regisztrációhoz kötött és szintén ingyenes nem kereskedelmi célokra.
 
-<br />
-## Felhasznált irodalom
 
-<ul class="no-decoration-18px">
-    <li>Google Earth Engine Team (2015). <a href="https://earthengine.google.com" target="_blank">Google Earth Engine: A planetary-scale geospatial analysis platform.</a>
-    </li>
-    <li><a href="https://developers.google.com/earth-engine/" target="_blank">Google Earth Engine API kézikönyv.</a> 
-    </li>
-    <li><a href="https://code.earthengine.google.com/" target="_blank">Google Earth Engine Code Editor.</a></li>
-    <li><a href="https://explorer.earthengine.google.com" target="_blank">Google Earth Engine Explorer.</a></li>
-    <li>Egy Earth Engine Kiértékelő felhasználói fiókért egy elektronikus űrlap kitöltésével <a href="https://signup.earthengine.google.com/" target="_blank">itt</a> lehet jelentkezni. 
-    </li>
-    <li>További JavaScript kódok a <a href="https://github.com/SalsaBoy990/EarthEngine" target="_blank">GitHub</a> gyűjteményemből érhetők el. 
-    </li>
-</ul>
+## Ajánlott irodalom, linkek
 
+1. Google Earth Engine Team (2015). [Google Earth Engine: A planetary-scale geospatial analysis platform.](https://earthengine.google.com)
+2. [Google Earth Engine API kézikönyv.](https://developers.google.com/earth-engine/) 
+3. [Google Earth Engine Code Editor.](https://code.earthengine.google.com/)
+4. [Google Earth Engine Explorer.](https://explorer.earthengine.google.com)
 
+Egy Earth Engine Kiértékelő felhasználói fiókért egy elektronikus űrlap kitöltésével [itt lehet jelentkezni](https://signup.earthengine.google.com/). 
 
+További JavaScript kódok az [EarthEngine](https://github.com/SalsaBoy990/EarthEngine) gyűjteményemből érhetők el.
 

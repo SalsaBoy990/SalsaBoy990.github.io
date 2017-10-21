@@ -1,6 +1,6 @@
 ---
 layout: post
-comments: true
+comments: false
 title: "Rövid elméleti bevezető a JavaScript nyelvbe, 3. rész."
 excerpt: "Ebben a részben a felemelésről (hoisting), a this értékről, annak eredetéről, a bezárásról (closure), a privát hozzáférésről és a beágyazott függvényekről lesz szó."
 date: 2017-09-20 16:37
@@ -32,7 +32,6 @@ A JavaScript gyengén típusos nyelv, tehát `var`-ral lefoglalt változóink t�
 
 Térjünk át most a `this` érték és annak eredetének boncolgatására, majd utána a bezárással (closure), a privát hozzáféréssel és az egymásba ágyazott függvényekkel fogunk foglalkozni.
 
-<br />
 
 ## Mi a `this`, honnan származik?
 
@@ -163,7 +162,6 @@ A `this` **az osztály aktuális példányának** (az `elso`-nek) **a belső mut
 
 A JavaScript-ben szintén létezik a `this`. A `this` **az éppen aktuális objektumpéldányra hivatkozik.** A `this` egy **referencia**. Mivel a JS-ben nincsen mutató, ezért nincs szükség a nyíl operátorra, helyette a `.` operátorral érhetjük el az objektum tulajdonságait a `this`-en keresztül, vagyis a `this.x` a helyes szintaxis.
 
-<br />
 
 ## A bezárás (closure), a privát hozzáférés és a beágyazott függvények
 
@@ -248,7 +246,6 @@ console.log(sanyi);
 
 Ha kiíratod a konzolra `sanyi` tartalmát, akkor nem fogod látni a `nev` és az `eha_kod` tulajdonságát, hiszen a `console.log()` nem fér hozzájuk! Csak a get és a set függvények láthatók. Csak ezeken keresztül, szabályozottan férhetünk hozzá ezekhez a tulajdonságokhoz. Tehát „illetéktelenek” nem férnek hozzájuk.
 
-<br />
 
 ## A beágyazott függvények és a `this`
 
@@ -294,9 +291,9 @@ Egyelőre elég ennyi. A következő két részben foglalkozni fogok a kivételk
 
 Ezek után pedig rá fogok térni a funkcionális programozásra és a Google Earth Engine API (Application Programming Interface, vagyis alkamazásprogramozási felület) használatára. 
 
-<br />
+
 ## Ajánlott irodalom
 
-1. Anthony Alicea (2015). [**JavaScript: Understanding the Weird Parts - The First 3.5 Hours.**](https://www.youtube.com/watch?v=Bv_5Zv5c-Ts) A teljes 12 órás kurzus az [udemy.com](https://www.udemy.com/understand-javascript/?utm_content=_._pd_364426_._&utm_source=facebook-row&utm_medium=udemyads&utm_campaign=NEW-FB-VRT-ROW-Tech-EN-ALL_._ci_._sl_ALL_._vi_._sd_All_._la_EN_.&utm_term=_._ag_NEW-FB-VRT-ROW-Tech-EN-ALL_._ci_._sl_ALL_._vi_._sd_All_._la_EN_._-_._ci_._._pi_1814585708581485_._gi_all_._ai_18--65_._an_M3oTyZ&k_clickid=97b08e8c-94fa-4830-ad99-8b6239fe4a0d_131994849)-on megtalálható. Nem biztos, hogy érdemes kiadni rá a pénzt. Én csak az első 3,5 órát néztem meg a youtube-on.
-2. Brian W. Kernighan - Dennis M. Richie: **A C programozási nyelv. 2. kiadás.** - Műszaki Kiadó, Budapest.
-3. Benedek Zoltán - Levendovszky Tihamér (2013). **Szoftverfejlesztés C++ nyelven.** SZAK Kiadó Kft., Bicske.
+1. *Anthony Alicea* (2015). [JavaScript: Understanding the Weird Parts - The First 3.5 Hours.](https://www.youtube.com/watch?v=Bv_5Zv5c-Ts) A teljes 12 órás kurzus az [udemy.com](https://www.udemy.com/understand-javascript/?utm_content=_._pd_364426_._&utm_source=facebook-row&utm_medium=udemyads&utm_campaign=NEW-FB-VRT-ROW-Tech-EN-ALL_._ci_._sl_ALL_._vi_._sd_All_._la_EN_.&utm_term=_._ag_NEW-FB-VRT-ROW-Tech-EN-ALL_._ci_._sl_ALL_._vi_._sd_All_._la_EN_._-_._ci_._._pi_1814585708581485_._gi_all_._ai_18--65_._an_M3oTyZ&k_clickid=97b08e8c-94fa-4830-ad99-8b6239fe4a0d_131994849)-on megtalálható. Néha van akció. Ilyenkor 10-15 euróért megvehető egy-egy kurzus, ami egyébként közel 200 euróba kerülne.
+2. *Brian W. Kernighan - Dennis M. Richie*: A C programozási nyelv. 2. kiadás. - Műszaki Kiadó, Budapest.
+3. *Benedek Zoltán - Levendovszky Tihamér* (2013). Szoftverfejlesztés C++ nyelven. SZAK Kiadó Kft., Bicske.

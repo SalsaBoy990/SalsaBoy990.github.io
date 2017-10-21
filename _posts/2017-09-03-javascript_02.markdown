@@ -1,6 +1,6 @@
 ---
 layout: post
-comments: true
+comments: false
 title: "Rövid elméleti bevezető a JavaScript nyelvbe, 2. rész."
 excerpt: "A JavaScript sorozatom folytatása, az alábbi témákra térek ki: a függvényhatókör, a felemelés (hoisting), a globális objektum (`Window`), a szigorú mód (strict mode) és a korlátozás, objektumok és függvények létrehozása, tömbök és tömbszerű objektumok, valamint a hozzáférés az objektumok tulajdonságaihoz."
 date: 2017-09-03 1:11
@@ -19,7 +19,7 @@ Az [előző részben](http://www.newgeographer.com/tudomany/2017/08/29/javascrip
 * Tömbök és tömbszerű objektumok,
 * Hozzáférés az objektumok tulajdonságaihoz.
 
-<br />
+
 ## A függvényhatókör és a felemelés (hoisting)
 
 Mi a függvényhatókör? Ezt néhány példával lehet a legegyszerűbben elmagyarázni. A blokkhatókört már megszokhattuk más nyelvekben, így például a C-ben, ezért furcsának tűnhet elsőre, amit bemutatok.
@@ -87,7 +87,7 @@ Természetesen az **ES6**-tól kezdődően a függvényhatókörű `var` helyett
 
 Az előző részben említettem, hogy a webböngészők még nem implementálták az új nyelvi elemek  egy jó részét, tehát kliens oldali kódban nem biztos, hogy működni fognak. Szerver oldalon (pl. Node.js) már támogatottak, ott nyugodtan használd azokat, beleértve az egyszerűsített függvényszintaxist a callback függvényeknél! Az aszinkron függvényhívásról máskor írok.
 
-<br />
+
 ## A globális objektum (Window)
 
 Említettem többször is a **globális objektum**ot. Ez egy szokványos JavaScript objektum, ami  rendkívül fontos szerepet játszik. **A globális objektum tulajdonságai globálisan definiáltak**, vagyis hozzáférhetők a programunk számára:
@@ -106,7 +106,8 @@ for (var prop in window) {
     console.log(prop);
 } 
 </code></pre>
-<br />
+
+
 ## A szigorú mód ("strict mode") és a JS korlátozása
 
 A JS-ben egyaránt vannak **jó és rossz részek**. **Douglas Crockford** (neves JS guru) szerint korlátozni kell a JS programozási nyelvet, és **kizárólag csak a jó részeket** használni belőle. Ezzel jobb programokat írunk és jobb programozóvá is válunk. Crockford jóvoltából rendelkezésünkre áll a [JSLint](http://www.jslint.com/) kódellenőrző, ami megvizsgálja, hogy a programunk megfelel-e a szigorúbb követelményeknek (beleértve a szintaktikai megfontolásokat - magyarul hogyan nézzen ki a kód), és csak a jó részeket alkalmazza. Az ajánlott irodalomban feltüntettem Crockford könyvét. Akit bővebben érdekel, utánanézhet.
@@ -139,7 +140,6 @@ if (result !== null) {
 
 Egy `RegExp` objektum (a következő részben bővebben) segítségével megkeresem a szövegben található `for` kulcsszót. A `/` jelek közötti kifejezést, vagyis a `"for"`-t keressük a `RegExp` objektum `match()` metódusának segítségével. Ha nem talál a sztringünkben ilyet, akkor `null`-t ad vissza. Hibát dobok, ha találtam `for` ciklust, ami leállítja a kód futását. A hibakezelés a következő részben lesz kifejtve.
 
-
 Az ECMAScript5 szabványban bevezették a **szigorú módot** (`"strict mode"`), ami bizonyos korlátozásokat vezetett be a biztonság növelésre. Több hibaellenőrzés is van benne (több hibát is jelez a fordító, ami leállítja a kód futását). Nagyon erősen ajánlott a használata, mivel rengeteg sérülékenység van a JS-ben, amit a hekkerek kihasználhatnak. Nem tekinthető jó kódnak, ami nem alkalmazza ezt a fontos korlátozást. Bővebb tájékoztatást a [Mozilla honlapján](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) találtok. A GEE kódszerkesztőjében is `"strict mode"` van érvényben. Használata egyszerű, az utasítások elé kell beilleszteni:
 
 <pre><code class="language-javascript">"use strict";
@@ -155,7 +155,7 @@ var f = function (a) {
 }
 </code></pre>
 
-<br />
+
 ## Objektumok és függvények létrehozása
 
 Az egyik módja a függvények létrehozásának, ha egy `var` változóba tároljuk el a függvényt. Az objetum literál létrehozása `var o = { x: 0 };` szintaxissal történik. Mivel ezek utasítások és nem kifejezések szükség van az utasítást záró `;`-ra.
@@ -253,7 +253,8 @@ var point = {
   } 
 };
 </code></pre>
-<br />
+
+
 ## Tömbök, tömbszerű objektumok és hozzáférés az objektumok tulajdonságaihoz
 
 A tömbök is objektumok. Az objektumok tulajdonságokból épülnek fel, amelyek lehetnek változók, tömbök, tömbszerű objektumok, objektumok és függvények. Értsétek ezt úgy, hogy tetszőlegesen egymásba ágyazhatók. **A tulajdonságok azonosító-érték párok.** `x: 6` esetén az `x` azonosító a `6`-os értéket jelöli, amit valamelyik memóriacímen tároljuk. Emlékezzünk vissza, hogy az objektumok mind referenciák, amelyek a dinamikus memóriában lefoglalt tárhelyre hivatkoznak, ahol megtalálhatók az objektum tulajdonságai. Az objektumok tulajdonságaihoz a `.` **pont operátor** segítségével férhetünk hozzá (is), míg a tömbök esetén a `[0]` **tömbelem-hivatkozás** segítségével. A függvények esetén az érték maga a függvény teste, az azonosító pedig a függvény neve.
@@ -345,7 +346,6 @@ A következő rész tartalma:
 * Kivételkezelés (exeption handling)
 * A `RegExp` objektumok
 
-<br />
 
 ## Ajánlott irodalom
-1. Douglas Crockford (2008). [JavaScript: The Good Parts. 1th Edition.](https://www.amazon.com/exec/obidos/ASIN/0596517742/wrrrldwideweb) O’Reilly, USA.
+1. *Douglas Crockford* (2008). [JavaScript: The Good Parts. 1th Edition.](https://www.amazon.com/exec/obidos/ASIN/0596517742/wrrrldwideweb) O’Reilly, USA.

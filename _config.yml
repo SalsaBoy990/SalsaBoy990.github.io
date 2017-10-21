@@ -10,21 +10,13 @@ name: Gulácsi András
 # URL to site image. Site image is used when your site is shared via social media
 # 1:1 aspect ratio with a minimum of 144x144 or maximum of 4096x4096 pixels
 # Sizes are references from https://dev.twitter.com/cards/types/summary#reference
-# image: https://location-of-image.com
+image: http://i346.photobucket.com/albums/p406/salsa990/android-chrome-512x512_zpsp4waxcic.png
 
 description: > # this means to ignore newlines until "baseurl:"
-  Gulácsi András vagyok. Geoinformatikusként a legújabb web-alapú megoldásokat alkalmazom
-  a földrajzi kutatásban, a földrajzi adatok feldolgozására és megjelenítésére a JavaScript
-  nyelv erejével. Az alacsony színvonalú, elavult egyetemi tömegoktatás nem képes megfelelni
-   a jelen kihívásainak és nem aknázza ki a legújabb IT-technológiákban rejlő nagy
-   lehetőségeket. A tudásom 90%-át nem az egyetemen szereztem, programozni is magamtól
-   tanultam meg. Az írásaimban és a készülő könyvemben az ideológiai alapú, utópisztikus
-   gondolkodás ellen veszem fel a küzdelmet a tények, a tapasztalatok és a józan ész
-   segítségével, hogy ne váljon a pusztító ideológiák martalékává a társadalom,
-   szenvedést és nyomort hagyva maga után. A New Geographer – Új Geográfus blog
-   egy újszerű szemléletben egyesíti a földrajzot az informatikával és a webfejlesztéssel.
-
-short-description: Egy újszerű szemléletben egyesíti a földrajzot az informatikával és a webfejlesztéssel.
+  Gulácsi András vagyok, Frontend/JavaScript Developer, természettudós és író.
+  A blogommal a földrajzot egy új szemléletben egyesítem az informatikával és a webfejlesztéssel.
+  
+short-description: Gulácsi András, Frontend/JavaScript Developer, természettudós és író honlapja.
 # the subpath of your site, e.g. /blog
 baseurl: ""
 # the base hostname & protocol for your site, e.g. http://example.com
@@ -35,7 +27,7 @@ email: admin@newgeographer.com
 mobile: +36 20 442 7225
 github_username: SalsaBoy990
 facebook: https://www.facebook.com/newgeographer
-twitter_username: "@UjGeografus"
+linkedin: https://www.linkedin.com/in/andrás-gulácsi-194784113
 
 # google analytics
 google_analytics: "UA-106020833-1"

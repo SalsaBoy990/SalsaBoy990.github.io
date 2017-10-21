@@ -1,6 +1,6 @@
 ---
 layout: post
-comments: true
+comments: false
 title: "Rövid elméleti bevezető a JavaScript nyelvbe"
 excerpt: "A Google Earth Engine (GEE) felhő alapú platform általános bemutatása után, ebben a részben egy rövid betekintést nyújtok az objektum-orientált programozásba és felhívom a figyelmet a JavaScript nyelv fontos jellemzőire, hogy hatékonyan ki tudjátok aknázni a GEE-ben rejlő lehetőségeket akár több száz GB-nyi adat gyors feldolgozására, minimális erőfeszítéssel."
 date: 2017-08-29 19:49
@@ -17,8 +17,7 @@ A bejegyzésemben megadott kódrészleteket pedig próbáljátok ki!
 Használhatjátok valamelyik böngésző konzolját (Google Chrome esetén: `F12`, Firefox esetén `CTRL+SHIFT+i`) vagy a GEE kódszerkesztőjét (ebben "strict mode"-ban használhatjátok a JS-t)!
 
 A programrészleteket egyben letölthetitek [innen](https://github.com/SalsaBoy990/EarthEngine/blob/master/tutorial2.js).
-<br />
-<br />
+
 
 ## Bevezetés az objektum-orientált programozásba
 
@@ -38,8 +37,7 @@ A klasszikus öröklés (és a polimorfizmus) JavaScript-ben is imitálható, de
 Csak az **egységbe foglalás**ba megyünk itt bele: **az objektum-orientált paradigma lényege, hogy együtt kezeljük a változókat és a rájuk meghívandó függvényeket egy osztályban** (`class`). Meglepően hangzik, de a JS-ben nincsenek tényleges osztályok, bár úgy programozunk, mintha lennének. Helyesebb inkább objektumokról beszélni (a függvények és a tömbök is objektumok).
 
 A C++-ban a hozzáférési szintek (**public**, **protected** és **private**) segítségével szabályozhatjuk a tagváltozók és tagfüggvények külső hozzáférését. A C++-ban az osztályok esetén alapértelmezetten privát a hozzáférés, és csak az általunk írt publikus hozzáférésű metódusokon keresztül férhetünk hozzá a tagváltozókhoz. Ez a biztonságot szolgálja. A JavaScript-ben **minden tagváltozó és metódus kívülről hozzáférhető** és módosítható. A **bezárás** (**closure**) alkalmazásával tehetjük priváttá (tehát kívülről nem hozzáférhetővé) az objektumok tulajdonságait.
-<br />
-<br />
+
 
 ## Belekóstolás a JavaScript programozási nyelvbe
 
@@ -205,7 +203,6 @@ console.log(0.1 + 0.2 == 0.3); //=> false
 Apró kiegészítés: két fontos dolgot kell itt pótolnom. Az egyik a változók elnevezési konvenciója. Ha a változó egyszerű szó, akkor nincs probléma, mivel minden betűjét kisbetűvel írjuk. Az összetett szavak esetén az első tagot mindig kisbetűvel írjuk, viszont az utána következő tagokat nagy kezdőbetűvel írjuk: `likeThis`, illetve használhatunk egy alulvonást is a tagok elválasztására: `like_this`. Ezt nem kötelező betartani, de erősen ajánlott. A másik dolog az úgynevezett **"hamisértékek"** (falsy values) bevezetése a JS-ben. Ezek közé tartozik: a `false`, a `0`, a `null`, az `undefined`,  az `""` (üres sztring) és a `NaN`. Ezek a kifejezésekben **mindig hamisnak** (`false`) **értékelődnek ki** a szabvány szerint. (2017. augusztus 31.)
 {: .update}
 
-Szerintem ennyi érdekesség elég.
 
 Egy részbe elég ennyi, majd a folytatom ezt az oktató sorozatot. A következő részekben ezekről tervezek írni:
  + a függvényhatókör és blokkhatókör
@@ -222,8 +219,7 @@ Egy részbe elég ennyi, majd a folytatom ezt az oktató sorozatot. A következ�
  + a globális objektum (Window)
 
 Ez a cikksorozat csak bevezető jellegű. Ez alapján elindulhattok a JavaScript mélyebb megismeréséhez vezető úton.
-<br />
-<br />
+
 
 ## Erősen ajánlott irodalom
-1. David Flanagan (2011). [JavaScript: The Definitive Guide. 6th Edition.](http://shop.oreilly.com/product/9780596805531.do) O’Reilly, USA.
+1. *David Flanagan* (2011). [JavaScript: The Definitive Guide. 6th Edition.](http://shop.oreilly.com/product/9780596805531.do) O’Reilly, USA.

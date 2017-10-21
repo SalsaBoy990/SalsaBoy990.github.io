@@ -1,6 +1,6 @@
 ---
 layout: post
-comments: true
+comments: false
 title: "Az „ego” miatt…"
 excerpt: "Az „ego” miatt…"
 date:   2017-09-23 16:22
@@ -8,7 +8,6 @@ categories: egyeb
 ---
 
 <blockquote class="poem">
-<h4>Gulácsi András: Az „ego” miatt…</h4>
 <p>Az „ego” miatt épült fel a civilizáció és lett kapitalista.<br>
 Az „ego” miatt jött a kuruzslás helyére modern orvoslás:<br>
 Járványok és gyógyíthatatlan betegségek váltak múlttá.<br>
@@ -33,6 +32,5 @@ Nézz meg egy amerikai szénerőművet és vesd össze a kínai szmoggal!<br>
 Egyetlen egy „felvilágosult” utópista sem tagadhatja e tényeket.</p>
 </blockquote>
 
-
-<img src="{{ site.url }}/assets/az_ego_miatt.jpg" class="image" alt="Ego kontra öko"/>
+<img src="{{ site.url }}/assets/az_ego_miatt.jpg" class="small" alt="Ego kontra öko"/>
 

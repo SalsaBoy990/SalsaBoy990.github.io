@@ -2,14 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gulácsi András</title>
-    <description>Gulácsi András vagyok. Geoinformatikusként a legújabb web-alapú megoldásokat alkalmazom a földrajzi kutatásban, a földrajzi adatok feldolgozására és megjelenítésére a JavaScript nyelv erejével. Az alacsony színvonalú, elavult egyetemi tömegoktatás nem képes megfelelni
- a jelen kihívásainak és nem aknázza ki a legújabb IT-technológiákban rejlő nagy
- lehetőségeket. A tudásom 90%-át nem az egyetemen szereztem, programozni is magamtól
- tanultam meg. Az írásaimban és a készülő könyvemben az ideológiai alapú, utópisztikus
- gondolkodás ellen veszem fel a küzdelmet a tények, a tapasztalatok és a józan ész
- segítségével, hogy ne váljon a pusztító ideológiák martalékává a társadalom,
- szenvedést és nyomort hagyva maga után. A New Geographer – Új Geográfus blog
- egy újszerű szemléletben egyesíti a földrajzot az informatikával és a webfejlesztéssel.
+    <description>Gulácsi András vagyok, Frontend/JavaScript Developer, természettudós és író. A blogommal a földrajzot egy új szemléletben egyesítem az informatikával és a webfejlesztéssel.
 </description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +10,6 @@
       <item>
         <title>Az „ego” miatt…</title>
         <description>&lt;blockquote class=&quot;poem&quot;&gt;
-&lt;h4&gt;Gulácsi András: Az „ego” miatt…&lt;/h4&gt;
 &lt;p&gt;Az „ego” miatt épült fel a civilizáció és lett kapitalista.&lt;br /&gt;
 Az „ego” miatt jött a kuruzslás helyére modern orvoslás:&lt;br /&gt;
 Járványok és gyógyíthatatlan betegségek váltak múlttá.&lt;br /&gt;
@@ -42,7 +34,7 @@ Nézz meg egy amerikai szénerőművet és vesd össze a kínai szmoggal!&lt;br 
 Egyetlen egy „felvilágosult” utópista sem tagadhatja e tényeket.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/az_ego_miatt.jpg&quot; class=&quot;image&quot; alt=&quot;Ego kontra öko&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/az_ego_miatt.jpg&quot; class=&quot;small&quot; alt=&quot;Ego kontra öko&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 23 Sep 2017 16:22:00 +0200</pubDate>
@@ -75,8 +67,6 @@ a = 7;
 &lt;p&gt;A JavaScript gyengén típusos nyelv, tehát &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;-ral lefoglalt változóink típusa a kódunk futtatásakor dől el és futás közben változhat. A JS a szabvány szerint megállapítja a változóink típusát és gondoskodik az adattípusok közötti konverzióról.&lt;/p&gt;
 
 &lt;p&gt;Térjünk át most a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; érték és annak eredetének boncolgatására, majd utána a bezárással (closure), a privát hozzáféréssel és az egymásba ágyazott függvényekkel fogunk foglalkozni.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;mi-a-this-honnan-származik&quot;&gt;Mi a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;, honnan származik?&lt;/h2&gt;
 
@@ -205,8 +195,6 @@ void Kijelzo::this_erteke() const {
 
 &lt;p&gt;A JavaScript-ben szintén létezik a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;. A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; &lt;strong&gt;az éppen aktuális objektumpéldányra hivatkozik.&lt;/strong&gt; A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; egy &lt;strong&gt;referencia&lt;/strong&gt;. Mivel a JS-ben nincsen mutató, ezért nincs szükség a nyíl operátorra, helyette a &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; operátorral érhetjük el az objektum tulajdonságait a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;-en keresztül, vagyis a &lt;code class=&quot;highlighter-rouge&quot;&gt;this.x&lt;/code&gt; a helyes szintaxis.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;h2 id=&quot;a-bezárás-closure-a-privát-hozzáférés-és-a-beágyazott-függvények&quot;&gt;A bezárás (closure), a privát hozzáférés és a beágyazott függvények&lt;/h2&gt;
 
 &lt;p&gt;A JavaScript-ben nem blokkhatókör van, hanem &lt;strong&gt;függvényhatókör&lt;/strong&gt;, tehát nem &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;/code&gt; segítségével tudunk lokális, kívülről nem hozzáférhető változókat bezárni, hanem &lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt; használatával. Tetszőleges számú függvényhatókört (és végrehajtási kontextust) hozhatunk létre a &lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt; zárójelpár segítségével. Ezt a technikát &lt;strong&gt;bezárásnak&lt;/strong&gt; nevezzük. A függvényen belül a &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; kulcsszóval deklarált változók privátak, vagyis kívülről nem elérhetők. A külső környezetben, tehát a függvényen kívül deklarált ugyanolyan nevű változókat elrejtik az aktuális függvényen belül deklarált változók (ha vannak ilyenek).&lt;/p&gt;
@@ -290,8 +278,6 @@ console.log(sanyi);
 
 &lt;p&gt;Ha kiíratod a konzolra &lt;code class=&quot;highlighter-rouge&quot;&gt;sanyi&lt;/code&gt; tartalmát, akkor nem fogod látni a &lt;code class=&quot;highlighter-rouge&quot;&gt;nev&lt;/code&gt; és az &lt;code class=&quot;highlighter-rouge&quot;&gt;eha_kod&lt;/code&gt; tulajdonságát, hiszen a &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log()&lt;/code&gt; nem fér hozzájuk! Csak a get és a set függvények láthatók. Csak ezeken keresztül, szabályozottan férhetünk hozzá ezekhez a tulajdonságokhoz. Tehát „illetéktelenek” nem férnek hozzájuk.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;h2 id=&quot;a-beágyazott-függvények-és-a-this&quot;&gt;A beágyazott függvények és a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; érték a változókkal ellentétben nem kapcsolódik hatókörhöz és a beágyazott függvények sem férnek hozzá a befoglaló függvény &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; értékéhez. A &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;-nek mi nem adhatunk értéket, pl. a &lt;code class=&quot;highlighter-rouge&quot;&gt;this = obj;&lt;/code&gt; utasítás érvénytelen.&lt;/p&gt;
@@ -336,13 +322,12 @@ obj.feldolgoz();
 
 &lt;p&gt;Ezek után pedig rá fogok térni a funkcionális programozásra és a Google Earth Engine API (Application Programming Interface, vagyis alkamazásprogramozási felület) használatára.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;ajánlott-irodalom&quot;&gt;Ajánlott irodalom&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Anthony Alicea (2015). &lt;a href=&quot;https://www.youtube.com/watch?v=Bv_5Zv5c-Ts&quot;&gt;&lt;strong&gt;JavaScript: Understanding the Weird Parts - The First 3.5 Hours.&lt;/strong&gt;&lt;/a&gt; A teljes 12 órás kurzus az &lt;a href=&quot;https://www.udemy.com/understand-javascript/?utm_content=_._pd_364426_._&amp;amp;utm_source=facebook-row&amp;amp;utm_medium=udemyads&amp;amp;utm_campaign=NEW-FB-VRT-ROW-Tech-EN-ALL_._ci_._sl_ALL_._vi_._sd_All_._la_EN_.&amp;amp;utm_term=_._ag_NEW-FB-VRT-ROW-Tech-EN-ALL_._ci_._sl_ALL_._vi_._sd_All_._la_EN_._-_._ci_._._pi_1814585708581485_._gi_all_._ai_18--65_._an_M3oTyZ&amp;amp;k_clickid=97b08e8c-94fa-4830-ad99-8b6239fe4a0d_131994849&quot;&gt;udemy.com&lt;/a&gt;-on megtalálható. Nem biztos, hogy érdemes kiadni rá a pénzt. Én csak az első 3,5 órát néztem meg a youtube-on.&lt;/li&gt;
-  &lt;li&gt;Brian W. Kernighan - Dennis M. Richie: &lt;strong&gt;A C programozási nyelv. 2. kiadás.&lt;/strong&gt; - Műszaki Kiadó, Budapest.&lt;/li&gt;
-  &lt;li&gt;Benedek Zoltán - Levendovszky Tihamér (2013). &lt;strong&gt;Szoftverfejlesztés C++ nyelven.&lt;/strong&gt; SZAK Kiadó Kft., Bicske.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Anthony Alicea&lt;/em&gt; (2015). &lt;a href=&quot;https://www.youtube.com/watch?v=Bv_5Zv5c-Ts&quot;&gt;JavaScript: Understanding the Weird Parts - The First 3.5 Hours.&lt;/a&gt; A teljes 12 órás kurzus az &lt;a href=&quot;https://www.udemy.com/understand-javascript/?utm_content=_._pd_364426_._&amp;amp;utm_source=facebook-row&amp;amp;utm_medium=udemyads&amp;amp;utm_campaign=NEW-FB-VRT-ROW-Tech-EN-ALL_._ci_._sl_ALL_._vi_._sd_All_._la_EN_.&amp;amp;utm_term=_._ag_NEW-FB-VRT-ROW-Tech-EN-ALL_._ci_._sl_ALL_._vi_._sd_All_._la_EN_._-_._ci_._._pi_1814585708581485_._gi_all_._ai_18--65_._an_M3oTyZ&amp;amp;k_clickid=97b08e8c-94fa-4830-ad99-8b6239fe4a0d_131994849&quot;&gt;udemy.com&lt;/a&gt;-on megtalálható. Néha van akció. Ilyenkor 10-15 euróért megvehető egy-egy kurzus, ami egyébként közel 200 euróba kerülne.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Brian W. Kernighan - Dennis M. Richie&lt;/em&gt;: A C programozási nyelv. 2. kiadás. - Műszaki Kiadó, Budapest.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Benedek Zoltán - Levendovszky Tihamér&lt;/em&gt; (2013). Szoftverfejlesztés C++ nyelven. SZAK Kiadó Kft., Bicske.&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Wed, 20 Sep 2017 16:37:00 +0200</pubDate>
@@ -363,8 +348,6 @@ A &lt;a href=&quot;http://www.saga-gis.org/en/index.html&quot;&gt;SAGA GIS&lt;/a
 
 &lt;p&gt;A fenti verziójú alkalmazásokat használtam a parancssori szkriptek futtatására, tehát más verziókkal nem 100%, hogy tökéletesen működnek.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;h2 id=&quot;1-adat-és-módszer&quot;&gt;1. Adat és módszer&lt;/h2&gt;
 
 &lt;p&gt;Egy 15 éves 2000 és 2016 közötti műholdas adatsort használtam fel a parancssorban történő adatfeldolgozás demonstrálására. A NASA Terra műhold MODIS szenzorának &lt;a href=&quot;https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1_v006&quot;&gt;250 méteres felbontású, 16 napos EVI és NDVI kompozitképeit&lt;/a&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;MOD13Q1: MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid V005&lt;/code&gt;) dolgoztam fel a Duna-Tisza-közi erdőterületekre, melyeket az Európai Uniós &lt;a href=&quot;https://www.eea.europa.eu/publications/COR0-landcover&quot;&gt;CORINE&lt;/a&gt; (Coordination of Information on the Environment) felszínborítási adatbázis segítségével határolt le a témavezetőm (&lt;em&gt;Dr. Kovács Ferenc&lt;/em&gt;).
@@ -372,15 +355,15 @@ Az EU tagállamok nagyjából 6 évente felmérik a felszínborítás változás
 
 &lt;p&gt;Azokat a 250*250 méteres cellákat válogattuk le, aminek legalább 2/3 részét erdő borította. Külön vizsgáljuk a lomb-, a tűlevelű és az elegyes erdőket. A cél a vegetáció egészségi állapotának monitorozása, valamint trendszerű változásainak kimutatása a szárazodó Homokhátságon március vége és szeptember vége között. Az 1970-es évektől számítva a talajvízkút-hálózat mérései szerint átlagosan 3 méterrel süllyedt a régióban a talajvízszint (a magasabban fekvő térségekben ennél nagyobb csökkenés is megfigyelhető, de kizárólag csak ott).&lt;/p&gt;
 
-&lt;p&gt;A 16 napos kompozitképeket úgy kell érteni, hogy a 16 nap alatt készült összes felvételből raknak össze egy képet: a legjobb minőségű, azaz tiszta, felhőktől mentes értékeket használják fel minden egyes cellára (pixelre). A legnagyobb hátulütője az optikai (a látható és az infravörös tartományban mérő) szenzoroknak, hogy a felhőkön nem látnak át, szemben a lézeres vagy radaros mérésekkel. A kompozit készítésével sokkal teljesebb adatokat kapunk, hiszen egy hosszabb időszakra nézve valószínűbb, hogy lesznek olyan felhőmentes képek, amelyek lefedik a földfelszín nagy részét, így használható információkhoz jutunk.&lt;/p&gt;
+&lt;p&gt;A 16 napos kompozitképeket úgy kell érteni, hogy a 16 nap alatt készült összes felvételből raknak össze egy képet: a legjobb minőségű, azaz tiszta, felhőktől mentes értékeket használják fel minden egyes cellára (képpontra). A legnagyobb hátulütője az optikai (a látható és az infravörös tartományban mérő) szenzoroknak, hogy a felhőkön nem látnak át, szemben a lézeres vagy radaros mérésekkel. A kompozit készítésével sokkal teljesebb adatokat kapunk, hiszen egy hosszabb időszakra nézve valószínűbb, hogy lesznek olyan felhőmentes képek, amelyek lefedik a földfelszín nagy részét, így használható információkhoz jutunk.&lt;/p&gt;
 
-&lt;p&gt;Az &lt;strong&gt;EVI&lt;/strong&gt; (Enhanced Vegetation Index, Továbbfejlesztett Vegetációindex) és az &lt;strong&gt;NDVI&lt;/strong&gt; (Normalized Difference Vegetation Index, &lt;a href=&quot;https://www.agroinform.hu/gazdasag/hogyan-hasznosithatom-a-vegetacios-index-kepeket-demo-32500-001&quot;&gt;Normalizált Vegetációindex&lt;/a&gt;) spektrális index. A &lt;a href=&quot;http://www.geo.u-szeged.hu/~feri/kornyezeti_informatika/ch10s02.html&quot;&gt;&lt;strong&gt;spektrális indexek&lt;/strong&gt;&lt;/a&gt; olyan származtatott mérőszámok, amelyek a műholdkép-sávokon (például látható kék, látható zöld, látható vörös, közeli, középhullámú és hosszúhullámú, azaz termális infravörös hullámhossz-tartományú sávok) végzett aritmetikai műveletek (osztás, szorzás, kivonás, összeadás) eredményeképpen állnak elő.&lt;/p&gt;
+&lt;p&gt;Az &lt;strong&gt;EVI&lt;/strong&gt; (Enhanced Vegetation Index, Továbbfejlesztett Vegetációindex) és az &lt;strong&gt;NDVI&lt;/strong&gt; (Normalized Difference Vegetation Index, &lt;a href=&quot;https://www.agroinform.hu/gazdasag/hogyan-hasznosithatom-a-vegetacios-index-kepeket-demo-32500-001&quot;&gt;Normalizált Vegetációindex&lt;/a&gt;) spektrális index. A &lt;a href=&quot;http://www.geo.u-szeged.hu/~feri/kornyezeti_informatika/ch10s02.html&quot;&gt;spektrális indexek&lt;/a&gt; olyan származtatott mérőszámok, amelyek a műholdkép-sávokon (például látható kék, látható zöld, látható vörös, közeli, középhullámú és hosszúhullámú, azaz termális infravörös hullámhossz-tartományú sávok) végzett aritmetikai műveletek (osztás, szorzás, kivonás, összeadás) eredményeképpen állnak elő.&lt;/p&gt;
 
 &lt;p&gt;A műholdkép sávok értékei reflektancia értékek, vagyis a különböző hullámhossz tartományokban mért, felszínre beérkező és onnan visszaverődő sugárzás hányadosai (0 és 1 közötti értékek lehetnek). Például a hófelszín a beérkező napsugárzás 90%-át veri vissza a látható hullámhossz-tartományban. Ezzel szemben a homok csak 30-40%-ot ver vissza, ezért nem csoda, hogy nyáron nagyon felforrósodik a tűző napon. A különböző felszínek/anyagok másképpen vernek vissza a különböző hullámhosszakon. Ez azért fontos, mert ennek segítségével jól el tudjuk határolni egymástól a felszínborítás-típusokat és feltérképezni a változásokat.&lt;/p&gt;
 
 &lt;p&gt;A vegetációs indexek segítségével a levélzetben bekövetkező biológiai változásokat számszerűsíthetjük (cifrán mondva: kvantifikálhatjuk). Szoros kapcsolat áll fenn a levélzet klorofilltartalma és a vegetációs indexek értékei között. A vegetációs indexeket az 1970-es évek eleje óta használják a növényzet/biomassza változásainak értékelére (&lt;em&gt;Rouse, J. W. et al. 1973&lt;/em&gt;).&lt;/p&gt;
 
-&lt;p&gt;A klorofill molekulák (klorofill-a és klorofill-b) a zöld színtestekben (kloroplasztisz) találhatók. A kloroplasztisz a szén-dioxidból és a vízből fény hatására cukrot (glükózt) állít elő. Ez a fotoszintézis folyamata. A klorofill molekulák nagyon fontos szerepet töltenek be a növények energiatermelő folyamataiban, ugyanis ezek nyelik el (abszorbeálják) a látható vörös és kék tartományba eső napfényt. (A zöld tartományban viszont nagy a visszaverődés, és &lt;a href=&quot;http://miert.webclub.hu/miert-zoldek-a-levelek&quot;&gt;innen a levelek zöld színe.&lt;/a&gt;) Az így elnyelt fotonok energiáját összegyűjtik és továbbítják a fotoszintézis enzimei, fehérjéi felé.&lt;/p&gt;
+&lt;p&gt;A klorofill molekulák (klorofill-a és klorofill-b) a zöld színtestekben (kloroplasztisz) találhatók. A kloroplasztisz a szén-dioxidból és a vízből fény hatására cukrot (glükózt) állít elő. Ez a fotoszintézis folyamata. A klorofill molekulák nagyon fontos szerepet töltenek be a növények energiatermelő folyamataiban, ugyanis ezek nyelik el (abszorbeálják) a látható vörös és kék tartományba eső napfényt. (A zöld tartományban viszont nagy a visszaverődés, és innen a levelek zöld színe.) Az így elnyelt fotonok energiáját összegyűjtik és továbbítják a fotoszintézis enzimei, fehérjéi felé.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Egészséges vegetáció&lt;/strong&gt; esetén magas a klorofilltartalom a levelekben. Ilyenkor &lt;strong&gt;a látható vörös tartományban nagyon alacsony a reflektancia&lt;/strong&gt; (a visszaverődés), hiszen a klorofill elnyeli a sugárzást. Ezzel szemben, a közeli infravörös tartományban reflektancia csúcs jelentkezik, ugyanis itt a levélzet erősen visszaverő. &lt;strong&gt;A vegetációindexek a vörös és a közeli infravörös sáv reflektanciaértékei közötti különbségen alapszanak.&lt;/strong&gt;&lt;/p&gt;
 
@@ -398,13 +381,9 @@ Az EU tagállamok nagyjából 6 évente felmérik a felszínborítás változás
 
 &lt;p&gt;ahol &lt;code class=&quot;highlighter-rouge&quot;&gt;NIR&lt;/code&gt; a közeli infravörös sáv (841-876 nm), &lt;code class=&quot;highlighter-rouge&quot;&gt;Red&lt;/code&gt; a látható vörös sáv (620-670 nm) és &lt;code class=&quot;highlighter-rouge&quot;&gt;Blue&lt;/code&gt; a látható kék sáv (459-479 nm).  nm: nanométer, &lt;code class=&quot;highlighter-rouge&quot;&gt;10^-9&lt;/code&gt; m. A korrekciós együtthatók értékei &lt;code class=&quot;highlighter-rouge&quot;&gt;C1 = 6&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;C2 = 2,5&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;L = 1&lt;/code&gt; és &lt;code class=&quot;highlighter-rouge&quot;&gt;G = 7,5&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;h2 id=&quot;2-feldolgozás-a-parancssorban&quot;&gt;2. Feldolgozás a parancssorban&lt;/h2&gt;
 
-&lt;p&gt;A Windows parancssorban úgynevezett &lt;a href=&quot;https://hu.wikipedia.org/wiki/K%C3%B6tegelt_%C3%A1llom%C3%A1ny&quot;&gt;&lt;strong&gt;kötegelt állományokat&lt;/strong&gt;&lt;/a&gt; futtatok. Egyszerű és hatékony kis programokat lehet batch-ban írni. Az általában .cmd vagy &lt;strong&gt;.bat&lt;/strong&gt; kiterjesztésű kötegelt állományokat (angolból átvett néven &lt;a href=&quot;https://hu.wikipedia.org/wiki/Batch_programoz%C3%A1s&quot;&gt;batch fájlokat&lt;/a&gt;) Windows, OS/2, és MS-DOS rendszerekben szokták használni. Formailag egy szövegfájlhoz hasonlítanak, tartalmuk pedig parancsok (DOS/Windows parancsok) egymásutánja. Futtatásuk a tartalom sorról sorra való olvasásával történik például a &lt;strong&gt;cmd.exe&lt;/strong&gt;-vel a Windows operációs rendszer alatt. A SAGA GIS parancssorban is futtatható, de célszerű kötegelt fájlként futtatni az utasítások sorozatát.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;A Windows parancssorban úgynevezett &lt;a href=&quot;https://hu.wikipedia.org/wiki/K%C3%B6tegelt_%C3%A1llom%C3%A1ny&quot;&gt;kötegelt állományokat&lt;/a&gt; futtatok. Egyszerű és hatékony kis programokat lehet batch-ban írni. Az általában .cmd vagy &lt;strong&gt;.bat&lt;/strong&gt; kiterjesztésű kötegelt állományokat (angolból átvett néven &lt;a href=&quot;https://hu.wikipedia.org/wiki/Batch_programoz%C3%A1s&quot;&gt;batch fájlokat&lt;/a&gt;) Windows, OS/2, és MS-DOS rendszerekben szokták használni. Formailag egy szövegfájlhoz hasonlítanak, tartalmuk pedig parancsok (DOS/Windows parancsok) egymásutánja. Futtatásuk a tartalom sorról sorra való olvasásával történik például a &lt;strong&gt;cmd.exe&lt;/strong&gt;-vel a Windows operációs rendszer alatt. A SAGA GIS parancssorban is futtatható, de célszerű kötegelt fájlként futtatni az utasítások sorozatát.&lt;/p&gt;
 
 &lt;h3 id=&quot;21-saga-gis-saga_cmd&quot;&gt;2.1. SAGA GIS (saga_cmd)&lt;/h3&gt;
 
@@ -527,7 +506,7 @@ PAUSE
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gdalbuildvrt -separate g:\modis\TEMP\raszter\layer_stack.vrt g:\modis\TEMP\raszter\*.tif&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/shell.png&quot; class=&quot;image3&quot; alt=&quot;Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/shell.png&quot; class=&quot;medium&quot; alt=&quot;Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;-separate&lt;/code&gt; logikai argumentumot megadva külön sávokba helyezi a képeket (ha ezt lehagynánk, akkor virtuális mozaikot készítene nekünk a GDAL), utána következik a kimenet és a bemenet. Ebben a sorrendben! Az elérési útvonalakat pedig módosítsátok, ha szükséges.&lt;/p&gt;
@@ -540,26 +519,19 @@ A létrehozott táblázatra kattintsunk jobb egérgombbal és válasszuk ki a &l
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_gui_2.png&quot; class=&quot;large&quot; alt=&quot;A statisztikákat tartalmazó táblázat exportálása szöveges formátumba&quot; /&gt;
 &lt;br /&gt;
-Feltöltöttem nektek a Google Drive-ra a MODIS minta-adatbázisomat (&lt;a href=&quot;https://drive.google.com/open?id=0B8pLujeireG7YjBmWTMtbm85UzQ&quot;&gt;&lt;strong&gt;modis_sample_data.rar&lt;/strong&gt;&lt;/a&gt;, 561 MB, kitömörítve 2,71 GB), amin gyakorolhatjátok a parancssori adatfeldolgozást. A batch szkriptet megtaláljátok a &lt;a href=&quot;https://github.com/SalsaBoy990/saga_gis_batch&quot;&gt;&lt;strong&gt;saga_gis_batch&lt;/strong&gt;&lt;/a&gt; repository-mban.&lt;/p&gt;
+Feltöltöttem nektek a Google Drive-ra a MODIS minta-adatbázisomat (&lt;a href=&quot;https://drive.google.com/open?id=0B8pLujeireG7YjBmWTMtbm85UzQ&quot;&gt;modis_sample_data.rar&lt;/a&gt;, 561 MB, kitömörítve 2,71 GB), amin gyakorolhatjátok a parancssori adatfeldolgozást. A batch szkriptet megtaláljátok a &lt;a href=&quot;https://github.com/SalsaBoy990/saga_gis_batch&quot;&gt;saga_gis_batch&lt;/a&gt; repository-mban.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-&lt;em&gt;&lt;strong&gt;Házi feladat:&lt;/strong&gt; Készíts egy tudományos színvonalú elemzést egy tetszőlegesen választott mintaterület erdőiben (pl. Keszthelyi-hegység) bekövetkezett változásokról az NDVI adatok alapján, 2000 és 2016 között! Milyen kapcsolat áll fenn a megfigyelt változások és az éves meteorológiai viszonyok között? (A minta-adatbázisban az ország egész területére megvannak az NDVI-képek.) A Keszthelyi-hegységet azért ajánlom mintaterületnek, mert ott egy igen jelentős erdőpusztulás következett be 2011-től kezdődően. Ennek okainak feltárása egy nagyon jó BSc-s szakdolgozat témája lehet.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Házi feladat:&lt;/strong&gt; Készíts egy tudományos színvonalú elemzést egy tetszőlegesen választott mintaterület erdőiben (pl. Keszthelyi-hegység) bekövetkezett változásokról az NDVI adatok alapján, 2000 és 2016 között! Milyen kapcsolat áll fenn a megfigyelt változások és az éves meteorológiai viszonyok között? (A minta-adatbázisban az ország egész területére megvannak az NDVI-képek.) A Keszthelyi-hegységet azért ajánlom mintaterületnek, mert ott egy igen jelentős erdőpusztulás következett be 2011-től kezdődően.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;ajánlott-irodalom&quot;&gt;Ajánlott irodalom&lt;/h2&gt;
 
-&lt;ul class=&quot;no-decoration-18px&quot;&gt;
-    &lt;li&gt;&lt;em&gt;Gulácsi A. - Kovács F. (2015).&lt;/em&gt; &lt;a href=&quot;http://www.tajokologiailapok.szie.hu/pdf/201502/04_Gulacsi_Kovacs.pdf&quot;&gt;Aszályvizsgálat lehetősége MODIS műholdképekből számított spektrális indexekkel Magyarországon.&lt;/a&gt;Tájökológiai Lapok 13(2), pp. 235-248.
-    &lt;/li&gt;
-    &lt;li&gt;
-    &lt;em&gt;Gulácsi A. - Kovács F. (2015).&lt;/em&gt; &lt;a href=&quot;http://publicatio.bibl.u-szeged.hu/11921/&quot;&gt;Drought monitoring with spectral indices calculated from MODIS satellite images in Hungary.&lt;/a&gt; Journal of Environmental Geography 8(3-4), pp. 11-20.
-    &lt;/li&gt;
-    &lt;li&gt;
-    &lt;em&gt;Rouse, J. W. - Haas, H. R. - Schell, A. J. - Deering, W. D. (1973).&lt;/em&gt; &lt;a href=&quot;https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19740022614.pdf&quot;&gt;Monitoring vegetation systems in the Great Plains
-with ERTS.&lt;/a&gt; Third ERTS Symposium, NASA SP-351 1. pp. 309–317. 
-    &lt;/li&gt;
-&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;Gulácsi András - Kovács Ferenc&lt;/em&gt; (2015). &lt;a href=&quot;http://www.tajokologiailapok.szie.hu/pdf/201502/04_Gulacsi_Kovacs.pdf&quot;&gt;Aszályvizsgálat lehetősége MODIS műholdképekből számított spektrális indexekkel Magyarországon.&lt;/a&gt; Tájökológiai Lapok 13(2), pp. 235-248.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Gulácsi András - Kovács Ferenc&lt;/em&gt; (2015). &lt;a href=&quot;http://publicatio.bibl.u-szeged.hu/11921/&quot;&gt;Drought monitoring with spectral indices calculated from MODIS satellite images in Hungary.&lt;/a&gt; Journal of Environmental Geography 8(3-4), pp. 11-20.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Rouse, J. W. - Haas, H. R. - Schell, A. J. - Deering, W. D.&lt;/em&gt; (1973). &lt;a href=&quot;https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19740022614.pdf&quot;&gt;Monitoring vegetation systems in the Great Plains
+with ERTS.&lt;/a&gt; Third ERTS Symposium, NASA SP-351 1. pp. 309–317.&lt;/li&gt;
+&lt;/ol&gt;
+
 </description>
         <pubDate>Sat, 16 Sep 2017 20:50:00 +0200</pubDate>
         <link>http://localhost:4000//tudomany/2017/09/16/parancssor_a_geoinformatikaban.html</link>
@@ -580,7 +552,6 @@ with ERTS.&lt;/a&gt; Third ERTS Symposium, NASA SP-351 1. pp. 309–317.
   &lt;li&gt;Hozzáférés az objektumok tulajdonságaihoz.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;a-függvényhatókör-és-a-felemelés-hoisting&quot;&gt;A függvényhatókör és a felemelés (hoisting)&lt;/h2&gt;
 
 &lt;p&gt;Mi a függvényhatókör? Ezt néhány példával lehet a legegyszerűbben elmagyarázni. A blokkhatókört már megszokhattuk más nyelvekben, így például a C-ben, ezért furcsának tűnhet elsőre, amit bemutatok.&lt;/p&gt;
@@ -646,7 +617,6 @@ console.log(scope); //=&amp;gt; lokális
 
 &lt;p&gt;Az előző részben említettem, hogy a webböngészők még nem implementálták az új nyelvi elemek  egy jó részét, tehát kliens oldali kódban nem biztos, hogy működni fognak. Szerver oldalon (pl. Node.js) már támogatottak, ott nyugodtan használd azokat, beleértve az egyszerűsített függvényszintaxist a callback függvényeknél! Az aszinkron függvényhívásról máskor írok.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;a-globális-objektum-window&quot;&gt;A globális objektum (Window)&lt;/h2&gt;
 
 &lt;p&gt;Említettem többször is a &lt;strong&gt;globális objektum&lt;/strong&gt;ot. Ez egy szokványos JavaScript objektum, ami  rendkívül fontos szerepet játszik. &lt;strong&gt;A globális objektum tulajdonságai globálisan definiáltak&lt;/strong&gt;, vagyis hozzáférhetők a programunk számára:&lt;/p&gt;
@@ -667,7 +637,7 @@ for (var prop in window) {
     console.log(prop);
 } 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;a-szigorú-mód-strict-mode-és-a-js-korlátozása&quot;&gt;A szigorú mód (“strict mode”) és a JS korlátozása&lt;/h2&gt;
 
 &lt;p&gt;A JS-ben egyaránt vannak &lt;strong&gt;jó és rossz részek&lt;/strong&gt;. &lt;strong&gt;Douglas Crockford&lt;/strong&gt; (neves JS guru) szerint korlátozni kell a JS programozási nyelvet, és &lt;strong&gt;kizárólag csak a jó részeket&lt;/strong&gt; használni belőle. Ezzel jobb programokat írunk és jobb programozóvá is válunk. Crockford jóvoltából rendelkezésünkre áll a &lt;a href=&quot;http://www.jslint.com/&quot;&gt;JSLint&lt;/a&gt; kódellenőrző, ami megvizsgálja, hogy a programunk megfelel-e a szigorúbb követelményeknek (beleértve a szintaktikai megfontolásokat - magyarul hogyan nézzen ki a kód), és csak a jó részeket alkalmazza. Az ajánlott irodalomban feltüntettem Crockford könyvét. Akit bővebben érdekel, utánanézhet.&lt;/p&gt;
@@ -714,7 +684,6 @@ var f = function (a) {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;objektumok-és-függvények-létrehozása&quot;&gt;Objektumok és függvények létrehozása&lt;/h2&gt;
 
 &lt;p&gt;Az egyik módja a függvények létrehozásának, ha egy &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; változóba tároljuk el a függvényt. Az objetum literál létrehozása &lt;code class=&quot;highlighter-rouge&quot;&gt;var o = { x: 0 };&lt;/code&gt; szintaxissal történik. Mivel ezek utasítások és nem kifejezések szükség van az utasítást záró &lt;code class=&quot;highlighter-rouge&quot;&gt;;&lt;/code&gt;-ra.&lt;/p&gt;
@@ -810,7 +779,7 @@ var point = {
   } 
 };
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;tömbök-tömbszerű-objektumok-és-hozzáférés-az-objektumok-tulajdonságaihoz&quot;&gt;Tömbök, tömbszerű objektumok és hozzáférés az objektumok tulajdonságaihoz&lt;/h2&gt;
 
 &lt;p&gt;A tömbök is objektumok. Az objektumok tulajdonságokból épülnek fel, amelyek lehetnek változók, tömbök, tömbszerű objektumok, objektumok és függvények. Értsétek ezt úgy, hogy tetszőlegesen egymásba ágyazhatók. &lt;strong&gt;A tulajdonságok azonosító-érték párok.&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;x: 6&lt;/code&gt; esetén az &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; azonosító a &lt;code class=&quot;highlighter-rouge&quot;&gt;6&lt;/code&gt;-os értéket jelöli, amit valamelyik memóriacímen tároljuk. Emlékezzünk vissza, hogy az objektumok mind referenciák, amelyek a dinamikus memóriában lefoglalt tárhelyre hivatkoznak, ahol megtalálhatók az objektum tulajdonságai. Az objektumok tulajdonságaihoz a &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; &lt;strong&gt;pont operátor&lt;/strong&gt; segítségével férhetünk hozzá (is), míg a tömbök esetén a &lt;code class=&quot;highlighter-rouge&quot;&gt;[0]&lt;/code&gt; &lt;strong&gt;tömbelem-hivatkozás&lt;/strong&gt; segítségével. A függvények esetén az érték maga a függvény teste, az azonosító pedig a függvény neve.&lt;/p&gt;
@@ -904,11 +873,9 @@ o[&quot;print&quot;]();
   &lt;li&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;RegExp&lt;/code&gt; objektumok&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;h2 id=&quot;ajánlott-irodalom&quot;&gt;Ajánlott irodalom&lt;/h2&gt;
 &lt;ol&gt;
-  &lt;li&gt;Douglas Crockford (2008). &lt;a href=&quot;https://www.amazon.com/exec/obidos/ASIN/0596517742/wrrrldwideweb&quot;&gt;JavaScript: The Good Parts. 1th Edition.&lt;/a&gt; O’Reilly, USA.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Douglas Crockford&lt;/em&gt; (2008). &lt;a href=&quot;https://www.amazon.com/exec/obidos/ASIN/0596517742/wrrrldwideweb&quot;&gt;JavaScript: The Good Parts. 1th Edition.&lt;/a&gt; O’Reilly, USA.&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Sun, 03 Sep 2017 01:11:00 +0200</pubDate>
@@ -926,9 +893,7 @@ o[&quot;print&quot;]();
 &lt;p&gt;A bejegyzésemben megadott kódrészleteket pedig próbáljátok ki! 
 Használhatjátok valamelyik böngésző konzolját (Google Chrome esetén: &lt;code class=&quot;highlighter-rouge&quot;&gt;F12&lt;/code&gt;, Firefox esetén &lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL+SHIFT+i&lt;/code&gt;) vagy a GEE kódszerkesztőjét (ebben “strict mode”-ban használhatjátok a JS-t)!&lt;/p&gt;
 
-&lt;p&gt;A programrészleteket egyben letölthetitek &lt;a href=&quot;https://github.com/SalsaBoy990/EarthEngine/blob/master/tutorial2.js&quot;&gt;innen&lt;/a&gt;.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;A programrészleteket egyben letölthetitek &lt;a href=&quot;https://github.com/SalsaBoy990/EarthEngine/blob/master/tutorial2.js&quot;&gt;innen&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;bevezetés-az-objektum-orientált-programozásba&quot;&gt;Bevezetés az objektum-orientált programozásba&lt;/h2&gt;
 
@@ -949,9 +914,7 @@ Használhatjátok valamelyik böngésző konzolját (Google Chrome esetén: &lt;
 
 &lt;p&gt;Csak az &lt;strong&gt;egységbe foglalás&lt;/strong&gt;ba megyünk itt bele: &lt;strong&gt;az objektum-orientált paradigma lényege, hogy együtt kezeljük a változókat és a rájuk meghívandó függvényeket egy osztályban&lt;/strong&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;). Meglepően hangzik, de a JS-ben nincsenek tényleges osztályok, bár úgy programozunk, mintha lennének. Helyesebb inkább objektumokról beszélni (a függvények és a tömbök is objektumok).&lt;/p&gt;
 
-&lt;p&gt;A C++-ban a hozzáférési szintek (&lt;strong&gt;public&lt;/strong&gt;, &lt;strong&gt;protected&lt;/strong&gt; és &lt;strong&gt;private&lt;/strong&gt;) segítségével szabályozhatjuk a tagváltozók és tagfüggvények külső hozzáférését. A C++-ban az osztályok esetén alapértelmezetten privát a hozzáférés, és csak az általunk írt publikus hozzáférésű metódusokon keresztül férhetünk hozzá a tagváltozókhoz. Ez a biztonságot szolgálja. A JavaScript-ben &lt;strong&gt;minden tagváltozó és metódus kívülről hozzáférhető&lt;/strong&gt; és módosítható. A &lt;strong&gt;bezárás&lt;/strong&gt; (&lt;strong&gt;closure&lt;/strong&gt;) alkalmazásával tehetjük priváttá (tehát kívülről nem hozzáférhetővé) az objektumok tulajdonságait.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;A C++-ban a hozzáférési szintek (&lt;strong&gt;public&lt;/strong&gt;, &lt;strong&gt;protected&lt;/strong&gt; és &lt;strong&gt;private&lt;/strong&gt;) segítségével szabályozhatjuk a tagváltozók és tagfüggvények külső hozzáférését. A C++-ban az osztályok esetén alapértelmezetten privát a hozzáférés, és csak az általunk írt publikus hozzáférésű metódusokon keresztül férhetünk hozzá a tagváltozókhoz. Ez a biztonságot szolgálja. A JavaScript-ben &lt;strong&gt;minden tagváltozó és metódus kívülről hozzáférhető&lt;/strong&gt; és módosítható. A &lt;strong&gt;bezárás&lt;/strong&gt; (&lt;strong&gt;closure&lt;/strong&gt;) alkalmazásával tehetjük priváttá (tehát kívülről nem hozzáférhetővé) az objektumok tulajdonságait.&lt;/p&gt;
 
 &lt;h2 id=&quot;belekóstolás-a-javascript-programozási-nyelvbe&quot;&gt;Belekóstolás a JavaScript programozási nyelvbe&lt;/h2&gt;
 
@@ -1117,8 +1080,6 @@ console.log(0.1 + 0.2 == 0.3); //=&amp;gt; false
 
 &lt;p class=&quot;update&quot;&gt;Apró kiegészítés: két fontos dolgot kell itt pótolnom. Az egyik a változók elnevezési konvenciója. Ha a változó egyszerű szó, akkor nincs probléma, mivel minden betűjét kisbetűvel írjuk. Az összetett szavak esetén az első tagot mindig kisbetűvel írjuk, viszont az utána következő tagokat nagy kezdőbetűvel írjuk: &lt;code class=&quot;highlighter-rouge&quot;&gt;likeThis&lt;/code&gt;, illetve használhatunk egy alulvonást is a tagok elválasztására: &lt;code class=&quot;highlighter-rouge&quot;&gt;like_this&lt;/code&gt;. Ezt nem kötelező betartani, de erősen ajánlott. A másik dolog az úgynevezett &lt;strong&gt;“hamisértékek”&lt;/strong&gt; (falsy values) bevezetése a JS-ben. Ezek közé tartozik: a &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;, a &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;, a &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;, az &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;,  az &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&quot;&lt;/code&gt; (üres sztring) és a &lt;code class=&quot;highlighter-rouge&quot;&gt;NaN&lt;/code&gt;. Ezek a kifejezésekben &lt;strong&gt;mindig hamisnak&lt;/strong&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;) &lt;strong&gt;értékelődnek ki&lt;/strong&gt; a szabvány szerint. (2017. augusztus 31.)&lt;/p&gt;
 
-&lt;p&gt;Szerintem ennyi érdekesség elég.&lt;/p&gt;
-
 &lt;p&gt;Egy részbe elég ennyi, majd a folytatom ezt az oktató sorozatot. A következő részekben ezekről tervezek írni:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;a függvényhatókör és blokkhatókör&lt;/li&gt;
@@ -1135,13 +1096,11 @@ console.log(0.1 + 0.2 == 0.3); //=&amp;gt; false
   &lt;li&gt;a globális objektum (Window)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Ez a cikksorozat csak bevezető jellegű. Ez alapján elindulhattok a JavaScript mélyebb megismeréséhez vezető úton.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Ez a cikksorozat csak bevezető jellegű. Ez alapján elindulhattok a JavaScript mélyebb megismeréséhez vezető úton.&lt;/p&gt;
 
 &lt;h2 id=&quot;erősen-ajánlott-irodalom&quot;&gt;Erősen ajánlott irodalom&lt;/h2&gt;
 &lt;ol&gt;
-  &lt;li&gt;David Flanagan (2011). &lt;a href=&quot;http://shop.oreilly.com/product/9780596805531.do&quot;&gt;JavaScript: The Definitive Guide. 6th Edition.&lt;/a&gt; O’Reilly, USA.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;David Flanagan&lt;/em&gt; (2011). &lt;a href=&quot;http://shop.oreilly.com/product/9780596805531.do&quot;&gt;JavaScript: The Definitive Guide. 6th Edition.&lt;/a&gt; O’Reilly, USA.&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Tue, 29 Aug 2017 19:49:00 +0200</pubDate>

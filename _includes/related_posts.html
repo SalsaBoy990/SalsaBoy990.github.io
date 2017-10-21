@@ -2,27 +2,27 @@
 <aside class="post-content" role="complementary">
 <h2>Kapcsolódó bejegyzések</h2>
 <div>
-    <ul>
-    {% assign related = 0 %}
-    {% for post in site.posts %}
-        {% assign commonTags = '' %}
+  <ul>
+  {% assign related = 0 %}
+  {% for post in site.posts %}
+    {% assign commonTags = '' %}
 
-        {% for tag in post.tags %}
-            {% if post.url != page.url %}
-                {% if page.tags contains tag %}
-                    {% assign related = related | plus: 1 %}
-                    <li>
-                    <a class="archive-a" href="{{ post.url | prepend: site.baseurl }}"><span>{{ post.title }} <span class="post-date">({% assign date = post.date %}{% include date.html %})</span></span></a>
-                    </li>
-                {% endif %}  
-            {% endif %}
-        {% endfor %}
+    {% for tag in post.tags %}
+      {% if post.url != page.url %}
+        {% if page.tags contains tag %}
+        {% assign related = related | plus: 1 %}
+          <li>
+            <a class="writings" href="{{ post.url | prepend: site.baseurl }}"><span>{{ post.title }}</span></a>
+          </li>
+        {% endif %}  
+      {% endif %}
     {% endfor %}
+  {% endfor %}
     
-    {% if related == 0 %}
-        <p>Nincsen kapcsolódó cikk.</p>
-    {% endif %}
-    </ul>
+  {% if related == 0 %}
+    <li>Nincsen kapcsolódó cikk.</li>
+  {% endif %}
+  </ul>
 </div>
 </aside>
 {% endif %}

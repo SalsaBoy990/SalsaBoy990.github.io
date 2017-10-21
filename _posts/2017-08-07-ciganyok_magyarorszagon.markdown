@@ -1,6 +1,6 @@
 ---
 layout: post
-comments: true
+comments: false
 title:  "Hány cigány él Magyarországon?"
 excerpt: "A népszámlálások adataiból az derül ki, hogy Magyarországon 2001 és 2011 között 53%-kal, 205 720 főről 315 583 főre nőtt a cigányok száma. Mennyi a magyarországi cigányok valós száma?"
 date: 2017-08-07 17:27
@@ -64,7 +64,7 @@ A cigányság száma **az elmúlt 110 évben megtízszereződött**: **60 ezer f
 A cigányság 2015. évi számának becslésére és 2020-ig való előrejelzésére, egy egyszerű modellt készítettem. A rendelkezésre álló adatfelvételek adatpontjaira egy exponenciális függvényt illesztettem (1. ábra).
 
 
-<img src="{{ site.url }}/assets/Cigany_modell-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="image2" />
+<img src="{{ site.url }}/assets/Cigany_modell-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="medium" />
 <figcaption>1. ábra: A cigányfelmérések eredményeire számolt exponenciális függvény (Hablicsek L. 2007). (Az R-ben írt kódot lásd az <a href="https://github.com/SalsaBoy990/R-codes" target="_blank">R-codes</a> gyűjteményemben.)
 </figcaption>
 
@@ -183,10 +183,10 @@ A teljes népesség és a cigányság élveszületési számának és arányána
 A könnyebb összehasonlíthatóság kedvéért, a 2-3. ábrákon megjelenítettem a cigány és a magyar korfát a 2001. évi népszámlálás adatainak felhasználásával. Megjegyzés: a vízszintes tengely beosztása a két korfán eltérő. A magyar lakosság esetén 39 év az átlagéletkor, míg a cigányoknál csupán 25.
 
 
-<img src="{{ site.url }}/assets/Cigany_korfa-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="image2" />
+<img src="{{ site.url }}/assets/Cigany_korfa-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="small" />
 <figcaption>2. ábra: A cigányságot jellemző korfa piramis alakú (KSH alapján). (Az R-ben írt kódot lásd az <a href="https://github.com/SalsaBoy990/R-codes" target="_blank">R-codes</a> gyűjteményemben.)
 </figcaption>
-<img src="{{ site.url }}/assets/Magyar_korfa-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="image2" />
+<img src="{{ site.url }}/assets/Magyar_korfa-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="small" />
 <figcaption>3. ábra: A magyarság korfája elöregedő korszerkezetet tükröz, urna alakú (KSH alapján). (Az R-ben írt kódot lásd az <a href="https://github.com/SalsaBoy990/R-codes" target="_blank">R-codes</a> gyűjteményemben.)
 </figcaption>
 
@@ -295,31 +295,28 @@ A 6. táblázatból világossá válik, hogy a szocializmus időszakában a cig�
 
 
 ## Végszó
-A szocializmus alatt kevés volt a „közveszélyes munkakerülő”. A nehézipar, a bányászat sok alacsonyan képzett munkaerőt szívott fel, ami munkát adott, a cigányoknak is. Viszont a rendszerváltoztatás során szétbomlasztották a magyar ipart, jelentősen megnövelve ezzel a munkanélküliséget. Ma a szociális ellátórendszeren élősködnek az indiából származó cigányok (megélhetési gyerekcsinálók). A cigányokkal pedig csak keményen lehet bánni, hiszen a többségük csak az erőszakból ért.
+A szocializmus alatt kevés volt a „közveszélyes munkakerülő”. A nehézipar, a bányászat sok alacsonyan képzett munkaerőt szívott fel, ami munkát adott, a cigányoknak is. Viszont a rendszerváltoztatás során szétbomlasztották a magyar ipart, jelentősen megnövelve ezzel a munkanélküliséget. Ma a szociális ellátórendszeren élősködnek az Indiából származó cigányok (megélhetési gyerekcsinálók). A cigányokkal pedig csak keményen lehet bánni, hiszen a többségük csak az erőszakból ért.
 
 A cigányok beilleszkedési képtelenségét a cigányok viselkedésében kell keresni. Nem a magyarok szegregálják a cigányokat, hanem a cigányok magukat, mert **nem akarnak integrálódni**!
 
 A bőnözőket nem luxusbörtönbe kell zárni, hanem kemény munkatáborba, hogy társadalmilag hasznos tevékenységet folytassanak. Ez majd lelohasztja a cigányok bűnözésre való hajlamát.
 
 
-<br />
 ## Felhasznált irodalom
 
-<ul class="no-decoration-18px">
-    <li>Hablicsek L. (2007). <a href="http://demografia.hu/kiadvanyokonline/index.php/demografia/article/viewFile/540/483" target="_blank">Kísérleti számítások a roma lakosság területi jellemzőinek alakulására és 2021-ig történő előrebecslésére.</a> – Demográfia 50(1), pp. 7-54. </li>
-    <li>Janky B. (2005). <a href="www.szmm.gov.hu/download.php?ctag=download&docID=20471" target="_blank">A cigány nők társadalmi helyzete és termékenysége.</a> – In. Nagy I. – Pongrácz T. –Tóth I. Gy. (szerk.): Szerepváltozások. Jelentés a nők és férfiak helyzetéről, 2005. – TÁRKI, Ifjúsági, Családügyi, Szociális és Esélyegyenlőségi Minisztérium, Budapest. pp. 136–148.</li>
-    <li>Kemény I. 2004: <a href="http://www.demografia.hu/kiadvanyokonline/index.php/demografia/article/download/615/427" target="_blank">A magyarországi cigány népesség demográfiája.</a> – Demográfia 47(3-4), pp. 335-346. </li>
-    <li>Kertesi G. – Kézdi G. 1998: <a href="http://econ.core.hu/file/download/Kertesi_Kezdi/A_cigany_nepesseg_Mo-n.pdf" target="_blank">A cigány népesség Magyarországon.</a> (Dokumentáció és adattár.) – Socio-typo, Budapest. 467 p. </li>
-    <li><br /></li>
-    <li><a href="http://www.nepszamlalas2001.hu/hun/kotetek/04/tabhun/tabl01/load01.html" target="_blank">KSH 2001. évi népszámlálás. 1.1.  Nemzetiség.</a> (letöltve: 2015-05-27)</li>
-    <li><a href="http://www.nepszamlalas2001.hu/hun/kotetek/24/tables/loadcig2_1.html" target="_blank">KSH 2001. évi népszámlálás. Cigány, roma:
-2.1. A népesség korév és nemek szerint, a nemek aránya.</a> (letöltve: 2015-05-25)</li>
-    <li><a href="http://www.nepszamlalas2001.hu/hun/kotetek/24/tables/loadmagy2_1.html" target="_blank">KSH 2001. évi népszámlálás. Magyar: 
-2.1. A népesség korév és nemek szerint, a nemek aránya.</a> (letöltve: 2015-05-25)</li>
-    <li><a href="http://www.ksh.hu/nepszamlalas/docs/tablak/nemzetiseg/09_02_15_01.xls" target="_blank">KSH 2011. évi népszámlálás. 2.15.1. A népesség korcsoport, településtípus és nemek szerint, a nemek aránya, 2011.
-</a> (letöltve: 2015-05-27)</li>
-    <li><a href="http://www.ksh.hu/nepszamlalas/docs/tablak/teruleti/00/00_2_1_6_1.xls" target="_blank">KSH 2011. évi népszámlálás. 2.1.6.1. A népesség nemzetiség, korcsoport, legmagasabb befejezett iskolai végzettség és nemek szerint, 2011.
-</a> (letöltve: 2015-05-26)</li>
-    <li><a href="http://www.ksh.hu/nepszamlalas/docs/tablak/nemzetiseg/09_01_01.xls" target="_blank">KSH 2011. 1.1. A népesség a nemzetiségi hovatartozást befolyásoló tényezők szerint
-</a> (letöltve: 2015-05-27)</li>
-</ul>
+1. *Hablicsek L.* (2007). [Kísérleti számítások a roma lakosság területi jellemzőinek alakulására és 2021-ig történő előrebecslésére.](http://demografia.hu/kiadvanyokonline/index.php/demografia/article/viewFile/540/483) – Demográfia 50(1), pp. 7-54.
+2. *Janky B.* (2005). [A cigány nők társadalmi helyzete és termékenysége.](www.szmm.gov.hu/download.php?ctag=download&docID=20471) – In. Nagy I. – Pongrácz T. –Tóth I. Gy. (szerk.): Szerepváltozások. Jelentés a nők és férfiak helyzetéről, 2005. – TÁRKI, Ifjúsági, Családügyi, Szociális és Esélyegyenlőségi Minisztérium, Budapest. pp. 136–148.
+3. *Kemény I.* (2004). [A magyarországi cigány népesség demográfiája.](http://www.demografia.hu/kiadvanyokonline/index.php/demografia/article/download/615/427) – Demográfia 47(3-4), pp. 335-346.
+4. *Kertesi G. – Kézdi G.* (1998). [A cigány népesség Magyarországon.](http://econ.core.hu/file/download/Kertesi_Kezdi/A_cigany_nepesseg_Mo-n.pdf) (Dokumentáció és adattár.) – Socio-typo, Budapest. 467 p.
+
+
+* [KSH 2001. évi népszámlálás. 1.1.  Nemzetiség.](http://www.nepszamlalas2001.hu/hun/kotetek/04/tabhun/tabl01/load01.html) (letöltve: 2015-05-27)
+* [KSH 2001. évi népszámlálás. Cigány, roma: 2.1. A népesség korév és nemek szerint, a nemek aránya.](http://www.nepszamlalas2001.hu/hun/kotetek/24/tables/loadcig2_1.html) (letöltve: 2015-05-25)
+* [KSH 2001. évi népszámlálás. Magyar: 2.1. A népesség korév és nemek szerint, a nemek aránya.](http://www.nepszamlalas2001.hu/hun/kotetek/24/tables/loadmagy2_1.html) (letöltve: 2015-05-25)
+* [KSH 2011. évi népszámlálás. 2.15.1. A népesség korcsoport, településtípus és nemek szerint, a nemek aránya.](http://www.ksh.hu/nepszamlalas/docs/tablak/nemzetiseg/09_02_15_01.xls)
+ (letöltve: 2015-05-27)
+* [KSH 2011. évi népszámlálás. 2.1.6.1. A népesség nemzetiség, korcsoport, legmagasabb befejezett iskolai végzettség és nemek szerint.](http://www.ksh.hu/nepszamlalas/docs/tablak/teruleti/00/00_2_1_6_1.xls)
+ (letöltve: 2015-05-26)
+* [KSH 2011. 1.1. A népesség a nemzetiségi hovatartozást befolyásoló tényezők szerint.](http://www.ksh.hu/nepszamlalas/docs/tablak/nemzetiseg/09_01_01.xls)
+ (letöltve: 2015-05-27)
+

@@ -1,0 +1,7 @@
+{% comment %}
+site.time generates the current time when the site is built. The filter, date
+is used to show just the year for the date.
+{% endcomment %}
+<div class="copyright">
+  <span>&copy; {{ site.name | escape }} {{ site.time | date: '%Y' }}</span> 
+</div>

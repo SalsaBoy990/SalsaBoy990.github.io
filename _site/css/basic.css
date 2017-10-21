@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+/* IDs */
+#menu-button {
+  cursor:pointer;
+  color: #828282;
+  height: 45px;
+}
+
+#adress {
+  font-style: italic;
+  font-size: 1rem;
+}
+
+
+html {
+  font-size: 16px;
+}
 /**
  * Reset some basic elements
  */
@@ -17,12 +33,11 @@ dl, dd, ol, ul, figure {
 body {
   height: 100%;
   width: 100%;
- 
-  color: #242424;
-  background-color: #F2F2FF;
- 
-  font: 400 26px/1.45 "EB Garamond", Garamond, "Times New Roman", serif;
+  color: #383838;
+  background-color: rgb(197, 207, 207);
+  font: 400 1.2rem/1.7 'Roboto', Arial, 'Segoe UI', Helvetica, serif;
   text-align: left;
+
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -35,11 +50,16 @@ body {
  /**
   * Set `margin-bottom` to maintain vertical rhythm
   */
-h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 .highlight {
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.9rem;
+  
 }
  
 
@@ -72,9 +92,9 @@ figcaption {
 
   margin: auto;
   padding-bottom: 20px;
-
+  font-style: italic;
   text-align: center;
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 
@@ -101,7 +121,7 @@ table {
   border: 1px solid #828282;
   border-collapse: collapse;
 
-  font-size: 22px;
+  font-size: 1rem;
   }
   table tr, table td, table th {
     border: 1px solid #828282;
@@ -126,7 +146,7 @@ li > ol {
  * Headings
  */
  h1, h2, h3, h4, h5, h6 {
-  font-family: "Archivo Black", "Impact", "Arial Black", serif;
+  font-family: 'Roboto Slab', 'Palatino Linotype', Palatino, 'Clarendon', 'Rockwell', 'Courier New', Courier, serif;
   line-height: 1.2;
   color:  #29293f;
 }
@@ -156,13 +176,13 @@ h6 {
  */
 a {
   line-height: 1.2;
-  text-decoration: none;
-  border-bottom: 2px solid peru;
-  color: #242424;
+  text-decoration: underline;
+  color: rgb(205, 133, 63);
+  font-size: 1.2rem;
   }
   a:hover {
     transition: 0.3s;
-    border-bottom: 2px solid orangered;
+    color: rgb(103, 75, 47);
   }
 
 
@@ -172,21 +192,15 @@ a {
 blockquote {
   position: relative;
   display: block;
-
   width: 75%;
-
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-
   padding: 30px 40px;
-
-  border-left: 4px solid peru;
- 
-  line-height: 1.35;
+  border-left: 4px solid rgba(205, 133, 63, 0.4);
+  line-height: 1.4;
   text-align: left;
   font-style: italic;
-
   color: #383838;
   background: #fff;
   }
@@ -195,22 +209,18 @@ blockquote {
   }
 
   blockquote:before {
-      position: absolute;
-
-      width: 40px;
-      height: 40px;
-
-      padding-left: 10px;
-      
-      font-size: 60px;
-      line-height: 0.85;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 60px;
+    line-height: 0.85;
   }
   blockquote:before {
-      top: 0;
-      left: 0; 
-      content: "\201D";
-
-      color: peru;
+    top: 0;
+    left: 0; 
+    content: "\201D";
+    color: rgba(205, 133, 63, 0.4);
   }
 
 
@@ -221,11 +231,8 @@ pre,
 code {
   border: 1px solid #e8e8e8;
   border-radius: 3px;
-
-  font-size: 18px;
-  font-family: Consolas, monaco, monospace;
-  font-weight: 400;
-
+  font-size: 1rem;
+  font-family: 'Roboto Mono', Consolas, monaco, monospace;
   background-color: #f5f2f0;
   }
   code {
@@ -236,7 +243,6 @@ code {
     white-space: -moz-pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
-
     padding: 8px 12px;
     overflow-x: auto;
   }

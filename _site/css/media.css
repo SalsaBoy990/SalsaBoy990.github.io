@@ -7,56 +7,6 @@
     padding-right: 15px;
     padding-left: 15px;   
     }
-    .image, .image2 {
-      height: 65%;
-      width: 65%;
-    }
-}
-
-@media only screen and (max-width: 765px) {
-  .site-wrapper .site-title a {
-    font-size: 56px;
-  }
-
-  .site-nav .page-link {
-    font-size: 20px;
-  }
-}
-
-
-@media only screen and (max-width: 700px) {
-  .wrapper {
-    max-width: -webkit-calc(700px - (30px));
-    max-width: calc(700px - (30px));
-
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-
-  .image, .image2, .image3 {
-    height: 80%;
-    width: 80%;
-  }
-
-  .signup, .contact {
-    float: none;
-  }
-  .contact {
-    clear: both;
-    }
-    .contact h4 {
-      padding-top: 20px;
-    }
-    .copyright {
-      clear: both;
-      text-align: center;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-  .site-wrapper .site-title a {
-    font-size: 52px;
-  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -67,36 +17,28 @@
     padding-right: 15px;
     padding-left: 15px;
 
-    font-size: 22px; 
+    font-size: 1.1rem; 
   }
     
-  .read-more {
-    font-size: 20px;
-  }
-
   a {
-    font-size: 22px;
+    font-size: 1.1rem;
   }
 
-  .archive-a {
-    font-size: 22px;
-}
 
   pre, code {
-    font-size: 16px;
+    font-size: 0.95rem;
   }
     
   .post-date {
-    font-size: 18px;
+    font-size: 0.85rem;
+  }
+  .post-date a {
+    font-size: 0.85rem;
   }
 
-  .copyright {
-    font-size:13px;
-  }
-
-  .image, .image2, .image3 {
-    height: 95%;
-    width: 95%;
+  .small, .medium {
+    height: 80%;
+    width: 80%;
   }
 
   iframe {

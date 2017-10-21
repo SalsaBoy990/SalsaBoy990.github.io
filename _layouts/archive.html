@@ -31,7 +31,7 @@ layout: page
                             {% endcase %}</h3>
     <ul>
   {% endif %}
-  <li><a href="{{ post.url }}" class="archive-a"><span>{{ post.title }}</span></a></li>
+  <li class="writings"><a href="{{ post.url }}"><span>{{ post.title }}</span></a></li>
 
   {% unless forloop.last %}
     {% if this_year != prev_year %}

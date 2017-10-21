@@ -1,43 +1,11 @@
 <script src="{{ site.url}}/js/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {
-    $("#back-to-top").on("click", function() {
-        $("html,body").animate({ scrollTop: 0 }, 50);
-    });
-    $("#open-mission").click(function() {
-      var temp = $("#about-block");
-      temp.css("margin-bottom", "0px");
-      temp.slideToggle(300);
-      $("html,body").animate({ scrollTop: temp.offset().top }, 300);
-    
-    });
-    $("#close-mission").click(function() {
-      $("#about-block").slideToggle(300);
-      /*$("html,body").animate({ scrollTop: 0 }, 300);*/
-      /*$(window).scrollTop(0);*/
-    });
-
-    $("#open-contact").click(function() {
-      var temp = $("#contact-me");
-      temp.slideToggle(300);
-      $("html,body").animate({ scrollTop: temp.offset().top }, 300);
-    });
-    $("#close-contact").click(function() {
-      $("#contact-me").slideToggle(300);
-    });
-
-    $("#toggle-book-contents").on("click", function() {
-      var temp = $("#book-contents");
-      temp.css("background", "oldlace");
-      temp.slideToggle(200);
-    });
-
     $("#menu-button").on("click", function() {
       $("#dropdown").slideToggle();
     });
     
     $('table tr:even').addClass('color');
     $("table tr").filter(":first").css("font-weight", "600");
-    $("#social-media-links table tr:even").removeClass("color");
 });
 </script>
