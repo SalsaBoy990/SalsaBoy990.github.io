@@ -25,6 +25,55 @@
   <!-- CSS style. New Geographer Redux theme (version: 6.0b).-->
   <link rel="stylesheet" type="text/css" href="/css/style-min.css"/>
   
+  <style>/**
+ * Earth globe
+ */
+.globe {
+  overflow: hidden;
+  position: absolute;
+
+  height: 140px;
+  width: 140px;
+  left: 50%;
+  top: 90px;
+  margin-bottom: 0px;
+  border: 0.03125rem solid rgba(130, 130, 130, 0.6);
+  border-radius: 50%;
+
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  }
+  .globe svg {
+    -webkit-animation: rotation 30s linear 0s infinite;
+    animation: rotation 30s linear 0s infinite;
+  }
+  .globe svg path {
+    stroke: rgba(205, 133, 63, 0.6);
+  }
+
+  @-webkit-keyframes rotation {
+    from {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    from {
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes rotation {
+    from {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    from {
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+  </style>
+  
   <!-- CSS style. Syntax highlight rules for code snippets.-->
   <link rel="stylesheet" type="text/css" href="/css/prism.css"/>
 
