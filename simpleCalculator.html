@@ -1,1 +1,79 @@
-<!DOCTYPE html><meta charset=utf-8><meta content="IE=edge"http-equiv=X-UA-Compatible><meta content="width=device-width,initial-scale=1"name=viewport><title>Egyszerű számológép</title><meta lang=hu-HU><meta content="Teszteléshez egyszerű honlap"name=description><meta content="Gulácsi András"name=author><link href=/assets/calculator.png rel="shortcut icon"type=image/png><style>body{font:400 18px/1.5 Helvetica,Arial,sans-serif;text-align:left;height:100%;width:100%;margin:0}h1,h2,h3,h4,h5,h6{text-align:center;font-family:Georgia,'Times New Roman',Times,serif}.body-day{color:#000;background-color:#f5fffa}.body-night{color:#f5fffa;background-color:#000}.wrapper{margin:auto;padding:0;border-radius:5px;border:1px solid gray;height:100%;width:100%;box-shadow:1px 1px 2px silver}.menu{height:100%;width:40%;border:2px ridge #555;box-shadow:2px 2px 2px #fff;padding:0 0 0 10px;border-radius:8px;background:silver;background:-webkit-linear-gradient(left top,#dcdcdc ,#a9a9a9);background:-o-linear-gradient(bottom right,#dcdcdc ,#a9a9a9);background:-moz-linear-gradient(bottom right,#dcdcdc,#a9a9a9);background:linear-gradient(to bottom right,#dcdcdc,#a9a9a9)}.menu-night{height:100%;width:40%;border:2px ridge #add8e6;box-shadow:2px 2px 2px #f5f5f5;padding:0 0 0 10px;border-radius:8px;background:#11546e;background:-webkit-linear-gradient(left top,#11546e ,#24435c);background:-o-linear-gradient(bottom right,#11546e ,#24435c);background:-moz-linear-gradient(bottom right,#11546e,#24435c);background:linear-gradient(to bottom right,#11546e,#24435c)}.gradiens{background:#d3d3d3;background:-webkit-linear-gradient(left top,snow ,#d3d3d3);background:-o-linear-gradient(bottom right,snow ,#d3d3d3);background:-moz-linear-gradient(bottom right,snow,#d3d3d3);background:linear-gradient(to bottom right,snow,#d3d3d3)}.gradiens-night{background:#333;background:-webkit-linear-gradient(left top,#2f4f4f,#333);background:-o-linear-gradient(bottom right,#2f4f4f,#333);background:-moz-linear-gradient(bottom right,#2f4f4f,#333);background:linear-gradient(to bottom right,#2f4f4f,#333)}.day-color{color:#000}.night-color{color:#fff}.smallbox{display:flex;flex-direction:column;align-items:center;justify-content:center;height:55px;width:55px;margin:4px;border:1px solid gray;border-radius:8px;font-size:22px;font-weight:400;text-align:center;vertical-align:middle}.smallbox-2{display:flex;flex-direction:column;align-items:center;justify-content:center;height:55px;width:126px;margin:4px;border:1px solid gray;border-radius:8px;background-color:salmon;font-size:22px;font-weight:800;text-align:center;vertical-align:middle}.display{height:75px;width:90%;padding:10px;margin-bottom:20px;border-top:5px solid #eee;border-bottom:5px solid #eee;border-right:5px solid #aaa;border-left:5px solid #bbb;border-radius:5px;background-color:#daffb3;font-family:'Courier New', Courier, monospace;font-size:24px;color:#dc143c;text-align:right;overflow:auto}.note{padding-left:30px;font-size:12px}.night-mode{float:right;margin-right:10px;font-size:14px}#calculate-button:active{vertical-align:top;padding:8px 13px 6px}#backspace,#pi{background:#5f9ea0}#backspace:active,#percent:active,#sqr-root:active,#square:active{background:#a0615f;vertical-align:top;padding:8px 13px 6px;margin:0}#b0,#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9{background:#778899}#b0:active,#b1:active,#b2:active,#b3:active,#b4:active,#b5:active,#b6:active,#b7:active,#b8:active,#b9:active{background:#876;vertical-align:top;padding:8px 13px 6px;margin:0}#clear{background:tomato}#clear:active{background:#009cb8;vertical-align:top;padding:8px 13px 6px;margin:0}#add,#comma,#divide,#ending-bracket,#multiply,#sign,#starting-bracket,#substract{background:#f08628}#add:active,#comma:active,#divide:active,#ending-bracket:active,#multiply:active,#sign:active,#starting-bracket:active,#substract:active{background:#b8860b;vertical-align:top;padding:0 1px 1px 1px;margin:0}</style><script>function calculate(startBracket,endBracket){"use strict";var szamologep={};szamologep.kimenet="",szamologep.bemenet=document.getElementById("display"),szamologep.bemenet=szamologep.bemenet.textContent,console.log(szamologep.bemenet),szamologep.errorHandling=function(){try{if(startBracket!==endBracket)throw console.error("Lemaradt zárójel."),"Lemaradt zárójel."}catch(e){return e}try{for(var e=0,o=void 0!==szamologep.bemenet&&szamologep.bemenet.length,t=0;t<o;t+=1){if("("===szamologep.bemenet[t]&&(e+=1),")"===szamologep.bemenet[t]&&0===e)throw console.error("Záró zárójellel nem kezdődhet egy zárójel-pár!"),"Záró zárójellel nem kezdődhet egy zárójel-pár!";1,e-=1}}catch(e){return e}},szamologep.reformatString=function(){for(var e="",o="",t="",r=void 0!==szamologep.bemenet&&szamologep.bemenet.length,m=0;m<r;m+=1)"("===(o=szamologep.bemenet[m])?m>0?null!==(t=szamologep.bemenet[m-1]).match(/[0-9]/g)?(e+="*",e+=o):")"===t?(e+="*",e+=o):e+=o:e+=o:e+=","===o?".":o;return console.log(e),e},szamologep.errorHandling(),szamologep.kimenet="=<br />";var temp=szamologep.reformatString();szamologep.kimenet+=eval(temp),console.log(temp),szamologep.kimenet=szamologep.kimenet.replace(".",",","g");var eredmeny=document.getElementById("display");eredmeny.innerHTML+=szamologep.kimenet}</script><body class=body-day id=body-id><div class=wrapper id=wrap><br><center><table class=menu id=table-2><tr><td colspan=5><center><h2 id=label>Egyszerű számológép</h2></center><td><td><td><td><tr><td colspan=5><center><div class=display id=display>0</div></center><td><td><td><td><tr><td><center><button class=smallbox id=pi>π</button></center><td><center></center><td><center></center><td><center><button class=smallbox id=backspace>←</button></center><td><center><button class=smallbox id=clear>C</button></center><tr><td><center><button class=smallbox id=b7>7</button></center><td><center><button class=smallbox id=b8>8</button></center><td><center><button class=smallbox id=b9>9</button></center><td><center><button class=smallbox id=starting-bracket>(</button></center><td><center><button class=smallbox id=ending-bracket>)</button></center><tr><td><center><button class=smallbox id=b4>4</button></center><td><center><button class=smallbox id=b5>5</button></center><td><center><button class=smallbox id=b6>6</button></center><td><center><button class=smallbox id=multiply>*</button></center><td><center><button class=smallbox id=divide>/</button></center><tr><td><center><button class=smallbox id=b1>1</button></center><td><center><button class=smallbox id=b2>2</button></center><td><center><button class=smallbox id=b3>3</button></center><td><center><button class=smallbox id=add>+</button></center><td><center><button class=smallbox id=substract>-</button></center><tr><td><center><button class=smallbox id=b0>0</button></center><td><center><button class=smallbox id=comma>,</button></center><td><center><button class=smallbox id=sign>-x</button></center><td colspan=2><center><button class=smallbox-2 id=calculate-button>=</button></center><td></table></center><br><p class=note>© Gulácsi András, 2017-07-21 <em>(verzió: 1.0b)</em><br>A program igyenes, de a saját felelősségedre használod. Ez egy kísérleti alkalmazás, ami még fejlesztés alatt áll. Ha hibába ütközöl a program használata során, akkor a <a href=mailto:gulandras90@gmail.com>gulandras90@gmail.com</a> e-mail címre küldj egy üzenetet, ha gondolod!<div class=night-mode><input class=night-mode id=day-mode type=button value="Nappali nézet"> <input class=night-mode id=night-mode type=button value="Éjszakai nézet"></div><br></div><script src=js/jquery.min.js></script><script>$(document).ready(function(){$(".wrapper").addClass("gradiens");var l=0;$("#calculate-button").click(function(){calculate(a,t)}),$("#night-mode").click(function(){$("#body-id").removeClass("body-day").addClass("body-night"),$(".wrapper").removeClass("gradiens").addClass("gradiens-night"),$("#table").removeClass("menu").addClass("menu-night"),$("#table-2").removeClass("menu").addClass("menu-night"),$(".smallbox, .smallbox-2").removeClass("day-color").addClass("night-color"),$(".menu-2").css("background-color","black")}),$("#day-mode").click(function(){$("#body-id").removeClass("body-night").addClass("body-day"),$(".wrapper").removeClass("gradiens-night").addClass("gradiens"),$("#table").removeClass("menu-night").addClass("menu"),$("#table-2").removeClass("menu-night").addClass("menu"),$(".smallbox, .smallbox-2").removeClass("night-color").addClass("day-color"),$(".menu-2").css("background-color","oldlace")}),$("#b0").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?($("#display").html(a),l=1):(a+="0",$("#display").html(a))}),$("#b1").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="1",$("#display").html(a),l=1):(a+="1",$("#display").html(a))}),$("#b2").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="2",$("#display").html(a),l=1):(a+="2",$("#display").html(a))}),$("#b3").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="3",$("#display").html(a),l=1):(a+="3",$("#display").html(a))}),$("#b4").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="4",$("#display").html(a),l=1):(a+="4",$("#display").html(a))}),$("#b5").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="5",$("#display").html(a),l=1):(a+="5",$("#display").html(a))}),$("#b6").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="6",$("#display").html(a),l=1):(a+="6",$("#display").html(a))}),$("#b7").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="7",$("#display").html(a),l=1):(a+="7",$("#display").html(a))}),$("#b8").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="8",$("#display").html(a),l=1):(a+="8",$("#display").html(a))}),$("#b9").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="9",$("#display").html(a),l=1):(a+="9",$("#display").html(a))}),$("#pi").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="3,141592654",$("#display").html(a),l=1):(a+="3.141592654",$("#display").html(a))}),$("#backspace").click(function(){var a=$("#display").html();if(1===a.length)a="0",$("#display").html(a),l=0;else{var t=a.slice(0,-1);console.log(t),$("#display").html(t)}}),$("#clear").click(function(){$("#display").html("0"),l=0}),$("#add").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="+",$("#display").html(a),l=1):(a+="+",$("#display").html(a))}),$("#substract").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="-",$("#display").html(a),l=1):(a+="-",$("#display").html(a))}),$("#multiply").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="*",$("#display").html(a),l=1):(a+="*",$("#display").html(a))}),$("#divide").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="/",$("#display").html(a),l=1):(a+="/",$("#display").html(a))}),$("#comma").click(function(){var l=$("#display").html();l+=",",$("#display").html(l)}),$("#sign").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a="-",$("#display").html(a),l=1):(a+="-",$("#display").html(a))});var a=0,t=0;$("#starting-bracket").click(function(){var t=$("#display").html();0===l&&"0"===t.charAt(0)&&","!==t.charAt(1)?(t="(",$("#display").html(t),l=1,a++):(t+="(",$("#display").html(t),a++)}),$("#ending-bracket").click(function(){var a=$("#display").html();0===l&&"0"===a.charAt(0)&&","!==a.charAt(1)?(a=")",$("#display").html(a),l=1,t++):(a+=")",$("#display").html(a),t++)})})</script></body>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>simpleCalc - A simple Calculator</title>
+    <meta lang="hu-HU">
+    <meta name="description" content="simpleCalc - A Simple Calculator">
+    <meta name="author" content="Gulácsi András">
+
+    <link rel="shortcut icon" type="image/png" href="https://assets-cdn.github.com/images/icons/emoji/unicode/1f522.png">
+    <link rel="stylesheet" type="text/css" href="css/style-calculator.css"/>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/style-calculator.js"></script>
+    <script type="text/javascript" src="js/simpleCalc-min.js"></script>
+  </head>
+  <body>
+    <table class="calculator">
+      <tr>
+        <td colspan="5"><h2>Your calculator</h2></td>
+      </tr>
+
+      <tr>
+        <td colspan="5"><div id="display" class="display">0</div></td>
+      </tr>
+
+      <tr>
+        <td colspan="3"><div id="message"></div></td>
+        <td><button id="backspace" class="smallbox">←</button></td>
+        <td><button id="clear" class="smallbox margin-right-0">C</button></td>
+      </tr>
+
+      <tr>
+        <td><button id="b7" class="smallbox">7</button></td>
+        <td><button id="b8" class="smallbox">8</button></td>
+        <td><button id="b9" class="smallbox">9</button></td>
+        <td><button id="starting-bracket" class="smallbox margin-right-0">(</button></td>
+        <td><button id="ending-bracket" class="smallbox margin-right-0">)</button></td>
+      </tr>
+
+      <tr>
+        <td><button id="b4" class="smallbox">4</button></td>
+        <td><button id="b5" class="smallbox">5</button></td>
+        <td><button id="b6" class="smallbox">6</button></td>
+        <td><button id="multiply" class="smallbox margin-right-0">*</button></td>
+        <td><button id="divide" class="smallbox margin-right-0">/</button></td>
+      </tr>
+
+      <tr>
+        <td><button id="b1" class="smallbox">1</button></td>
+        <td><button id="b2" class="smallbox">2</button></td>
+        <td><button id="b3" class="smallbox">3</button></td>
+        <td><button id="add" class="smallbox margin-right-0">+</button></td>
+        <td><button id="substract" class="smallbox margin-right-0">-</button></td>
+      </tr>
+
+      <tr>
+        <td><button id="b0" class="smallbox">0</button></td>
+        <td><button id="point" class="smallbox">.</button></td>
+        <td><button id="sign" class="smallbox">-x</button></td>
+        <td colspan="2"><button class="smallbox-2 margin-right-0" id="calculate-button" >=</button></td>
+        <td></td>
+      </tr>
+    </table>
+    
+    <br />
+
+    <div class="note">
+        <p>Copyright &copy; 2017 Andras Gulacsi<br/>MIT license.<br/>
+          If you bump into an error, send me an <a href="mailto:guland@protonmail.com">email</a> if you want!<br />
+          Or open a new issue on <a href="https://github.com/SalsaBoy990/simpleCalc/issues">GitHub</a>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

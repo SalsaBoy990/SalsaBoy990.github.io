@@ -1,0 +1,164 @@
+html {
+  font-size: 16px;
+  font: 400 1.1rem/1.5 , Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  text-align:left;
+  background: snow;
+  color: #383838; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+  table-layout: fixed;
+  box-sizing: border-box;
+}
+
+table tr, table td {
+  margin: 0;
+  padding: 0;
+}
+
+.calculator {
+  display: block;
+  height: 100%;
+  width: 290px;
+  margin-top: .5rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border: 1.5px solid rgb(124, 140, 156);
+  box-shadow: 0 0 2px lightgray;
+  border-radius: 5px;
+  background: lightsteelblue;
+}
+
+.smallbox {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  margin-bottom: 2px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  font-size: 1.375rem;
+  text-align: center;
+}
+
+.smallbox-2 {
+  display: block;
+  height: 50px;
+  width: 106px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  margin-bottom: 2px;
+  border: 1px solid gray;
+  border-radius: 6px;              
+  background-color: PapayaWhip;
+  font-size: 1.375rem;
+  text-align: center;
+}
+
+.display {
+  display: block;
+  overflow: auto;
+  justify-content: center;
+  height: 4.2rem;
+  width: 250px;
+  padding: 0.5rem;
+  margin-left: 3.75px;
+  margin-right: 0.0rem;
+  margin-bottom: 1.25rem;
+  border-top: 5px solid rgb(219, 228, 240);
+  border-bottom: 5px solid rgb(219, 228, 240);
+  border-right: 5px solid rgb(124, 140, 156);
+  border-left: 5px solid rgb(124, 140, 156);
+  border-radius: 5px;
+  text-align: left;
+  font-family: 'Consolas', Courier New, Courier, monospace;
+  font-size: 1.3rem;
+  color: orangered;
+  background-color: lightcyan;  
+}
+
+.note {
+  display: block;
+  max-width: 31.25rem;
+  margin: auto;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: .8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #828282;
+}
+
+#message {
+  display: block;
+  width: 7.5rem;
+  margin: auto;
+  font-weight: 800;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .9rem;
+  text-align: center;
+  color: maroon;
+}
+
+#calculate-button:active {
+  vertical-align: top;
+  padding: 8px 13px 6px;
+}
+
+#backspace {
+  background: palegoldenrod;
+}
+#backspace:active {
+  background: gold;
+  vertical-align: top;
+  padding: 8px 13px 6px;
+}
+
+#b0, #b1, #b2, #b3, #b4, #b5, #b6, #b7, #b8, #b9 {
+  background: seashell;
+}
+      
+#b0:active, #b1:active, #b2:active, #b3:active, #b4:active,
+#b5:active, #b6:active, #b7:active, #b8:active, #b9:active {
+  background: lavender;
+  vertical-align: top;
+  padding: 8px 13px 6px;
+}
+
+#clear {
+  background: peachpuff;
+}
+#clear:active {
+  background: gold;
+  vertical-align: top;
+  padding: 8px 13px 6px;
+}
+
+#starting-bracket, #ending-bracket,
+#multiply, #divide, #add, #substract,
+#point, #sign {
+  background: PapayaWhip;
+}
+
+#starting-bracket:active, #ending-bracket:active,
+#multiply:active, #divide:active, #add:active,
+#substract:active, #point:active, #sign:active {
+  background: lightgoldenrodyellow;
+  vertical-align: top;
+  padding: 0px 1px 1px 1px;
+}
