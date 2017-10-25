@@ -1,0 +1,152 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  background: snow;
+  color: #383838;
+  font: 400 1.2rem/1.3 Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0.5rem;
+}
+
+table {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  width: 150px;
+  font-family: 'Consolas', Courier New, Courier, monospace;
+  font-size: 1.1rem;
+  color: orangered;
+}
+
+#result {
+  display: block;
+  margin: 0rem auto;
+  padding: 5px;
+  border: 1px dotted transparent;
+  border-radius: 4px;
+  text-align: center;
+}
+
+#result-2 {
+  display: block;
+  margin: 0rem auto;
+  width: 10rem;
+  height: 2rem;
+  padding: 5px;
+  color: teal;
+  background: lavender;
+  border: 1px dashed #555;
+  border-radius: 4px;
+  line-height: 2rem;
+  text-align:center;
+}
+
+#output {
+  display: block;
+  margin: 0rem auto;
+  text-align: center;
+}
+
+
+#original {
+  float: left;
+  color: white;
+  background: black;
+}
+
+#inverted {
+  float: right;
+  color: black;
+  background:white;
+}
+
+
+.menu {
+  display: block;
+  height: 100%;
+  width: 300px;
+  margin-top: .5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  border: 1px solid #626262;
+  border-radius: 4px;
+  background: gainsboro;
+}
+
+.menu td {
+  text-align: center;
+}
+
+.menu-2 {
+  margin: 0rem auto;
+  padding: 5px;
+  border: 1px solid #383838;
+  border-radius: 4px;
+  background-color:#999;
+}
+
+.message {
+  display: block;
+  width: 7.5rem;
+  margin: auto;
+  font-weight: 800;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .9rem;
+  text-align: center;
+  color: maroon;
+}
+
+.btn {
+  font-size: 1rem;
+  font-style: bold;
+  display: flex;
+  justify-content: center;
+  margin: 0.4rem auto;
+}
+
+.box {
+  height: 4.5rem;
+  width: 4.5rem;
+  padding: 20px;
+  background-color: white;
+  border: 2px solid gray;
+  text-align: center;
+}
+
+.note {
+  display: block;
+  max-width: 31.25rem;
+  margin: auto;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: .8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #828282;
+}
+
+.red {
+  padding-left: 1rem;
+  color: crimson;
+}
+.green {
+  padding-left: 1rem;
+  color: mediumseagreen;
+}
+.blue {
+  padding-left: 1rem;
+  color: dodgerblue;
+}

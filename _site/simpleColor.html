@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RGB Color Inverter</title>
+    <meta lang="en">
+    <meta name="description" content="Teszteléshez egyszerű honlap">
+    <meta name="author" content="Gulácsi András">
+
+    <link rel="shortcut icon" type="image/png" href="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3a8.png">
+    <link rel="stylesheet" type="text/css" href="css/style-color.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="js/simpleColor.min.js"></script>
+  </head>
+  <body>
+    <table class="menu">
+      <tr><th colspan="2"><h2>RGB Color Inverter</h2></th></tr>
+      <tr><th colspan="2">Give me the RGB color code:</th></tr>
+
+      <tr>
+        <td class="red">Red: </td>
+        <td><input id="red" type="text" value=""/></td>
+      </tr>
+
+      <tr>
+        <td class="green">Green: </td>
+        <td><input id="green" type="text" value=""/></td>
+      </tr>
+                        
+      <tr>
+        <td class="blue">Blue: </td>
+        <td><input id="blue" type="text" value=""/></td>
+      </tr>
+
+      <tr>
+        <td colspan="2"><div id="msg-1" class="message"></div></td>
+        <td></td>
+      </tr>
+                        
+      <tr>
+        <td colspan="2"><button class="btn" id="color-button" >Calculate</button></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td colspan="2" rowspan="7">
+          <div id="result">
+            <table class="menu-2">
+              <tr>
+                <th><em>Original</em></th>
+                <th><em>Inverted</em></th>
+              </tr>
+                                
+              <tr>
+                <td><div id="original" class="box">#000000</div></td>
+                <td><div id="inverted" class="box">#ffffff</div></td>
+              </tr>
+
+              <tr>
+                <td colspan="2"><button class="btn" id="switch-button" >Switch boxes</button></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>
+      <tr></tr>
+
+      <tr>
+        <td colspan="2" rowspan="7">
+          <div>
+            <table class="">
+              <tr><th colspan="2"><h2>Hex to RGB</h2></th></tr>
+              <tr><th colspan="2">Give me the Hex to convert:</th></tr>
+        
+              <tr><td>Hex: </td>
+                <td><input id="hex" type="text" value="#"/></td>
+              </tr>
+        
+              <tr>
+                <td colspan="2"><div id="msg-2" class="message"></div></td>
+                <td></td>
+              </tr>
+        
+              <tr>
+                <td colspan="2"><button class="btn" id="hex-button" >Calculate</button></td>
+                <td></td>
+              </tr>
+                 
+              <tr>
+                <td colspan="2">
+                  <div id="result-2">
+                    <div id="output">rgb(0, 0, 0)</div>
+                  </div>
+                </td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+    <div class="note">
+      <p>Copyright &copy; 2017 Andras Gulacsi<br/>MIT license.<br/>
+        If you bump into an error, send me an <a href="mailto:guland@protonmail.com">email</a> if you want!<br />
+        Or open a new issue on <a href="https://github.com/SalsaBoy990/simpleColor/issues">GitHub</a>.
+      </p>
+    </div>
+  </body>
+</html>

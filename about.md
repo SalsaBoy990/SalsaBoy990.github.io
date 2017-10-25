@@ -44,8 +44,8 @@ function getAge(year, month, day, id) {
 
 E-mail: <a title="e-mail" href="mailto:{{ site.email }}">{{ site.email }}</a>
 
-Megtalálsz a [LinkedIn]({{ site.linkedin }})-en és a [GitHub](https://github.com/SalsaBoy990)-on is. Az önéletrajzomat [innen töltheted le](https://www.docdroid.net/cGLwe5U/gulacsiandrasoneletrajz2017.pdf).
+Megtalálsz a [LinkedIn]({{ site.linkedin }})-en és a [GitHub](https://github.com/SalsaBoy990)-on is. Az önéletrajzomat [innen töltheted le](https://www.docdroid.net/QELceEr/gulacsiandrasoneletrajz2017.pdf).
 
 ## A munkáim
-* [simpleCalc](https://github.com/SalsaBoy990/simpleCalc): *egyszerű számológép, ami a 4 alapművelet számítására képes tetszőleges kombinációban és zárójelekkel.* [*Itt kipóbálható*](/simpleCalculator.html)
-* [RGB színinvertáló és hex-RGB konverter program (verzió: 1.0b)](/colours.html)/simpleCalculator.html
+* [**simpleCalc**](https://github.com/SalsaBoy990/simpleCalc): *egyszerű számológép, ami a 4 alapművelet számítására képes tetszőleges kombinációban és zárójelekkel.* [Kipóbálom!](/simpleCalculator.html)
+* [**simpleColor**](https://github.com/SalsaBoy990/simpleColor): *egyszerű RGB szín invertáló és RGB-hexa konverziós program.* [Kipóbálom!](/simpleColor.html)
