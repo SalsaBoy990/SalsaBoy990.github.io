@@ -1,0 +1,44 @@
+---
+layout: post
+comments: false
+title:  "A jövő évi tematika"
+excerpt: "A jövő évben tervezett blogbejegyzések."
+date:   2017-11-01 20:14
+tags: "tematika"
+categories: hirdetmeny
+---
+
+Összeállítottam a 2018-as tematikát. Egy-két írás talán már most decemberben elkészül.
+
+A JavaScript tutoriálokat is át fogom dolgozni, ugyanis apróbb pontatlanságok vannak bennük és persze folytatni fogom a JavaScript sorozatot. Az ember a hibákból sokat tanul, és ez hatványozottan igaz a programozásra. A tutoriálok készítése rendkívül hasznos számomra, ugyanis ezzel jobban elmélyítem és rendszerezem az elsajátított tudást.
+
+Bízom benne, hogy mindenki talál számára érdekes és hasznos írásokat. 
+
+## Íme, a tervezett blogbejegyzéseim listája:
+
+* Mi áll a „zöldek” vegyszer- és GMO-ellenessége mögött?
+* Az élővilág és a kihalási hullámok. De hol vannak a tetemek?
+* Törzsi ösztön.
+* A nyugati kultúra válsága.
+* Gondolatok az abortuszról.
+* *Tudományos* szkepticizmus, kulturális ellenállás és tagadás a kulturális evolúció tükrében.
+* A radioaktivitás veszélyeinek eltúlozása. A lineáris, küszöbérték nélküli (LNT) modell tarthatatlansága.
+* Mitől jó üzlet a „megújuló” energia? Al Gore miért terjeszti a globális felmelegedés *körüli* hisztériát? Mit mond az IPCC a klímaváltozás várható következményeiről (valószínűségek)?<sup>1</sup>
+* A konzervativizmus közelebb áll a környezetvédelemhez, mint a globális „zöld” ideológia.
+* A legkegyetlenebb adó. A CO<sub>2</sub> társadalmi költsége és haszna.
+{: .update }
+
+Nem feltétlenül ebben a sorrendben fognak megjelenni. Ezek közül néhány cikk a készülő kétrészes könyvem részét fogja képezni. Apropó, az első kötettel (kb. 200-250 oldal), ha minden a terv szerint halad, akkor 2018 őszére készülök el. Csak az éghajlatváltozásos fejezet nincsen kész (ez egyébként a legnehezebb), a többi közel kész állapotban van.
+
+Ezt a honlapot messzemenőkig fontosabbnak tartom az összes tudományos publikációmnál. Én úgy látom, hogy több értelme van közvetlenül az interneten megosztani az elemzéseimet (illetve a véleményemet), mint folyóiratokba irogani olyan cikkeket, ami szinte senki nem fog elolvasni.
+
+A blogom 100%-ban független a magyar államtól, a Szegedi Tudományegyetemtől és a nagyvállalatoktól. Így aztán senki nem mondhatja meg nekem, hogy mit publikálhatok.
+
+Ha gondolod, iratkozz fel a [hírlevelemre](http://eepurl.com/c2wHQj) vagy kövesd a híreket a [Facebook](https://www.facebook.com/newgeographer)-on!
+
+(<sup>1</sup> Természetesen a médiában nap mint nap hallható klímahisztéria, vagy nevezhetnénk katasztrófabeszédnek, köszönőviszonyban sincsen azzal, amit az IPCC állít.)
+{: .footnote }
+
+
+
+

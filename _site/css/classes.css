@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-/** New Geographer theme. Redux edition (version: 6.0b).
+/** New Geographer theme. Redux edition (version: 6.1).
  * Minimalistic UI.
  * Author: András Gulácsi
- * Date: October 21, 2017
+ * Date: November 1, 2017
  */
 
 .emoji {
@@ -24,7 +24,7 @@
 
 .intro {
   display: block;
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 
 .small {
@@ -70,6 +70,11 @@
   color: #636395;
 }
 
+.footnote {
+  padding-top: 1rem;
+  font-size: 1rem;
+}
+
 .poem {
   width: 87%;
   font-size: 1rem;
@@ -87,9 +92,11 @@
   margin-left: auto;  
   padding-right: 3rem;
   padding-left: 3rem;
-  background: snow;/*#F2F2FF;*/
-  border: 1px solid #828282;
-  border-radius: 4px;
+  padding-top: .5rem;
+
+  background: #fcfffd;
+  border-left: 1px solid #828282;
+  border-right: 1px solid #828282;
 }
 
 
@@ -165,11 +172,11 @@
  */
 .site-header {
   position: relative;
-  min-height: 11.5rem;
+  min-height: 12.5rem;
   width: 100%;
   margin: 0;
   padding: 0;
-  background: snow /*rgb(197, 207, 207)*/;
+  background: #fcfffd;
 }
 
 .site-title {
@@ -182,15 +189,13 @@
   z-index: 1;
 }
 
-.site-title a {
-  font-family: 'Roboto Slab', 'Palatino Linotype', Palatino, 'Clarendon', 'Rockwell', 'Courier New', Courier, serif;
-  margin-bottom: 1rem;
-  font-size: 2.75rem;
+.site-title h1 {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  margin-top: .5rem;
   text-decoration: none;
-  letter-spacing: -2px;
   color: #29293f;
 }
-.site-title a:hover {
+.site-title h1:hover {
   transition: 0.3s;
   color: rgba(205, 133, 63, 0.7);
 }
@@ -219,7 +224,7 @@
  * Posts
  */
 .post-header {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -254,13 +259,13 @@
 .post-date {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-style: italic;
   color: #606060;
 }
 
 .post-date a {
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .writings {
@@ -285,7 +290,7 @@
   display: flex;
   padding-top: 0.5rem;
   border: none;
-  font-family: 'Roboto Slab', 'Palatino Linotype', Palatino, 'Clarendon', 'Rockwell', 'Courier New', Courier, serif;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
   
 .navigation-menu ul {
@@ -305,9 +310,10 @@
 }
 
 .navigation-menu ul li a {
-  color: #828282;
+  color: 	#778899;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-style: bold;
 }
 
 .navigation-menu ul li a:hover {

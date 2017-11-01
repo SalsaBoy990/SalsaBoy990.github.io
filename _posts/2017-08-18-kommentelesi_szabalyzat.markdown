@@ -6,7 +6,7 @@ date: 2017-08-18 19:08
 excerpt: "Megfogalmaztam egy pár hozzászólási szabályt, amit be kell tartani. Itt nincsen politikai korrektség, ami megakadályozná, hogy szabadon, a valóságnak és a tényeknek megfelelően vitassunk meg társadalmi és tudományos kérdéseket. A szerzői jogokkal utólag kiegészítettem a bejegyzésemet."
 ---
 
-**Frissítés**: Teljesen átdolgoztam a kommentelési szabályokat és a szerzői jogok szövegét. Egyelőre kikapcsoltam a Disqus rendszert, így a hozzászólások csak a honlapom [facebook oldalán](https://www.facebook.com/newgeographer/) tehetők meg. (2017. október 21.)
+**Frissítés**: Teljesen átdolgoztam a kommentelési szabályokat és a szerzői jogok szövegét. Egyelőre kikapcsoltam a Disqus rendszert, így a hozzászólások csak a honlapom [facebook oldalán](https://www.facebook.com/newgeographer/) tehetők meg. (2017. november 1.)
 {: .update}
 
 ## A honlapom kommentelési szabályzata
@@ -30,16 +30,13 @@ Kelt: Szeged, 2017. augusztus 18.
 ## A szerzői jogok
 {: .update}
 
-1. Az oldalamon megjelent cikkek zöme szabadon terjeszthető a forrás feltüntetésével! (Kivéve azokat a tartalmakat, amelyek valamilyen liszensz (pl. CreativeCommons, MIT) hatálya alá esnek. Ezeket mindig jelölni fogom a megfelelő helyen.)
+1. Az oldalamon megjelent cikkek tartalma (beleértve a szöveget, a képeket, az ábrákat és a táblázatokat, **kivéve a programkódokat**) <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Nevezd meg! - Így add tovább! 4.0 Nemzetközi Licenc</a> feltételeinek megfelelően felhasználható.
 
-2. Ha tudományos vagy egyéb céllal idézel az írásaimból, akkor az idézet mellett meg kell adni a forrást a cikkemre mutató linkkel együtt. (Például így: *Gulácsi A. (2017). A cikk címe. Link.*)
+2. Az 1. pont nem vonatkozik azokra a tartalmakra, amelyek valamilyen más liszensz hatálya alá esnek. Ezeket mindig jelölni fogom a megfelelő helyen.
 
-3. A cikkekben szereplő programkódokkal azt csinálsz, amit akarsz. Nincs semmilyen kikötés. (Ez nem vonatkozik a liszenszes programjaimra, amik kizárólag csak a liszenszben foglalt feltételek szerint használhatók fel.)
+3. A cikkekben szereplő programkódok teljesen szabadon használhatók bármilyen célra. Ez az MIT liszenszes programjaimra nem vonatkozik. 
 
-4. Egyéb: az általam írt alkalmazások igyenesek, de a saját felelősségedre használod őket. (Ha valamilyen hibát találsz, akkor az [admin@newgeographer.com](mailto:admin@newgeographer.com)-ra küldhetsz üzenetet.)
-{: .update}
-
-A hatályos jogszabály: az [1999. évi LXXVI. törvény a szerzői jogokról.](https://net.jogtar.hu/jr/gen/hjegy_doc.cgi?docid=99900076.TV)
+4. Az általam írt alkalmazásokat (MIT liszensz) saját felelősségedre használod.
 {: .update}
 
 

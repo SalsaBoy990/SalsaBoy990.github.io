@@ -8,6 +8,45 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>A jövő évi tematika</title>
+        <description>&lt;p&gt;Összeállítottam a 2018-as tematikát. Egy-két írás talán már most decemberben elkészül.&lt;/p&gt;
+
+&lt;p&gt;A JavaScript tutoriálokat is át fogom dolgozni, ugyanis apróbb pontatlanságok vannak bennük és persze folytatni fogom a JavaScript sorozatot. Az ember a hibákból sokat tanul, és ez hatványozottan igaz a programozásra. A tutoriálok készítése rendkívül hasznos számomra, ugyanis ezzel jobban elmélyítem és rendszerezem az elsajátított tudást.&lt;/p&gt;
+
+&lt;p&gt;Bízom benne, hogy mindenki talál számára érdekes és hasznos írásokat.&lt;/p&gt;
+
+&lt;h2 id=&quot;íme-a-tervezett-blogbejegyzéseim-listája&quot;&gt;Íme, a tervezett blogbejegyzéseim listája:&lt;/h2&gt;
+
+&lt;ul class=&quot;update&quot;&gt;
+  &lt;li&gt;Mi áll a „zöldek” vegyszer- és GMO-ellenessége mögött?&lt;/li&gt;
+  &lt;li&gt;Az élővilág és a kihalási hullámok. De hol vannak a tetemek?&lt;/li&gt;
+  &lt;li&gt;Törzsi ösztön.&lt;/li&gt;
+  &lt;li&gt;A nyugati kultúra válsága.&lt;/li&gt;
+  &lt;li&gt;Gondolatok az abortuszról.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Tudományos&lt;/em&gt; szkepticizmus, kulturális ellenállás és tagadás a kulturális evolúció tükrében.&lt;/li&gt;
+  &lt;li&gt;A radioaktivitás veszélyeinek eltúlozása. A lineáris, küszöbérték nélküli (LNT) modell tarthatatlansága.&lt;/li&gt;
+  &lt;li&gt;Mitől jó üzlet a „megújuló” energia? Al Gore miért terjeszti a globális felmelegedés &lt;em&gt;körüli&lt;/em&gt; hisztériát? Mit mond az IPCC a klímaváltozás várható következményeiről (valószínűségek)?&lt;sup&gt;1&lt;/sup&gt;&lt;/li&gt;
+  &lt;li&gt;A konzervativizmus közelebb áll a környezetvédelemhez, mint a globális „zöld” ideológia.&lt;/li&gt;
+  &lt;li&gt;A legkegyetlenebb adó. A CO&lt;sub&gt;2&lt;/sub&gt; társadalmi költsége és haszna.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nem feltétlenül ebben a sorrendben fognak megjelenni. Ezek közül néhány cikk a készülő kétrészes könyvem részét fogja képezni. Apropó, az első kötettel (kb. 200-250 oldal), ha minden a terv szerint halad, akkor 2018 őszére készülök el. Csak az éghajlatváltozásos fejezet nincsen kész (ez egyébként a legnehezebb), a többi közel kész állapotban van.&lt;/p&gt;
+
+&lt;p&gt;Ezt a honlapot messzemenőkig fontosabbnak tartom az összes tudományos publikációmnál. Én úgy látom, hogy több értelme van közvetlenül az interneten megosztani az elemzéseimet (illetve a véleményemet), mint folyóiratokba irogani olyan cikkeket, ami szinte senki nem fog elolvasni.&lt;/p&gt;
+
+&lt;p&gt;A blogom 100%-ban független a magyar államtól, a Szegedi Tudományegyetemtől és a nagyvállalatoktól. Így aztán senki nem mondhatja meg nekem, hogy mit publikálhatok.&lt;/p&gt;
+
+&lt;p&gt;Ha gondolod, iratkozz fel a &lt;a href=&quot;http://eepurl.com/c2wHQj&quot;&gt;hírlevelemre&lt;/a&gt; vagy kövesd a híreket a &lt;a href=&quot;https://www.facebook.com/newgeographer&quot;&gt;Facebook&lt;/a&gt;-on!&lt;/p&gt;
+
+&lt;p class=&quot;footnote&quot;&gt;(&lt;sup&gt;1&lt;/sup&gt; Természetesen a médiában nap mint nap hallható klímahisztéria, vagy nevezhetnénk katasztrófabeszédnek, köszönőviszonyban sincsen azzal, amit az IPCC állít.)&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 01 Nov 2017 20:14:00 +0100</pubDate>
+        <link>http://localhost:4000//hirdetmeny/2017/11/01/tematika_2018.html</link>
+        <guid isPermaLink="true">http://localhost:4000//hirdetmeny/2017/11/01/tematika_2018.html</guid>
+      </item>
+    
+      <item>
         <title>Az „ego” miatt…</title>
         <description>&lt;blockquote class=&quot;poem&quot;&gt;
 &lt;p&gt;Az „ego” miatt épült fel a civilizáció és lett kapitalista.&lt;br /&gt;
@@ -37,7 +76,7 @@ Egyetlen egy „felvilágosult” utópista sem tagadhatja e tényeket.&lt;/p&gt
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/az_ego_miatt.jpg&quot; class=&quot;small&quot; alt=&quot;Ego kontra öko&quot; /&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 23 Sep 2017 16:22:00 +0200</pubDate>
+        <pubDate>Sat, 23 Sep 2017 16:22:00 +0100</pubDate>
         <link>http://localhost:4000//egyeb/2017/09/23/az_ego_miatt.html</link>
         <guid isPermaLink="true">http://localhost:4000//egyeb/2017/09/23/az_ego_miatt.html</guid>
       </item>
@@ -330,7 +369,7 @@ obj.feldolgoz();
   &lt;li&gt;&lt;em&gt;Benedek Zoltán - Levendovszky Tihamér&lt;/em&gt; (2013). Szoftverfejlesztés C++ nyelven. SZAK Kiadó Kft., Bicske.&lt;/li&gt;
 &lt;/ol&gt;
 </description>
-        <pubDate>Wed, 20 Sep 2017 16:37:00 +0200</pubDate>
+        <pubDate>Wed, 20 Sep 2017 16:37:00 +0100</pubDate>
         <link>http://localhost:4000//tudomany/2017/09/20/javascript_03.html</link>
         <guid isPermaLink="true">http://localhost:4000//tudomany/2017/09/20/javascript_03.html</guid>
       </item>
@@ -533,7 +572,7 @@ with ERTS.&lt;/a&gt; Third ERTS Symposium, NASA SP-351 1. pp. 309–317.&lt;/li&
 &lt;/ol&gt;
 
 </description>
-        <pubDate>Sat, 16 Sep 2017 20:50:00 +0200</pubDate>
+        <pubDate>Sat, 16 Sep 2017 20:50:00 +0100</pubDate>
         <link>http://localhost:4000//tudomany/2017/09/16/parancssor_a_geoinformatikaban.html</link>
         <guid isPermaLink="true">http://localhost:4000//tudomany/2017/09/16/parancssor_a_geoinformatikaban.html</guid>
       </item>
@@ -878,234 +917,9 @@ o[&quot;print&quot;]();
   &lt;li&gt;&lt;em&gt;Douglas Crockford&lt;/em&gt; (2008). &lt;a href=&quot;https://www.amazon.com/exec/obidos/ASIN/0596517742/wrrrldwideweb&quot;&gt;JavaScript: The Good Parts. 1th Edition.&lt;/a&gt; O’Reilly, USA.&lt;/li&gt;
 &lt;/ol&gt;
 </description>
-        <pubDate>Sun, 03 Sep 2017 01:11:00 +0200</pubDate>
+        <pubDate>Sun, 03 Sep 2017 01:11:00 +0100</pubDate>
         <link>http://localhost:4000//tudomany/2017/09/03/javascript_02.html</link>
         <guid isPermaLink="true">http://localhost:4000//tudomany/2017/09/03/javascript_02.html</guid>
-      </item>
-    
-      <item>
-        <title>Rövid elméleti bevezető a JavaScript nyelvbe</title>
-        <description>&lt;p&gt;A Google Earth Engine (GEE) felhő alapú platform általános bemutatása után (&lt;a href=&quot;http://www.newgeographer.com/tudomany/2017/08/07/google_earth_engine_01.html&quot;&gt;itt elérhető az 1. rész&lt;/a&gt;), ebben a részben egy rövid betekintést nyújtok az objektum-orientált programozásba és felhívom a figyelmet a JavaScript nyelv fontos jellemzőire, hogy hatékonyan ki tudjátok aknázni a GEE-ben rejlő lehetőségeket akár több száz GB-nyi adat gyors feldolgozására, minimális erőfeszítéssel.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Előzetes programozói tapasztalat erősen javallott&lt;/strong&gt;, különben nem sokat értetek meg az egészből. Teljesen mindegy, hogy milyen nyelvet ismersz. A programozói gondolkodás az, ami valóban számít. Az alapelvek, a vezérlési szerkezetek, az algoritmusok stb. mind ugyanazok, csak a szintaxis és a szabvány más.
-Én a C nyelven keresztül tanultam meg a programozást, majd utána ismerkedtem meg a C++-szal és az objektum-orientált paradigmával. És csak ezt követően jött a &lt;a href=&quot;https://www.javascript.com/&quot;&gt;JavaScript&lt;/a&gt; (JS).&lt;/p&gt;
-
-&lt;p&gt;A bejegyzésemben megadott kódrészleteket pedig próbáljátok ki! 
-Használhatjátok valamelyik böngésző konzolját (Google Chrome esetén: &lt;code class=&quot;highlighter-rouge&quot;&gt;F12&lt;/code&gt;, Firefox esetén &lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL+SHIFT+i&lt;/code&gt;) vagy a GEE kódszerkesztőjét (ebben “strict mode”-ban használhatjátok a JS-t)!&lt;/p&gt;
-
-&lt;p&gt;A programrészleteket egyben letölthetitek &lt;a href=&quot;https://github.com/SalsaBoy990/EarthEngine/blob/master/tutorial2.js&quot;&gt;innen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;bevezetés-az-objektum-orientált-programozásba&quot;&gt;Bevezetés az objektum-orientált programozásba&lt;/h2&gt;
-
-&lt;p&gt;Ez bevezető csak egy nagyon kurta betekintést nyújt az objektum orientált szemléletbe.&lt;/p&gt;
-
-&lt;p&gt;A programozás célja mindig egy összetett probléma megoldása a számítógép számítási kapacitásának a lehető leghatékonyabb kihasználásával. A programozás során ezt &lt;strong&gt;az összetett problémát fel kell bontanunk kisebb részproblémákra/részlépésekre&lt;/strong&gt; (például az adatok bekérése, a bemenet ellenőrzése, különböző műveletek, amelyeket az adatokon végzünk, adatok mentése stb.), amelyek megoldására külön függvényeket írunk. Ezáltal átláthatóvá válik számunkra a program működése.&lt;/p&gt;
-
-&lt;p&gt;A “hagyományos” nyelvekben (mint például a C-ben) megtanultuk, hogy &lt;strong&gt;a változókat és a függvényeket külön kezeljük&lt;/strong&gt;, valamint a függvényeket a változók argumentumként való átadásával hívjuk meg. (Az argumentum az az érték, amit bemenő paraméterként megadunk egy függvénynek.). Lehet érték szerint, mutató szerint és referencia szerint paramétert átadni. A JavaScript-ben &lt;strong&gt;kizárólag érték szerinti paraméterátadás&lt;/strong&gt; létezik (az objektum referenciák is érték szerint adódnak át)!&lt;/p&gt;
-
-&lt;p&gt;Az objektum orientált nyelveknek három alapelve van:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;egységbezárás&lt;/strong&gt; / enkapszuláció (encapsulation)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;öröklés&lt;/strong&gt; (inheritance)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;többalakúság&lt;/strong&gt; / polimorfizmus (polymorphism)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;A klasszikus öröklés (és a polimorfizmus) JavaScript-ben is imitálható, de valójában kizárólag csak &lt;strong&gt;prototípusos öröklés&lt;/strong&gt; létezik a JS-ben. Öröklés helyett &lt;strong&gt;kompozíció&lt;/strong&gt;t is alkalmazhatunk. A prototípusos öröklésről majd máskor írok.&lt;/p&gt;
-
-&lt;p&gt;Csak az &lt;strong&gt;egységbe foglalás&lt;/strong&gt;ba megyünk itt bele: &lt;strong&gt;az objektum-orientált paradigma lényege, hogy együtt kezeljük a változókat és a rájuk meghívandó függvényeket egy osztályban&lt;/strong&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;). Meglepően hangzik, de a JS-ben nincsenek tényleges osztályok, bár úgy programozunk, mintha lennének. Helyesebb inkább objektumokról beszélni (a függvények és a tömbök is objektumok).&lt;/p&gt;
-
-&lt;p&gt;A C++-ban a hozzáférési szintek (&lt;strong&gt;public&lt;/strong&gt;, &lt;strong&gt;protected&lt;/strong&gt; és &lt;strong&gt;private&lt;/strong&gt;) segítségével szabályozhatjuk a tagváltozók és tagfüggvények külső hozzáférését. A C++-ban az osztályok esetén alapértelmezetten privát a hozzáférés, és csak az általunk írt publikus hozzáférésű metódusokon keresztül férhetünk hozzá a tagváltozókhoz. Ez a biztonságot szolgálja. A JavaScript-ben &lt;strong&gt;minden tagváltozó és metódus kívülről hozzáférhető&lt;/strong&gt; és módosítható. A &lt;strong&gt;bezárás&lt;/strong&gt; (&lt;strong&gt;closure&lt;/strong&gt;) alkalmazásával tehetjük priváttá (tehát kívülről nem hozzáférhetővé) az objektumok tulajdonságait.&lt;/p&gt;
-
-&lt;h2 id=&quot;belekóstolás-a-javascript-programozási-nyelvbe&quot;&gt;Belekóstolás a JavaScript programozási nyelvbe&lt;/h2&gt;
-
-&lt;p&gt;Ez a nagyon rövid bemutatás csak felületesen érinti a JS néhány jellemzőjét.&lt;/p&gt;
-
-&lt;p&gt;A JavaScript (a későbbiekben: JS), a web nyelve, ECMAScript néven lett szabványosítva. A nevével ellentétben nincs köze a Java-hoz, és nem egyszerű szkriptnyelv, hanem sokkal több annál: egy dinamikus, objektum-orientált, általános célú programozási nyelv.&lt;/p&gt;
-
-&lt;p&gt;A JavaScript &lt;strong&gt;interpretáló nyelv&lt;/strong&gt;, tehát a &lt;strong&gt;fordítás futási időben történik&lt;/strong&gt;: a JS értelmező sorról-sorra halad végig az utasításokon, értelmezi és végrehajtja azokat. Nincsen main() függvény. Ilyen egyszerű. Míg a C esetén először lefordítjuk a forrásfájlt, bináris, futtatható állományt készítve belőle (.exe Windows esetén), majd utána lefuttatunk.&lt;/p&gt;
-
-&lt;p&gt;A legújabb szabvány az &lt;strong&gt;ECMAScript 2017&lt;/strong&gt; (ES8), tavaly az ES7, két éve az ES6 jelent meg. A &lt;strong&gt;webböngészők&lt;/strong&gt; az &lt;strong&gt;ECMAScript5&lt;/strong&gt;-nél újabb szabványokat még nem nagyon implementálták, éppen ezért kocázatos az újabb szabványok szerint kliens oldali kódot írni a webböngészők számára. Minden webböngésző tartalmaz &lt;strong&gt;JavaScript fordító&lt;/strong&gt;t (fordítómotornak is szokták hívni). A &lt;strong&gt;Node.js&lt;/strong&gt; szerver oldali JS keretrendszer például a Google Chrome V8 fordítómotorját használja. Később tervezek foglalkozni ezzel a framework-kkel is.&lt;/p&gt;
-
-&lt;p&gt;A szerver oldalon viszont lehet ES6 szabvány szerint programozni. Például az egyszerűsített függvényszintaxis is használható: &lt;code class=&quot;highlighter-rouge&quot;&gt;(args) =&amp;gt; { /* utasítások */ }&lt;/code&gt; a &lt;code class=&quot;highlighter-rouge&quot;&gt;function (args) { /* utasítások */ }&lt;/code&gt; helyett. Ez az úgynevezett &lt;strong&gt;callback függvényeknél&lt;/strong&gt; hasznos, amelyeknek ugyanis nem kell nevet adni.&lt;/p&gt;
-
-&lt;p&gt;A JS-ben &lt;strong&gt;nincsen &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; függvény&lt;/strong&gt;, bár lehet ilyen néven függvényt létrehozni. A &lt;strong&gt;változók típusa változhat&lt;/strong&gt;, ugyanis a JS gyengén típusos nyelv. Azonban a típusos nyelveknél, mint például a C vagy a C++, mindig meg kell adni a változók típusát:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;char&lt;/code&gt; (karakter, ASCII)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt; (egész szám)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; (lebegőpontos, vagyis törtszám)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;double&lt;/code&gt; (kétszeres pontosságú lebegőpontos szám)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt; (sztring, szöveg típusú).&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bool&lt;/code&gt; (logikai: &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A JS-ben a &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;&lt;/strong&gt; kulcsszóval hozhatunk létre változókat, amelyekhez bármilyen típusú értéket, objektumot és függvényt is rendelhetünk. Az objektum tulajdonságainál alapértelmezett a &lt;strong&gt;public&lt;/strong&gt; hozzáférés, vagyis kívülről elérhetők és módosíthatók, de ez a viselkedés megváltoztatható. Private hozzáférés is lehetséges a JS-ben a &lt;strong&gt;bezárás&lt;/strong&gt;nak, illetve angulul &lt;strong&gt;closure&lt;/strong&gt;-nek nevezett eljárással.&lt;/p&gt;
-
-&lt;p&gt;Az ES6-ban már lehet használni a &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; helyett a &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;&lt;/strong&gt;-et, aminek már &lt;strong&gt;blokkhatóköre van&lt;/strong&gt;, így egy csomó nem várt “mellékhatástól” megkímél bennünket. Például magának a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;-nek az értéke a kontextustól függ, azonban nem kötődik &lt;strong&gt;függvényhatókör&lt;/strong&gt;höz! A függvényhatókörről és a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;-ről a következő részben lesz szó.&lt;/p&gt;
-
-&lt;p&gt;A JS-ben az aposztróf &lt;code class=&quot;highlighter-rouge&quot;&gt;'&lt;/code&gt; és az idézőjel &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt; egyenértékű és a sztringek jelölésére használatos. De keverni ne keverjük őket! A &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;dupla idézőjeleket&quot;&lt;/code&gt; használjuk inkább. &lt;strong&gt;Unicode karakterkészletet használ&lt;/strong&gt; a JS, így majnem minden írott nyelvet támogat (az Unicode tábla maximum 1 millió 114 ezer 112 különféle betűt és jelet képes  eltárolni, jelenleg több mint 136 ezer karaktert tartalmaz). Ez hatalmas előny. A változónevekben és a függvény nevekben lehet ékezetes karakter is, de ez nem ajánlott programozói gyakorlat. Sőt lehetséges &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; nevű függvény/változó is: gondoljunk itt a &lt;strong&gt;jQuery&lt;/strong&gt; keretrendszerre, ahol van egy &lt;code class=&quot;highlighter-rouge&quot;&gt;$()&lt;/code&gt; nevű függvény. Az ékezetes karakterekkel nincsen probléma a JavaScript-ben, mert nem a szörnyű ASCII karaktertáblát használjunk.&lt;/p&gt;
-
-&lt;p&gt;A JS-ben &lt;strong&gt;automatikus szemétgyűjtés&lt;/strong&gt; van (automatic garbage collection), tehát nem kell felszabadítanunk a lefoglalt tárhelyet (a C/C++ esetén csak a &lt;strong&gt;dinamikus memóriakezelés&lt;/strong&gt; esetén kell explicit, azaz magunknak elvégezni a lefoglalt memóraterület felszabadítását), hanem a fordító automatikusan elvégzi: ha egy objektum már nem elérhető – amikor a program már nem tud hivatkozni rá – a fordító automatikusan felszabadítja a lefoglalt memóriaterületet. Éppen ezért &lt;strong&gt;nincsen destruktor&lt;/strong&gt; függvény a JS-ben. &lt;strong&gt;Mutatók sincsenek&lt;/strong&gt;, tehát nem férhetünk hozzá a memóriacímekhez. Helyette &lt;strong&gt;referenciák vannak&lt;/strong&gt;, amiről a JS gondoskodik nekünk.&lt;/p&gt;
-
-&lt;figcaption class=&quot;code-caption&quot;&gt;Az 1. JavaScript programod: Változók és függvények.&lt;/figcaption&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var valtozo = 10;
-valtozo = &quot;Helló&quot;;
-var f = function (s) {
-    console.log(s + &quot;, világ!&quot;);
-};
-f(valtozo); //=&amp;gt; Helló, világ!
-var nev = prompt(&quot;Add meg a keresztneved!&quot;);
-console.log(&quot;Szia &quot; + nev + &quot;!&quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A JavaScript-ben a &lt;strong&gt;primitív adattípusok&lt;/strong&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;, logikai, szám és sztring) &lt;strong&gt;nem mutálódnak&lt;/strong&gt; (immutable), azaz létrehozásuk után az értékük már nem megváltoztatható! Ezek a nyelv legalacsonyabb szintű elemei.&lt;/p&gt;
-
-&lt;p&gt;Hiába hívjuk meg a &lt;code class=&quot;highlighter-rouge&quot;&gt;toUpperCase()&lt;/code&gt; globális metódust (nagybetűssé alakítja a szöveget) a &lt;code class=&quot;highlighter-rouge&quot;&gt;nev&lt;/code&gt; változóra, a &lt;code class=&quot;highlighter-rouge&quot;&gt;nev&lt;/code&gt; változó értékét nem változtatja meg. Ha primitívekre hívunk meg függvényeket, illetve paraméterként átadjuk azokat függvénynek, akkor lokális másolat készül róluk (lefoglalódik számukra új memóriaterület) és a módosítások azokon hajtódnak végre. Az eredeti változó értéke változatlan marad:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var nev = &quot;Juliska&quot;;
-console.log(nev.toUpperCase()); //=&amp;gt; JULISKA
-console.log(nev); //=&amp;gt; Juliska
-nev = nev.toUpperCase();
-console.log(nev); //=&amp;gt; JULISKA
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Az eredeti változó értéke nem változott! Egyetlen sztring metódus sem képes megváltoztatni azt, hanem egy új sztring értéket adnak vissza (“JULISKA”). Viszont új értéket adhatunk a &lt;code class=&quot;highlighter-rouge&quot;&gt;nev&lt;/code&gt; változónak. A megváltoztathatatlanság nem az értékadásra vonatkozik.&lt;/p&gt;
-
-&lt;p&gt;A primitíveket érték szerint hasonlítjuk össze: &lt;strong&gt;két primitív azonos, ha értékük megegyezik&lt;/strong&gt; (két sztring egyenlő, ha hosszuk és minden egyes karakterük megegyezik):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;console.log(101 === 101); //=&amp;gt; true
-console.log(false === false); //=&amp;gt; true
-console.log(&quot;róka&quot; === &quot;róka&quot;); //=&amp;gt; true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Az &lt;strong&gt;objektumok (beleértve a tömböket és a függvényeket)&lt;/strong&gt; másként viselkednek, mint a primitív típusok, ugyanis ezek &lt;strong&gt;mutálódnak&lt;/strong&gt; (mutable), azaz &lt;strong&gt;értékük megváltoztatható&lt;/strong&gt;. A primitív típusoknál:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var a = 3.14;
-var b = a; // Az a változó értékét egy új változóba másoljuk.
-a = 4; // Új értéket adunk az eredeti változónak.
-alert(b) // 3.14-et ír ki, b nem változott meg.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;De mi a helyzet az objektumoknál, amelyeket &lt;strong&gt;referencia típus&lt;/strong&gt;oknak is nevezünk:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var a = [1, 2, 3]; // Egy 3 elemű tömb létrehozása.
-var b = a; // A 'b' tömb ugyanarra a tömbre hivatkozik.
-a[0] = 99; // Módosítsuk az eredeti tömböt!
-alert(b); // A 'b' elemei is változnak: [99, 2, 3].
-console.log(a === b); //=&amp;gt; true
-// 'a' és 'b' ugyanarra a tömbre hivatkozik.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Amikor a &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt;-hez rendeljük az &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; tömböt, akkor nem egy új másolat jön létre az &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; tömb objektumról, hanem csupán egy referencia, pontosabban a &lt;strong&gt;referencia egy másolata&lt;/strong&gt;, adódik át, ami az &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; tömb címére mutat. Tehát a &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt; ugyanarra a tömbre egy második referencia. Tulajdonképpen &lt;strong&gt;sekély másolás&lt;/strong&gt; történik. Mély másolat készítéséhez explicite kell másolnunk az erdeti tömb összes elemét egy újabb memóraterületre (új tömböt hozunk létre):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var a = [1, 2, 3];
-var b = [];
-for(var i = 0; i &amp;lt; a.length; i++) {
-    b[i] = a[i];
-}
-console.log(a === b); //=&amp;gt; false: különböző tömbök sosem egyenlők.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Az objektumokat &lt;strong&gt;referencia szerint&lt;/strong&gt; különböztetjük meg egymástól: &lt;strong&gt;két objektum akkor sem egyenlő, ha ugyanazokkal a tulajdonságokkal és értékekkel rendelkeznek&lt;/strong&gt;. Két tömb sem egyenlő, mégha megegyezik az összes elemük, és azok sorrendje is. &lt;strong&gt;Csak akkor azonos&lt;/strong&gt; két objektum érték, &lt;strong&gt;ha ugyanarra az objektumra hivatkoznak&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Referencia szerinti értékadás van az objektumok esetén, vagyis nem új másolatokat (magát az objektumot), hanem referenciákat adunk értékül ugyanarról az objektumról. A függvényeknek nem maguk az objektumok adódnak át, hanem csupán a rájuk mutató referenciák másolatai, amin keresztül a függvény hozzáférhet az objektumok megváltoztatható értékeihez. A primitív típusok értékei a &lt;strong&gt;verem&lt;/strong&gt;be (&lt;strong&gt;call stack&lt;/strong&gt;) kerülnek. Ha meghívunk egy függvényt egy primitív változóra, akkor egy lokális másolat készül róla, ami a függvény visszatérése után felszabadul. Az eredeti érték nem változik.&lt;/p&gt;
-
-&lt;p&gt;Az objektumokat a &lt;strong&gt;heap&lt;/strong&gt;-ben (a &lt;strong&gt;dinamikusan lefoglalt&lt;/strong&gt; adatok tárterülete a memóriában) tároljuk el. Például tekintsük a &lt;code class=&quot;highlighter-rouge&quot;&gt;var o = { x:0 };&lt;/code&gt; kifejezést! Mi történik a futáskor? A heap-ben megfelelő méretű tárhely foglalódik le az objektum &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;x:0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt; tárolására, majd az értékek inicializálódnak. A kifejezés értéke az objektumra mutató hivatkozás lesz &lt;code class=&quot;highlighter-rouge&quot;&gt;o&lt;/code&gt;-n keresztül. Az &lt;code class=&quot;highlighter-rouge&quot;&gt;o&lt;/code&gt; tehát nem magát az objektumot, csak egy referenciát tárol.&lt;/p&gt;
-
-&lt;figcaption class=&quot;code-caption&quot;&gt;A 2. JavaScript példa: Az objektumok mutálódnak, míg a primitívek nem.&lt;/figcaption&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var s = &quot;Alma&quot;;
-var o = { nev: &quot;Alma&quot; };
-
-var foo = function (arg) {
-    if(arg instanceof Object) { // Objektum-e az arg.
-        arg.nev = &quot;Körte&quot;;
-    } else {
-        arg = &quot;Körte&quot;;
-    }
-};
-foo(s);
-foo(o);
-console.log(s); //=&amp;gt; &quot;Alma&quot;
-console.log(o); //=&amp;gt; &quot;{ nev: &quot;Körte&quot; }&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Összefoglalva tehát, &lt;strong&gt;a Javascript-ben kizárólag érték szerinti paraméterátadás van!&lt;/strong&gt; Az objektumoknál a &lt;strong&gt;referenciák másolatai&lt;/strong&gt; érték szerint adódnak át a függvényeknek (az objektum értékei mutálódnak), míg a primitív típusoknál &lt;strong&gt;lokális másolat&lt;/strong&gt; készül a változók értékeiről (az eredeti értékek nem mutálódnak).&lt;/p&gt;
-
-&lt;p&gt;A JS-ben számos implicit (rejtett) típuskonverzió van. A változók típusa változhat a program futása során, amit az implicit típuskonverziók tesznek lehetővé:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var szam = 101, szoveg = &quot; kiskutya&quot;;
-/* A + operátor az n számot sztringgé konvertálja
- * és összefűzi s-sel.
- */
-var eredmeny = szam + szoveg;
-console.log(eredmeny); //=&amp;gt; 101 kiskutya
-
-/* A '-' operátor a sztringet számmá konvertálja/castolja
- * (ha tudja, különben undefined lesz) és kivonja belőle a 10-et.
- */
-var x = &quot;62&quot; - 10; //=&amp;gt; 52
-
-// De explicite mi is végezhetünk típuskonverziót.
-var y = &quot;1500&quot;;
-y = Number(y); // Számmá castoljuk a sztringet.
-console.log(x + y); //=&amp;gt; 1552
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Amikor az egyenlőség és az egyenlőtlenség operátorokat használjuk, akkor életbevágóan fontos tisztában lenni az implicit típuskonverziókkal. Létezik az egyenlőség operátor (&lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt;) és a szigorú egyenlőség operátor (&lt;code class=&quot;highlighter-rouge&quot;&gt;===&lt;/code&gt;). Az utóbbi az azonosság szigorú definícióját használja és az alapján határozza meg a két operanduszának az azonosságát. A “sima” egyenlőség operátor (&lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt;) sokkal megengedőbb, hiszen engedélyezi a típuskonverziókat. A nemegyenlőség operátorból szintén kettő van: a “sima” (&lt;code class=&quot;highlighter-rouge&quot;&gt;!=&lt;/code&gt;) és szigorú (&lt;code class=&quot;highlighter-rouge&quot;&gt;!==&lt;/code&gt;) változat. Egy rövid kódrészleten bemutatva ez világosabb lesz:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;console.log(60 == &quot;60&quot;); //=&amp;gt; true, a &quot;60&quot;-ból szám lesz
-console.log(60 === &quot;60&quot;); //=&amp;gt; false; szám és sztring különbözik
-console.log(1 == true); //=&amp;gt; true
-console.log(1 === true); //=&amp;gt; false; szám !== logikai érték
-console.log(NaN == NaN); //=&amp;gt; false
-console.log(NaN === NaN); //=&amp;gt; false
-
-/* Ezzel a függvénnyel meghatározható, hogy NaN-e a vizsgált érték. */
-console.log(isNaN(NaN)); //=&amp;gt; true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A NaN érték (not-a-number) a “nem szám” jelölésére való. Akkor kapjuk értékül például, ha számot osztunk sztringgel: &lt;code class=&quot;highlighter-rouge&quot;&gt;10/&quot;a&quot;&lt;/code&gt;. Ez nyilvánvalóan értelmetlen eredményre vezet. A NaN semmilyen másik értékkel, de még önmagával sem azonos!&lt;/p&gt;
-
-&lt;p&gt;A JS-ben az összes számot &lt;strong&gt;64-bites lebegőpontos formátum&lt;/strong&gt;ban reprezentálja az &lt;strong&gt;IEEE 754 szabvány&lt;/strong&gt; szerint. Ez azt jelenti, hogy maximum az olyan nagy számot képes eltárolni, mint a &lt;code class=&quot;highlighter-rouge&quot;&gt;±1.7976931348623157 x 10^308&lt;/code&gt;, és olyan kicsit, mint &lt;code class=&quot;highlighter-rouge&quot;&gt;5 x 10^-324&lt;/code&gt; (
-&lt;strong&gt;alulcsordulás&lt;/strong&gt; történik amikor olyan kicsi a szám, hogy a számítógép nem tudja megkülönböztetni a 0-tól). A túlcsordulást szerinten nem kell magyaráznom.
-A JavaScript számformátuma pontosan reprezentálja az egész számokat &lt;code class=&quot;highlighter-rouge&quot;&gt;-9007199254740992&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;-2^53&lt;/code&gt;) és &lt;code class=&quot;highlighter-rouge&quot;&gt;9007199254740992&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;2^53&lt;/code&gt;) között. Bizonyos operátorok viszont (mint például a tömbök indexelése vagy a bitenkénti műveletek) 32-bites egész számokkal működnek.&lt;/p&gt;
-
-&lt;p&gt;A &lt;strong&gt;hexadecimális számok is támogatottak&lt;/strong&gt; az ECMAScript szabványban, viszont az oktális számok nem!&lt;/p&gt;
-
-&lt;p&gt;Legyetek tisztában azzal is, hogy &lt;strong&gt;a lebegőpontos értékek bizonyos esetekben nem pontosak&lt;/strong&gt;, így ne lepődjetek meg, ha ezt tapasztaljátok:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;console.log(0.1 + 0.2); //=&amp;gt; 0.30000000000000004
-console.log(0.1 + 0.2 == 0.3); //=&amp;gt; false
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p class=&quot;update&quot;&gt;Apró kiegészítés: két fontos dolgot kell itt pótolnom. Az egyik a változók elnevezési konvenciója. Ha a változó egyszerű szó, akkor nincs probléma, mivel minden betűjét kisbetűvel írjuk. Az összetett szavak esetén az első tagot mindig kisbetűvel írjuk, viszont az utána következő tagokat nagy kezdőbetűvel írjuk: &lt;code class=&quot;highlighter-rouge&quot;&gt;likeThis&lt;/code&gt;, illetve használhatunk egy alulvonást is a tagok elválasztására: &lt;code class=&quot;highlighter-rouge&quot;&gt;like_this&lt;/code&gt;. Ezt nem kötelező betartani, de erősen ajánlott. A másik dolog az úgynevezett &lt;strong&gt;“hamisértékek”&lt;/strong&gt; (falsy values) bevezetése a JS-ben. Ezek közé tartozik: a &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;, a &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;, a &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;, az &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;,  az &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&quot;&lt;/code&gt; (üres sztring) és a &lt;code class=&quot;highlighter-rouge&quot;&gt;NaN&lt;/code&gt;. Ezek a kifejezésekben &lt;strong&gt;mindig hamisnak&lt;/strong&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;) &lt;strong&gt;értékelődnek ki&lt;/strong&gt; a szabvány szerint. (2017. augusztus 31.)&lt;/p&gt;
-
-&lt;p&gt;Egy részbe elég ennyi, majd a folytatom ezt az oktató sorozatot. A következő részekben ezekről tervezek írni:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;a függvényhatókör és blokkhatókör&lt;/li&gt;
-  &lt;li&gt;a bezárás (closure)&lt;/li&gt;
-  &lt;li&gt;a tömbök és a tömbszerű objektumok&lt;/li&gt;
-  &lt;li&gt;hozzáférés az objektum tulajdonságaihoz&lt;/li&gt;
-  &lt;li&gt;a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; érték&lt;/li&gt;
-  &lt;li&gt;objektumok és függvények létrehozása&lt;/li&gt;
-  &lt;li&gt;a prototípusos öröklés&lt;/li&gt;
-  &lt;li&gt;a JSON (JavaScript Object Notation)&lt;/li&gt;
-  &lt;li&gt;a RegExp objektumok&lt;/li&gt;
-  &lt;li&gt;a funkcionális programozás (&lt;code class=&quot;highlighter-rouge&quot;&gt;map()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;reduce()&lt;/code&gt; és &lt;code class=&quot;highlighter-rouge&quot;&gt;filter()&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;a “use strict” pragma&lt;/li&gt;
-  &lt;li&gt;a globális objektum (Window)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ez a cikksorozat csak bevezető jellegű. Ez alapján elindulhattok a JavaScript mélyebb megismeréséhez vezető úton.&lt;/p&gt;
-
-&lt;h2 id=&quot;erősen-ajánlott-irodalom&quot;&gt;Erősen ajánlott irodalom&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;em&gt;David Flanagan&lt;/em&gt; (2011). &lt;a href=&quot;http://shop.oreilly.com/product/9780596805531.do&quot;&gt;JavaScript: The Definitive Guide. 6th Edition.&lt;/a&gt; O’Reilly, USA.&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Tue, 29 Aug 2017 19:49:00 +0200</pubDate>
-        <link>http://localhost:4000//tudomany/2017/08/29/javascript_01.html</link>
-        <guid isPermaLink="true">http://localhost:4000//tudomany/2017/08/29/javascript_01.html</guid>
       </item>
     
   </channel>
