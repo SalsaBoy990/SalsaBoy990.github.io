@@ -195,10 +195,6 @@
   text-decoration: none;
   color: #29293f;
 }
-.site-title h1:hover {
-  transition: 0.3s;
-  color: rgba(205, 133, 63, 0.7);
-}
 
 .site-wrapper {
   max-width: 95%;
@@ -259,7 +255,7 @@
 .post-date {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-style: italic;
   color: #606060;
 }
@@ -270,7 +266,7 @@
 
 .writings {
   padding-bottom: 0.35rem;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
 }
 
 
@@ -310,7 +306,7 @@
 }
 
 .navigation-menu ul li a {
-  color: 	#778899;
+  color: 	#3a5367;
   text-decoration: none;
   font-size: 1.1rem;
   font-style: bold;
@@ -318,7 +314,7 @@
 
 .navigation-menu ul li a:hover {
   transition: 0.3s;
-  color: rgb(130, 79, 52);
+  color: #973e41;
 }
 
 .navigation-menu ul ul {

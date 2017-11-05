@@ -6,12 +6,12 @@ weight: 4
 ---
 
 <div>
-  <div style="">
-    <img class="profile-picture" src="{{ site.url}}/assets/basic/me-min.jpg" alt="It's me."/>
+  <div>
+    <img class="profile-picture" src="{{ site.url}}/assets/basic/me-min.jpg" alt="Önarckép"/>
   </div>
   <div style="max-width:650px;">
     <p>Sziasztok! Gulácsi András vagyok (<span id="age"></span> éves), természettudós és író. Frontend/JavaScript fejlesztőnek készülök. Pillanatnyilag PhD hallgatóként tevékenykedek, de kész vagyok váltani.<br />
-      <span>{% include placemark.svg %}</span>
+      <span aria-hidden="true">{% include placemark.svg %}</span>
       <span id="adress">Szeged, Magyarország</span>
     </p>
   </div>
@@ -62,8 +62,8 @@ Megtalálsz a [Twitter]({{ site.twitter }})-en, a [LinkedIn]({{ site.linkedin }}
 
 ## A munkáim
 
-* [**STATS.js**](https://github.com/SalsaBoy990/STATS.js): **jelenleg fejlesztés alatt áll**. Egyszerű számokat tartalmazó tömbökből, illetve tömbökben tárolt objektumok (például egy mySQL adattábla JSON-ba konvertálva) valamelyik tulajdonságából statisztikákat (egyelőre ezek: összeg, átlag, bármelyik percentilis, medián, kvartilisek, minimum, maximum, kiugró értékek) számító JavaScript könyvtár. Egyelőre egymásba ágyazott objektumokat nem támogat. Az eredményeket dobozdiagram formájában is megjeleníti az AnyChart könyvtár segítségével. További tervezett funkciók: az adatsorok szűrése valamelyik statisztika alapján: például az átlag feletti elemek leválogatása. Sok funkcionális programozási elemet használok, valamint a jQuery-hez hasonló felépítésű a könyvtáram. Metóduslánccal és hasonló elegáns technikákkal.
+* [STATS.js](https://github.com/SalsaBoy990/STATS.js): **jelenleg fejlesztés alatt áll**. Egyszerű számokat tartalmazó tömbökből, illetve tömbökben tárolt objektumok (például egy mySQL adattábla JSON-ba konvertálva) valamelyik tulajdonságából statisztikákat (egyelőre ezek: összeg, átlag, bármelyik percentilis, medián, kvartilisek, minimum, maximum, kiugró értékek) számító JavaScript könyvtár. Egyelőre egymásba ágyazott objektumokat nem támogat. Az eredményeket dobozdiagram formájában is megjeleníti az AnyChart könyvtár segítségével. További tervezett funkciók: az adatsorok szűrése valamelyik statisztika alapján: például az átlag feletti elemek leválogatása. Sok funkcionális programozási elemet használok, valamint a jQuery-hez hasonló felépítésű a könyvtáram. Metóduslánccal és hasonló elegáns technikákkal.
 {: .update}
 
-* [**simpleCalc**](https://github.com/SalsaBoy990/simpleCalc): számológép, ami a 4 alapművelet számítására képes tetszőleges kombinációban és zárójelekkel. [Megnyitás](/simpleCalculator.html)
-* [**simpleColor**](https://github.com/SalsaBoy990/simpleColor): RGB szín invertáló és RGB-hexa konverziós program. [Megnyitás](/simpleColor.html)
+* [simpleCalc](https://github.com/SalsaBoy990/simpleCalc): számológép, ami a 4 alapművelet számítására képes tetszőleges kombinációban és zárójelekkel. [Megnyitás](/simpleCalculator.html)
+* [simpleColor](https://github.com/SalsaBoy990/simpleColor): RGB szín invertáló és RGB-hexa konverziós program. [Megnyitás](/simpleColor.html)

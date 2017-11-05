@@ -13,4 +13,4 @@ Igyekszem vele, amennyire az időmből kitelik. Úgy néz ki, hogy két kötetre
 
 {% include license.html %}
 
-<img class="small" src="{{ site.url}}/assets/basic/boritoterv_2017.jpg" alt="A könyvem borítóterve"/>
+<img class="small" src="{{ site.url}}/assets/basic/boritoterv_2017.jpg" alt="A könyvem borítóképe"/>

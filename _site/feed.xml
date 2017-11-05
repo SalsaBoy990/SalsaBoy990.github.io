@@ -8,6 +8,219 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>A Big Data és a felhő alapú számítástechnika a földrajzban</title>
+        <description>&lt;h2 id=&quot;mi-az-a-big-data&quot;&gt;Mi az a Big Data?&lt;/h2&gt;
+
+&lt;p&gt;Néhány részletet idézek az IT Services Hungary honlapján megjelent kis &lt;a href=&quot;https://www.it-services.hu/hirek/mi-az-a-big-data/&quot;&gt;cikkből&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;A „Big Data” (“Nagy Adat”) a cégek, az intelligens hálózatok, a magánszektor és az egyéni felhasználók által világszerte és napi szinten előállított óriási adatmennyiséget jelenti. Strukturáltan és kielemezve ez a rengeteg információ nagy hasznot hozhat a cégek és ügyfelek számára.&lt;/p&gt;
+
+&lt;p&gt;A megfelelően felhasznált „Big Data” magyarázatot adhat a felhasználók fogyasztói és információs viselkedésére, segítséget nyújthat piacok felméréséhez, javíthatja a marketing- és értékesítési kampányokat, támogatást adhat az árképzésnél és optimalizálhatja a logisztikai folyamatokat és az árufolyamot.&lt;/p&gt;
+
+&lt;p&gt;A „Big Data” analitika az az eszköz, amely segít az adattömeget összegyűjteni, integrálni és elemezni –  majd a vállalkozások számára felhasználhatóvá tenni.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Sven Löffler&lt;/em&gt;t, a T-Systems Üzleti Intelligencia és Big Data üzletfejlesztési igazgatóját kérdeztük a „Big Data” és a felhő kapcsolatáról, továbbá a „3V”-ről.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Löffler úr, hogyan jellemezné a „Big Data”-t?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Sven Löffler&lt;/strong&gt;: A Big Data-nak három jellemzője van: mennyiség (volume), sebesség (velocity) és változatosság (variety). Erre szoktunk úgy utalni, hogy a „3V”. A mennyiség a másodpercenként előállított hatalmas adatözönre vonatkozik. A sebesség azért fontos kérdés, mert az adatok nem halmazokban jönnek, hanem folyamatosan áramolnak. Mindig gyorsabban és gyorsabban kell őket feldolgozni, és lehetőleg valós időben. Végül pedig az egyik legnagyobb kihívást a változatosság jelenti, mert az egyes adatokat strukturálni kell és egymással összefüggésbe hozni, a forrásra való tekintet nélkül. A cél a kontrollálatlan adatfolyamok formázása az értékes információk kinyeréséhez. Ez végső soron hozzásegíthet minket üzleti döntések meghozatalához, és hosszú távú versenyelőnyök megszerzéséhez.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Pontosan hogy kapcsolódik a felhő és a big data?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Löffler&lt;/strong&gt;: Nagyon egyszerűen fogalmazva: felhő nélkül nincs Big Data. Az internet és a felhő – magánéletünk fokozódó digitalizációja és az üzleti folyamatok virtualizálásának térhódítása – egyszerre teszik szükségessé és lehetővé a big datát. A felhő alapú számítástechnika az egyetlen lehetőség, hogy támogassuk a big data infrastruktúra-igényeit. Hatalmas tárolókapacitást és nagyteljesítményű szervereket és adatbázisokat kínál.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;adatfúzió-és-a-térbeli-adatok-feldolgozása&quot;&gt;Adatfúzió és a térbeli adatok feldolgozása&lt;/h2&gt;
+
+&lt;p&gt;Az adatgyűjtés, adatfeldolgozás, adatelemzés és adatmegjelenítés egyre inkább áttevődik a felhő alapú megoldásokra.&lt;/p&gt;
+
+&lt;p&gt;Az adatfúzió (data fusion) során a különböző forrásból származó adatokat összevonjuk vagy együtt kezeljük egy adott jelenség vagy valamilyen létező dolog (entitás) érzékelésére, azonosítására vagy jellemzésére egy valamilyen ismereteken alapuló keretrendszerben. Az adatfúzió célja független adatállományokból származó, különböző információkat hordozó változók összekapcsolása az egyes esetek szintjén. Ezáltal adott a lehetőség különálló információk együttes elemzésére (&lt;em&gt;Carl Reed&lt;/em&gt; 2010). A Google Earth Engine a földtudományi és távérzékelt adatokat fogja össze egy egységes rendszerbe.&lt;/p&gt;
+
+&lt;p&gt;A “nagy adaton” belül kifejezetten a térbeli/távérzékelési adatok feldolgozásával, a Google Earth Engine (GEE) felhő alapú webalkalmazás - analitikai eszköz foglalkozom, a JavaScript nyelv erejével. Erről már írtam egy cikket &lt;a href=&quot;http://www.newgeographer.com/tudomany/2017/08/07/google_earth_engine_01.html&quot;&gt;még augusztusban&lt;/a&gt;. Ezen felül JavaScript tutoriálokat is készítettem: &lt;a href=&quot;http://www.newgeographer.com/tudomany/2017/08/29/javascript_01.html&quot;&gt;a sorozat első része&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A “nagy adat” tárolásához és megosztásához egységes adatszabványokra van szükség, hiszen az adatok sok forrásból származnak, más formátumban állnak rendelkezésre. Ahhoz, hogy ezeket össze tudjuk kapcsolni, egy egységes, integrált rendszert kell felépíteni: egy internet felhőre van szükség. Egy ilyet épített fel a földi léptékű földrajzi és távérzékelt adatok feldolgozására a Google. A nagyvállalat hatalmas szerverparkokat üzemeltet erre a célra, amik óriási számítási teljesítményre képesek.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/bigdata/google_servers.jpg&quot; alt=&quot;A Google egyik szerverparkja&quot; class=&quot;medium&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;2. kép: &lt;a href=&quot;https://i.ytimg.com/vi/1Ve5u7jfxds/maxresdefault.jpg&quot;&gt;Csendélet a Google egyik szerverparkjában.&lt;/a&gt; Persze a gépek keményen pörögnek. Komoly hűtőrendszer védi őket a besüléstől.&lt;/figcaption&gt;
+
+&lt;h3 id=&quot;geojson-és-json&quot;&gt;GeoJSON és JSON&lt;/h3&gt;
+
+&lt;p&gt;Több nemzetközi szabványt létezik a földrajzi adatokra. Mivel a JavaScripttel kiemelten foglalkozom, ezért először a szabad hozzáférésű &lt;a href=&quot;http://geojson.org/&quot;&gt;GeoJSON&lt;/a&gt;-t (JavaScript Object Notation, JSON) említem meg, ugyanis ezt extenzíven használja a GEE. Ez annyiban különbözik a hagyományos JSON-tól, hogy van egy geometria (&lt;code class=&quot;highlighter-rouge&quot;&gt;geometry&lt;/code&gt;) tulajdonsága, ami tartalmazza az adott objektum (pont, vonal, poligon) földrajzi koordinátáit tömbök formájában, a szabvány által megszabott módon. De egy egyszerű példán keresztül jobban szemléltethető ez:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;{
+  &quot;type&quot;: &quot;Feature&quot;,
+    &quot;properties&quot;: {
+      &quot;fovaros&quot;: &quot;Colombo&quot;,
+      &quot;lakossag&quot;: 669700,
+      &quot;orszag&quot;: &quot;Sri Lanka&quot;
+    },
+    &quot;geometry&quot;: {
+      &quot;type&quot;: &quot;Point&quot;,
+        &quot;coordinates&quot;: [
+          79.88433837890625,
+          6.931879889517218
+        ]
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;properties&lt;/code&gt; tulajdonság a város főbb jellemzőit (név, lakosság, melyik ország fővárosa) tartalmazza, míg a &lt;code class=&quot;highlighter-rouge&quot;&gt;geometry&lt;/code&gt; tulajdonság a geometria típusát és a koordinátákat tartalmazza. Nagyon könnyű átalakítani egy JavaScript objektummá a &lt;code class=&quot;highlighter-rouge&quot;&gt;JSON.parse()&lt;/code&gt; metódussal:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// A GeoJSON-t minimalizálni kell egy sorba https://www.minifier.org/:
+var szoveg = '{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{&quot;fovaros&quot;:&quot;Colombo&quot;,&quot;lakossag&quot;:669700,&quot;orszag&quot;:&quot;Sri Lanka&quot;},&quot;geometry&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[79.88433837890625,6.931879889517218]}}';
+
+var telepules = JSON.parse(szoveg);
+console.log(
+  telepules.properties.orszag + ' fővárosa ' +
+  telepules.properties.fovaros + ', melynek lakossága: ' +
+  telepules.properties.lakossag + ' fő.'
+);
+
+// Természetesen vissza is alakítható:
+var geojson = JSON.stringify(telepules);
+console.log(geojson);&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A JSON nagyon tömör és sokkal jobb választás, mint a régi XML formátum, ami tag-eket használ, ezért nagyon redundáns, hiszen a nyitó és a zárótag-ek kétszer tartalmazzák a tulajdonság nevét:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt;&lt;xmp&gt;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+	&lt;type&gt;Feature&lt;/type&gt;
+	&lt;properties&gt;
+		&lt;fovaros&gt;Colombo&lt;/fovaros&gt;
+		&lt;lakossag&gt;669700&lt;/lakossag&gt;
+		&lt;orszag&gt;Sri Lanka&lt;/orszag&gt;
+	&lt;/properties&gt;
+	&lt;geometry&gt;
+		&lt;type&gt;Point&lt;/type&gt;
+		&lt;coordinates&gt;79.88433837890625&lt;/coordinates&gt;
+		&lt;coordinates&gt;6.931879889517218&lt;/coordinates&gt;
+	&lt;/geometry&gt;&lt;/xmp&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A kliens (a Google Earth Engine Kódszerkesztő) és a szerver közötti kommunikáció JSON-ba csomagoltan történik: a felhasználó kérést (&lt;code class=&quot;highlighter-rouge&quot;&gt;request&lt;/code&gt;) küld a szerver számára, hogy az végezze el az általunk megszabott műveletek sorozatát az adatbázisban található általunk meghatározott adatokra. A szerver ezt fogadja és elvégzi a feladatot, és JSON-ban válaszol (az eredményeket beleágyazza). A JSON-t a kliens “kicsomagolja” és megjeleníti. Ha hiba volt a kódunkban, akkor természetesen hibával tér vissza a szerver. Egyszerű, nem agysebészet.&lt;/p&gt;
+
+&lt;p&gt;Hogy bebizonyítsam, hogy ez tényleg így van, írjuk be ezt a GEE Kódszerkesztőjébe (a hozzáféréshez regisztrálni kell, a részleteket lásd az egyik korábbi cikkemben), és futtassuk:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// Az adatok kiválasztása: SRTM domborzatmodell
+var image = ee.Image('CGIAR/SRTM90_V4');
+// Hozzáadunk 10-et a domborzatmodell minden cellájához
+var operation = image.add(10);
+// Kiírjuk a konzolra a kérésünket szövegként (JSON)
+print(operation.toString());
+// A szerver válasza (JSON)
+print(operation);&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A kérésünk így néz ki (ezt küldjük a szerver számára):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;ee.Image({
+  &quot;type&quot;: &quot;Invocation&quot;,
+  &quot;arguments&quot;: {
+    &quot;image1&quot;: {
+      &quot;type&quot;: &quot;Invocation&quot;,
+      &quot;arguments&quot;: {
+        &quot;id&quot;: &quot;CGIAR/SRTM90_V4&quot;
+      },
+      &quot;functionName&quot;: &quot;Image.load&quot;
+    },
+    &quot;image2&quot;: {
+      &quot;type&quot;: &quot;Invocation&quot;,
+      &quot;arguments&quot;: {
+        &quot;value&quot;: 10
+      },
+      &quot;functionName&quot;: &quot;Image.constant&quot;
+    }
+  },
+  &quot;functionName&quot;: &quot;Image.add&quot;
+})&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; függvénnyel az új objektum (kép) tulajdonságait kérdeztük le. A szerver hozzáadott 10-et a domborzatmodell minden egyes cellaértékéhez. Ezt nyilván el kell végeznie, hiszen akkor nem tudná kiiírni a létrehozott új kép tulajdonságait. A GEE-ben csak akkor küldjük el a kérést, ha explicite utasítást adunk rá. A példánkban a &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; meghívásával ez teljesül. Így néz ki a szerver válasza (&lt;code class=&quot;highlighter-rouge&quot;&gt;POST response&lt;/code&gt;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;{
+  &quot;type&quot;: &quot;Image&quot;,
+  &quot;bands&quot;: [
+    {
+      &quot;id&quot;: &quot;elevation&quot;,
+      &quot;data_type&quot;: {
+        &quot;type&quot;: &quot;PixelType&quot;,
+        &quot;precision&quot;: &quot;int&quot;,
+        &quot;min&quot;: -32758,
+        &quot;max&quot;: 32777
+      },
+      &quot;crs&quot;: &quot;EPSG:4326&quot;,
+      &quot;crs_transform&quot;: [
+        0.0008333333535119891,
+        0,
+        -180,
+        0,
+        -0.0008333333535119891,
+        60
+      ]
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Eredményül kaptuk az új objektumunk tulajdonságait. Látható, hogy a kérés és a válasz is JSON. Na, röviden így működik a Google Earth Engine. A számításnak persze nem sok értelme volt, de itt a működés megértésén volt a hangsúly.&lt;/p&gt;
+
+&lt;h3 id=&quot;ogc-szabványok&quot;&gt;OGC szabványok&lt;/h3&gt;
+
+&lt;p&gt;Igazából ezzel nem kívánok nagyon részletesen foglalkozni, de azért megemlítem ezeket, hogy halljatok még egy kicsit erről is.&lt;/p&gt;
+
+&lt;p&gt;Az Open Geospatial Consortium (OGC) egy 1994-ben alapított globális ipari konzorcium. Az OGC nyilvánosan elérhető térinformatikai felület szabványokat (geospatial interface standards) és kódolásokat fejleszt, tesztel és dokumentál az információs és kommunikációs iparban való használatra (&lt;em&gt;Carl Reed&lt;/em&gt; 2010).&lt;/p&gt;
+
+&lt;p&gt;Az OGC célja, hogy a térbeli erőforrások kereskedelmi és intézményi folyamatokba való integrálásából származó társadalmi, gazdasági és tudományos előnyöket a legteljesebben kihasználjuk. 2013-ban több mint 475 tagja van (térinformatikai szoftver forgalmazók, kormányzati ügynökségek és egyetemek). Az ODC együttműködik más szabványosító szervezetekkel is mint például az ISO-val (International Organization for Standardization) (&lt;em&gt;Carl Reed&lt;/em&gt; 2010).&lt;/p&gt;
+
+&lt;p&gt;Számos OGC szabványt már használják a „térinformatikai nagy adatokra”. Ezek:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;OGC Web Map Service (WMS) Interface&lt;/strong&gt;: Egyszerű HTTP (HyperText Transfer Protocol) interfész georeferált képek lekérdezésére egy megosztott adattárból (szerver). Egy WMS-kérés definiálja a lekérdezni kívánt réteget és területet. A szerver válaszként visszaküldi a lekérdezett képeket (JPEG, PNG stb. formátumban), amit a böngészőalkalmazás meg tud jeleníteni. A WMS egy adatmegjelenítő felület.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Web Coverage Service (WCS) Interface&lt;/strong&gt;: Standard interfész és műveletek, amelyek hozzáférést biztosítanak raszteres fedvényekhez (műholdkép, légifotó, DEM). Szintén HTTP-n keresztül (a metaadatokat és a fedvényeket is elküldi valamilyen bináris formátumban - GeoTiFF, NetCDF stb.). A WCS az adatok letöltésére szolgál.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Sensor Observation Service (SOS) Interface&lt;/strong&gt;: Szabványosított felületet biztosít a metaadatok és a megfigyelések kezelésére és kinyerésére a különféle érzékelő (szenzor) rendszerekből.
+Pl. in-situ szenzorok (pl. vízmércék), mozgó szenzoros platformok (automata UAV-k), szenzorok hálózata (pl. szeizmikus mérések) stb.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Web Processing Service (WPS) Interface&lt;/strong&gt;: Szabványosított felület, ami bármilyen algoritmus, számítás és modell publikálását lehetővé teszi, ami térbeli adatokon elvégezhető. Az ügyfél számára GIS funkcionalitást nyújt a hálózaton keresztül. Az ügyfél számára elérhetővé teszi, hogy használják az algoritmusokat és a modelleket a saját adataikon. Tehát végrehajthatnak előre leprogramozott műveleteket: a bemenő adatokat megadva futtatják a modelleket, és készen megkapják a modellfuttatás eredményét, amit felhasználhatnak a saját céljaikra. Ez nem igényel nagy háttértudást az ügyfél részéről.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/bigdata/GITEWS_1.jpg&quot; alt=&quot;GITEWS - Német-Indonéz Cúnami Korai Riasztási Rendszer.&quot; class=&quot;medium&quot; /&gt;&lt;/p&gt;
+&lt;figcaption&gt;1. ábra: &lt;a href=&quot;http://www.marinebuzz.com/2008/12/27/indonesia-has-reliable-german-indonesian-tsunami-early-warning-system-gitews/&quot;&gt;A Német-Indonéz Cúnami Korai Riasztási Rendszer.&lt;/a&gt; Példa egy működő Sensor Observation Service (SOS) rendszerre.&lt;/figcaption&gt;
+
+&lt;h2 id=&quot;a-big-data-árnyoldala&quot;&gt;A Big Data árnyoldala&lt;/h2&gt;
+
+&lt;p&gt;A három kulcskérdés itt a titoktartás, az adatok eredete és minősége.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Titoktartás&lt;/strong&gt;: az emberek napi mozgása a mobileszközökön keresztül folyamatosan nyomon követhető, személyük beazonosítható, viselkedésük elemezhető. Már szinte az összes okoseszköz gyűjt valamiféle információt a felhasználóról, ami sértheti a személyiségi jogokat. Nincs ez másként a felhő alapú megoldásoknál sem.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Az adatok eredete&lt;/strong&gt;: ha az adatok hivatalos forrásból származnak (állami, magánszektor), akkor szinte biztosan rendelkezésre áll rendes leíró adat vagy metaadat (ilyen például az adat forrása, hogy ki állította össze az adatokat, információ az adatfrissítésekről, milyen célból készült az adatgyűjtés stb.). Azonban a crowd-sourcing és az állampolgári adatgyűjtéseknél ezek hiányoznak, így bizonytalanok vagy megbízhatatlanok lehetnek az így nyert adatok.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Adatminőség&lt;/strong&gt;: hivatalos források esetén van információ az adatok minőségéről: például a lépték, a mérések pontossága, a mérések precizitása, kalibráció, a hibák halmozódása (error propagation) a származtatott termékben. Az állampolgárok, de különösen a “civil” szervezetek (vagy inkább politikai/gazdasági lobbicsoportok) által készített adatgyűjtések nem igazán megbízhatóak.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;felhasznált-irodalom&quot;&gt;Felhasznált irodalom&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;Carl Reed&lt;/em&gt; (2010). OGC Standards and Geospatial Big Data. – In. &lt;em&gt;Hassan A. Karimi&lt;/em&gt; (szerk.): Big Data: Techniques and Technologies in Geoinformatics. CRC Press, Boca Raton, USA. pp. 279-289.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.google.com/earth-engine/concepts_overview&quot;&gt;Google Earth Engine API kézikönyv.&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sun, 05 Nov 2017 18:04:00 +0100</pubDate>
+        <link>http://localhost:4000//tudomany/2017/11/05/big_data.html</link>
+        <guid isPermaLink="true">http://localhost:4000//tudomany/2017/11/05/big_data.html</guid>
+      </item>
+    
+      <item>
         <title>A jövő évi tematika</title>
         <description>&lt;p&gt;Összeállítottam a 2018-as tematikát. Egy-két írás talán már most decemberben elkészül.&lt;/p&gt;
 
@@ -32,7 +245,7 @@
 
 &lt;p&gt;Nem feltétlenül ebben a sorrendben fognak megjelenni. Ezek közül néhány cikk a készülő kétrészes könyvem részét fogja képezni. Apropó, az első kötettel (kb. 200-250 oldal), ha minden a terv szerint halad, akkor 2018 őszére készülök el. Csak az éghajlatváltozásos fejezet nincsen kész (ez egyébként a legnehezebb), a többi közel kész állapotban van.&lt;/p&gt;
 
-&lt;p&gt;Ezt a honlapot messzemenőkig fontosabbnak tartom az összes tudományos publikációmnál. Én úgy látom, hogy több értelme van közvetlenül az interneten megosztani az elemzéseimet (illetve a véleményemet), mint folyóiratokba irogani olyan cikkeket, ami szinte senki nem fog elolvasni.&lt;/p&gt;
+&lt;p&gt;Ezt a honlapot messzemenőkig fontosabbnak tartom az összes tudományos publikációmnál. Én úgy látom, hogy több értelme van közvetlenül az interneten megosztani az elemzéseimet (illetve a véleményemet), mint folyóiratokba irogani olyan cikkeket, amiket szinte senki nem fog elolvasni.&lt;/p&gt;
 
 &lt;p&gt;A blogom 100%-ban független a magyar államtól, a Szegedi Tudományegyetemtől és a nagyvállalatoktól. Így aztán senki nem mondhatja meg nekem, hogy mit publikálhatok.&lt;/p&gt;
 
@@ -575,351 +788,6 @@ with ERTS.&lt;/a&gt; Third ERTS Symposium, NASA SP-351 1. pp. 309–317.&lt;/li&
         <pubDate>Sat, 16 Sep 2017 20:50:00 +0100</pubDate>
         <link>http://localhost:4000//tudomany/2017/09/16/parancssor_a_geoinformatikaban.html</link>
         <guid isPermaLink="true">http://localhost:4000//tudomany/2017/09/16/parancssor_a_geoinformatikaban.html</guid>
-      </item>
-    
-      <item>
-        <title>Rövid elméleti bevezető a JavaScript nyelvbe, 2. rész.</title>
-        <description>&lt;p&gt;Az &lt;a href=&quot;http://www.newgeographer.com/tudomany/2017/08/29/javascript_01.html&quot;&gt;előző részben&lt;/a&gt; az objektum-orientált paradigmáról írtam, valamint a JavaScript bemutatásába kezdtem bele. Az alábbi dolgokra tértem ki: a JavaScript interpretáló nyelv, vagyis a fordítás futási időben történik; az ECMAScript szabványok; gyengén típusos nyelv; két adattípus létezik: a primitív (változók) és a referencia (objektumok); a primitív típusok nem, míg a referencia típusok mutálódnak; az automatikus szemétgyűjtés miatt nem kell foglalkoznunk a dinamikus tárhelyek felszabadításával (nincsen destruktor), továbbá nincsenek mutatók, amiken keresztül hozzáférhetnénk a memóriacímekhez; egy tömb példáján keresztük rávilágítottam a sekély és a mély másolás különbségére; az implicit típuskonverziókra és a szigorú azonosság, illetve szigorú nemegyenlőség operátorokra is kitértem; leírtam, hogy a JS Unicode karakterkészletet használ, illetve a számokat 64 bites lebegőpontos formátumban tárolja el. Kitértem a hamisértékekre is.&lt;/p&gt;
-
-&lt;p&gt;És most jön a folytatás, az alábbi részekkel, ebben a sorrendben:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;A &lt;strong&gt;függvény- és a blokkhatókör&lt;/strong&gt; közötti különbség, &lt;strong&gt;felemelés&lt;/strong&gt; (hoisting),&lt;/li&gt;
-  &lt;li&gt;A globális objektum (&lt;code class=&quot;highlighter-rouge&quot;&gt;Window&lt;/code&gt;),&lt;/li&gt;
-  &lt;li&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;use strict&quot;&lt;/code&gt; pragma,&lt;/li&gt;
-  &lt;li&gt;Objektumok és függvények, illetve objektum literál és függvény szintaxis,&lt;/li&gt;
-  &lt;li&gt;Tömbök és tömbszerű objektumok,&lt;/li&gt;
-  &lt;li&gt;Hozzáférés az objektumok tulajdonságaihoz.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;a-függvényhatókör-és-a-felemelés-hoisting&quot;&gt;A függvényhatókör és a felemelés (hoisting)&lt;/h2&gt;
-
-&lt;p&gt;Mi a függvényhatókör? Ezt néhány példával lehet a legegyszerűbben elmagyarázni. A blokkhatókört már megszokhattuk más nyelvekben, így például a C-ben, ezért furcsának tűnhet elsőre, amit bemutatok.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function foo () {
-    console.log(&quot;i = &quot; + i); //=&amp;gt; i = undefined
-    for (var i = 0; i &amp;lt; 10; i++) {
-        /* üres ciklus */;
-    }
-    console.log(&quot;i = &quot; + i); //=&amp;gt; i = 10
-}
-foo();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; ciklus előtt és után is hozzáférhető az &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; változó. Ha blokk hatókör lenne érvényben, akkor az &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; kizárólag a for ciklus &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;/code&gt; blokkján belül lenne hozzáférhető, de ez a függvény hatókörnél nincsen így, ugyanis ebben az esetben a blokkon kívül is hozzáférhető &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt;, az éppen aktuális függvényen belül.&lt;/p&gt;
-
-&lt;p&gt;Mint említettem, a &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; ciklus előtt hozzáférhető az &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt;, viszont az értéke &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt; lesz, mivel az értékadás csak  később, a &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; ciklusba ágyazottan történik (alapértelmezetten minden deklarált változó értéke &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;). &lt;strong&gt;Egy függvényen belül deklarált változó hatóköre kiterjed az egész függvényre&lt;/strong&gt; és a &lt;strong&gt;változók felemelése&lt;/strong&gt; (hoisting) történik a függvény első sorába. Az &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; változó felemelődik. Az előző kódrészlet egyenértékű ezzel:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function foo () {
-    var i; // Felemelődés az első sorba.
-    console.log(&quot;i = &quot; + i); //=&amp;gt; i = undefined
-    for (i = 0; i &amp;lt; 10; i++) {
-        /* üres ciklus */;
-    }
-    console.log(&quot;i = &quot; + i); //=&amp;gt; i = 10
-}
-foo();
-console.log(&quot;i = &quot; + i); // Referenciahiba lesz.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Természetesen függvényen kívül nem elérhető az &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt;. A kód utolsó sora referenciahibát fog dobni (&lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; nincs definiálva).&lt;/p&gt;
-
-&lt;p&gt;A változó hatókör a kód azon régiója, amiben definiáltuk a változót. A globális változók globális hatókörrel rendelkeznek, tehát a forráskódban mindenhol definiálva vannak (hozzáférhetők). Ezzel szemben a függvényen belül deklarált változók lokálisak, és csak az adott függvényen (függvényhatókörön) belül hozzáférhetők. Kívülről nem.&lt;/p&gt;
-
-&lt;p&gt;Ha ugyanolyan nevű lokális változót deklarálunk a függvényen belül, akkor az elrejti a globális változót, így a két &lt;code class=&quot;highlighter-rouge&quot;&gt;scope&lt;/code&gt; változó nem ugyanaz a változó:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var scope = &quot;globális&quot;;
-function checkScope() {
-    var scope = &quot;lokális&quot;;
-    return scope;
-}
-checkScope(); //=&amp;gt; lokális
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;De mi történik ebben az esetben?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var scope = &quot;globális&quot;;
-function checkScope() {
-    scope = &quot;lokális&quot;;
-    return scope;
-}
-checkScope(); //=&amp;gt; lokális
-console.log(scope); //=&amp;gt; lokális
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A függvényen belül lehagytam a &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;-t, ezért az a &lt;code class=&quot;highlighter-rouge&quot;&gt;scope&lt;/code&gt; a globális változó, aminek az értékét sikeresen felülírtuk &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;lokális&quot;&lt;/code&gt;-ra.&lt;/p&gt;
-
-&lt;p&gt;A lokális változókat tekinthetjük egy objektum tulajdonságainak. Minden kódrészlethez kapcsolódik egy &lt;strong&gt;hatókör-láncolat&lt;/strong&gt; (scope chain), ami objektumok egy listája, ami a hatókörökhöz tartozó változókat definiálja. Például amikor a JS egy &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; változó értékét keresi, akkor a hatókörlánc első objektumában keresi először. Ha ennek van &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; tulajdonsága, akkor azt használja. Ha nem található ilyen nevű változó, akkor a következő objektumban keresi, és így tovább, míg végül eljutunk a globális objektumig. Ha ott sem találja &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;-et, akkor referenciahiba lép fel (&lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; nem található). Az előbbi példában a függvényen belül a &lt;code class=&quot;highlighter-rouge&quot;&gt;scope&lt;/code&gt; változó értékét módosítottuk. No de melyik &lt;code class=&quot;highlighter-rouge&quot;&gt;scope&lt;/code&gt; változót? A &lt;code class=&quot;highlighter-rouge&quot;&gt;checkScope()&lt;/code&gt; függvényen belül nincsen &lt;code class=&quot;highlighter-rouge&quot;&gt;scope&lt;/code&gt; változó deklarálva (nem használtuk a &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;-t). Ilyenkor a JS értelmező a következő, fölötte levő szinten keresi a &lt;code class=&quot;highlighter-rouge&quot;&gt;scope&lt;/code&gt;-ot. Ez a globális objektum, és itt megtalálja a globális &lt;code class=&quot;highlighter-rouge&quot;&gt;scope&lt;/code&gt; változót.&lt;/p&gt;
-
-&lt;p&gt;A hatókörlánc a JS legfelső szintjén (az a kódrész, ami a függvénydefiníciókon kívül van) egyetlen objektumból áll: ez a globális objektum.&lt;/p&gt;
-
-&lt;p&gt;Természetesen az &lt;strong&gt;ES6&lt;/strong&gt;-tól kezdődően a függvényhatókörű &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; helyett használhatjuk a blokkhatókörű &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;-et, így a függvényhatókörnél jelentkező szoktalan jelenségek nem lépnek fel. Szintén bevezetésre került a &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt;, ami egy konstans, azaz állandó érték jelölésére szolgál. Egy konstansnak kötelező értéket adni annak deklarációjakor. Ezután az értéke semmilyen módon nem lesz megváltoztatható.&lt;/p&gt;
-
-&lt;p&gt;Az előző részben említettem, hogy a webböngészők még nem implementálták az új nyelvi elemek  egy jó részét, tehát kliens oldali kódban nem biztos, hogy működni fognak. Szerver oldalon (pl. Node.js) már támogatottak, ott nyugodtan használd azokat, beleértve az egyszerűsített függvényszintaxist a callback függvényeknél! Az aszinkron függvényhívásról máskor írok.&lt;/p&gt;
-
-&lt;h2 id=&quot;a-globális-objektum-window&quot;&gt;A globális objektum (Window)&lt;/h2&gt;
-
-&lt;p&gt;Említettem többször is a &lt;strong&gt;globális objektum&lt;/strong&gt;ot. Ez egy szokványos JavaScript objektum, ami  rendkívül fontos szerepet játszik. &lt;strong&gt;A globális objektum tulajdonságai globálisan definiáltak&lt;/strong&gt;, vagyis hozzáférhetők a programunk számára:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;olyan globális tulajdonságok, mint például az &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;, az &lt;code class=&quot;highlighter-rouge&quot;&gt;Infinity&lt;/code&gt; és a &lt;code class=&quot;highlighter-rouge&quot;&gt;NaN&lt;/code&gt;,&lt;/li&gt;
-  &lt;li&gt;olyan globális függvények mint az &lt;code class=&quot;highlighter-rouge&quot;&gt;isNaN()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;parseInt()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;eval()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout()&lt;/code&gt; stb.,&lt;/li&gt;
-  &lt;li&gt;konstruktor függvények: &lt;code class=&quot;highlighter-rouge&quot;&gt;Date()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;RegExp()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;String()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Object()&lt;/code&gt; és &lt;code class=&quot;highlighter-rouge&quot;&gt;Array()&lt;/code&gt;,&lt;/li&gt;
-  &lt;li&gt;olyan globális objektumok, mint a &lt;code class=&quot;highlighter-rouge&quot;&gt;Math&lt;/code&gt; és a &lt;code class=&quot;highlighter-rouge&quot;&gt;JSON&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A kliens oldali JavaScript-ben a &lt;code class=&quot;highlighter-rouge&quot;&gt;Window&lt;/code&gt; objektum a böngészőablakban található összes JS kódunk globális objektumaként funkcionál. Például a &lt;code class=&quot;highlighter-rouge&quot;&gt;console&lt;/code&gt; objektum a megnyitott böngészőablakunk konzolja. Ennek a &lt;code class=&quot;highlighter-rouge&quot;&gt;log()&lt;/code&gt; metódusát szoktuk meghívni, ha a konzolra akarunk írni. A &lt;code class=&quot;highlighter-rouge&quot;&gt;console&lt;/code&gt; objektum is része a globális objektumnak. Így tudjuk lekérdezni a &lt;code class=&quot;highlighter-rouge&quot;&gt;Window&lt;/code&gt; objektum összes tulajdonságát:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/* A window a Window objektum önmagát meghivatkozó tulajdonsága.
- * Ezen a referencián keresztül férünk hozzá a globális objektumhoz.
- */
-for (var prop in window) {
-    console.log(prop);
-} 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;a-szigorú-mód-strict-mode-és-a-js-korlátozása&quot;&gt;A szigorú mód (“strict mode”) és a JS korlátozása&lt;/h2&gt;
-
-&lt;p&gt;A JS-ben egyaránt vannak &lt;strong&gt;jó és rossz részek&lt;/strong&gt;. &lt;strong&gt;Douglas Crockford&lt;/strong&gt; (neves JS guru) szerint korlátozni kell a JS programozási nyelvet, és &lt;strong&gt;kizárólag csak a jó részeket&lt;/strong&gt; használni belőle. Ezzel jobb programokat írunk és jobb programozóvá is válunk. Crockford jóvoltából rendelkezésünkre áll a &lt;a href=&quot;http://www.jslint.com/&quot;&gt;JSLint&lt;/a&gt; kódellenőrző, ami megvizsgálja, hogy a programunk megfelel-e a szigorúbb követelményeknek (beleértve a szintaktikai megfontolásokat - magyarul hogyan nézzen ki a kód), és csak a jó részeket alkalmazza. Az ajánlott irodalomban feltüntettem Crockford könyvét. Akit bővebben érdekel, utánanézhet.&lt;/p&gt;
-
-&lt;p&gt;Az egész korlátozás egyrészt a kód jobb értelmezhetőségét, másrészt pedig a biztonság növelését szolgálja. A kliens oldali JS sebezhető a támadásokkal szemben a hekkerek részéről, így célszerű olyan kódot írni, ami biztonságosabb. Például nem használ &lt;code class=&quot;highlighter-rouge&quot;&gt;eval&lt;/code&gt;-t ellenőrzés nélkül. Az &lt;code class=&quot;highlighter-rouge&quot;&gt;eval&lt;/code&gt; a JavaScript fordítót hívja meg egy sztringre, ami JavaSript kódot tartalmaz, amit végrehajt. Az &lt;code class=&quot;highlighter-rouge&quot;&gt;eval&lt;/code&gt; használatát lehetőség szerint kerüld el! Egyébként nagyon ritkán van szükség rá.&lt;/p&gt;
-
-&lt;p&gt;Az alábbi kódrészlet állandóan egy felugró ablakot hoz létre egy végtelen ciklus segítségével:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// Idegesítő kód.
-var text = &quot;for (;;) alert(\&quot;Muhaha!!\&quot;);&quot;;
-/* Nem vizsgálok rá a sztring tartalmára
- * és úgy hívom meg rá az eval-t. */
-eval(text);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ha nem ismerjük a sztring tartalmát, akkor előfordulhatnak benne kártékony, vagy legalábbis kellemetlen kódrészletek. A fenti példát módosítva elkerülhetjük, hogy a kód lefusson:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var text = &quot;for(;;) alert(\&quot;Muhaha!!\&quot;);&quot;;
-
-var pattern = /for/; // egy RegExp objektum.
-// Most rávizsgálok a sztring tartalmára
-var result = text.match(pattern);
-if (result !== null) {
-    throw &quot;A for ciklusok nem engedélyezettek!&quot;;
-} else {
-    eval(text);
-} // Mi történik?
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Egy &lt;code class=&quot;highlighter-rouge&quot;&gt;RegExp&lt;/code&gt; objektum (a következő részben bővebben) segítségével megkeresem a szövegben található &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; kulcsszót. A &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt; jelek közötti kifejezést, vagyis a &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;for&quot;&lt;/code&gt;-t keressük a &lt;code class=&quot;highlighter-rouge&quot;&gt;RegExp&lt;/code&gt; objektum &lt;code class=&quot;highlighter-rouge&quot;&gt;match()&lt;/code&gt; metódusának segítségével. Ha nem talál a sztringünkben ilyet, akkor &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;-t ad vissza. Hibát dobok, ha találtam &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; ciklust, ami leállítja a kód futását. A hibakezelés a következő részben lesz kifejtve.&lt;/p&gt;
-
-&lt;p&gt;Az ECMAScript5 szabványban bevezették a &lt;strong&gt;szigorú módot&lt;/strong&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;strict mode&quot;&lt;/code&gt;), ami bizonyos korlátozásokat vezetett be a biztonság növelésre. Több hibaellenőrzés is van benne (több hibát is jelez a fordító, ami leállítja a kód futását). Nagyon erősen ajánlott a használata, mivel rengeteg sérülékenység van a JS-ben, amit a hekkerek kihasználhatnak. Nem tekinthető jó kódnak, ami nem alkalmazza ezt a fontos korlátozást. Bővebb tájékoztatást a &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode&quot;&gt;Mozilla honlapján&lt;/a&gt; találtok. A GEE kódszerkesztőjében is &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;strict mode&quot;&lt;/code&gt; van érvényben. Használata egyszerű, az utasítások elé kell beilleszteni:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&quot;use strict&quot;;
-var v = &quot;Szigorú módban vagyok!&quot;;
-
-// Referenciahibát dob a fordító:
-x = &quot;A globális objektumnak nem adhatunk tulajdonságot&quot;;
-
-// Függvényeknél:
-var f = function (a) {
-    &quot;use strict&quot;;
-    /* utasítások */
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;objektumok-és-függvények-létrehozása&quot;&gt;Objektumok és függvények létrehozása&lt;/h2&gt;
-
-&lt;p&gt;Az egyik módja a függvények létrehozásának, ha egy &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; változóba tároljuk el a függvényt. Az objetum literál létrehozása &lt;code class=&quot;highlighter-rouge&quot;&gt;var o = { x: 0 };&lt;/code&gt; szintaxissal történik. Mivel ezek utasítások és nem kifejezések szükség van az utasítást záró &lt;code class=&quot;highlighter-rouge&quot;&gt;;&lt;/code&gt;-ra.&lt;/p&gt;
-
-&lt;figcaption class=&quot;code-caption&quot;&gt;
-Az 1. JavaScript példa: Objektum literál, tulajdonságok és metódusok.
-&lt;/figcaption&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var square = function (x) {
-    return x * x;
-};
-console.log(&quot;A megadott szám négyzete: &quot; + square(200));
-
-var point = {
-  x: 0,
-  y: 0,
-  print_1: function () {
-     console.log(&quot;x: &quot; + point.x + &quot;, y: &quot; + point.y);
-  } 
-};
-point.print_2 = function () {
-  console.log(&quot;x: &quot; + point.x + &quot;, y: &quot; + point.y);
-};
-point.x = 5, point.y = 15;
-point.print_1(); //=&amp;gt; x: 5, y: 15
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A függvény szintaxissal felírt függvények kifejezések, tehát nem kell ; utánuk. A példában szereplő &lt;code class=&quot;highlighter-rouge&quot;&gt;Point()&lt;/code&gt; függvény egy pont „osztály” konstruktora. A konstruktor egy olyan függvény, amit objektumok létrehozására, illetve azok tulajdonságainak inicializálására használunk. A prototípusos öröklést a következő részre tartogtatom. Az osztályt azért tettem idezőjelbe, mert mint már említettem, nincsenek igazi osztályok (&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;) a JS-ben.&lt;/p&gt;
-
-&lt;figcaption class=&quot;code-caption&quot;&gt;A 2. JavaScript példa: Függvény szintaxis, konstruktor és osztály.&lt;/figcaption&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function square (x) {
-    return x * x;
-}
-console.log(&quot;A megadott szám négyzete: &quot; + square(200));
-
-/* Ez egy pont osztály konstruktora. */
-function Point(x, y) {
-    this.x = x || 0;
-    this.y = x || 0;
-
-    this.print = function () {
-        console.log(&quot;x: &quot; + this.x + &quot;, y: &quot; + this.y);
-    };
-}
-/* Az osztály példányosítása: egy változóban
- * eltároljuk az objektumot.
- */
-var object = new Point(10, 20);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;this.x = x || 0;&lt;/code&gt; utasításban a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; az éppen aktuális objektumpéldányra mutat (egy referencia), amin keresztül hozzáférünk az éppen aktuális objektum tulajdonságaihoz. A konstruktor önmagában nem hoz létre egy új objektumot, hanem azt nekünk kell megtennünk a new kulcsszó használatával, például: &lt;code class=&quot;highlighter-rouge&quot;&gt;var object = new Point(10, 20);&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Ha nem adunk át egyetlen argumentumot sem a konstruktornak, akkor &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; lesz az &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; és &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; tulajdonság értéke. Miért? A logikai VAGY operátor (&lt;code class=&quot;highlighter-rouge&quot;&gt;||&lt;/code&gt;) abban az esetben, &lt;strong&gt;ha mindkét részkifejezése hamis, akkor a jobb oldali operandusz értékét adja vissza&lt;/strong&gt;, vagyis a nullát.&lt;/p&gt;
-
-&lt;p&gt;A logikai operátorok (ÉS, VAGY) &lt;strong&gt;rövidzár kiértékelést&lt;/strong&gt; alkalmaznak. ÉS kapcsolat esetén (&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt; operátor) akkor igaz az összetett kifejezés, ha mindegyik feltétel igaz (ha már a bal oldali részkifejezés hamis, akkor az egész kifejezés hamis - fölösleges megvizsgálni a jobb oldali részkifejezést). VAGY kapcsolat esetén legalább az egyik feltételnek igaznak kell lennie, hogy az egész kifejezés igaz legyen. A &lt;code class=&quot;highlighter-rouge&quot;&gt;x || 0;&lt;/code&gt; kifejezésben, ha igaz értéket adunk meg az x helyére, akkor a &lt;code class=&quot;highlighter-rouge&quot;&gt;||&lt;/code&gt; operátor már nem vizsgál rá a második kifejezésre, hanem visszadja az első kifejezés értékét. További információ a logikai operátorokról &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators&quot;&gt;itt található&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Felhívom itt a figyelmet arra, hogy vannak az úgynevezett &lt;strong&gt;„hamisértékek”&lt;/strong&gt; (falsy values), amelyek mindig &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;-nak értékelődnek ki, ezek: &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&quot;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;NaN&lt;/code&gt;! Ha ezek bármelyikét is megadnánk az &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; argumentum helyére, akkor is megfelelően működik ez a roppant hasznos technika.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Alapértelmezett függvényargumentumokat&lt;/strong&gt; az ES5-ben még nem implementálták (viszont egyes böngészők már támogathatják), de a fenti technikával megoldható. Az ES6 szintaxis így néz ki:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;function Point(x = 0, y = 0) {
-    this.x = x;
-    this.y = y;
-}
-var p = new Point(45);
-console.log(p); // Mit fog kiírni?
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A Mozilla Firefox és a Google Chrome esetén működik. A többi böngészőnél nem néztem.&lt;/p&gt;
-
-&lt;p&gt;Egy &lt;strong&gt;nagyon fontos különbség van&lt;/strong&gt; az objektum literál (illetve változó) szintaxis és a függvény/konstruktor szintaxis között. Ha objektum literál segítségével hozunk létre egy objektumot, akkor az a deklarációkor létrejön. A deklaráció előtt nem használható (ugyanúgy, mint egy egyszerű változó esetén). A konstruktor esetén viszon egy függvényt hozunk létre, amit ha meghívunk, létrehozzuk az objektum egy példányát (tetszőleges számú példányt hozhatunk létre). A függvény definíció előtt is létrehozhatunk objektum példányokat. A példa talán érthetőbb lesz:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// Példányosítás a konstruktor definíciója előtt.
-var x = new Point(233,455);
-x.print();
-function Point(x, y) {
-    this.x = x || 0;
-    this.y = x || 0;
-    this.print = function () {
-        console.log(&quot;x: &quot; + this.x + &quot;, y: &quot; + this.y);
-    };
-}
-
-// Objektum literál esetén nem működik.
-/* Típushibát dob, hiszen még a point objektum nem létezik,
- * a következő sorban hozzuk létre! */
-point.print();
-var point = {
-  x: 0,
-  y: 0,
-  print: function () {
-     console.log(&quot;x: &quot; + point.x + &quot;, y: &quot; + point.y);
-  } 
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;tömbök-tömbszerű-objektumok-és-hozzáférés-az-objektumok-tulajdonságaihoz&quot;&gt;Tömbök, tömbszerű objektumok és hozzáférés az objektumok tulajdonságaihoz&lt;/h2&gt;
-
-&lt;p&gt;A tömbök is objektumok. Az objektumok tulajdonságokból épülnek fel, amelyek lehetnek változók, tömbök, tömbszerű objektumok, objektumok és függvények. Értsétek ezt úgy, hogy tetszőlegesen egymásba ágyazhatók. &lt;strong&gt;A tulajdonságok azonosító-érték párok.&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;x: 6&lt;/code&gt; esetén az &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; azonosító a &lt;code class=&quot;highlighter-rouge&quot;&gt;6&lt;/code&gt;-os értéket jelöli, amit valamelyik memóriacímen tároljuk. Emlékezzünk vissza, hogy az objektumok mind referenciák, amelyek a dinamikus memóriában lefoglalt tárhelyre hivatkoznak, ahol megtalálhatók az objektum tulajdonságai. Az objektumok tulajdonságaihoz a &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; &lt;strong&gt;pont operátor&lt;/strong&gt; segítségével férhetünk hozzá (is), míg a tömbök esetén a &lt;code class=&quot;highlighter-rouge&quot;&gt;[0]&lt;/code&gt; &lt;strong&gt;tömbelem-hivatkozás&lt;/strong&gt; segítségével. A függvények esetén az érték maga a függvény teste, az azonosító pedig a függvény neve.&lt;/p&gt;
-
-&lt;figcaption class=&quot;code-caption&quot;&gt;A 3. JavaScript példa: Tömbök, tömbszerű objektumok és az objektum tulajdonságok elérése.&lt;/figcaption&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// A tömbök.
-var ures_tomb = [];
-var tomb = [1, 2, 3, 4, 5];
-console.log(tomb[0]);
-
-/* Elemek hozzáadása a tömb végére. */
-tomb.push(-200, 1552, 9999);
-/* Az utolsó elem törlése. */
-tomb.pop();
-/* A tömb elemeinek kiíratása. */
-for (var i = 0; i &amp;lt; tomb.length; i++) {
-    console.log(&quot;A tömb &quot; + (i+1) + &quot;. eleme: &quot; + tomb[i]);
-}
-/* Ezzel a 4. index utáni elemeket törlöm. */
-tomb.length = 4;
-
-var array = [
-    { x: 0 },
-    &quot;kizomba&quot;,
-    26,
-    true,
-    function(nev) { console.log(&quot;Helló, &quot; + nev + &quot;!&quot;); }
-];
-// Utolsó elem.
-array[array.length-1];
-// Hívjuk is meg a függvényt!
-array[array.length-1](&quot;Jancsi&quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A tömbök tulajdonságait a tömb &lt;strong&gt;elemeinek&lt;/strong&gt; hívjuk, amelyek azonosítója szám. Ezt a számot &lt;strong&gt;indexnek&lt;/strong&gt; nevezzük. &lt;strong&gt;A többi objektumnál a tulajdonságok azononosítói&lt;/strong&gt; nem számok, hanem &lt;strong&gt;sztringek&lt;/strong&gt;. A tömböknek van egy hossz / length tulajdonságuk, ami az éppen aktuális tömbelemek számát, a &lt;strong&gt;tömb méretét&lt;/strong&gt; tartalmazza. A fenti &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; ciklus helyett használhatunk &lt;strong&gt;for-in ciklust&lt;/strong&gt; is, ami egy változón keresztül iteráltatja egy objektum tulajdonságait:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/* Ugyanaz, mint az előző, csak for-in ciklussal. */
-var temp;
-for (var p in tomb) {
-  /* Számmá kellett konvertálni. */
-  temp = Number(p)+1;
-  console.log(&quot;A tömb &quot; + temp + &quot;. eleme: &quot; + tomb[p]);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;Tömbszerű objektumokat&lt;/strong&gt; is létrehozhatunk (ilyen az &lt;code class=&quot;highlighter-rouge&quot;&gt;arguments&lt;/code&gt; tulajdonság, ami egy tömbszerű objektum, de erről majd később), ha azonosítónak számot adunk meg, valamint szükség van az elemek számának eltárolására egy változóba (&lt;code class=&quot;highlighter-rouge&quot;&gt;length&lt;/code&gt;):&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/* Tömbszerű objektumok. */
-/* Üres objektum. */
-var a = {};
-var i = 0;
-while (i &amp;lt; 10) {
-  a[i] = i * i;
-  i++;
-}
-/* A tömböknek van hossz tulajdonsága. Itt is létrehozzuk. */
-a.length = i;
-
-var osszeg = 0;
-for (var j = 0; j &amp;lt; a.length; j++) {
-  osszeg += a[j];
-}
-console.log(osszeg);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Az előbbiekből következik, hogy az objektum tulajdonságok elérése kétféleképpen történhet: az &lt;code class=&quot;highlighter-rouge&quot;&gt;objektum.tulajdonsag&lt;/code&gt; és az &lt;code class=&quot;highlighter-rouge&quot;&gt;objektum[&quot;tulajdonsag&quot;]&lt;/code&gt; szintaxissal. A tömbök esetén csak a &lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; zárójelek segítségével.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/* A két példával ezelőtti &quot;a&quot;
- * tömbszerű objektum szerepel itt.
- * A`for in` ciklus a length tulajdonságot is kiírja a konzolra! */
-for (var prop in a) {
-    console.log(prop + &quot; = &quot; + a[prop]);
-}
-// Hozzáférés az objektumok tulajdonságaihoz.
-var o = {};
-o.x = 10, o.y = 25;
-o.print = function () {
-    console.log(&quot;x: &quot; + o.x + &quot;, y: &quot; + o.y);
-};
-console.log(o[&quot;x&quot;]);
-console.log(o.y);
-// A print metódus meghívása.
-o[&quot;print&quot;]();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A következő rész tartalma:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Mi a &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;, honnan származik?&lt;/li&gt;
-  &lt;li&gt;Aszinkron programozás, bezárás (closure) és a privát hozzáférés&lt;/li&gt;
-  &lt;li&gt;Egymásba ágyazott függvények&lt;/li&gt;
-  &lt;li&gt;Kivételkezelés (exeption handling)&lt;/li&gt;
-  &lt;li&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;RegExp&lt;/code&gt; objektumok&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;ajánlott-irodalom&quot;&gt;Ajánlott irodalom&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;em&gt;Douglas Crockford&lt;/em&gt; (2008). &lt;a href=&quot;https://www.amazon.com/exec/obidos/ASIN/0596517742/wrrrldwideweb&quot;&gt;JavaScript: The Good Parts. 1th Edition.&lt;/a&gt; O’Reilly, USA.&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Sun, 03 Sep 2017 01:11:00 +0100</pubDate>
-        <link>http://localhost:4000//tudomany/2017/09/03/javascript_02.html</link>
-        <guid isPermaLink="true">http://localhost:4000//tudomany/2017/09/03/javascript_02.html</guid>
       </item>
     
   </channel>

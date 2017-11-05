@@ -10,20 +10,32 @@
 }
 
 @media only screen and (max-width: 550px) {
+  body {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
   .wrapper {
     max-width: -webkit-calc(550px - (30px));
     max-width: calc(550px - (30px));
 
     padding-right: 15px;
     padding-left: 15px;
-
-    font-size: 1.1rem; 
   }
     
   a {
     font-size: 1.1rem;
   }
 
+  blockquote {
+    font-size: 1.1rem; 
+  }
+
+  figcaption {
+    font-size: 1rem; 
+  }
+  figcaption a{
+    font-size: 1rem; 
+  }
 
   pre, code {
     font-size: 0.95rem;
@@ -34,6 +46,10 @@
   }
   .post-date a {
     font-size: 0.85rem;
+  }
+
+  .writings {
+    font-size: 1.1rem;
   }
 
   .small, .medium {
@@ -70,10 +86,16 @@
     display: flex !important;
     width: 100% !important;
   }
+  #dropdown {
+    display: block;
+  }
   .navigation-menu ul li {
     width: 100% !important;
     float: none !important;
 
     border-bottom: 1px solid transparent;
+  }
+  .navigation-menu ul li a{
+    font-size: 1.05rem;
   }
 }

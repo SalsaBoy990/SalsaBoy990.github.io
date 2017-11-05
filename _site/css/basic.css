@@ -3,7 +3,7 @@
 /* IDs */
 #menu-button {
   cursor:pointer;
-  color: #99a;
+  color: #3a5367;
   height: 45px;
 }
 
@@ -32,9 +32,9 @@ dl, dd, ol, ul, figure {
 body {
   height: 100%;
   width: 100%;
-  color: #383838;
+  color: #384050;
   background-color: rgb(197, 207, 207);
-  font: 400 1.3rem/1.65 "Tinos", Times, "Times New Roman", serif;
+  font: 400 1.35rem/1.6 "Tinos", "Liberation Serif", Times, "Times New Roman", serif;
   text-align: left;
 
   -webkit-text-size-adjust: 100%;
@@ -56,9 +56,8 @@ ul, ol, dl, figure,
 }
 
 h2, h3, h4, h5, h6 {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   margin-bottom: 0.9rem;
-  
 }
  
 
@@ -85,10 +84,14 @@ figure > img {
 
 figcaption {
   display: block;
-  margin: auto;
-  padding-bottom: 20px;
+  margin: 0;
+  padding-bottom: 1rem;
   font-style: italic;
   text-align: center;
+  font-size: 1.2rem;
+}
+
+figcaption a{
   font-size: 1.2rem;
 }
 
@@ -170,12 +173,12 @@ h6 {
 a {
   line-height: 1.2;
   text-decoration: underline;
-  color: peru;
-  font-size: 1.3rem;
+  color: #c56e39;
+  font-size: 1.35rem;
   }
   a:hover {
     transition: 0.3s;
-    color: rgb(130, 79, 52);
+    color: #973e41;
   }
 
 
@@ -194,8 +197,8 @@ blockquote {
   line-height: 1.4;
   text-align: left;
   font-style: italic;
-  color: #383838;
-  background: #fff;
+  font-size: 1.3rem;
+  color: #384050;
   }
   blockquote > :last-child { /* ??? */
     margin-bottom: 0;

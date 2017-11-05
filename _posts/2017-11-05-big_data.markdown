@@ -1,0 +1,202 @@
+---
+layout: post
+comments: false
+title:  "A Big Data és a felhő alapú számítástechnika a földrajzban"
+excerpt: "A Big Data és a felhő alapú számítástechnika a földrajzban"
+date:   2017-11-05 18:04
+tags: ["big data", "javascript", "google earth engine"]
+categories: tudomany
+---
+
+## Mi az a Big Data?
+
+Néhány részletet idézek az IT Services Hungary honlapján megjelent kis [cikkből](https://www.it-services.hu/hirek/mi-az-a-big-data/):
+
+A „Big Data” ("Nagy Adat") a cégek, az intelligens hálózatok, a magánszektor és az egyéni felhasználók által világszerte és napi szinten előállított óriási adatmennyiséget jelenti. Strukturáltan és kielemezve ez a rengeteg információ nagy hasznot hozhat a cégek és ügyfelek számára. 
+
+A megfelelően felhasznált „Big Data” magyarázatot adhat a felhasználók fogyasztói és információs viselkedésére, segítséget nyújthat piacok felméréséhez, javíthatja a marketing- és értékesítési kampányokat, támogatást adhat az árképzésnél és optimalizálhatja a logisztikai folyamatokat és az árufolyamot.
+
+A „Big Data” analitika az az eszköz, amely segít az adattömeget összegyűjteni, integrálni és elemezni –  majd a vállalkozások számára felhasználhatóvá tenni.
+
+*Sven Löffler*t, a T-Systems Üzleti Intelligencia és Big Data üzletfejlesztési igazgatóját kérdeztük a „Big Data” és a felhő kapcsolatáról, továbbá a „3V”-ről.
+
+**Löffler úr, hogyan jellemezné a „Big Data”-t?**
+
+> **Sven Löffler**: A Big Data-nak három jellemzője van: mennyiség (volume), sebesség (velocity) és változatosság (variety). Erre szoktunk úgy utalni, hogy a „3V”. A mennyiség a másodpercenként előállított hatalmas adatözönre vonatkozik. A sebesség azért fontos kérdés, mert az adatok nem halmazokban jönnek, hanem folyamatosan áramolnak. Mindig gyorsabban és gyorsabban kell őket feldolgozni, és lehetőleg valós időben. Végül pedig az egyik legnagyobb kihívást a változatosság jelenti, mert az egyes adatokat strukturálni kell és egymással összefüggésbe hozni, a forrásra való tekintet nélkül. A cél a kontrollálatlan adatfolyamok formázása az értékes információk kinyeréséhez. Ez végső soron hozzásegíthet minket üzleti döntések meghozatalához, és hosszú távú versenyelőnyök megszerzéséhez.
+
+**Pontosan hogy kapcsolódik a felhő és a big data?**
+
+> **Löffler**: Nagyon egyszerűen fogalmazva: felhő nélkül nincs Big Data. Az internet és a felhő – magánéletünk fokozódó digitalizációja és az üzleti folyamatok virtualizálásának térhódítása – egyszerre teszik szükségessé és lehetővé a big datát. A felhő alapú számítástechnika az egyetlen lehetőség, hogy támogassuk a big data infrastruktúra-igényeit. Hatalmas tárolókapacitást és nagyteljesítményű szervereket és adatbázisokat kínál.
+
+
+## Adatfúzió és a térbeli adatok feldolgozása
+
+Az adatgyűjtés, adatfeldolgozás, adatelemzés és adatmegjelenítés egyre inkább áttevődik a felhő alapú megoldásokra.
+
+Az adatfúzió (data fusion) során a különböző forrásból származó adatokat összevonjuk vagy együtt kezeljük egy adott jelenség vagy valamilyen létező dolog (entitás) érzékelésére, azonosítására vagy jellemzésére egy valamilyen ismereteken alapuló keretrendszerben. Az adatfúzió célja független adatállományokból származó, különböző információkat hordozó változók összekapcsolása az egyes esetek szintjén. Ezáltal adott a lehetőség különálló információk együttes elemzésére (*Carl Reed* 2010). A Google Earth Engine a földtudományi és távérzékelt adatokat fogja össze egy egységes rendszerbe.
+
+A "nagy adaton" belül kifejezetten a térbeli/távérzékelési adatok feldolgozásával, a Google Earth Engine (GEE) felhő alapú webalkalmazás - analitikai eszköz foglalkozom, a JavaScript nyelv erejével. Erről már írtam egy cikket [még augusztusban](http://www.newgeographer.com/tudomany/2017/08/07/google_earth_engine_01.html). Ezen felül JavaScript tutoriálokat is készítettem: [a sorozat első része](http://www.newgeographer.com/tudomany/2017/08/29/javascript_01.html).
+
+
+A "nagy adat" tárolásához és megosztásához egységes adatszabványokra van szükség, hiszen az adatok sok forrásból származnak, más formátumban állnak rendelkezésre. Ahhoz, hogy ezeket össze tudjuk kapcsolni, egy egységes, integrált rendszert kell felépíteni: egy internet felhőre van szükség. Egy ilyet épített fel a földi léptékű földrajzi és távérzékelt adatok feldolgozására a Google. A nagyvállalat hatalmas szerverparkokat üzemeltet erre a célra, amik óriási számítási teljesítményre képesek.
+
+<img src="/assets/bigdata/google_servers.jpg" alt="A Google egyik szerverparkja" class="medium" />
+<figcaption>2. kép: <a href="https://i.ytimg.com/vi/1Ve5u7jfxds/maxresdefault.jpg">Csendélet a Google egyik szerverparkjában.</a> Persze a gépek keményen pörögnek. Komoly hűtőrendszer védi őket a besüléstől.</figcaption>
+
+
+### GeoJSON és JSON
+
+Több nemzetközi szabványt létezik a földrajzi adatokra. Mivel a JavaScripttel kiemelten foglalkozom, ezért először a szabad hozzáférésű [GeoJSON](http://geojson.org/)-t (JavaScript Object Notation, JSON) említem meg, ugyanis ezt extenzíven használja a GEE. Ez annyiban különbözik a hagyományos JSON-tól, hogy van egy geometria (`geometry`) tulajdonsága, ami tartalmazza az adott objektum (pont, vonal, poligon) földrajzi koordinátáit tömbök formájában, a szabvány által megszabott módon. De egy egyszerű példán keresztül jobban szemléltethető ez:
+
+<pre><code class="language-json">{
+  "type": "Feature",
+    "properties": {
+      "fovaros": "Colombo",
+      "lakossag": 669700,
+      "orszag": "Sri Lanka"
+    },
+    "geometry": {
+      "type": "Point",
+        "coordinates": [
+          79.88433837890625,
+          6.931879889517218
+        ]
+    }
+}</code></pre>
+
+A `properties` tulajdonság a város főbb jellemzőit (név, lakosság, melyik ország fővárosa) tartalmazza, míg a `geometry` tulajdonság a geometria típusát és a koordinátákat tartalmazza. Nagyon könnyű átalakítani egy JavaScript objektummá a `JSON.parse()` metódussal:
+
+<pre><code class="language-javascript">// A GeoJSON-t minimalizálni kell egy sorba https://www.minifier.org/:
+var szoveg = '{"type":"Feature","properties":{"fovaros":"Colombo","lakossag":669700,"orszag":"Sri Lanka"},"geometry":{"type":"Point","coordinates":[79.88433837890625,6.931879889517218]}}';
+
+var telepules = JSON.parse(szoveg);
+console.log(
+  telepules.properties.orszag + ' fővárosa ' +
+  telepules.properties.fovaros + ', melynek lakossága: ' +
+  telepules.properties.lakossag + ' fő.'
+);
+
+// Természetesen vissza is alakítható:
+var geojson = JSON.stringify(telepules);
+console.log(geojson);</code></pre>
+
+A JSON nagyon tömör és sokkal jobb választás, mint a régi XML formátum, ami tag-eket használ, ezért nagyon redundáns, hiszen a nyitó és a zárótag-ek kétszer tartalmazzák a tulajdonság nevét:
+
+<pre><code class="language-xml"><xmp><?xml version="1.0" encoding="UTF-8" ?>
+	<type>Feature</type>
+	<properties>
+		<fovaros>Colombo</fovaros>
+		<lakossag>669700</lakossag>
+		<orszag>Sri Lanka</orszag>
+	</properties>
+	<geometry>
+		<type>Point</type>
+		<coordinates>79.88433837890625</coordinates>
+		<coordinates>6.931879889517218</coordinates>
+	</geometry></xmp>
+</code></pre>
+
+A kliens (a Google Earth Engine Kódszerkesztő) és a szerver közötti kommunikáció JSON-ba csomagoltan történik: a felhasználó kérést (`request`) küld a szerver számára, hogy az végezze el az általunk megszabott műveletek sorozatát az adatbázisban található általunk meghatározott adatokra. A szerver ezt fogadja és elvégzi a feladatot, és JSON-ban válaszol (az eredményeket beleágyazza). A JSON-t a kliens "kicsomagolja" és megjeleníti. Ha hiba volt a kódunkban, akkor természetesen hibával tér vissza a szerver. Egyszerű, nem agysebészet.
+
+Hogy bebizonyítsam, hogy ez tényleg így van, írjuk be ezt a GEE Kódszerkesztőjébe (a hozzáféréshez regisztrálni kell, a részleteket lásd az egyik korábbi cikkemben), és futtassuk:
+
+<pre><code class="language-javascript">// Az adatok kiválasztása: SRTM domborzatmodell
+var image = ee.Image('CGIAR/SRTM90_V4');
+// Hozzáadunk 10-et a domborzatmodell minden cellájához
+var operation = image.add(10);
+// Kiírjuk a konzolra a kérésünket szövegként (JSON)
+print(operation.toString());
+// A szerver válasza (JSON)
+print(operation);</code></pre>
+
+A kérésünk így néz ki (ezt küldjük a szerver számára):
+
+<pre><code class="language-json">ee.Image({
+  "type": "Invocation",
+  "arguments": {
+    "image1": {
+      "type": "Invocation",
+      "arguments": {
+        "id": "CGIAR/SRTM90_V4"
+      },
+      "functionName": "Image.load"
+    },
+    "image2": {
+      "type": "Invocation",
+      "arguments": {
+        "value": 10
+      },
+      "functionName": "Image.constant"
+    }
+  },
+  "functionName": "Image.add"
+})</code></pre>
+
+A `print()` függvénnyel az új objektum (kép) tulajdonságait kérdeztük le. A szerver hozzáadott 10-et a domborzatmodell minden egyes cellaértékéhez. Ezt nyilván el kell végeznie, hiszen akkor nem tudná kiiírni a létrehozott új kép tulajdonságait. A GEE-ben csak akkor küldjük el a kérést, ha explicite utasítást adunk rá. A példánkban a `print` meghívásával ez teljesül. Így néz ki a szerver válasza (`POST response`):
+
+<pre><code class="language-json">{
+  "type": "Image",
+  "bands": [
+    {
+      "id": "elevation",
+      "data_type": {
+        "type": "PixelType",
+        "precision": "int",
+        "min": -32758,
+        "max": 32777
+      },
+      "crs": "EPSG:4326",
+      "crs_transform": [
+        0.0008333333535119891,
+        0,
+        -180,
+        0,
+        -0.0008333333535119891,
+        60
+      ]
+    }
+  ]
+}
+</code></pre>
+
+Eredményül kaptuk az új objektumunk tulajdonságait. Látható, hogy a kérés és a válasz is JSON. Na, röviden így működik a Google Earth Engine. A számításnak persze nem sok értelme volt, de itt a működés megértésén volt a hangsúly.
+
+
+### OGC szabványok
+
+Igazából ezzel nem kívánok nagyon részletesen foglalkozni, de azért megemlítem ezeket, hogy halljatok még egy kicsit erről is.
+
+Az Open Geospatial Consortium (OGC) egy 1994-ben alapított globális ipari konzorcium. Az OGC nyilvánosan elérhető térinformatikai felület szabványokat (geospatial interface standards) és kódolásokat fejleszt, tesztel és dokumentál az információs és kommunikációs iparban való használatra (*Carl Reed* 2010).
+
+Az OGC célja, hogy a térbeli erőforrások kereskedelmi és intézményi folyamatokba való integrálásából származó társadalmi, gazdasági és tudományos előnyöket a legteljesebben kihasználjuk. 2013-ban több mint 475 tagja van (térinformatikai szoftver forgalmazók, kormányzati ügynökségek és egyetemek). Az ODC együttműködik más szabványosító szervezetekkel is mint például az ISO-val (International Organization for Standardization) (*Carl Reed* 2010).
+
+Számos OGC szabványt már használják a „térinformatikai nagy adatokra”. Ezek:
+
+1. **OGC Web Map Service (WMS) Interface**: Egyszerű HTTP (HyperText Transfer Protocol) interfész georeferált képek lekérdezésére egy megosztott adattárból (szerver). Egy WMS-kérés definiálja a lekérdezni kívánt réteget és területet. A szerver válaszként visszaküldi a lekérdezett képeket (JPEG, PNG stb. formátumban), amit a böngészőalkalmazás meg tud jeleníteni. A WMS egy adatmegjelenítő felület.
+
+2. **Web Coverage Service (WCS) Interface**: Standard interfész és műveletek, amelyek hozzáférést biztosítanak raszteres fedvényekhez (műholdkép, légifotó, DEM). Szintén HTTP-n keresztül (a metaadatokat és a fedvényeket is elküldi valamilyen bináris formátumban - GeoTiFF, NetCDF stb.). A WCS az adatok letöltésére szolgál.
+
+3. **Sensor Observation Service (SOS) Interface**: Szabványosított felületet biztosít a metaadatok és a megfigyelések kezelésére és kinyerésére a különféle érzékelő (szenzor) rendszerekből.
+Pl. in-situ szenzorok (pl. vízmércék), mozgó szenzoros platformok (automata UAV-k), szenzorok hálózata (pl. szeizmikus mérések) stb.
+
+4. **Web Processing Service (WPS) Interface**: Szabványosított felület, ami bármilyen algoritmus, számítás és modell publikálását lehetővé teszi, ami térbeli adatokon elvégezhető. Az ügyfél számára GIS funkcionalitást nyújt a hálózaton keresztül. Az ügyfél számára elérhetővé teszi, hogy használják az algoritmusokat és a modelleket a saját adataikon. Tehát végrehajthatnak előre leprogramozott műveleteket: a bemenő adatokat megadva futtatják a modelleket, és készen megkapják a modellfuttatás eredményét, amit felhasználhatnak a saját céljaikra. Ez nem igényel nagy háttértudást az ügyfél részéről.
+
+
+<img src="/assets/bigdata/GITEWS_1.jpg" alt="GITEWS - Német-Indonéz Cúnami Korai Riasztási Rendszer." class="medium" />
+<figcaption>1. ábra: <a href="http://www.marinebuzz.com/2008/12/27/indonesia-has-reliable-german-indonesian-tsunami-early-warning-system-gitews/">A Német-Indonéz Cúnami Korai Riasztási Rendszer.</a> Példa egy működő Sensor Observation Service (SOS) rendszerre.</figcaption>
+
+
+## A Big Data árnyoldala
+
+A három kulcskérdés itt a titoktartás, az adatok eredete és minősége.
+
+1. **Titoktartás**: az emberek napi mozgása a mobileszközökön keresztül folyamatosan nyomon követhető, személyük beazonosítható, viselkedésük elemezhető. Már szinte az összes okoseszköz gyűjt valamiféle információt a felhasználóról, ami sértheti a személyiségi jogokat. Nincs ez másként a felhő alapú megoldásoknál sem.
+
+2. **Az adatok eredete**: ha az adatok hivatalos forrásból származnak (állami, magánszektor), akkor szinte biztosan rendelkezésre áll rendes leíró adat vagy metaadat (ilyen például az adat forrása, hogy ki állította össze az adatokat, információ az adatfrissítésekről, milyen célból készült az adatgyűjtés stb.). Azonban a crowd-sourcing és az állampolgári adatgyűjtéseknél ezek hiányoznak, így bizonytalanok vagy megbízhatatlanok lehetnek az így nyert adatok.
+
+3. **Adatminőség**: hivatalos források esetén van információ az adatok minőségéről: például a lépték, a mérések pontossága, a mérések precizitása, kalibráció, a hibák halmozódása (error propagation) a származtatott termékben. Az állampolgárok, de különösen a "civil" szervezetek (vagy inkább politikai/gazdasági lobbicsoportok) által készített adatgyűjtések nem igazán megbízhatóak.
+
+## Felhasznált irodalom
+
+1. *Carl Reed* (2010). OGC Standards and Geospatial Big Data. – In. *Hassan A. Karimi* (szerk.): Big Data: Techniques and Technologies in Geoinformatics. CRC Press, Boca Raton, USA. pp. 279-289.
+2. [Google Earth Engine API kézikönyv.](https://developers.google.com/earth-engine/concepts_overview)
