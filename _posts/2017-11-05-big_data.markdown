@@ -10,23 +10,23 @@ categories: tudomany
 
 ## Mi az a Big Data?
 
-Néhány részletet idézek az IT Services Hungary honlapján megjelent kis [cikkből](https://www.it-services.hu/hirek/mi-az-a-big-data/):
+Néhány részletet idézek az IT Services Hungary [honlapján](https://www.it-services.hu/hirek/mi-az-a-big-data/) megjelent cikkből:
 
-A „Big Data” ("Nagy Adat") a cégek, az intelligens hálózatok, a magánszektor és az egyéni felhasználók által világszerte és napi szinten előállított óriási adatmennyiséget jelenti. Strukturáltan és kielemezve ez a rengeteg információ nagy hasznot hozhat a cégek és ügyfelek számára. 
+A „Big Data” („Nagy Adat”) a cégek, az intelligens hálózatok, a magánszektor és az egyéni felhasználók által világszerte és napi szinten előállított óriási adatmennyiséget jelenti. Strukturáltan és kielemezve ez a rengeteg információ nagy hasznot hozhat a cégek és ügyfelek számára. 
 
 A megfelelően felhasznált „Big Data” magyarázatot adhat a felhasználók fogyasztói és információs viselkedésére, segítséget nyújthat piacok felméréséhez, javíthatja a marketing- és értékesítési kampányokat, támogatást adhat az árképzésnél és optimalizálhatja a logisztikai folyamatokat és az árufolyamot.
 
 A „Big Data” analitika az az eszköz, amely segít az adattömeget összegyűjteni, integrálni és elemezni –  majd a vállalkozások számára felhasználhatóvá tenni.
 
-*Sven Löffler*t, a T-Systems Üzleti Intelligencia és Big Data üzletfejlesztési igazgatóját kérdeztük a „Big Data” és a felhő kapcsolatáról, továbbá a „3V”-ről.
+*Sven Löffler*-t, a T-Systems Üzleti Intelligencia és Big Data üzletfejlesztési igazgatóját kérdeztük a „Big Data” és a felhő kapcsolatáról, továbbá a „3V”-ről.
 
-**Löffler úr, hogyan jellemezné a „Big Data”-t?**
+### Löffler úr, hogyan jellemezné a „Big Data”-t?
 
 > **Sven Löffler**: A Big Data-nak három jellemzője van: mennyiség (volume), sebesség (velocity) és változatosság (variety). Erre szoktunk úgy utalni, hogy a „3V”. A mennyiség a másodpercenként előállított hatalmas adatözönre vonatkozik. A sebesség azért fontos kérdés, mert az adatok nem halmazokban jönnek, hanem folyamatosan áramolnak. Mindig gyorsabban és gyorsabban kell őket feldolgozni, és lehetőleg valós időben. Végül pedig az egyik legnagyobb kihívást a változatosság jelenti, mert az egyes adatokat strukturálni kell és egymással összefüggésbe hozni, a forrásra való tekintet nélkül. A cél a kontrollálatlan adatfolyamok formázása az értékes információk kinyeréséhez. Ez végső soron hozzásegíthet minket üzleti döntések meghozatalához, és hosszú távú versenyelőnyök megszerzéséhez.
 
-**Pontosan hogy kapcsolódik a felhő és a big data?**
+### Pontosan hogy kapcsolódik a felhő és a big data?
 
-> **Löffler**: Nagyon egyszerűen fogalmazva: felhő nélkül nincs Big Data. Az internet és a felhő – magánéletünk fokozódó digitalizációja és az üzleti folyamatok virtualizálásának térhódítása – egyszerre teszik szükségessé és lehetővé a big datát. A felhő alapú számítástechnika az egyetlen lehetőség, hogy támogassuk a big data infrastruktúra-igényeit. Hatalmas tárolókapacitást és nagyteljesítményű szervereket és adatbázisokat kínál.
+> **Löffler**: Nagyon egyszerűen fogalmazva: felhő nélkül nincs Big Data. Az internet és a felhő – magánéletünk fokozódó digitalizációja és az üzleti folyamatok virtualizálásának térhódítása – egyszerre teszik szükségessé és lehetővé a big datát. A felhő alapú számítástechnika az egyetlen lehetőség, hogy támogassuk a Big Data infrastruktúra-igényeit. Hatalmas tárolókapacitást és nagyteljesítményű szervereket és adatbázisokat kínál.
 
 
 ## Adatfúzió és a térbeli adatok feldolgozása
@@ -35,10 +35,10 @@ Az adatgyűjtés, adatfeldolgozás, adatelemzés és adatmegjelenítés egyre in
 
 Az adatfúzió (data fusion) során a különböző forrásból származó adatokat összevonjuk vagy együtt kezeljük egy adott jelenség vagy valamilyen létező dolog (entitás) érzékelésére, azonosítására vagy jellemzésére egy valamilyen ismereteken alapuló keretrendszerben. Az adatfúzió célja független adatállományokból származó, különböző információkat hordozó változók összekapcsolása az egyes esetek szintjén. Ezáltal adott a lehetőség különálló információk együttes elemzésére (*Carl Reed* 2010). A Google Earth Engine a földtudományi és távérzékelt adatokat fogja össze egy egységes rendszerbe.
 
-A "nagy adaton" belül kifejezetten a térbeli/távérzékelési adatok feldolgozásával, a Google Earth Engine (GEE) felhő alapú webalkalmazás - analitikai eszköz foglalkozom, a JavaScript nyelv erejével. Erről már írtam egy cikket [még augusztusban](http://www.newgeographer.com/tudomany/2017/08/07/google_earth_engine_01.html). Ezen felül JavaScript tutoriálokat is készítettem: [a sorozat első része](http://www.newgeographer.com/tudomany/2017/08/29/javascript_01.html).
+A „Big Data”-n belül kifejezetten a térbeli/távérzékelési adatok feldolgozásával, a [Google Earth Engine](http://www.newgeographer.com/tudomany/2017/08/07/google_earth_engine_01.html) (GEE) felhő alapú webalkalmazás - analitikai eszköz foglalkozom, a JavaScript nyelv erejével. Ezen felül JavaScript tutoriálokat is készítettem: [a sorozat első része](http://www.newgeographer.com/tudomany/2017/08/29/javascript_01.html).
 
 
-A "nagy adat" tárolásához és megosztásához egységes adatszabványokra van szükség, hiszen az adatok sok forrásból származnak, más formátumban állnak rendelkezésre. Ahhoz, hogy ezeket össze tudjuk kapcsolni, egy egységes, integrált rendszert kell felépíteni: egy internet felhőre van szükség. Egy ilyet épített fel a földi léptékű földrajzi és távérzékelt adatok feldolgozására a Google. A nagyvállalat hatalmas szerverparkokat üzemeltet erre a célra, amik óriási számítási teljesítményre képesek.
+A „Big Data” tárolására és megosztásához egységes adatszabványokra van szükség, hiszen az adatok változatos forrásokból származnak, más formátumban állnak rendelkezésre. Ahhoz, hogy ezeket össze tudjuk kapcsolni, egy egységes, integrált rendszert kell felépíteni: egy internet felhőre van szükség. Egy ilyet épített fel a földi léptékű földrajzi és távérzékelt adatok feldolgozására a Google. A nagyvállalat hatalmas szerverparkokat üzemeltet erre a célra, amik óriási számítási teljesítményre képesek.
 
 <img src="/assets/bigdata/google_servers.jpg" alt="A Google egyik szerverparkja" class="medium" />
 <figcaption>2. kép: <a href="https://i.ytimg.com/vi/1Ve5u7jfxds/maxresdefault.jpg">Csendélet a Google egyik szerverparkjában.</a> Persze a gépek keményen pörögnek. Komoly hűtőrendszer védi őket a besüléstől.</figcaption>
@@ -96,7 +96,7 @@ A JSON nagyon tömör és sokkal jobb választás, mint a régi XML formátum, a
 	</geometry></xmp>
 </code></pre>
 
-A kliens (a Google Earth Engine Kódszerkesztő) és a szerver közötti kommunikáció JSON-ba csomagoltan történik: a felhasználó kérést (`request`) küld a szerver számára, hogy az végezze el az általunk megszabott műveletek sorozatát az adatbázisban található általunk meghatározott adatokra. A szerver ezt fogadja és elvégzi a feladatot, és JSON-ban válaszol (az eredményeket beleágyazza). A JSON-t a kliens "kicsomagolja" és megjeleníti. Ha hiba volt a kódunkban, akkor természetesen hibával tér vissza a szerver. Egyszerű, nem agysebészet.
+A kliens (a Google Earth Engine Kódszerkesztő) és a szerver közötti kommunikáció JSON-ba csomagoltan történik: a felhasználó kérést (`request`) küld a szerver számára, hogy az végezze el az általunk megszabott műveletek sorozatát az adatbázisban található általunk meghatározott adatokra. A szerver ezt fogadja és elvégzi a feladatot, és JSON-ban válaszol (az eredményeket beleágyazza). A JSON-t a kliens dekódolja és megjeleníti. Ha hiba volt a kódunkban, akkor természetesen hibával tér vissza a szerver. Egyszerű, nem agysebészet.
 
 Hogy bebizonyítsam, hogy ez tényleg így van, írjuk be ezt a GEE Kódszerkesztőjébe (a hozzáféréshez regisztrálni kell, a részleteket lásd az egyik korábbi cikkemben), és futtassuk:
 
@@ -170,7 +170,7 @@ Az Open Geospatial Consortium (OGC) egy 1994-ben alapított globális ipari konz
 
 Az OGC célja, hogy a térbeli erőforrások kereskedelmi és intézményi folyamatokba való integrálásából származó társadalmi, gazdasági és tudományos előnyöket a legteljesebben kihasználjuk. 2013-ban több mint 475 tagja van (térinformatikai szoftver forgalmazók, kormányzati ügynökségek és egyetemek). Az ODC együttműködik más szabványosító szervezetekkel is mint például az ISO-val (International Organization for Standardization) (*Carl Reed* 2010).
 
-Számos OGC szabványt már használják a „térinformatikai nagy adatokra”. Ezek:
+Számos OGC szabvány van használatban, ezek:
 
 1. **OGC Web Map Service (WMS) Interface**: Egyszerű HTTP (HyperText Transfer Protocol) interfész georeferált képek lekérdezésére egy megosztott adattárból (szerver). Egy WMS-kérés definiálja a lekérdezni kívánt réteget és területet. A szerver válaszként visszaküldi a lekérdezett képeket (JPEG, PNG stb. formátumban), amit a böngészőalkalmazás meg tud jeleníteni. A WMS egy adatmegjelenítő felület.
 

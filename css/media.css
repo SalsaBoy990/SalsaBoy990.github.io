@@ -11,8 +11,7 @@
 
 @media only screen and (max-width: 550px) {
   body {
-    font-size: 1.1rem;
-    line-height: 1.5;
+    font-size: 1.2rem;
   }
   .wrapper {
     max-width: -webkit-calc(550px - (30px));
@@ -23,7 +22,7 @@
   }
     
   a {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   blockquote {
@@ -48,8 +47,8 @@
     font-size: 0.85rem;
   }
 
-  .writings {
-    font-size: 1.1rem;
+  .writings a {
+    font-size: 1.2rem;
   }
 
   .small, .medium {
@@ -61,23 +60,6 @@
     height: 180px;
     width: 320px;
   } 
-
-    /* .post-title, .post-content , post headings */
-  .post-title {
-      font-size: 30px;
-  }
-  .post-link {
-      font-size: 30px;
-  }
-  .post-content h2 {
-      font-size: 26px;
-    }
-    .post-content h3 {
-      font-size: 22px;
-    }
-    .post-content h4 {
-      font-size: 18px;
-    }
 
   #full-menu {
     display: none;

@@ -3,7 +3,7 @@
 /* IDs */
 #menu-button {
   cursor:pointer;
-  color: #3a5367;
+  color: #606060;
   height: 45px;
 }
 
@@ -32,9 +32,9 @@ dl, dd, ol, ul, figure {
 body {
   height: 100%;
   width: 100%;
-  color: #384050;
-  background-color: rgb(197, 207, 207);
-  font: 400 1.35rem/1.6 "Tinos", "Liberation Serif", Times, "Times New Roman", serif;
+  color: #383838;
+  background-color: #aaa;
+  font: 400 1.25rem/1.6 "PT Serif", Georgia, "Times New Roman", Times, serif;
   text-align: left;
 
   -webkit-text-size-adjust: 100%;
@@ -88,11 +88,11 @@ figcaption {
   padding-bottom: 1rem;
   font-style: italic;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 figcaption a{
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 
@@ -103,7 +103,7 @@ iframe {
   text-align: center; 
   display: block;
   margin:auto;
-  padding-bottom: 20px;
+  padding-bottom: 1rem;
 }
 
 
@@ -113,7 +113,7 @@ iframe {
 table {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
   border: 1px solid #828282;
   border-collapse: collapse;
   font-size: 1.15rem;
@@ -141,29 +141,28 @@ li > ol {
  * Headings
  */
  h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
   line-height: 1.2;
   color:  #29293f;
-  font-weight: 700;
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 2.375rem;
 }
 h2 {
-  font-size: 30px;
+  font-size: 1.875rem;
 }
 h3 {
-  font-size: 26px;
+  font-size: 1.375rem;
 }
 h4 {
-  font-size: 22px;
+  font-size: 1.2rem;
 }
 h5 {
-  font-size: 20px;
+  font-size: 1.1rem;
 }
 h6 {
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 
@@ -173,14 +172,19 @@ h6 {
 a {
   line-height: 1.2;
   text-decoration: underline;
-  color: #c56e39;
-  font-size: 1.35rem;
+  color: #ff6300;/*#c56e39;*/
+  font-size: 1.3rem;
   }
   a:hover {
     transition: 0.3s;
-    color: #973e41;
+    color: Maroon;
   }
-
+  /*
+  a:visited {
+    transition: 0.3s;
+    color: #800080;
+  }
+*/
 
 /**
  * Blockquotes with very nice styling
@@ -193,12 +197,13 @@ blockquote {
   margin-right: auto;
   margin-bottom: 20px;
   padding: 30px 40px;
-  border-left: 4px solid rgba(205, 133, 63, 0.4);
+  border-left: 4px solid rgba(255, 99, 0, 0.4);
   line-height: 1.4;
   text-align: left;
   font-style: italic;
-  font-size: 1.3rem;
-  color: #384050;
+  font-size: 1.2rem;
+  color: #444;
+  background: white;
   }
   blockquote > :last-child { /* ??? */
     margin-bottom: 0;
@@ -216,7 +221,7 @@ blockquote {
     top: 0;
     left: 0; 
     content: "\201D";
-    color: rgba(205, 133, 63, 0.4);
+    color: rgba(255, 99, 0, 0.4);
   }
 
 
@@ -228,7 +233,7 @@ code {
   border: 1px solid #e8e8e8;
   border-radius: 3px;
   font-size: 1.05rem;
-  font-family: "Lekton", Consolas, monaco, monospace;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   background-color: #f5f2f0;
   }
   code {
