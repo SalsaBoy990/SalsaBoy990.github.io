@@ -60,7 +60,7 @@
 
 
 .update {
-  color: #444;
+  color: #001f3f;
 }
 
 .footnote {
@@ -159,10 +159,8 @@
  */
 .site-header {
   position: relative;
-  /*min-height: 12.3rem;
-  width: 100%;*/
   padding: 0;
-  background: #fff;
+  background-color: #fff;
   max-width: -webkit-calc(860px - (2rem * 2));
   max-width: calc(860px - (3rem * 2)); 
   margin-right: auto;
@@ -191,6 +189,7 @@
   font-size: 2.875rem;
 }
 
+/*
 .site-wrapper {
   max-width: 95%;
   max-width: 95%;
@@ -198,7 +197,7 @@
   margin-left: auto;
   padding-right: 10px;
   padding-left: 10px;
-}
+}*/
 
 
 
