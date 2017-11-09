@@ -15,6 +15,7 @@
 html {
   font-size: 16px;
 }
+
 /**
  * Reset some basic elements
  */
@@ -32,9 +33,11 @@ dl, dd, ol, ul, figure {
 body {
   height: 100%;
   width: 100%;
-  color: #383838;
+  color: #000;
   background-color: #aaa;
-  font: 400 1.25rem/1.6 "PT Serif", Georgia, "Times New Roman", Times, serif;
+  font-family: "PT Serif", Georgia, "Times New Roman", Times, serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
   text-align: left;
 
   -webkit-text-size-adjust: 100%;
@@ -172,7 +175,7 @@ h6 {
 a {
   line-height: 1.2;
   text-decoration: underline;
-  color: #ff6300;/*#c56e39;*/
+  color: #ff6300;
   font-size: 1.3rem;
   }
   a:hover {
@@ -202,8 +205,6 @@ blockquote {
   text-align: left;
   font-style: italic;
   font-size: 1.2rem;
-  color: #444;
-  background: white;
   }
   blockquote > :last-child { /* ??? */
     margin-bottom: 0;

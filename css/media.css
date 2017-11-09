@@ -1,6 +1,6 @@
 /* Media queries used */
 @media only screen and (max-width: 800px) { /* Default media query for desktop */
-  .wrapper {
+  .wrapper, .site-header {
     max-width: -webkit-calc(800px - (30px));
     max-width: calc(800px - (30px));
 
@@ -13,7 +13,7 @@
   body {
     font-size: 1.2rem;
   }
-  .wrapper {
+  .wrapper, .site-header {
     max-width: -webkit-calc(550px - (30px));
     max-width: calc(550px - (30px));
 

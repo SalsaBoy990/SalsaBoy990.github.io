@@ -15,7 +15,6 @@
 
 .license {
   font-size: 0.9rem;
-  color: #828282;
 }
 
 .license a {
@@ -59,12 +58,6 @@
   background-color:#e7e7e7;
 }
 
-.white {
-  background: snow;
-  height:100%;
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
-}
 
 .update {
   color: #444;
@@ -100,12 +93,6 @@
 }
 
 
-.homepage {
-  border: none;
-}
-
-
-
 /**
  * Clearfix hack
  */
@@ -129,7 +116,7 @@
   left: 50%;
   top: 90px;
   margin-bottom: 0px;
-  border: 0.03125rem solid rgba(130, 130, 130, 0.6);
+  border: 0.0625rem solid rgba(130, 130, 130, 0.6);
   border-radius: 50%;
 
   -webkit-transform: translate(-50%, -50%);
@@ -172,16 +159,26 @@
  */
 .site-header {
   position: relative;
-  min-height: 12.5rem;
-  width: 100%;
-  margin: 0;
+  /*min-height: 12.3rem;
+  width: 100%;*/
   padding: 0;
-  background: #fcfffd;
+  background: #fff;
+  max-width: -webkit-calc(860px - (2rem * 2));
+  max-width: calc(860px - (3rem * 2)); 
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  padding-bottom: 3rem;
+
+  border-left: 1px solid #626262;
+  border-right: 1px solid #626262;
 }
 
 .site-title {
   padding-top: 3.5rem;
   padding-bottom: 1.25rem;
+  padding-left: 0;
   margin: 0;
   clear: both;
   position: relative;
