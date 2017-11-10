@@ -286,7 +286,7 @@ Nézz meg egy amerikai szénerőművet és vesd össze a kínai szmoggal!&lt;br 
 Egyetlen egy „felvilágosult” utópista sem tagadhatja e tényeket.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/az_ego_miatt.jpg&quot; class=&quot;small&quot; alt=&quot;Ego kontra öko&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/misc/az_ego_miatt.jpg&quot; class=&quot;small&quot; alt=&quot;Ego kontra öko&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 23 Sep 2017 16:22:00 +0100</pubDate>
@@ -698,7 +698,7 @@ saga_cmd io_gdal 0 ^
 
 &lt;p&gt;Viszont van egy problémánk: évenként meg kell adnunk a 13 db kép teljes elérési útvonalát, amit begépelni kényelmetlen és időigényes volna. &lt;code class=&quot;highlighter-rouge&quot;&gt;FOR&lt;/code&gt; ciklust itt nem használhatunk. Ilyenkor mit tehetünk? Van egy fontos alapelvem, ami így szól: &lt;strong&gt;ha lehetséges, akkor mindig térj vissza egy olyan megoldáshoz, amit már ismersz!&lt;/strong&gt; Az Excelben mindenki ismeri a függvényeket. Az &lt;code class=&quot;highlighter-rouge&quot;&gt;ÖSSZEFŰZ()&lt;/code&gt; függvény segítségével könnyedén legenerálhatjuk az elérési utakat, és csak az éveket kell átírni. Az összefűzött szöveget pedig egyben bemásoljuk a szkriptünkbe. (Itt zárójelben megjegyzem, ha esetleg valamelyikőtök nem tudná, hogy a .bat fájlokat úgy szerkeszthetjük, hogy átírjuk a fájlkiterjesztést .txt-re.). A grid-ek elérési útvonalait &lt;code class=&quot;highlighter-rouge&quot;&gt;;&lt;/code&gt;-vel kell elválasztanunk egymástól.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/excel.png&quot; class=&quot;large&quot; alt=&quot;Elérési utak, fájlnevek generálása az ÖSSZEFŰZ() függvény segítségével&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/excel.jpg&quot; class=&quot;large&quot; alt=&quot;Elérési utak, fájlnevek generálása az ÖSSZEFŰZ() függvény segítségével&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-batch&quot;&gt;REM Tool: Statistics for Grids
@@ -727,7 +727,7 @@ saga_cmd shapes_grid 7 ^
 -EXTENT=0
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_results.png&quot; class=&quot;large&quot; alt=&quot;A mintaterületek sikeresen kivágva az átlagképből&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_results.jpg&quot; class=&quot;large&quot; alt=&quot;A mintaterületek sikeresen kivágva az átlagképből&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
 Miután eredményül kaptuk a mintaterületünkre kivágott átlag- és mediánképeket, ki kell exportálnunk őket GeoTIFF-be. Ehhez megint csak az &lt;code class=&quot;highlighter-rouge&quot;&gt;io_gdal&lt;/code&gt; modult használjuk. A &lt;code class=&quot;highlighter-rouge&quot;&gt;-GRIDS&lt;/code&gt;-nél az exportálandó grid-et, a &lt;code class=&quot;highlighter-rouge&quot;&gt;-FILE&lt;/code&gt;-nál a kimenő fájlt adjuk meg:&lt;/p&gt;
@@ -758,18 +758,18 @@ PAUSE
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gdalbuildvrt -separate g:\modis\TEMP\raszter\layer_stack.vrt g:\modis\TEMP\raszter\*.tif&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/shell.png&quot; class=&quot;medium&quot; alt=&quot;Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/shell.jpg&quot; class=&quot;medium&quot; alt=&quot;Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;-separate&lt;/code&gt; logikai argumentumot megadva külön sávokba helyezi a képeket (ha ezt lehagynánk, akkor virtuális mozaikot készítene nekünk a GDAL), utána következik a kimenet és a bemenet. Ebben a sorrendben! Az elérési útvonalakat pedig módosítsátok, ha szükséges.&lt;/p&gt;
 
 &lt;p&gt;Indítsuk el a &lt;strong&gt;saga_gui.exe&lt;/strong&gt;-t, utána a menüsorban válasszuk ki a &lt;strong&gt;File -&amp;gt; Open&lt;/strong&gt; parancsot (vagy a mappa ikonra is kattinthatunk a fájl megnyitásához) és nyissuk meg a virtuális raszterünket (&lt;code class=&quot;highlighter-rouge&quot;&gt;layer_stack.vrt&lt;/code&gt;)! Utána navigáljunk el ide: &lt;strong&gt;Geoprocessing -&amp;gt; Spatial and Geostatistics -&amp;gt; Grids -&amp;gt; Save Grid Statistics to Table&lt;/strong&gt;. Nyissuk meg az eszközt! A &lt;strong&gt;Grid Systems&lt;/strong&gt;-nél adjuk meg grid rendszerünket (a raszter terjedelem és felbontás) a legördülő listából. Utána a &lt;strong&gt;Grids&lt;/strong&gt;-nél a &lt;code class=&quot;highlighter-rouge&quot;&gt;...&lt;/code&gt; gombra kattintva a felugró kéthasábos ablak bal oldali oszlopában válasszuk ki a képkötegünket és a dupla vagy a szimpla nyílra kattintva pakoljuk át a jobb oldali ablakba (így lesz kiválasztva), majd kattintsunk az oké gombra! A táblázat részt hagyjuk úgy, ahogy van. Végül válasszuk ki, hogy milyen statisztikákat számoljon a képekre, és kattintsunk az okéra.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_gui_1.png&quot; class=&quot;large&quot; alt=&quot;Grid statisztikák mentése táblázatba eszköz&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_gui_1.jpg&quot; class=&quot;large&quot; alt=&quot;Grid statisztikák mentése táblázatba eszköz&quot; /&gt;
 &lt;br /&gt;
 A létrehozott táblázatra kattintsunk jobb egérgombbal és válasszuk ki a &lt;strong&gt;„mentés mint”&lt;/strong&gt; opciót és mentsük el .txt formátumba. Ez utána könnyedén beilleszthető az MS Excel-be vagy más táblázatkezelő szoftverbe.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_gui_2.png&quot; class=&quot;large&quot; alt=&quot;A statisztikákat tartalmazó táblázat exportálása szöveges formátumba&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/sagagis/saga_gui_2.jpg&quot; class=&quot;large&quot; alt=&quot;A statisztikákat tartalmazó táblázat exportálása szöveges formátumba&quot; /&gt;
 &lt;br /&gt;
 Feltöltöttem nektek a Google Drive-ra a MODIS minta-adatbázisomat (&lt;a href=&quot;https://drive.google.com/open?id=0B8pLujeireG7YjBmWTMtbm85UzQ&quot;&gt;modis_sample_data.rar&lt;/a&gt;, 561 MB, kitömörítve 2,71 GB), amin gyakorolhatjátok a parancssori adatfeldolgozást. A batch szkriptet megtaláljátok a &lt;a href=&quot;https://github.com/SalsaBoy990/saga_gis_batch&quot;&gt;saga_gis_batch&lt;/a&gt; repository-mban.&lt;/p&gt;
 

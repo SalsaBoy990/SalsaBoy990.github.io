@@ -64,7 +64,7 @@ A cigányság száma **az elmúlt 110 évben megtízszereződött**: **60 ezer f
 A cigányság 2015. évi számának becslésére és 2020-ig való előrejelzésére, egy egyszerű modellt készítettem. A rendelkezésre álló adatfelvételek adatpontjaira egy exponenciális függvényt illesztettem (1. ábra).
 
 
-<img src="{{ site.url }}/assets/Cigany_modell-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="medium" />
+<img src="{{ site.url }}/assets/gipsy/Cigany_modell-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="medium" />
 <figcaption>1. ábra: A cigányfelmérések eredményeire számolt exponenciális függvény (Hablicsek L. 2007). (Az R-ben írt kódot lásd az <a href="https://github.com/SalsaBoy990/R-codes" target="_blank">R-codes</a> gyűjteményemben.)
 </figcaption>
 
@@ -183,10 +183,10 @@ A teljes népesség és a cigányság élveszületési számának és arányána
 A könnyebb összehasonlíthatóság kedvéért, a 2-3. ábrákon megjelenítettem a cigány és a magyar korfát a 2001. évi népszámlálás adatainak felhasználásával. Megjegyzés: a vízszintes tengely beosztása a két korfán eltérő. A magyar lakosság esetén 39 év az átlagéletkor, míg a cigányoknál csupán 25.
 
 
-<img src="{{ site.url }}/assets/Cigany_korfa-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="small" />
+<img src="{{ site.url }}/assets/gipsy/Cigany_korfa-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="small" />
 <figcaption>2. ábra: A cigányságot jellemző korfa piramis alakú (KSH alapján). (Az R-ben írt kódot lásd az <a href="https://github.com/SalsaBoy990/R-codes" target="_blank">R-codes</a> gyűjteményemben.)
 </figcaption>
-<img src="{{ site.url }}/assets/Magyar_korfa-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="small" />
+<img src="{{ site.url }}/assets/gipsy/Magyar_korfa-min.jpg" alt="A cigányok számának előrejelzése 2020-ig" class="small" />
 <figcaption>3. ábra: A magyarság korfája elöregedő korszerkezetet tükröz, urna alakú (KSH alapján). (Az R-ben írt kódot lásd az <a href="https://github.com/SalsaBoy990/R-codes" target="_blank">R-codes</a> gyűjteményemben.)
 </figcaption>
 

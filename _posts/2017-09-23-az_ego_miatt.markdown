@@ -32,5 +32,5 @@ Nézz meg egy amerikai szénerőművet és vesd össze a kínai szmoggal!<br>
 Egyetlen egy „felvilágosult” utópista sem tagadhatja e tényeket.</p>
 </blockquote>
 
-<img src="{{ site.url }}/assets/az_ego_miatt.jpg" class="small" alt="Ego kontra öko"/>
+<img src="{{ site.url }}/assets/misc/az_ego_miatt.jpg" class="small" alt="Ego kontra öko"/>
 

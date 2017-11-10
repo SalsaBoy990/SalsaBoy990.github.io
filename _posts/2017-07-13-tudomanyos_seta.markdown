@@ -11,7 +11,7 @@ categories: politika
 A megvezetett tudósok, a tudományhívők, a „környezetvédő” politikai aktivisták és a „társadalmi igazságosság” harcosai az USA legtöbb nagyvárosában együtt kormányellenes tüntetéseket tartottak Donald Trump kormánya ellen, annak a tudományos kutatásokra fordított kormányzati kiadásokat drasztikusan lefaragó politikai intézkedései ellen. Ebben van ráció, ugyanis egy hatalmas bürokrácia jött létre, ami az állami pénzek haszonélvezője. Miről szóltak a tüntetések valójában?
 
 
-<img src="{{ site.url}}/assets/msf800px-min.jpg" class="small" alt="A Séta a Tudományért mozgalom weboldala"/>
+<img src="{{ site.url}}/assets/left/msf800px-min.jpg" class="small" alt="A Séta a Tudományért mozgalom weboldala"/>
 <figcaption>1. kép: <a href="https://satellites.marchforscience.com/">A Séta a Tudományért mozgalom weboldala</a></figcaption>
 
 
@@ -63,7 +63,7 @@ Egyszerű felforgatók csupán, akik egy soha sem létezett, soha meg nem valós
 Az első pontra reagálva: Mi köze van ehhez a tudományhoz? Második pont: Ez a párbeszéd a republikánusok kizárásával eléggé egyoldalú lesz. Harmadik pont: A tudományos életre is ki akarják terjeszteni a felforgató liberális ideológiájukat a mozgalom kiötlői. A tudományos körökbe az ember érdemei és teljesítménye alapján kerül. Ebben a bőrszínnek és a nemnek nincsen szerepe. A női nemi kvóták követelése a szabadság rovására megy: ez igazságtalan azokkal szemben, akik a személyes érdemeik alapján kerültek be a tudományos életbe, és akiknek egyetlen „bűne”, hogy fehér heteroszexuális férfinak születtek.
 
 
-<img class="medium" src="{{ site.url}}/assets/democrats800px-min.jpg" alt="Republikánus ellenes demokrata tüntetők. Tényleg a tudományért tüntetnek?"/>
+<img class="medium" src="{{ site.url}}/assets/left/democrats800px-min.jpg" alt="Republikánus ellenes demokrata tüntetők. Tényleg a tudományért tüntetnek?"/>
 <figcaption>2. kép: <a href="https://www.facebook.com/marchforscience/photos/pcb.360992090961778/360991287628525/?type=3&theater">Republikánus ellenes demokrata tüntetők.</a> Tényleg a tudományért tüntetnek?</figcaption>
 
 
@@ -129,7 +129,7 @@ Ezek a szélső baloldali álhumanista liberálisok rá akarják erőszakolni a 
 
 
 
-<img class="medium" src="{{ site.url}}/assets/mfsDC800px-min.jpg" alt="Tüntetők Washington D.C.-ben"/>
+<img class="medium" src="{{ site.url}}/assets/left/mfsDC800px-min.jpg" alt="Tüntetők Washington D.C.-ben"/>
 <figcaption>3. kép: <a href="https://pbs.twimg.com/media/C-iyuLzU0AADign.jpg:large">Tüntetők Washington D.C.-ben</a></figcaption>
 
 

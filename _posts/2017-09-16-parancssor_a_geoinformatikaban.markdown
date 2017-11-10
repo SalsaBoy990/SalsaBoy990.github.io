@@ -122,7 +122,7 @@ A raszterállományokra (grid-ek) statisztikákat (átlagképeket, szórást stb
 
 Viszont van egy problémánk: évenként meg kell adnunk a 13 db kép teljes elérési útvonalát, amit begépelni kényelmetlen és időigényes volna. `FOR` ciklust itt nem használhatunk. Ilyenkor mit tehetünk? Van egy fontos alapelvem, ami így szól: **ha lehetséges, akkor mindig térj vissza egy olyan megoldáshoz, amit már ismersz!** Az Excelben mindenki ismeri a függvényeket. Az `ÖSSZEFŰZ()` függvény segítségével könnyedén legenerálhatjuk az elérési utakat, és csak az éveket kell átírni. Az összefűzött szöveget pedig egyben bemásoljuk a szkriptünkbe. (Itt zárójelben megjegyzem, ha esetleg valamelyikőtök nem tudná, hogy a .bat fájlokat úgy szerkeszthetjük, hogy átírjuk a fájlkiterjesztést .txt-re.). A grid-ek elérési útvonalait `;`-vel kell elválasztanunk egymástól.
 
-<img src="{{ site.url }}/assets/sagagis/excel.png" class="large" alt="Elérési utak, fájlnevek generálása az ÖSSZEFŰZ() függvény segítségével"/>
+<img src="{{ site.url }}/assets/sagagis/excel.jpg" class="large" alt="Elérési utak, fájlnevek generálása az ÖSSZEFŰZ() függvény segítségével"/>
 <br />
 
 <pre><code class="language-batch">REM Tool: Statistics for Grids
@@ -151,7 +151,7 @@ saga_cmd shapes_grid 7 ^
 -EXTENT=0
 </code></pre>
 
-<img src="{{ site.url }}/assets/sagagis/saga_results.png" class="large" alt="A mintaterületek sikeresen kivágva az átlagképből"/>
+<img src="{{ site.url }}/assets/sagagis/saga_results.jpg" class="large" alt="A mintaterületek sikeresen kivágva az átlagképből"/>
 
 <br />
 Miután eredményül kaptuk a mintaterületünkre kivágott átlag- és mediánképeket, ki kell exportálnunk őket GeoTIFF-be. Ehhez megint csak az `io_gdal` modult használjuk. A `-GRIDS`-nél az exportálandó grid-et, a `-FILE`-nál a kimenő fájlt adjuk meg:
@@ -182,7 +182,7 @@ Nyissunk az OSGeo4W héjalkalmazást és gépeljük be ezt a rövid parancsot eg
 
 `gdalbuildvrt -separate g:\modis\TEMP\raszter\layer_stack.vrt g:\modis\TEMP\raszter\*.tif`
 
-<img src="{{ site.url }}/assets/sagagis/shell.png" class="medium" alt="Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva"/>
+<img src="{{ site.url }}/assets/sagagis/shell.jpg" class="medium" alt="Az OSGeo4W Shell felülete: a gdalbuildvrt használati útmutatója kiíratva"/>
 <br />
 
 A `-separate` logikai argumentumot megadva külön sávokba helyezi a képeket (ha ezt lehagynánk, akkor virtuális mozaikot készítene nekünk a GDAL), utána következik a kimenet és a bemenet. Ebben a sorrendben! Az elérési útvonalakat pedig módosítsátok, ha szükséges.
@@ -190,12 +190,12 @@ A `-separate` logikai argumentumot megadva külön sávokba helyezi a képeket (
 Indítsuk el a **saga_gui.exe**-t, utána a menüsorban válasszuk ki a **File -> Open** parancsot (vagy a mappa ikonra is kattinthatunk a fájl megnyitásához) és nyissuk meg a virtuális raszterünket (`layer_stack.vrt`)! Utána navigáljunk el ide: **Geoprocessing -> Spatial and Geostatistics -> Grids -> Save Grid Statistics to Table**. Nyissuk meg az eszközt! A **Grid Systems**-nél adjuk meg grid rendszerünket (a raszter terjedelem és felbontás) a legördülő listából. Utána a **Grids**-nél a `...` gombra kattintva a felugró kéthasábos ablak bal oldali oszlopában válasszuk ki a képkötegünket és a dupla vagy a szimpla nyílra kattintva pakoljuk át a jobb oldali ablakba (így lesz kiválasztva), majd kattintsunk az oké gombra! A táblázat részt hagyjuk úgy, ahogy van. Végül válasszuk ki, hogy milyen statisztikákat számoljon a képekre, és kattintsunk az okéra.
 
 
-<img src="{{ site.url }}/assets/sagagis/saga_gui_1.png" class="large" alt="Grid statisztikák mentése táblázatba eszköz"/>
+<img src="{{ site.url }}/assets/sagagis/saga_gui_1.jpg" class="large" alt="Grid statisztikák mentése táblázatba eszköz"/>
 <br />
 A létrehozott táblázatra kattintsunk jobb egérgombbal és válasszuk ki a **„mentés mint”** opciót és mentsük el .txt formátumba. Ez utána könnyedén beilleszthető az MS Excel-be vagy más táblázatkezelő szoftverbe.
 
 
-<img src="{{ site.url }}/assets/sagagis/saga_gui_2.png" class="large" alt="A statisztikákat tartalmazó táblázat exportálása szöveges formátumba"/>
+<img src="{{ site.url }}/assets/sagagis/saga_gui_2.jpg" class="large" alt="A statisztikákat tartalmazó táblázat exportálása szöveges formátumba"/>
 <br />
 Feltöltöttem nektek a Google Drive-ra a MODIS minta-adatbázisomat ([modis_sample_data.rar](https://drive.google.com/open?id=0B8pLujeireG7YjBmWTMtbm85UzQ), 561 MB, kitömörítve 2,71 GB), amin gyakorolhatjátok a parancssori adatfeldolgozást. A batch szkriptet megtaláljátok a [saga_gis_batch](https://github.com/SalsaBoy990/saga_gis_batch) repository-mban.
 

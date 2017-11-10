@@ -23,7 +23,7 @@ A recenzens (kritikus) védelmébe veszi az amerikai liberálisokat a brit konze
 Scruton könyve, amely a bírálat tárgyát képezi, a «Bolondok, csalók, gyújtogatók» címet viseli, és a szerzőnek az **új baloldal** gondolkodóiról szóló írásait gyűjti egybe. Első változata harminc éve jelent meg, és mint maga Scruton írja, a kiadónak vissza kellett vonnia, annyira nagy volt a felzúdulás a brit egyetemeken domináns szerepet betöltő újbaloldali értelmiség körében. Azóta újabb tanulmányokkal bővítette ki a kötetet, s így a régi baloldali, félig-meddig kommunista gondolkodók közül Sartre és Lukács György, Hobsbawm és Habermas mellett most már Slavoj Žižekről is szó van benne. Új baloldalnak **a hatvanas években azt az irányzatot nevezték, amely nem szakított a marxizmussal, sőt a leninizmussal sem szükségképpen, de nem a szovjet kommunizmus propagátora volt.** Scruton ezt a változást alapjában mellékesnek tartja, nála ugyanis az a lényeg, hogy **ezek a szerzők a társadalmi igazságosság ideálja nevében felszámolnák azokat az intézményeket, amelyek továbbviszik a társadalom örökségét.** Scruton azt az egyet még nem találta meg írásaikban, hogy miként is fog megvalósulni a teljes egyenlőség, amelynek nevében a felforgatást szükségesnek tartják, ezért elméleteiket a hit fogalomkörébe utalja. Sőt, már elvben is megállapítja, hogy törekvésük **csak a szabadság korlátozása árán** valósulhatna meg, mivel az emberek, ha szabadságban tevékenykedhetnek, **egyenlőtlen viszonyokat** hoznak létre. A kétkezi dolgozók azonban, akiknek nevében a kommunisták a hagyományos erkölcs és intézményrendszer eltávolítását hirdették, **sokkal szervesebben kötődtek** nemzetükhöz, mint osztályukhoz, ezért a nagy változásnak semmi esélye sem volt. A kommunisták ekkor **az egyetemeket és a kulturális életet** kezdték elfoglalni, és Scruton szerint meg is nyerték az elmúlt évtizedek kultúrharcát. **A baloldali értelmiség** – írja Scruton – **az elmúlt évtizedekben módszeresen rombolta a hagyományos intézményekbe, a családba, az iskolába, a jogba, a nemzetbe vetett bizalmat, pedig a nyugati civilizációt ezek örökítették ránk.** Freeman szerint a brit filozófus a régieket, Sartre-ot és Foucault-t még mindennek ellenére is tisztelettel elemzi, az újabbak munkásságát viszont, Althussertől Žižekig „nonszensz-gépezetnek” minősíti.
 
 
-<img src="{{ site.url }}/assets/sztalin.jpg" class="small" alt="Rózsák Sztálinnak (1949)"/>
+<img src="{{ site.url }}/assets/left/sztalin.jpg" class="small" alt="Rózsák Sztálinnak (1949)"/>
 <figcaption>1. kép: Boris Vladimirski - <a href="http://d2jv9003bew7ag.cloudfront.net/uploads/Boris-Vladimirski-Roses-for-Stalin-detail-865x577.jpg">Rózsák Sztálinnak (1949)</a></figcaption>
 
 
@@ -37,7 +37,7 @@ Freeman legfőbb kifogása az, hogy a mérsékelt amerikai liberális gondolkod�
 A sorozat [első részében](https://salsaboy990.github.io/politika/2017/07/13/tudomanyosseta.html) már nagy vonalakban felvázoltam a konzervativizmus mibenlétét, és erős kritikával illettem a „Séta a Tudományért” mozgalmat, ami a nevével ellentétben sokkal inkább a társadalmi igazságosságról szólt. A tudományban nincs helye a politikai aktivizmusnak. Itt áttértek a „kulturális marxizmussal” kapcsolatos eszmefuttatásomra.
 
 
-<img src="{{ site.url }}/assets/a_mezon.jpg" class="small" alt="A mezőn (1977)"/>
+<img src="{{ site.url }}/assets/left/a_mezon.jpg" class="small" alt="A mezőn (1977)"/>
 <figcaption>2. kép: Nikolay Karacharskov - <a href="http://www.paintingofrussia.com/artwork.php?artwork=21672">A mezőn (1977)</a></figcaption>
 
 
@@ -52,7 +52,7 @@ Az emberek közti egyenlőtlenségek társadalmi egyenlőtlenségeket eredménye
 „A politikai bölcsesség, a társadalom irányításához szükséges tudás nem lelhető fel egy-egy elszigetelt gondolkodó elméleti spekulációiban, hanem ezt a tapasztalati tudást a közösség egésze birtokolja. Az elvont elméleti konstrukciók nem alkalmasak a politikai gyakorlat szabályozására. Marx elméleti spekulációi (az anyagi javak egyenlőtlenül oszlanak fel, és ha ezt felszámoljuk, eljön az osztály nélküli társadalom, ahol nincsenek társadalmi egyenlőtlenségek) tévesek, mert Marx nem ismerte a hétköznapi emberek gondolkodását. „A kétkezi dolgozók azonban, akiknek nevében a kommunisták a hagyományos erkölcs és intézményrendszer eltávolítását hirdették, sokkal szervesebben kötődtek nemzetükhöz, mint osztályukhoz, ezért a nagy változásnak semmi esélye sem volt.” A emberek nem kértek belőle, és igazuk is volt.
 
 
-<img src="{{ site.url}}/assets/kirov.jpg" class="small" alt="Szergey Kirov köszönti a sportolók díszszemléjét (1935)"/>
+<img src="{{ site.url}}/assets/left/kirov.jpg" class="small" alt="Szergey Kirov köszönti a sportolók díszszemléjét (1935)"/>
 <figcaption>3. kép: Alexander Nikolayevich Samokhvalov: <a href="http://sfmag.hu/wp-content/uploads/2011/02/ParadeKirov1.jpg">Szergey Kirov köszönti a sportolók díszszemléjét (1935).</a> A totalitárius művészet a rendszer tökéletes lenyomata. Grandiózus és uniformizált.</figcaption>
 
 
@@ -89,7 +89,7 @@ Az 1960-as évek társadalmi mozgalmai – fekete erő (black power), feminizmus
 Marcuse itt találta ki a „felszabadító tolerancia” kifejezést. **Toleranciát követelt minden olyan eszmével szemben, ami a baloldalról jött, viszont intoleranciát hirdetett a jobboldalról jövőkkel szemben.** A Frankfurti Iskola egyik átívelő motívuma volt **bármely, a sajátján kívüli nézőponttal szembeni teljes intolerancia.** Napjainkban a politikai korrektség híveinek szintén ez az alapvető jellemvonása.
 
 
-<img src="{{ site.url}}/assets/feminists-min.jpg" class="small" alt="Feminista tüntetők"/>
+<img src="{{ site.url}}/assets/left/feminists-min.jpg" class="small" alt="Feminista tüntetők"/>
 <figcaption>4. kép: <a href="https://i.ytimg.com/vi/5xop3CMLDWg/hqdefault.jpg">Feminista tüntetők az 1960-as évekből</a></figcaption>
 
 
@@ -100,7 +100,7 @@ A politikai vezetés teljes mértékben felkarolta a Frankfurti Iskola elképzel
 Egy olyan túlérzékeny társadalomban élünk most már, ahol a társadalmi mémek és érzések átvették a biológiai és objektív valóság szerepét annak meghatározásában, hogy mi számít jónak és rossznak. Eddig tartott a második átvett cikk.
 
 
-<img src="{{ site.url}}/assets/washington1963-min.jpg" class="small" alt="Washington-i Séta, 1963"/>
+<img src="{{ site.url}}/assets/left/washington1963-min.jpg" class="small" alt="Washington-i Séta, 1963"/>
 <figcaption>5. kép: <a href="https://blogs.ancestry.com/ancestry/files/2016/03/263488011-1024x575.jpg">A négerek Washington-i Sétája 1963-ban.</a> Munkalehetőségekért és szabadságért tüntettek.</figcaption>
 
 
@@ -127,7 +127,7 @@ Orbitálisan nagy baromságok! Ez megint egy utópia. Okkal alakult ki úgy ki a
 Sajnos rengeteg naiv és hiszékeny geográfus bedőlt ezeknek az orbitálisan nagy ostobaságoknak, és a zöld ideológia szócsövévé vált a nemzeti érdekeink ellenében. Mindenesetre én a műszaki értelmiségünkre hallgatok, hiszen ők a szakemberek az energetika területén, így az ő véleményük a releváns.
 
 
-<img src="{{ site.url }}/assets/green_activists-min.jpg" class="small" alt="Zöld politikai aktivisták"/>
+<img src="{{ site.url }}/assets/left/green_activists-min.jpg" class="small" alt="Zöld politikai aktivisták"/>
 <figcaption>6. kép: <a href="https://i.ytimg.com/vi/7kJWJo-Elo0/maxresdefault.jpg">„Környezetvédő” aktivisták Cleveland-ban (Ohio állam), 1970-ben</a></figcaption>
 
 
