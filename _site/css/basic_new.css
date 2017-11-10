@@ -1,0 +1,258 @@
+@charset "UTF-8";
+
+/* IDs */
+#menu-button {
+  color: #444;
+  height: 45px;
+}
+
+#adress {
+  font-style: italic;
+}
+
+
+html {
+  font-size: 20px;
+}
+
+
+/**
+ * Reset some basic elements
+ */
+ body, h1, h2, h3, h4, h5, h6,
+ p, blockquote, pre, hr,
+ dl, dd, ol, ul, figure {
+   margin: 0;
+   padding: 0;
+ }
+
+
+ /**
+  * Set `margin-bottom` to maintain vertical rhythm
+  */
+blockquote, pre,
+ul, ol, dl, figure,
+.highlight {
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: .7rem;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 2rem;
+  margin-bottom: .9rem;
+}
+
+
+ /**
+  * Basic styling
+  */
+body {
+  height: 100%;
+  width: 100%;
+  color: #000;
+  background-color: #aaa;
+  font-family: "PT Serif", Georgia, "Times New Roman", Times, serif;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/*
+ * Headings
+ */
+ h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  color:  #29293f;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+h4 {
+  font-size: .9rem;
+}
+h5 {
+  font-size: .8rem;
+}
+h6 {
+  font-size: .7rem;
+}
+
+
+/*
+ * Links
+ */
+a {
+  line-height: 1.2;
+  text-decoration: underline;
+  color: #0074D9;
+  }
+  a:hover {
+    transition: .3s;
+    color: #800000;
+  }
+
+
+ /**
+  * Images
+  */
+  img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    border-radius: .2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  
+  /**
+   * Figures
+   */
+  figure > img {
+    display: block;
+  }
+  
+  figcaption {
+    display: block;
+    margin: 0;
+    padding-bottom: 1rem;
+    font-style: italic;
+    text-align: center;
+    font-size: .9rem;
+  }
+  
+  figcaption a{
+    font-size: .9rem;
+  }
+
+
+  /**
+ * Videos
+ */
+iframe {
+  text-align: center; 
+  display: block;
+  margin:auto;
+  padding-bottom: 1rem;
+}
+
+
+/**
+ * Tables
+ */ 
+table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  border: 1px solid #828282;
+  border-collapse: collapse;
+  font-size: .9rem;
+  }
+  table tr, table td, table th {
+    border: 1px solid #828282;
+    padding: 0 .5rem;
+  }
+
+table tr:even {
+  background-color: #e7e7e7;
+}
+table tr:first {
+  font-weight: 600;
+}
+
+
+/**
+ * Lists
+ */
+ul, ol {
+  margin-left: 1.5rem;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
+/**
+* Code formatting
+*/
+pre,
+code {
+  border: 1px solid #e8e8e8;
+  border-radius: .15rem;
+  font-size: .8rem;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  background-color: #f5f2f0;
+  }
+  code {
+    padding: 1px .2rem;
+  }
+  pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    padding: 0;
+    overflow-x: auto;
+  }
+  pre > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+
+  /**
+ * Blockquotes with very nice styling
+ */
+blockquote {
+  position: relative;
+  display: block;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  padding: 1.5rem 2rem;
+  border-left: .2rem solid rgba(255, 99, 0, 0.4);
+  text-align: left;
+  font-style: italic;
+  font-size: .9rem;
+  }
+  blockquote > :last-child { /* ??? */
+    margin-bottom: 0;
+  }
+
+  blockquote:before {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    padding-left: .5rem;
+    font-size: 3rem;
+    line-height: .85;
+  }
+  blockquote:before {
+    top: 0;
+    left: 0; 
+    content: "\201D";
+    color: rgba(255, 99, 0, 0.4);
+  }
+
+/**
+* Article border
+*/
+article {
+  padding-left: .5rem;
+  padding-top: .5rem;
+}

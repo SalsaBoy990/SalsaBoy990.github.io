@@ -11,7 +11,7 @@
 
 @media only screen and (max-width: 550px) {
   body {
-    font-size: 1.2rem;
+    font-size: .95rem;
   }
   .wrapper, .site-header {
     max-width: -webkit-calc(550px - (30px));
@@ -22,38 +22,42 @@
   }
     
   a {
-    font-size: 1.2rem;
+    font-size: .95rem;
   }
 
   blockquote {
-    font-size: 1.1rem; 
+    font-size: .85rem; 
   }
 
   figcaption {
-    font-size: 1rem; 
+    font-size: .8rem; 
   }
   figcaption a{
-    font-size: 1rem; 
+    font-size: .8rem; 
   }
 
   pre, code {
-    font-size: 0.95rem;
+    font-size: 0.75rem;
   }
     
   .post-date {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
   .post-date a {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .writings a {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .small, .medium {
-    height: 80%;
-    width: 80%;
+    height: 95%;
+    width: 95%;
+  }
+
+  .license {
+    font-size: .7rem;
   }
 
   iframe {
@@ -72,12 +76,12 @@
     display: block;
   }
   .navigation-menu ul li {
-    width: 100% !important;
-    float: none !important;
+    width: 100%;
+    float: none;
 
     border-bottom: 1px solid transparent;
   }
   .navigation-menu ul li a{
-    font-size: 1.05rem;
+    font-size: .9rem;
   }
 }

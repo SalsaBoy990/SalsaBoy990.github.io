@@ -72,6 +72,7 @@ img {
   height: auto;
   max-width: 100%;
   margin: auto;
+  padding: 0;
   text-align: center;
   /*vertical-align: middle;*/ /* Or remove display: block; */
   border-radius: 5px;

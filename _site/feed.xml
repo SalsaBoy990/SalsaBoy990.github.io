@@ -134,7 +134,7 @@ print(operation);&lt;/code&gt;&lt;/pre&gt;
   &quot;functionName&quot;: &quot;Image.add&quot;
 })&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; függvénnyel az új objektum (kép) tulajdonságait kérdeztük le. A szerver hozzáadott 10-et a domborzatmodell minden egyes cellaértékéhez. Ezt nyilván el kell végeznie, hiszen akkor nem tudná kiiírni a létrehozott új kép tulajdonságait. A GEE-ben csak akkor küldjük el a kérést, ha explicite utasítást adunk rá. A példánkban a &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; meghívásával ez teljesül. Így néz ki a szerver válasza (&lt;code class=&quot;highlighter-rouge&quot;&gt;POST response&lt;/code&gt;):&lt;/p&gt;
+&lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; függvénnyel az új objektum (kép) tulajdonságait kérdeztük le. A szerver hozzáadott 10-et a domborzatmodell minden egyes cellaértékéhez. Ezt nyilván el kell végeznie, hiszen akkor nem tudná kiírni a létrehozott új kép tulajdonságait. A GEE-ben csak akkor küldjük el a kérést, ha explicite utasítást adunk rá. A példánkban a &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; meghívásával ez teljesül. Így néz ki a szerver válasza (&lt;code class=&quot;highlighter-rouge&quot;&gt;POST response&lt;/code&gt;):&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;{
   &quot;type&quot;: &quot;Image&quot;,

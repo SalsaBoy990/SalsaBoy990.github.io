@@ -1,0 +1,236 @@
+/** New Geographer theme. Redux edition (version: 6.2).
+ * Minimalistic UI.
+ * Author: András Gulácsi
+ * Date: November 10, 2017
+ */
+
+
+/*
+ * Wrapper
+ */
+.wrapper {
+  max-width: -webkit-calc(860px - (2rem * 2));
+  max-width: calc(860px - (3rem * 2)); 
+  margin-right: auto;
+  margin-left: auto;  
+  padding-right: 3rem;
+  padding-left: 3rem;
+  padding-top: .5rem;
+  background: #fff;
+  border-left: 1px solid #626262;
+  border-right: 1px solid #626262;
+}
+/**
+ * Clearfix hack
+ */
+.wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/**
+ * Site header
+ */
+ .site-header {
+  display: block;
+  position: relative;
+  padding: 0;
+  background-color: #fff;
+  max-width: -webkit-calc(860px - (2rem * 2));
+  max-width: calc(860px - (3rem * 2)); 
+  margin: 0 auto;
+  text-align: center;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  padding-bottom: 3rem;
+
+  border-left: 1px solid #626262;
+  border-right: 1px solid #626262;
+}
+
+
+.site-title {
+  padding-top: 2.8rem;
+  padding-bottom: 1rem;
+  padding-left: 0;
+  margin: 0;
+  clear: both;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.site-title h1 {
+  margin-top: .5rem;
+  font-size: 2.3rem;
+}
+
+  /**
+ * Post content
+ */
+.page-content {
+    padding: 0px;
+  }
+  
+
+/*
+ * Posts
+ */
+.post-header {
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.post-title {
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+  
+.post-content {
+  margin-bottom: 1.5rem;
+  padding: 0px;
+}
+      
+.post-date {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-size: .85rem;
+  font-style: italic;
+  color: #606060;
+}
+.post-date a {
+  font-size: .85rem;
+}
+  
+.writings a {
+  padding-bottom: 0.35rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  text-decoration: underline;
+}
+.writings a:hover {
+  color: #973e41;
+}
+
+
+/**
+ * Navigation bar - my new collapsable menu
+ */
+ #collapsed-menu {
+  display: none;
+}
+
+#dropdown {
+  display: none;
+  border: 1px solid #626262;
+}
+
+.navigation-menu {
+  display: flex;
+  padding-top: 0.5rem;
+  border: none;
+  font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+}
+  
+.navigation-menu ul {
+  margin-left: 0px;
+  padding: 0;
+  border-radius: 4px; 
+  list-style: none;
+  text-align: center;
+  z-index: 1; 
+}
+
+.navigation-menu ul li {
+  float: left;
+  padding-right: 1rem;
+  line-height: 45px;
+  text-align: center;
+}
+
+.navigation-menu ul li a {
+  color: 	#444;
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+.navigation-menu ul li a:hover {
+  transition: 0.3s;
+  color: Maroon;
+  text-decoration: underline;
+}
+
+.navigation-menu ul ul {
+  padding: 0;
+  margin: 0;
+}
+
+
+.emoji {
+  float: left;
+  margin-right: 3px;
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+.license {
+  font-size: .8rem;
+}
+
+.license a {
+  font-size: .8rem;
+}
+
+.intro {
+  display: block;
+  margin-top: 0rem;
+}
+
+.small {
+  height: 50%;
+  width: 50%;
+}
+
+.medium {
+  height: 70%;
+  width: 70%;
+}
+
+.large {
+  height: 95%;
+  width: 95%;
+}
+
+.profile-picture {
+  float: left;
+  height: 50%;
+  width: 150px;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+.code-caption {
+  padding-bottom: 0px;
+}
+
+.color {
+  background-color:#e7e7e7;
+}
+
+.update {
+  color: #85144b;
+}
+
+.footnote {
+  padding-top: 1rem;
+  font-size: .8rem;
+}
+
+.poem {
+  width: 87%;
+  font-size: .8rem;
+}

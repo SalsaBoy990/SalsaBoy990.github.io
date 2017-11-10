@@ -132,7 +132,7 @@ A kérésünk így néz ki (ezt küldjük a szerver számára):
   "functionName": "Image.add"
 })</code></pre>
 
-A `print()` függvénnyel az új objektum (kép) tulajdonságait kérdeztük le. A szerver hozzáadott 10-et a domborzatmodell minden egyes cellaértékéhez. Ezt nyilván el kell végeznie, hiszen akkor nem tudná kiiírni a létrehozott új kép tulajdonságait. A GEE-ben csak akkor küldjük el a kérést, ha explicite utasítást adunk rá. A példánkban a `print` meghívásával ez teljesül. Így néz ki a szerver válasza (`POST response`):
+A `print()` függvénnyel az új objektum (kép) tulajdonságait kérdeztük le. A szerver hozzáadott 10-et a domborzatmodell minden egyes cellaértékéhez. Ezt nyilván el kell végeznie, hiszen akkor nem tudná kiírni a létrehozott új kép tulajdonságait. A GEE-ben csak akkor küldjük el a kérést, ha explicite utasítást adunk rá. A példánkban a `print` meghívásával ez teljesül. Így néz ki a szerver válasza (`POST response`):
 
 <pre><code class="language-json">{
   "type": "Image",

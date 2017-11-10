@@ -161,6 +161,7 @@
   position: relative;
   padding: 0;
   background-color: #fff;
+  min-height: 5rem;
   max-width: -webkit-calc(860px - (2rem * 2));
   max-width: calc(860px - (3rem * 2)); 
   margin-right: auto;
