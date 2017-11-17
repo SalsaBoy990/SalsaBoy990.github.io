@@ -1,11 +1,6 @@
 @charset "UTF-8";
 
 /* IDs */
-#menu-button {
-  color: #444;
-  height: 45px;
-}
-
 #adress {
   font-style: italic;
 }
@@ -65,7 +60,7 @@ body {
  h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", Arial, Helvetica, sans-serif;
   line-height: 1.2;
-  color:  #29293f;
+  color:  #000;
 }
 
 h1 {
@@ -164,13 +159,12 @@ table {
     border: 1px solid #828282;
     padding: 0 .5rem;
   }
-
-table tr:even {
-  background-color: #e7e7e7;
-}
-table tr:first {
-  font-weight: 600;
-}
+  table tr:nth-child(even) {
+    background: #e7e7e7;
+  }
+  table tr:nth-child(odd) {
+    background: #fff;
+  }
 
 
 /**
@@ -225,10 +219,11 @@ blockquote {
   margin-right: auto;
   margin-bottom: 1rem;
   padding: 1.5rem 2rem;
-  border-left: .2rem solid rgba(255, 99, 0, 0.4);
+  /*border-left: .2rem solid #ccc;*/
   text-align: left;
   font-style: italic;
   font-size: .9rem;
+  background-color: snow;
   }
   blockquote > :last-child { /* ??? */
     margin-bottom: 0;
@@ -246,7 +241,7 @@ blockquote {
     top: 0;
     left: 0; 
     content: "\201D";
-    color: rgba(255, 99, 0, 0.4);
+    color: #ccc;
   }
 
 /**
